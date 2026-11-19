@@ -16,8 +16,16 @@
  * destinations, puts a blank page before any chapter that fell on a verso,
  * fills in the page numbers of the contents and glossary, pads to an even
  * count, and prints again until nothing changes. The result is checked (trim
- * size of every page, page count, fonts embedded, no colour) before it is
- * written.
+ * size of every page, page count, fonts embedded, no colour, printed folios)
+ * before it is written.
+ *
+ * Page numbering: the front matter (title, copyright, contents, About, and any
+ * blank page before chapter 1) is numbered i, ii, iii, … from the title page,
+ * and chapter 1's first page is 1. book.css prints the folios that way with a
+ * `folio` counter of its own (Chromium's page counter cannot be restarted);
+ * this script uses the same numbering for the contents and glossary page
+ * references (folioLabel), writes it into the PDF as /PageLabels so viewers
+ * show it too, and checks the printed folios against it (folioCheck).
  */
 import { spawnSync } from 'node:child_process';
 import { createReadStream, existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';
@@ -26,7 +34,7 @@ import type { AddressInfo } from 'node:net';
 import { tmpdir } from 'node:os';
 import { dirname, extname, join, normalize, resolve, sep } from 'node:path';
 import { parseArgs } from 'node:util';
-import { PDFArray, PDFDict, PDFDocument, PDFName, PDFRef, PDFString, PDFHexString } from 'pdf-lib';
+import { PDFArray, PDFDict, PDFDocument, PDFName, PDFNumber, PDFRef, PDFString, PDFHexString } from 'pdf-lib';
 import { chromium, type Page } from 'playwright';
 import { BOOK_PDF } from '../src/lib/chapters';
 import { loadGuide } from '../src/lib/content';
@@ -56,6 +64,36 @@ function kdpGutter(pages: number): number {
   if (pages <= 500) return 0.625;
   if (pages <= 700) return 0.75;
   return 0.875;
+}
+
+// ---------------------------------------------------------------- folios
+
+/** Lower-case roman numeral (1 → i), for the front-matter folios. */
+function roman(n: number): string {
+  const digits: [number, string][] = [
+    [1000, 'm'], [900, 'cm'], [500, 'd'], [400, 'cd'], [100, 'c'], [90, 'xc'],
+    [50, 'l'], [40, 'xl'], [10, 'x'], [9, 'ix'], [5, 'v'], [4, 'iv'], [1, 'i'],
+  ];
+  let out = '';
+  for (const [value, numeral] of digits) {
+    for (; n >= value; n -= value) out += numeral;
+  }
+  return out;
+}
+
+/**
+ * The folio of a 1-based PDF page, given the number of front-matter pages
+ * (those before chapter 1): roman in the front matter, arabic from 1 after it.
+ * The same numbering as the printed folios (book.css) and the /PageLabels.
+ */
+function folioLabel(page: number, frontPages: number): string {
+  return page > frontPages ? String(page - frontPages) : roman(page);
+}
+
+/** Front-matter pages: those before chapter 1's first page (0 if it has no page). */
+function frontPageCount(info: PdfInfo, firstChapter: string): number {
+  const p = firstChapter ? info.dests.get(firstChapter) : undefined;
+  return p === undefined ? 0 : p - 1;
 }
 
 // ---------------------------------------------------------------- arguments
@@ -225,6 +263,8 @@ interface Layout {
   recto: string[];
   /** Ids whose page numbers the page shows. */
   refs: string[];
+  /** Id of chapter 1 (the first article.chapter), whose first page is folio 1; '' if none. */
+  firstChapter: string;
 }
 
 async function layoutTargets(page: Page): Promise<Layout> {
@@ -244,25 +284,34 @@ async function layoutTargets(page: Page): Promise<Layout> {
     }
     const recto = [...document.querySelectorAll<HTMLElement>('[data-recto], article.chapter')].map((el) => el.id);
     const refs = [...new Set([...document.querySelectorAll<HTMLElement>('[data-pageref]')].map((el) => el.dataset['pageref'] ?? ''))];
-    return { recto, refs };
+    const firstChapter = document.querySelector<HTMLElement>('article.chapter[id]')?.id ?? '';
+    return { recto, refs, firstChapter };
   });
 }
 
 /**
  * Applies one pass of pagination fixes in the page and reports whether anything
  * changed. Inserting a blank page before an element moves everything after it
- * by exactly one page, so all fixes can be made in one pass.
+ * by exactly one page, so all fixes can be made in one pass. The page
+ * references are filled in from this pass's PDF (roman or arabic, folioLabel);
+ * if a blank page moved them, the next pass corrects them.
  */
 async function applyPass(page: Page, info: PdfInfo, layout: Layout): Promise<string[]> {
   const pageOf = Object.fromEntries(info.dests);
+  const front = frontPageCount(info, layout.firstChapter);
+  const labelOf = Object.fromEntries([...info.dests].map(([id, p]) => [id, folioLabel(p, front)]));
   return page.evaluate(
-    ({ pageOf, recto, pages }) => {
+    ({ pageOf, labelOf, recto, pages, firstChapter }) => {
       const changes: string[] = [];
       let shift = 0;
+      const first = firstChapter ? document.getElementById(firstChapter) : null;
       for (const id of recto) {
         const el = document.getElementById(id);
         const p = pageOf[id];
         if (!el || p === undefined) continue;
+        // A blank page before chapter 1 or anything ahead of it is front matter
+        // (.kdp-front: no folio, not counted in the arabic numbering, book.css).
+        const inFront = first !== null && (el === first || (el.compareDocumentPosition(first) & Node.DOCUMENT_POSITION_FOLLOWING) !== 0);
         const prev = el.previousElementSibling;
         const hasBlank = prev?.classList.contains('kdp-blank') ?? false;
         const at = p + shift;
@@ -273,7 +322,7 @@ async function applyPass(page: Page, info: PdfInfo, layout: Layout): Promise<str
             changes.push(`removed blank before #${id}`);
           } else {
             const blank = document.createElement('div');
-            blank.className = 'kdp-blank';
+            blank.className = inFront ? 'kdp-blank kdp-front' : 'kdp-blank';
             blank.setAttribute('aria-hidden', 'true');
             el.before(blank);
             shift += 1;
@@ -282,8 +331,7 @@ async function applyPass(page: Page, info: PdfInfo, layout: Layout): Promise<str
         }
       }
       for (const span of document.querySelectorAll<HTMLElement>('[data-pageref]')) {
-        const p = pageOf[span.dataset['pageref'] ?? ''];
-        const text = p === undefined ? '' : String(p);
+        const text = labelOf[span.dataset['pageref'] ?? ''] ?? '';
         if (span.textContent !== text) {
           span.textContent = text;
           if (changes.length < 50) changes.push(`page ref #${span.dataset['pageref']} → ${text || '(none)'}`);
@@ -305,7 +353,7 @@ async function applyPass(page: Page, info: PdfInfo, layout: Layout): Promise<str
       }
       return changes;
     },
-    { pageOf, recto: layout.recto, pages: info.pages },
+    { pageOf, labelOf, recto: layout.recto, pages: info.pages, firstChapter: layout.firstChapter },
   );
 }
 
@@ -348,7 +396,64 @@ async function overflowCheck(page: Page, contentWidthPx: number): Promise<string
   }, contentWidthPx);
 }
 
+// ---------------------------------------------------------------- page labels
+
+/**
+ * Writes the folio numbering into the PDF's /PageLabels, so viewers (and the
+ * page box of a PDF reader) show i, ii, … for the front matter and 1, 2, …
+ * from chapter 1, as printed. Everything else in the PDF is kept as it is.
+ */
+async function withPageLabels(bytes: Uint8Array, frontPages: number): Promise<Uint8Array> {
+  const doc = await PDFDocument.load(bytes, { updateMetadata: false });
+  const ctx = doc.context;
+  const nums: (PDFNumber | PDFDict)[] = [];
+  if (frontPages > 0) nums.push(PDFNumber.of(0), ctx.obj({ S: PDFName.of('r') }));
+  nums.push(PDFNumber.of(frontPages), ctx.obj({ S: PDFName.of('D') }));
+  doc.catalog.set(PDFName.of('PageLabels'), ctx.obj({ Nums: nums }));
+  return doc.save({ useObjectStreams: false, updateFieldAppearances: false });
+}
+
 // ---------------------------------------------------------------- checks on the finished PDF
+
+/**
+ * Checks that the folios printed by book.css's counters match folioLabel (and
+ * so the page references and /PageLabels): in each window of pages, at least
+ * one page with text must show its expected folio at the outside edge of its
+ * first or last two lines (the first word on a verso, the last on a recto), so
+ * a heading such as "Chapter 1" is not taken for one. A window catches an offset or a drift (a page type that does
+ * not count) without failing on pages that print no folio, such as chapter
+ * openers or blank pages.
+ */
+function folioCheck(file: string, windows: { what: string; pages: number[] }[], frontPages: number): string[] {
+  if (!hasCommand('pdftotext')) {
+    warn('pdftotext (poppler-utils) not found: printed folios not checked.');
+    return [];
+  }
+  const problems: string[] = [];
+  for (const { what, pages } of windows) {
+    const seen: string[] = [];
+    let ok = false;
+    for (const p of pages) {
+      const r = spawnSync('pdftotext', ['-f', String(p), '-l', String(p), '-layout', file, '-'], { encoding: 'utf8' });
+      if (r.status !== 0) return [`pdftotext failed: ${r.stderr}`];
+      const lines = r.stdout.split('\n').map((l) => l.trim()).filter((l) => l !== '');
+      if (lines.length === 0) continue;
+      const label = folioLabel(p, frontPages);
+      const outside = [...lines.slice(0, 2), ...lines.slice(-2)].map((l) => {
+        const words = l.split(/\s+/);
+        return p % 2 === 0 ? words[0] : words.at(-1);
+      });
+      if (outside.includes(label)) {
+        ok = true;
+        break;
+      }
+      seen.push(`page ${p} (folio ${label}): "${lines.at(-1)?.replace(/\s+/g, ' ').slice(0, 60) ?? ''}"`);
+    }
+    if (!ok && seen.length > 0) problems.push(`the printed folios in the ${what} do not match the page labels (book.css folio counters?):\n    ${seen.join('\n    ')}`);
+  }
+  return problems;
+}
+
 
 function pdffontsCheck(file: string): string[] {
   if (!hasCommand('pdffonts')) {
@@ -436,6 +541,7 @@ async function main(): Promise<void> {
     let gutter = DEFAULT_GUTTER_IN;
     let pdf: Uint8Array | undefined;
     let info: PdfInfo | undefined;
+    let firstChapter = '';
 
     // Up to two layouts: the default gutter, then KDP's gutter for the page count if that is larger.
     for (let attempt = 0; attempt < 2; attempt++) {
@@ -473,6 +579,7 @@ async function main(): Promise<void> {
       if (tall > 0) console.log(`  ${tall} passage pair(s) taller than ${Math.round(TALL_PAIR_SHARE * 100)}% of a page may break across pages`);
 
       const layout = await layoutTargets(page);
+      firstChapter = layout.firstChapter;
       let stable = false;
       for (let pass = 1; pass <= MAX_PASSES; pass++) {
         pdf = await page.pdf({ preferCSSPageSize: true, printBackground: true, outline: true, tagged: true });
@@ -503,6 +610,11 @@ async function main(): Promise<void> {
     }
     if (!pdf || !info) throw new BuildError('no PDF was produced.');
 
+    // ---- page numbering: roman front matter, arabic from chapter 1 (see the header comment)
+    const front = frontPageCount(info, firstChapter);
+    if (front % 2 !== 0) throw new BuildError(`the front matter has ${front} pages, so chapter 1 is not on a right-hand page.`);
+    pdf = await withPageLabels(pdf, front);
+
     // ---- checks
     const problems: string[] = [];
     info.sizes.forEach((s, i) => {
@@ -519,7 +631,21 @@ async function main(): Promise<void> {
     writeFileSync(tmp, pdf);
     const checkedFonts = hasCommand('pdffonts');
     const checkedColour = hasCommand('pdftoppm');
-    problems.push(...pdffontsCheck(tmp), ...colourCheck(tmp));
+    const checkedFolios = hasCommand('pdftotext');
+    const range = (from: number, to: number): number[] => Array.from({ length: Math.max(0, Math.min(to, info?.pages ?? 0) - from + 1) }, (_, i) => from + i);
+    problems.push(
+      ...pdffontsCheck(tmp),
+      ...colourCheck(tmp),
+      ...folioCheck(
+        tmp,
+        [
+          { what: 'front matter', pages: range(3, front) },
+          { what: 'first pages of chapter 1', pages: range(front + 1, front + 4) },
+          { what: 'last pages', pages: range(Math.max(front + 1, info.pages - 5), info.pages) },
+        ],
+        front,
+      ),
+    );
     if (problems.length > 0) {
       rmSync(opts.out, { force: true });
       renameSync(tmp, failedOut);
@@ -533,8 +659,9 @@ async function main(): Promise<void> {
     console.log(`
 ✔ ${rel}
   ${info.pages} pages, ${TRIM_W_PT} × ${TRIM_H_PT} pt (7 × 10 in, no bleed), view: ${opts.view}${opts.final ? ', final (no draft notices)' : ', draft notices on'}
+  folios: ${front > 0 ? `i–${roman(front)} (front matter), ` : ''}1–${info.pages - front} from chapter 1 (also as /PageLabels)
   margins: inside ${gutter} in (KDP minimum for ${info.pages} pages: ${kdpGutter(info.pages)} in), outside ${OUTSIDE_MARGIN_IN} in
-  ${checkedFonts ? 'all fonts embedded (pdffonts)' : 'fonts NOT checked (no pdffonts)'}; ${checkedColour ? 'no colour (pdftoppm)' : 'colour NOT checked (no pdftoppm)'}
+  ${checkedFonts ? 'all fonts embedded (pdffonts)' : 'fonts NOT checked (no pdffonts)'}; ${checkedColour ? 'no colour (pdftoppm)' : 'colour NOT checked (no pdftoppm)'}; ${checkedFolios ? 'folios match (pdftotext)' : 'folios NOT checked (no pdftotext)'}
   KDP: paperback, 7 x 10 in, no bleed, black & white interior, cream or white paper; upload the cover separately.`);
   } finally {
     await browser.close();

@@ -175,8 +175,17 @@ npm run pdf -- --no-build --out x.pdf    # reuse dist/, write elsewhere
   frame; the Hebrew is ragged, the English prose justified with hyphenation
   limits and `text-wrap: pretty`. Labels are Source Serif small caps. Chapter
   openers are sunk and centred and have no running head (the opener has its
-  own named page, `kprelim`, as Chromium has no `:first` for named pages); the
+  own named page, `kopener`, as Chromium has no `:first` for named pages); the
   key terms start the following page.
+- **Page numbers:** the front matter (title, copyright, contents, "About this
+  guide" and a blank page if needed so that chapter 1 is a right-hand page) is
+  numbered in roman, counted from the title page (i, ii, iii, …; the title
+  and copyright pages print none), and chapter 1's first page is 1. The
+  contents and glossary page references use the same numbers, and the script
+  writes them into the PDF as `/PageLabels`, so a PDF viewer's page box shows
+  them too. Chromium's page counter cannot be restarted, so `book.css` counts
+  the arabic folios with a counter of its own (`folio`), which the
+  front-matter pages do not advance.
 - **Fonts:** Source Serif 4 and Frank Ruhl Libre (SIL OFL) set the book;
   Source Sans 3 (SIL OFL) is vendored and declared too, though the book no
   longer uses it. They are vendored with their licences in
@@ -199,11 +208,13 @@ npm run pdf -- --no-build --out x.pdf    # reuse dist/, write elsewhere
 - **Checks:** the script fails if content runs into the margins, a font
   does not load, a chapter starts on a left-hand page, a page is not
   504 × 720 pt, a font is not embedded or is a system fallback (`pdffonts`),
-  or any page has colour (`pdftoppm`). It pads to an even page count and warns
+  any page has colour (`pdftoppm`), or the printed folios do not match the
+  page labels (`pdftotext`). It pads to an even page count and warns
   under KDP's 24-page minimum. The summary gives the page count and the gutter
   used against KDP's minimum for that count (0.9 in by default, above KDP's
-  minimum for any page count; the script would widen it itself if not). `pdffonts` and `pdftoppm` are in
-  poppler-utils; without them those two checks are skipped with a warning.
+  minimum for any page count; the script would widen it itself if not).
+  `pdffonts`, `pdftoppm` and `pdftotext` are in poppler-utils; without them
+  those checks are skipped with a warning.
 - **Chromium:** Playwright 1.63.0 (`npx playwright install chromium` once, if
   it is not installed). Chromium neither inserts blank pages for
   `break-before: right` nor supports `target-counter()`, so the script prints

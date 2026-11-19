@@ -12,6 +12,17 @@
    deeper than the top, as in a book, and holds the folio. Pages are numbered
    from the title page, so odd pages are recto (right).
 
+   Folios: the front matter (title, copyright, contents, About) is numbered in
+   lower-case roman from the title page (title and copyright print none), and
+   chapter 1's first page is arabic 1. Chromium has one page counter that
+   cannot be reset across pages, so the arabic folios use a counter of their
+   own, `folio`: every page increments it (the @page rule below) except the
+   front-matter pages (kfront, kprelim), which add 0. Front-matter folios print
+   counter(page, lower-roman), all others counter(folio). build-pdf.ts writes
+   the same numbering into the PDF's /PageLabels and the contents and glossary
+   page references, and checks that the printed folios match. Restyle the
+   margin boxes freely, but keep those counter rules.
+
    Everything is black: KDP prints greys as a halftone screen. Lighter elements
    are lighter by weight (0.4–0.5 pt hairlines, italic, small sizes), not by
    colour. Labels are Source Serif small caps (c2sc + smcp), never sans and
@@ -20,6 +31,8 @@
 @page {
   size: 7in 10in;
   margin: 0.85in 0.8in 0.95in 0.9in;
+  /* The arabic folio: counts every page but the front matter's (see above). */
+  counter-increment: folio;
 }
 
 /* Running heads in spaced capitals the height of the text's small caps:
@@ -41,7 +54,7 @@
   }
 
   @bottom-left {
-    content: counter(page);
+    content: counter(folio);
     font-family: 'Source Serif 4', serif;
     font-size: 9pt;
     font-variant-numeric: lining-nums tabular-nums;
@@ -67,7 +80,7 @@
   }
 
   @bottom-right {
-    content: counter(page);
+    content: counter(folio);
     font-family: 'Source Serif 4', serif;
     font-size: 9pt;
     font-variant-numeric: lining-nums tabular-nums;
@@ -77,7 +90,7 @@
   }
 }
 
-/* Title and copyright pages: nothing in the margins. */
+/* Title and copyright pages, and blank pages in the front matter: nothing in the margins. */
 @page :first {
   @top-left { content: none; }
   @top-right { content: none; }
@@ -87,6 +100,7 @@
 }
 
 @page kfront {
+  counter-increment: folio 0;
   @top-left { content: none; }
   @top-right { content: none; }
   @bottom-left { content: none; }
@@ -103,8 +117,23 @@
   @bottom-center { content: none; }
 }
 
-/* Contents, introduction and the chapter openers: folios, no running heads. */
+/* Contents and introduction: roman folios, no running heads. */
 @page kprelim {
+  counter-increment: folio 0;
+  @top-left { content: none; }
+  @top-right { content: none; }
+}
+
+@page kprelim:left {
+  @bottom-left { content: counter(page, lower-roman); }
+}
+
+@page kprelim:right {
+  @bottom-right { content: counter(page, lower-roman); }
+}
+
+/* Chapter openers: arabic folios (they count, unlike kprelim), no running heads. */
+@page kopener {
   @top-left { content: none; }
   @top-right { content: none; }
 }
@@ -682,11 +711,12 @@ html.kdp {
 
   /* The opener page (the head and the overview) has a folio but no running
      head. Chromium has no :first for named pages, so the opener gets its own
-     page name; the key terms, which never fit beside the overview, start the
+     page name (kopener, not kprelim, which is roman and uncounted); the key
+     terms, which never fit beside the overview, start the
      next page under the chapter's running head. */
   .kdp .chapter-head,
   .kdp .overview {
-    page: kprelim;
+    page: kopener;
   }
 
   .kdp .notice {
@@ -1096,6 +1126,11 @@ html.kdp {
     page: kblank;
     break-before: page;
     height: 1px;
+  }
+
+  /* One before chapter 1 (or the contents) is front matter: not counted in the arabic folios. */
+  .kdp .kdp-blank.kdp-front {
+    page: kfront;
   }
 }
 
