@@ -23,6 +23,7 @@ import {
 } from './schema';
 import { classNumber, formatTime, parseListenHref, segmentLabel } from './format';
 import { CHAPTERS } from './chapters';
+import { bindListenLinks, ellipsizeLemmata, hebrewMarks, typographyHtml, typographyText } from './typography';
 
 /** Coverage confidence below which a listen position is flagged as approximate. */
 export const LOW_CONFIDENCE = 0.45;
@@ -148,7 +149,7 @@ export function listenLinkHtml(source: Source | undefined, key: string, seconds:
     `data-source="${escapeHtml(source.key)}" data-t="${t}" ` +
     `aria-label="Listen: class ${classNumber(source.key)} at ${time}${approximate ? ' (approximate)' : ''}">` +
     `<span class="listen-screen"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>${time}${approx}</span>` +
-    `<span class="listen-print">(class ${classNumber(source.key)}, ${time})</span></a>`
+    `<span class="listen-print">(class&nbsp;${classNumber(source.key)},&nbsp;${time})</span></a>`
   );
 }
 
@@ -180,14 +181,34 @@ export function nb(s: string): string {
   return s.replace(/\bG-d/g, 'G\u2011d');
 }
 
+/** Typography for rendered text (src/lib/typography.ts): smart quotes, Hebrew marks, bound class refs. */
+function finish(html: string): string {
+  return bindListenLinks(typographyHtml(nb(html)));
+}
+
 function renderBlock(src: string, context: RenderContext): string {
   ctx = context;
-  return nb(md.parse(src, { async: false }));
+  return finish(md.parse(src, { async: false }));
 }
 
 function renderInline(src: string, context: RenderContext): string {
   ctx = context;
-  return nb(md.parseInline(src, { async: false }));
+  return finish(md.parseInline(src, { async: false }));
+}
+
+/** A title or gloss: plain text, which Astro escapes. */
+function plain(s: string): string {
+  return typographyText(nb(s));
+}
+
+/** The data's segment with its typography finished (wording unchanged). */
+function finishSegment(s: Segment): Segment {
+  return {
+    ...s,
+    lines: s.lines.map((l) => ({ ...l, text: hebrewMarks(l.text) })),
+    en: typographyHtml(nb(s.en)),
+    footnotes: s.footnotes.map((f) => ({ ...f, html: typographyHtml(nb(f.html)) })),
+  };
 }
 
 export function escapeHtml(s: string): string {
@@ -244,7 +265,7 @@ function buildUnit(
   explanation: string,
   sources: Map<string, Source>,
 ): UnitModel {
-  const segments = chapter.segments.filter((s) => s.n >= from && s.n <= to);
+  const segments = chapter.segments.filter((s) => s.n >= from && s.n <= to).map(finishSegment);
   if (segments.length !== to - from + 1) throw new Error(`Chapter ${chapter.chapter}: no segments ${segmentLabel(from, to)} in data`);
   const coverage = segments.flatMap((s) => s.coverage);
   const approximate = coverage.length > 0 && coverage.every((c) => c.confidence < LOW_CONFIDENCE);
@@ -264,7 +285,7 @@ function buildUnit(
     to,
     label: segmentLabel(from, to),
     segments,
-    explanationHtml: explanation.trim() ? renderBlock(explanation, { sources, approximate }) : null,
+    explanationHtml: explanation.trim() ? ellipsizeLemmata(renderBlock(explanation, { sources, approximate })) : null,
     covered: coverage.length > 0,
     approximate,
     transcript: blocks,
@@ -301,7 +322,7 @@ function loadConcepts(
     const slug = file.replace(/^\d+-/, '').replace(/\.md$/, '');
     concepts.push({
       id: `ch${n}-${slug}`,
-      title: nb(fm.title),
+      title: plain(fm.title),
       from,
       to,
       inShortHtml: fm.inShort ? renderInline(fm.inShort, { sources, approximate: false }) : null,
@@ -337,7 +358,7 @@ function withPlaceholders(
     if (!first || !last) return;
     out.push({
       id: `ch${n}-pending-${first.n}`,
-      title: sectionOf(first.n),
+      title: plain(sectionOf(first.n)),
       from: first.n,
       to: last.n,
       inShortHtml: null,
@@ -386,7 +407,7 @@ function loadChapter(n: number, sources: Source[]): ChapterModel | null {
   if (existsSync(chPath)) {
     const { data, body } = splitFrontmatter(readFileSync(chPath, 'utf8'), chPath);
     const fm = parseOrThrow(ChapterFrontmatterSchema, data, chPath);
-    title = nb(fm.title);
+    title = plain(fm.title);
     status = fm.status;
     for (const { match, text } of splitSections(body, /^## (.+)$/)) {
       const heading = (match[1] ?? '').trim().toLowerCase();
@@ -397,7 +418,7 @@ function loadChapter(n: number, sources: Source[]): ChapterModel | null {
   const termsPath = join(dir, '_terms.yaml');
   if (existsSync(termsPath)) {
     const parsed = parseOrThrow(z.array(TermSchema), parseYaml(readFileSync(termsPath, 'utf8')) ?? [], termsPath);
-    terms = parsed.map((t) => ({ ...t, gloss: nb(t.gloss), chapter: n }));
+    terms = parsed.map((t) => ({ ...t, term: plain(t.term), he: hebrewMarks(t.he), gloss: plain(t.gloss), chapter: n }));
   }
   if (hasGuide) concepts = loadConcepts(n, dir, chapter, transcript, byKey);
   concepts = withPlaceholders(n, concepts, chapter, transcript, byKey);
@@ -407,7 +428,7 @@ function loadChapter(n: number, sources: Source[]): ChapterModel | null {
     n,
     title,
     status,
-    heRef: chapter.heRef,
+    heRef: hebrewMarks(chapter.heRef),
     sefariaUrl: chapter.sefariaUrl,
     translation: chapter.translation,
     hasGuide,
