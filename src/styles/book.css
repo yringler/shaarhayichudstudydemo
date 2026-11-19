@@ -7,12 +7,24 @@
    Margins (KDP minimums: outside 0.25 in, gutter 0.375–0.875 in by page count):
    outside 0.55 in, inside 0.625 in (enough for up to 500 pages; build-pdf.ts
    passes ?gutter= for more), top 0.8 in and bottom 0.75 in to hold the running
-   heads and folios. Pages are numbered from the title page, so odd pages are
-   recto (right). */
+   heads and folios. Odd PDF pages are recto (right).
+
+   Folios: the front matter (title, copyright, contents, About) is numbered in
+   lower-case roman from the title page (title and copyright print none), and
+   chapter 1's first page is arabic 1. Chromium has one page counter that
+   cannot be reset across pages, so the arabic folios use a counter of their
+   own, `folio`: every page increments it (the @page rule below) except the
+   front-matter pages (kfront, kprelim), which add 0. Front-matter folios print
+   counter(page, lower-roman), all others counter(folio). build-pdf.ts writes
+   the same numbering into the PDF's /PageLabels and the contents and glossary
+   page references, and checks that the printed folios match. Restyle the
+   margin boxes freely, but keep those counter rules. */
 
 @page {
   size: 7in 10in;
   margin: 0.8in 0.55in 0.75in 0.625in;
+  /* The arabic folio: counts every page but the front matter's (see above). */
+  counter-increment: folio;
 }
 
 @page :left {
@@ -30,7 +42,7 @@
   }
 
   @bottom-left {
-    content: counter(page);
+    content: counter(folio);
     font-family: 'Source Serif 4', serif;
     font-size: 9pt;
     color: #000;
@@ -53,7 +65,7 @@
   }
 
   @bottom-right {
-    content: counter(page);
+    content: counter(folio);
     font-family: 'Source Serif 4', serif;
     font-size: 9pt;
     color: #000;
@@ -61,7 +73,7 @@
   }
 }
 
-/* Title and copyright pages: nothing in the margins. */
+/* Title and copyright pages, and blank pages in the front matter: nothing in the margins. */
 @page :first {
   @top-left { content: none; }
   @top-right { content: none; }
@@ -71,6 +83,7 @@
 }
 
 @page kfront {
+  counter-increment: folio 0;
   @top-left { content: none; }
   @top-right { content: none; }
   @bottom-left { content: none; }
@@ -87,10 +100,19 @@
   @bottom-center { content: none; }
 }
 
-/* Contents and introduction: folios, no running heads. */
+/* Contents and introduction: roman folios, no running heads. */
 @page kprelim {
+  counter-increment: folio 0;
   @top-left { content: none; }
   @top-right { content: none; }
+}
+
+@page kprelim:left {
+  @bottom-left { content: counter(page, lower-roman); }
+}
+
+@page kprelim:right {
+  @bottom-right { content: counter(page, lower-roman); }
 }
 
 @page kgloss:right {
@@ -788,6 +810,11 @@ html.kdp {
     page: kblank;
     break-before: page;
     height: 1px;
+  }
+
+  /* One before chapter 1 (or the contents) is front matter: not counted in the arabic folios. */
+  .kdp .kdp-blank.kdp-front {
+    page: kfront;
   }
 }
 

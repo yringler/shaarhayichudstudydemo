@@ -161,6 +161,15 @@ npm run pdf -- --no-build --out x.pdf    # reuse dist/, write elsewhere
   numbers on the outside corners; none on the title and copyright pages.
   Transcripts, class topic lists, reviewer notes, audio and navigation are
   never printed.
+- **Page numbers:** the front matter (title, copyright, contents, "About this
+  guide" and a blank page if needed so that chapter 1 is a right-hand page) is
+  numbered in roman, counted from the title page (i, ii, iii, …; the title
+  and copyright pages print none), and chapter 1's first page is 1. The
+  contents and glossary page references use the same numbers, and the script
+  writes them into the PDF as `/PageLabels`, so a PDF viewer's page box shows
+  them too. Chromium's page counter cannot be restarted, so `book.css` counts
+  the arabic folios with a counter of its own (`folio`), which the
+  front-matter pages do not advance.
 - **Fonts:** Source Serif 4, Source Sans 3 and Frank Ruhl Libre (SIL OFL),
   vendored with their licences in `public/fonts/print/` and declared in
   `src/styles/book.css`, so printing needs no network. They keep every
@@ -181,11 +190,12 @@ npm run pdf -- --no-build --out x.pdf    # reuse dist/, write elsewhere
 - **Checks:** the script fails if content runs into the margins, a font
   does not load, a chapter starts on a left-hand page, a page is not
   504 × 720 pt, a font is not embedded or is a system fallback (`pdffonts`),
-  or any page has colour (`pdftoppm`). It pads to an even page count and warns
+  any page has colour (`pdftoppm`), or the printed folios do not match the
+  page labels (`pdftotext`). It pads to an even page count and warns
   under KDP's 24-page minimum. The summary gives the page count and the gutter
   used against KDP's minimum for that count (0.625 in by default; the script
-  widens it itself past 500 pages). `pdffonts` and `pdftoppm` are in
-  poppler-utils; without them those two checks are skipped with a warning.
+  widens it itself past 500 pages). `pdffonts`, `pdftoppm` and `pdftotext`
+  are in poppler-utils; without them those checks are skipped with a warning.
 - **Chromium:** Playwright 1.63.0 (`npx playwright install chromium` once, if
   it is not installed). Chromium neither inserts blank pages for
   `break-before: right` nor supports `target-counter()`, so the script prints
