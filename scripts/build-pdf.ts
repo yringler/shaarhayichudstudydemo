@@ -49,10 +49,14 @@ const KDP_MAX_PAGES = 828;
 const DEFAULT_GUTTER_IN = 0.9;
 const OUTSIDE_MARGIN_IN = 0.8;
 const MAX_PASSES = 8;
+/** Bottom margin (book.css @page). */
+const BOTTOM_MARGIN_IN = 0.95;
 /** Text block height (book.css: 10 in less 0.85 in top and 0.95 in bottom margins). */
-const TEXT_HEIGHT_IN = 10 - 0.85 - 0.95;
-/** A passage pair taller than this share of the text block may break across pages. */
-const TALL_PAIR_SHARE = 0.45;
+const TEXT_HEIGHT_IN = 10 - 0.85 - BOTTOM_MARGIN_IN;
+/** A page that stops more than this short of the text block's foot is reported (pageDepthReport). */
+const SHORT_PAGE_IN = 0.6;
+/** A passage pair no taller than this (about four lines of translation) is kept whole. */
+const SHORT_PAIR_IN = 0.8;
 const DEFAULT_OUT = `pdf/${BOOK_PDF}`;
 const VIEWS = ['guide', 'explanation', 'text'] as const;
 type View = (typeof VIEWS)[number];
@@ -358,16 +362,18 @@ async function applyPass(page: Page, info: PdfInfo, layout: Layout): Promise<str
 }
 
 /**
- * Marks passage pairs taller than about half a page with .kdp-tall, which
- * book.css lets break inside; shorter pairs stay whole. Returns how many.
+ * Marks passage pairs of about four lines or fewer with .kdp-short, which
+ * book.css keeps whole: split, they leave a line or two of Hebrew (or a lone
+ * footnote) at the head of a page. Longer pairs break between lines, so pages
+ * fill to the foot. Returns how many were marked.
  */
-async function markTallPairs(page: Page, maxPx: number): Promise<number> {
+async function markShortPairs(page: Page, maxPx: number): Promise<number> {
   return page.evaluate((max) => {
     let n = 0;
     for (const pair of document.querySelectorAll<HTMLElement>('.seg-pair')) {
-      const tall = pair.getBoundingClientRect().height > max;
-      pair.classList.toggle('kdp-tall', tall);
-      if (tall) n++;
+      const short = pair.getBoundingClientRect().height <= max;
+      pair.classList.toggle('kdp-short', short);
+      if (short) n++;
     }
     return n;
   }, maxPx);
@@ -454,6 +460,42 @@ function folioCheck(file: string, windows: { what: string; pages: number[] }[], 
   return problems;
 }
 
+/**
+ * Body pages whose text stops more than SHORT_PAGE_IN short of the foot of the
+ * text block. Not counted: the front matter, pages that start a recto section
+ * (chapter openers, whose key terms are kept whole on the next page), the last
+ * page before one (a chapter's end), a page before a blank one, and blank pages.
+ * Reported, not failed: a heading kept with its text can leave a short page that
+ * only an editor can mend.
+ */
+function pageDepthReport(file: string, pages: number, frontPages: number, skip: Set<number>): string[] {
+  if (!hasCommand('pdftotext')) return [];
+  const r = spawnSync('pdftotext', ['-bbox', file, '-'], { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 });
+  if (r.status !== 0) return [];
+  const footPt = TRIM_H_PT - BOTTOM_MARGIN_IN * 72;
+  const topPt = TRIM_H_PT - (TEXT_HEIGHT_IN + BOTTOM_MARGIN_IN) * 72;
+  // The lowest word of each page inside the text block (not the head or folio).
+  const lowest = r.stdout
+    .split('<page ')
+    .slice(1)
+    .map((pg) => {
+      let low = -1;
+      for (const m of pg.matchAll(/yMin="([\d.]+)" xMax="[\d.]+" yMax="([\d.]+)"/g)) {
+        const y0 = Number(m[1]);
+        const y1 = Number(m[2]);
+        if (y0 < footPt + 2 && y1 > topPt - 2) low = Math.max(low, y1);
+      }
+      return low;
+    });
+  const short: string[] = [];
+  for (let p = frontPages + 1; p < pages; p++) {
+    const low = lowest[p - 1] ?? -1;
+    if (low < 0 || skip.has(p) || (lowest[p] ?? -1) < 0) continue;
+    const gap = (footPt - low) / 72;
+    if (gap > SHORT_PAGE_IN) short.push(`${p} (${gap.toFixed(2)} in)`);
+  }
+  return short;
+}
 
 function pdffontsCheck(file: string): string[] {
   if (!hasCommand('pdffonts')) {
@@ -542,6 +584,7 @@ async function main(): Promise<void> {
     let pdf: Uint8Array | undefined;
     let info: PdfInfo | undefined;
     let firstChapter = '';
+    let rectoIds: string[] = [];
 
     // Up to two layouts: the default gutter, then KDP's gutter for the page count if that is larger.
     for (let attempt = 0; attempt < 2; attempt++) {
@@ -575,11 +618,12 @@ async function main(): Promise<void> {
       }
       const overflow = await overflowCheck(page, textWidthPx);
       if (overflow.length > 0) throw new BuildError(`content runs into the margins:\n  ${overflow.join('\n  ')}`);
-      const tall = await markTallPairs(page, TEXT_HEIGHT_IN * 96 * TALL_PAIR_SHARE);
-      if (tall > 0) console.log(`  ${tall} passage pair(s) taller than ${Math.round(TALL_PAIR_SHARE * 100)}% of a page may break across pages`);
+      const short = await markShortPairs(page, SHORT_PAIR_IN * 96);
+      console.log(`  ${short} short passage pair(s) kept whole; longer ones may break across pages`);
 
       const layout = await layoutTargets(page);
       firstChapter = layout.firstChapter;
+      rectoIds = layout.recto;
       let stable = false;
       for (let pass = 1; pass <= MAX_PASSES; pass++) {
         pdf = await page.pdf({ preferCSSPageSize: true, printBackground: true, outline: true, tagged: true });
@@ -653,6 +697,9 @@ async function main(): Promise<void> {
     }
     rmSync(failedOut, { force: true });
     renameSync(tmp, opts.out);
+    const rectoPages = rectoIds.map((id) => info?.dests.get(id) ?? 0);
+    const short = pageDepthReport(opts.out, info.pages, front, new Set([...rectoPages, ...rectoPages.map((p) => p - 1)]));
+    if (short.length > 0) warn(`${short.length} page(s) stop more than ${SHORT_PAGE_IN} in short of the foot (PDF page numbers): ${short.join(', ')}`);
     if (info.pages < KDP_MIN_PAGES) warn(`${info.pages} pages is under KDP's paperback minimum of ${KDP_MIN_PAGES}.`);
 
     const rel = opts.out.startsWith(cwd + sep) ? opts.out.slice(cwd.length + 1) : opts.out;

@@ -149,6 +149,14 @@ on purpose must have a note naming its `§`; the validator enforces this.
 
 ## Print-ready PDF for KDP
 
+Rendering repairs text inherited from the Sefaria import, for the site and
+the book alike, without touching `data/` (`src/lib/typography.ts`): reversed
+square brackets in the translation (`]like this[`) are turned round, and the
+build fails if one is left; stray footnote digits glued to Hebrew words are
+dropped, and `„` typed for an alef in the Yiddish glosses becomes `א`. Hebrew
+quoted in English is tagged `<span class="he" lang="he">`, which the book sets
+a little larger.
+
 `npm run pdf` makes the paperback interior for Amazon Kindle Direct Publishing:
 trim 7 × 10 in, no bleed, black and white, fonts embedded. It builds the site,
 serves `dist/` locally, opens `/book/` in Playwright's Chromium and prints it
@@ -172,8 +180,12 @@ npm run pdf -- --no-build --out x.pdf    # reuse dist/, write elsewhere
   0.85, outside 0.8, bottom 0.95, inside 0.9 in), body 11 pt with oldstyle
   figures, black ink only (KDP prints greys as halftone), hairline rules. Each
   passage sets the translation and the Hebrew in two open columns without a
-  frame; the Hebrew is ragged, the English prose justified with hyphenation
-  limits and `text-wrap: pretty`. Labels are Source Serif small caps. Chapter
+  frame; the Hebrew is ragged, the translation ragged without hyphens, the
+  English prose justified with hyphenation limits and `text-wrap: pretty`
+  (transliterations are never hyphenated). Long passages, callouts and the
+  review questions may break across pages, two lines either side; passages of
+  about four lines or fewer (marked `.kdp-short` by the script) and the class
+  list at a chapter's end stay whole. Labels are Source Serif small caps. Chapter
   openers are sunk and centred and have no running head (the opener has its
   own named page, `kopener`, as Chromium has no `:first` for named pages); the
   key terms start the following page.
@@ -210,7 +222,9 @@ npm run pdf -- --no-build --out x.pdf    # reuse dist/, write elsewhere
   504 × 720 pt, a font is not embedded or is a system fallback (`pdffonts`),
   any page has colour (`pdftoppm`), or the printed folios do not match the
   page labels (`pdftotext`). It pads to an even page count and warns
-  under KDP's 24-page minimum. The summary gives the page count and the gutter
+  under KDP's 24-page minimum. It also lists body pages whose text stops more
+  than 0.6 in short of the foot (chapter openers and ends aside): a warning,
+  since only an editor can mend most of them. The summary gives the page count and the gutter
   used against KDP's minimum for that count (0.9 in by default, above KDP's
   minimum for any page count; the script would widen it itself if not).
   `pdffonts`, `pdftoppm` and `pdftotext` are in poppler-utils; without them

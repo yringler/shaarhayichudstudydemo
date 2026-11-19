@@ -23,7 +23,17 @@ import {
 } from './schema';
 import { classNumber, formatTime, parseListenHref, segmentLabel } from './format';
 import { CHAPTERS } from './chapters';
-import { bindListenLinks, ellipsizeLemmata, hebrewMarks, typographyHtml, typographyText } from './typography';
+import {
+  REVERSED_BRACKET,
+  bindListenLinks,
+  ellipsizeLemmata,
+  fixBrackets,
+  hebrewMarks,
+  hebrewSource,
+  tagHebrew,
+  typographyHtml,
+  typographyText,
+} from './typography';
 
 /** Coverage confidence below which a listen position is flagged as approximate. */
 export const LOW_CONFIDENCE = 0.45;
@@ -181,9 +191,9 @@ export function nb(s: string): string {
   return s.replace(/\bG-d/g, 'G\u2011d');
 }
 
-/** Typography for rendered text (src/lib/typography.ts): smart quotes, Hebrew marks, bound class refs. */
+/** Typography for rendered text (src/lib/typography.ts): smart quotes, Hebrew marks, bound class refs, tagged Hebrew. */
 function finish(html: string): string {
-  return bindListenLinks(typographyHtml(nb(html)));
+  return tagHebrew(bindListenLinks(typographyHtml(nb(html))));
 }
 
 function renderBlock(src: string, context: RenderContext): string {
@@ -203,11 +213,13 @@ function plain(s: string): string {
 
 /** The data's segment with its typography finished (wording unchanged). */
 function finishSegment(s: Segment): Segment {
+  const en = tagHebrew(typographyHtml(nb(fixBrackets(s.en))));
+  if (REVERSED_BRACKET.test(en)) throw new Error(`§${s.n}: a reversed square bracket is left in the translation: ${en}`);
   return {
     ...s,
-    lines: s.lines.map((l) => ({ ...l, text: hebrewMarks(l.text) })),
-    en: typographyHtml(nb(s.en)),
-    footnotes: s.footnotes.map((f) => ({ ...f, html: typographyHtml(nb(f.html)) })),
+    lines: s.lines.map((l) => ({ ...l, text: hebrewSource(l.text) })),
+    en,
+    footnotes: s.footnotes.map((f) => ({ ...f, html: tagHebrew(typographyHtml(nb(fixBrackets(f.html)))) })),
   };
 }
 

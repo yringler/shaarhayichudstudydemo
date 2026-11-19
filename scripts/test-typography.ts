@@ -4,7 +4,16 @@
  *
  *   npm run test:typography
  */
-import { bindListenLinks, ellipsizeLemmata, hebrewMarks, typographyHtml, typographyText } from '../src/lib/typography.ts';
+import {
+  bindListenLinks,
+  ellipsizeLemmata,
+  fixBrackets,
+  hebrewMarks,
+  hebrewSource,
+  tagHebrew,
+  typographyHtml,
+  typographyText,
+} from '../src/lib/typography.ts';
 
 const cases: [name: string, actual: string, expected: string][] = [
   // Hebrew marks in the source text.
@@ -13,6 +22,17 @@ const cases: [name: string, actual: string, expected: string][] = [
   ["gershayim ''", hebrewMarks("הנו''ן דאבי''ע"), 'הנו״ן דאבי״ע'],
   ['pointed letter', hebrewMarks("הָ'"), 'הָ׳'],
   ['latin untouched', hebrewMarks("one's \"word\""), "one's \"word\""],
+
+  // Repairs to the Hebrew source text.
+  ['footnote digits', hebrewSource('ביז עס3 איז, מושכל15 וד"ל16: בכתבי\'12)'), 'ביז עס איז, מושכל וד״ל: בכתבי׳)'],
+  ['yiddish alef', hebrewSource('ניט „ז דער „ליין פ„ר זיך'), 'ניט אז דער אליין פאר זיך'],
+  ['digits kept apart', hebrewSource('פרק 3'), 'פרק 3'],
+
+  // Reversed brackets in the translation.
+  ['brackets', fixBrackets('etc. ]This continues[ until ]he reaches[ the [of x]'), 'etc. [This continues] until [he reaches] the [of x]'],
+  ['bracket opener', fixBrackets('as in ]the verse],<sup>2</sup> and ]Now, <i>x</i>] that'), 'as in [the verse],<sup>2</sup> and [Now, <i>x</i>] that'],
+  ['bracket before tag', fixBrackets('and <i>Tvunah.</i>” ]<i>Tvunah</i> is[ called'), 'and <i>Tvunah.</i>” [<i>Tvunah</i> is] called'],
+  ['brackets kept', fixBrackets('The sign for [this] deep'), 'The sign for [this] deep'],
 
   // English quotes, as marked renders them (entities) and as typed.
   ['double pair', typographyHtml('<p>he said, &quot;That there is a G-d.&quot;</p>'), '<p>he said, “That there is a G-d.”</p>'],
@@ -35,6 +55,10 @@ const cases: [name: string, actual: string, expected: string][] = [
   ['code', typographyHtml("<p><code>a 'b' &quot;c&quot;</code> 'd'</p>"), "<p><code>a 'b' &quot;c&quot;</code> ‘d’</p>"],
   ['other entities', typographyHtml('<p>&amp;&quot;x&quot;</p>'), '<p>&amp;”x”</p>'],
   ['block resets', typographyHtml("<p>'open</p><p>A's</p>"), '<p>‘open</p><p>A’s</p>'],
+
+  // Hebrew in English.
+  ['tag hebrew', tagHebrew('<p>“<i>HaShem</i>-יהו״ה founded” and עומק המושג here</p>'), '<p>“<i>HaShem</i>-<span class="he" lang="he">יהו״ה</span> founded” and <span class="he" lang="he">עומק המושג</span> here</p>'],
+  ['tag hebrew attrs', tagHebrew('<a title="כו׳">x</a>'), '<a title="כו׳">x</a>'],
 
   // Class references and lemmata.
   ['bind ref', bindListenLinks('innocent. <a class="listen" href="#">x</a>'), 'innocent. <a class="listen" href="#">x</a>'],

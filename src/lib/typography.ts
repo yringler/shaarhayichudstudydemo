@@ -8,6 +8,11 @@
  *  - Smart quotes for English: " and ' become “ ” ‘ ’, and apostrophes (one's,
  *    sheb'bina, ma'amik) become ’. Markup, attribute values and <code>/<pre> are
  *    left alone.
+ *  - Reversed square brackets in the translation (]like this[, inherited from the
+ *    Sefaria source) are turned the right way round.
+ *  - Stray footnote digits glued to Hebrew words in the source text (מושכל15) are
+ *    dropped (the data has no notes for them), and „ standing for an alef in the
+ *    Yiddish glosses (פ„ר, „ליין) becomes א.
  *
  * Run `npx tsx scripts/test-typography.ts` after changing anything here.
  */
@@ -41,6 +46,35 @@ export function hebrewMarks(s: string): string {
     .replace(new RegExp(`(${HEB})(?:''|")(?=${HEB})`, 'g'), `$1${GERSHAYIM}`)
     .replace(new RegExp(`(${HEB})''`, 'g'), `$1${GERSHAYIM}`)
     .replace(new RegExp(`(${HEB})'`, 'g'), `$1${GERESH}`);
+}
+
+/**
+ * The Hebrew source text: geresh and gershayim, plus two repairs to characters the
+ * Sefaria import mangled. Footnote numbers set as plain digits against a Hebrew
+ * word (עס3, מושכל15, וד"ל16) point at notes the data does not carry, so they go.
+ * In the Yiddish glosses „ was typed for an alef (פ„ר = פאר, „ז = אז).
+ */
+export function hebrewSource(s: string): string {
+  return hebrewMarks(
+    s
+      .replace(new RegExp(`(${HEB}['"]?)\\d{1,2}(?!\\d)`, 'g'), '$1')
+      .replace(new RegExp(`„(?=${HEB})|(?<=${HEB})„`, 'g'), 'א'),
+  );
+}
+
+/** A reversed bracket that is still left after {@link fixBrackets}. */
+export const REVERSED_BRACKET = /\](?:<[^>]+>)*[A-Za-z]/;
+
+/**
+ * Square brackets the wrong way round in the translation: "]This contemplation
+ * continues[ until ]he reaches[" and, with only the opener reversed, "]the verse],".
+ * A bracket in normal text is never followed directly by a letter (or by a tag
+ * and a letter: "]<i>Tvunah</i> is["), so such a "]" always opens.
+ */
+export function fixBrackets(html: string): string {
+  return html
+    .replace(/\](?=(?:<[^>]+>)*[A-Za-z])([^[\]]{1,200})\[/g, '[$1]')
+    .replace(/\](?=(?:<[^>]+>)*[A-Za-z])([^[\]]{1,200})\](?!(?:<[^>]+>)*[A-Za-z])/g, '[$1]');
 }
 
 // ---------------------------------------------------------------- mixed English text
@@ -174,6 +208,20 @@ export function typographyText(text: string): string {
 }
 
 // ---------------------------------------------------------------- explanation helpers
+
+/** A run of Hebrew words (with geresh, gershayim and maqaf) inside English text. */
+const HEB_RUN = new RegExp(`${HEB}(?:[׳״\u05BE]|${HEB}|[ \u00A0](?=${HEB}))*`, 'g');
+
+/**
+ * Tag Hebrew quoted in English text (“HaShem-יהו״ה”, “עומק of חכמה”) as
+ * <span class="he" lang="he">, so print can set it larger than the English
+ * around it. Markup and attribute values are left alone.
+ */
+export function tagHebrew(html: string): string {
+  return html.replace(/(<[^>]*>)|[^<]+/g, (text, tag: string | undefined) =>
+    tag ?? text.replace(HEB_RUN, '<span class="he" lang="he">$&</span>'),
+  );
+}
 
 /**
  * Keep a class reference with the word before it, so "(class 18, 22:26)" never
