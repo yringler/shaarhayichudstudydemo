@@ -1,0 +1,291 @@
+---
+/**
+ * /book/: the print-book source for the KDP paperback (7 × 10 in, no bleed).
+ * scripts/build-pdf.ts opens this page in Chromium and prints it; see
+ * README "Print-ready PDF for KDP". The page reuses the chapter components and
+ * the print content styles; its own page rules are in book.css and the inline
+ * styles below, so the Letter print of /booklet/ and the chapter pages is
+ * unchanged.
+ *
+ * Query parameters (read by the inline script before first paint):
+ *   ?view=guide|explanation|text  which blocks to show (default: guide)
+ *   ?final=1                      drop the draft notices
+ *   ?gutter=0.75                  inside margin in inches (default 0.625)
+ *
+ * Fonts are self-hosted (@fontsource) so the PDF never depends on the network.
+ */
+import '@fontsource/source-serif-4/400.css';
+import '@fontsource/source-serif-4/400-italic.css';
+import '@fontsource/source-serif-4/600.css';
+import '@fontsource/source-serif-4/600-italic.css';
+import '@fontsource/source-serif-4/700.css';
+import '@fontsource/source-serif-4/700-italic.css';
+import '@fontsource/frank-ruhl-libre/400.css';
+import '@fontsource/frank-ruhl-libre/500.css';
+import '@fontsource/frank-ruhl-libre/700.css';
+import '@fontsource/source-sans-3/400.css';
+import '@fontsource/source-sans-3/600.css';
+import '@fontsource/source-sans-3/700.css';
+import '../styles/global.css';
+import '../styles/print-content.css';
+import '../styles/book.css';
+import Chapter from '../components/Chapter.astro';
+import GlossaryList from '../components/GlossaryList.astro';
+import { glossary, loadGuide } from '../lib/content';
+import { chaptersTitle } from '../lib/chapters';
+import { segmentLabel } from '../lib/format';
+
+/** A copyright line for the copyright page (e.g. "© 2027 …"). Left empty until the publisher supplies one. */
+const COPYRIGHT_LINE = '';
+
+const guide = loadGuide();
+const { chapters } = guide;
+const terms = glossary(guide);
+const t = guide.translation;
+
+const counts = { reviewed: 0, edited: 0, ai: 0, none: 0 };
+for (const c of chapters) {
+  for (const k of c.concepts) {
+    if (k.status === 'reviewed') counts.reviewed++;
+    else if (k.status === 'edited') counts.edited++;
+    else if (k.status === 'ai-draft') counts.ai++;
+    else counts.none++;
+  }
+}
+const sections = chapters.reduce((n, c) => n + c.concepts.length, 0);
+const printed = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+
+/** A CSS string literal. JSON's escapes for quotes and backslashes are valid CSS. */
+const cssString = (s: string): string => JSON.stringify(s);
+/** "Bina and tevuna: grasping a concept…" → "Bina and tevuna" for the running head. */
+const shortTitle = (s: string): string => (s.split(':')[0]?.trim() ?? s).replace(/\u2011/g, '-');
+
+const marginBox = `font-family: 'Source Serif 4', serif; font-size: 8pt; font-style: italic; color: #000;`;
+/** One named page per chapter, for the recto running head. */
+const chapterPagesCss = chapters
+  .map(
+    (c) =>
+      `.kdp .chapter-${c.n} { page: kch${c.n}; }\n` +
+      `@page kch${c.n}:right { @top-right { content: ${cssString(`Chapter ${c.n} · ${shortTitle(c.title)}`)}; ${marginBox} } }`,
+  )
+  .join('\n');
+/** The draft notice in the foot of every numbered page; removed with ?final=1. */
+const draftCss = `@page { @bottom-center { content: 'Draft — not reviewed. Do not distribute.'; font-family: 'Source Sans 3', sans-serif; font-size: 6.5pt; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #000; vertical-align: middle; } }`;
+---
+
+<!doctype html>
+<html lang="en" data-view="guide" class="kdp">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{`Book (7 × 10 in) · ${chaptersTitle()} · Shaar HaYichud Study Guide`}</title>
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} type="image/svg+xml" />
+    <script is:inline>
+      (function () {
+        var q;
+        try {
+          q = new URLSearchParams(location.search);
+        } catch (e) {
+          return;
+        }
+        var root = document.documentElement;
+        var v = q.get('view');
+        if (v === 'guide' || v === 'explanation' || v === 'text') root.setAttribute('data-view', v);
+        if (q.get('final') === '1') {
+          root.classList.add('final');
+          document.addEventListener('DOMContentLoaded', function () {
+            var s = document.querySelectorAll('style[data-draft]');
+            for (var i = 0; i < s.length; i++) s[i].remove();
+          });
+        }
+        // The book's fonts have no non-breaking hyphen (U+2011, used in "G‑d"); set a plain
+        // hyphen in a no-wrap span instead, so Chromium does not fall back to a system font.
+        document.addEventListener('DOMContentLoaded', function () {
+          var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+          var nodes = [];
+          while (walker.nextNode()) if (walker.currentNode.nodeValue.indexOf('\u2011') >= 0) nodes.push(walker.currentNode);
+          nodes.forEach(function (node) {
+            var frag = document.createDocumentFragment();
+            node.nodeValue.split(/(\S*\u2011\S*)/).forEach(function (part, i) {
+              if (i % 2 === 0) {
+                if (part) frag.appendChild(document.createTextNode(part));
+              } else {
+                var span = document.createElement('span');
+                span.className = 'nobr';
+                span.textContent = part.replace(/\u2011/g, '-');
+                frag.appendChild(span);
+              }
+            });
+            node.parentNode.replaceChild(frag, node);
+          });
+        });
+        var g = Number(q.get('gutter'));
+        if (g >= 0.375 && g <= 1.5) {
+          document.addEventListener('DOMContentLoaded', function () {
+            var st = document.createElement('style');
+            st.textContent = '@page :left { margin-right: ' + g + 'in; } @page :right { margin-left: ' + g + 'in; }';
+            document.body.appendChild(st);
+          });
+        }
+      })();
+    </script>
+    <style is:inline data-draft set:html={draftCss} />
+  </head>
+  <body>
+    <main class="book">
+      <!-- Title page (recto, page 1) -->
+      <section class="kdp-title">
+        <p class="kdp-title-he" lang="he" dir="rtl">שער היחוד</p>
+        <h1 class="kdp-title-main">Shaar HaYichud</h1>
+        <p class="kdp-title-en">The Gate of Unity</p>
+        <p class="kdp-title-author">by the Mitteler Rebbe</p>
+        <p class="kdp-title-rule" aria-hidden="true"></p>
+        <p class="kdp-title-guide">Study Guide</p>
+        <p class="kdp-title-booklet">Booklet 1 · {chaptersTitle()}</p>
+        <p class="kdp-title-with">
+          The Hebrew text with the English translation of Rabbi Amiram Markel, and explanations following the classes of Rabbi Markel
+        </p>
+        <p class="kdp-title-draft draft-only">Draft for review · not for distribution</p>
+      </section>
+
+      <!-- Copyright and credits (verso, page 2) -->
+      <section class="kdp-copyright">
+        <div class="kdp-copyright-inner">
+          <p><strong>Shaar HaYichud: Study Guide.</strong> Booklet 1, {chaptersTitle()}.</p>
+          {COPYRIGHT_LINE && <p>{COPYRIGHT_LINE}</p>}
+          <aside class="kdp-draft-box draft-only">
+            <p class="kdp-draft-head">Draft for review</p>
+            <p>
+              The explanations were drafted by AI from recordings of Rabbi Markel’s classes and have not yet been reviewed by him. Do not
+              rely on them or distribute them. Printed {printed}.
+            </p>
+          </aside>
+          <p>
+            <strong>English translation:</strong> {t ? `“${t.versionTitle}”` : '“Translated by Rabbi Amiram Markel, 2023”'}, licensed under
+            Creative Commons Attribution (CC BY 4.0, creativecommons.org/licenses/by/4.0), from {t ? t.source.replace(/^https?:\/\//, '').replace(/\/$/, '') : 'neirot.com'},
+            via Sefaria (sefaria.org, “The Gate of Unity”). Changes: formatting reduced to italics, bold and footnotes, and the Name spelled
+            G-d. The footnotes are the translator’s.
+          </p>
+          <p>
+            <strong>Hebrew text:</strong> from the Shaar HaYichud class archive (shaar-hayichud-sections{
+              guide.sectionsCommit ? `, commit ${guide.sectionsCommit.slice(0, 7)}` : ''
+            }).
+          </p>
+          <p>
+            <strong>Classes:</strong> the explanations follow Rabbi Markel’s recorded classes, the “Rabbi Markel Series (Advanced)”.
+            References such as “(class 21, 4:12)” give the class and the time in its recording where the point is made.
+          </p>
+          <p>
+            <strong>How the explanations were written:</strong> each was drafted with AI from a machine transcript (Sofer.ai) of the class on
+            that passage, and is meant to say only what was said in the class. Of the {sections} sections in this booklet, {counts.reviewed}
+            {counts.reviewed === 1 ? 'has' : 'have'} been reviewed, {counts.edited} edited and {counts.ai}
+            {counts.ai === 1 ? 'is an AI draft' : 'are AI drafts'}{counts.none > 0 ? `; ${counts.none} have no explanation` : ''}.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contents (recto) -->
+      <nav class="kdp-toc" id="contents" aria-labelledby="contents-h" data-recto>
+        <h2 id="contents-h" class="kdp-section-title"><a class="kdp-self" href="#contents">Contents</a></h2>
+        <ol class="kdp-toc-list">
+          <li class="kdp-toc-front">
+            <a href="#about-this-guide"><span class="kdp-toc-text">About this guide</span><span class="kdp-toc-leader"></span><span class="pageref" data-pageref="about-this-guide"></span></a>
+          </li>
+          {
+            chapters.map((c) => (
+              <li class="kdp-toc-chapter">
+                <a href={`#chapter-${c.n}`}>
+                  <span class="kdp-toc-text">
+                    <span class="kdp-toc-num">Chapter {c.n}</span>
+                    <span class="kdp-toc-title">{c.title}</span>
+                  </span>
+                  <span class="kdp-toc-leader" />
+                  <span class="pageref" data-pageref={`chapter-${c.n}`} />
+                </a>
+                <ol class="kdp-toc-concepts">
+                  {c.concepts.map((k) => (
+                    <li>
+                      <a href={`#${k.id}`}>
+                        <span class="kdp-toc-text" dir="auto">
+                          {k.title} <span class="kdp-toc-range">{segmentLabel(k.from, k.to)}</span>
+                        </span>
+                        <span class="kdp-toc-leader" />
+                        <span class="pageref" data-pageref={k.id} />
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </li>
+            ))
+          }
+          {
+            terms.length > 0 && (
+              <li class="kdp-toc-chapter kdp-toc-back">
+                <a href="#glossary">
+                  <span class="kdp-toc-text">
+                    <span class="kdp-toc-title">Glossary</span>
+                  </span>
+                  <span class="kdp-toc-leader" />
+                  <span class="pageref" data-pageref="glossary" />
+                </a>
+              </li>
+            )
+          }
+        </ol>
+      </nav>
+
+      <!-- How to read the book -->
+      <section class="kdp-intro" id="about-this-guide">
+        <h2 class="kdp-section-title">About this guide</h2>
+        <div class="prose">
+          <p>
+            This is a preparation guide for the weekly class on the Mitteler Rebbe’s <em>Shaar HaYichud</em>. Each chapter is organised under
+            headings that name the idea being taught, each with a one-line “In short”.
+          </p>
+          <p class="v-guide">
+            Each passage gives the Hebrew text beside Rabbi Amiram Markel’s English translation, numbered by paragraph (§) as on Sefaria,
+            with the translator’s footnotes under the English. The explanation under it is drawn from Rabbi Markel’s recorded class on that
+            passage.
+          </p>
+          <p class="v-explanation">
+            This edition gives the explanations only, as continuous prose. They are drawn from Rabbi Markel’s recorded classes and follow the
+            text paragraph by paragraph; the paragraph numbers (§) are those of the English translation on Sefaria.
+          </p>
+          <p class="v-text">
+            This edition gives the Hebrew text beside Rabbi Amiram Markel’s English translation, numbered by paragraph (§) as on Sefaria, with
+            the translator’s footnotes under the English.
+          </p>
+          <p class="v-guide v-explanation">
+            Words quoted from the translation are in <strong>bold</strong>; Hebrew and Aramaic terms are in <em>italics</em>, in the spelling
+            of the glossary at the back. References such as “(class 21, 4:12)” give the class in Rabbi Markel’s advanced series and the time in
+            its recording where the point is made, so anything here can be checked against what was actually said. Each chapter ends with
+            review questions and a list of the classes on it.
+          </p>
+          <p class="draft-only">
+            <strong>This is a draft.</strong> The explanations were drafted by AI from machine transcripts of the classes and have not yet been
+            reviewed by Rabbi Markel.
+          </p>
+        </div>
+      </section>
+
+      <div class="kdp-chapters">
+        {chapters.map((c) => <Chapter chapter={c} level={2} classesHeading="Classes on this chapter" />)}
+      </div>
+
+      {
+        terms.length > 0 && (
+          <section class="kdp-glossary" id="glossary" data-recto aria-labelledby="glossary-h">
+            <h2 id="glossary-h" class="kdp-section-title">Glossary</h2>
+            <p class="kdp-glossary-lede">
+              The key terms of each chapter, in the transliteration this guide uses, with the passage where each first appears.
+            </p>
+            <GlossaryList terms={terms} mode="book" />
+          </section>
+        )
+      }
+    </main>
+    <!-- Chromium cascades @page rules by order, not specificity: these come after book.css. -->
+    <style is:inline set:html={chapterPagesCss} />
+  </body>
+</html>

@@ -11,7 +11,7 @@ It follows that **the [opposite] aspects of nullification and joy, which branch 
 
 This is what is seen with many kabbalists: they have one or the other. Either they have the understanding and become real big shots, thinking that now they are really something; or they do not want to understand anything, and want only some sense of wonder and humility. But that is not real humility, since without comprehension there is no real wonder either: it is false humility. [▶ 3:51](listen:061#231)
 
-**This is true of all *Hitbonenut-*contemplation of each particular detail, specifically**: every contemplation in this whole book has both. [▶ 4:27](listen:061#267)
+**This is true of all *Hitbonenut*-contemplation of each particular detail, specifically**: every contemplation in this whole book has both. [▶ 4:27](listen:061#267)
 
 ## §38
 

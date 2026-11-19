@@ -1,0 +1,287 @@
+/* Print: how the page content is set (black on white, the booklet layout,
+   listen buttons as plain references). Shared by the Letter booklet (print.css
+   adds its @page rules, Base.astro) and the KDP book (book.css, /book/).
+   No @page rules here. */
+
+@media print {
+  :root {
+    --ink: #000;
+    --ink-2: #111;
+    --muted: #444;
+    --rule: #bbb;
+    --rule-strong: #888;
+    --accent: #000;
+    --accent-2: #000;
+    --card: #fff;
+    --paper: #fff;
+  }
+
+  html,
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  body {
+    font-size: 10.5pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  .draft-banner,
+  .site-header,
+  .site-footer,
+  .toolbar,
+  .player,
+  .pager,
+  .transcript,
+  .reviewer,
+  .skip-link,
+  .cover-actions,
+  .letter-index,
+  .method-note,
+  .outline,
+  .chapter-meta a {
+    display: none !important;
+  }
+
+  .page {
+    max-width: none;
+    padding: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* --- chapters */
+  .chapter {
+    break-before: page;
+  }
+
+  .chapter + .chapter {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .booklet-head {
+    display: none;
+  }
+
+  .chapter-head {
+    margin-bottom: 4mm;
+  }
+
+  .chapter-title {
+    font-size: 20pt;
+  }
+
+  .eyebrow {
+    font-size: 7.5pt;
+  }
+
+  .status-chip {
+    background: none;
+    border: 1px solid #000;
+    color: #000;
+    font-size: 7pt;
+  }
+
+  .front-matter {
+    grid-template-columns: 1.35fr 1fr;
+    gap: 6mm;
+    margin: 4mm 0;
+    align-items: start;
+  }
+
+  .key-terms {
+    border: 1px solid #000;
+    border-top-width: 2pt;
+    break-inside: avoid;
+  }
+
+  .sub-head,
+  .class-list h2,
+  .class-list h3 {
+    font-size: 9pt;
+    color: #000;
+  }
+
+  .concept {
+    margin-top: 6mm;
+  }
+
+  .concept-title {
+    font-size: 13.5pt;
+    border-bottom: 1.25pt solid #000;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .callout {
+    background: #f1f1f1;
+    border-left: 2.5pt solid #000;
+    padding: 2.5mm 3.5mm;
+    break-inside: avoid;
+  }
+
+  .callout .lead {
+    color: #000;
+  }
+
+  /* --- text block: the Hebrew/English pair is the two columns */
+  .text-block {
+    border: 0.75pt solid #999;
+    border-radius: 0;
+  }
+
+  .seg-pair {
+    grid-template-columns: 1fr 1fr;
+    break-inside: avoid;
+  }
+
+  .seg-en {
+    grid-column: 1;
+    grid-row: 1;
+    border-top: 0;
+    border-right: 0.75pt solid #bbb;
+    font-size: 9.5pt;
+    padding: 2.5mm 3mm;
+  }
+
+  .seg-he {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 13pt;
+    padding: 2.5mm 3mm;
+    background: none;
+  }
+
+  .footnotes {
+    font-size: 7.5pt;
+  }
+
+  .explanation {
+    border-top: 0.75pt solid #888;
+  }
+
+  .explanation-label {
+    font-size: 6.5pt;
+    break-after: avoid;
+  }
+
+  .explanation .prose > :first-child {
+    break-before: avoid;
+  }
+
+  /* --- listen buttons become plain references */
+  .listen {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: none;
+    color: #444;
+    font-family: inherit;
+    font-size: 0.82em;
+    font-weight: 400;
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  .listen::before {
+    content: none;
+  }
+
+  .listen-screen {
+    display: none;
+  }
+
+  .listen-print {
+    display: inline;
+  }
+
+  .listen.is-approx .listen-print::after {
+    content: ' approx.';
+  }
+
+  .classes {
+    font-size: 9pt;
+  }
+
+  .class-head {
+    min-height: 0;
+  }
+
+  .review,
+  .class-list {
+    margin-top: 8mm;
+    break-inside: avoid;
+  }
+
+  .review li {
+    break-inside: avoid;
+  }
+
+  /* --- Explanation only: prose in two columns, headings within the column */
+  [data-view='explanation'] .concepts {
+    columns: 2;
+    column-gap: 7mm;
+    column-rule: 0.5pt solid #bbb;
+  }
+
+  [data-view='explanation'] .concept {
+    margin-top: 0;
+    margin-bottom: 4mm;
+  }
+
+  [data-view='explanation'] .concept-title {
+    font-size: 11.5pt;
+    margin-bottom: 2mm;
+  }
+
+  [data-view='explanation'] .concept-range {
+    font-size: 6.5pt;
+  }
+
+  [data-view='explanation'] .prose p {
+    margin: 0 0 1.5mm;
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  [data-view='explanation'] .callout {
+    margin: 2mm 0;
+  }
+
+  /* --- Text only */
+  [data-view='text'] .text-block {
+    break-inside: auto;
+  }
+
+  /* --- cover / index */
+  .cover {
+    padding: 30mm 0 12mm;
+  }
+
+  .draft-full {
+    background: none;
+    border: 1pt solid #000;
+    color: #000;
+  }
+
+  .toc {
+    break-before: page;
+  }
+
+  .toc-chapter {
+    break-inside: avoid;
+  }
+}

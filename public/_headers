@@ -1,0 +1,5 @@
+# Cloudflare Pages response headers. The site is noindex through its <meta> tag;
+# a PDF has no <meta>, so it says so in a header.
+/shaar-hayichud-booklet-1-7x10.pdf
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: public, max-age=0, must-revalidate

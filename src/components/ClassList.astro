@@ -6,16 +6,17 @@ import { classNumber, formatTime } from '../lib/format';
 interface Props {
   sources: Source[];
   level: 2 | 3;
+  heading?: string | undefined;
 }
 
-const { sources, level } = Astro.props;
+const { sources, level, heading = 'Listen to the full classes' } = Astro.props;
 const H = level === 2 ? 'h2' : 'h3';
 ---
 
 {
   sources.length > 0 && (
     <section class="class-list">
-      <H>Listen to the full classes</H>
+      <H>{heading}</H>
       <p class="muted small">Rabbi Markel, {sources[0]?.series}. Topic lists are auto-generated from the recordings.</p>
       <ol class="classes">
         {sources.map((s) => (

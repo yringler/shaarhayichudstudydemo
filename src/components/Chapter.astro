@@ -7,9 +7,11 @@ interface Props {
   chapter: ChapterModel;
   /** 1 on a chapter page, 2 inside the booklet. */
   level: 1 | 2;
+  /** Heading of the class list at the foot of the chapter. */
+  classesHeading?: string;
 }
 
-const { chapter, level } = Astro.props;
+const { chapter, level, classesHeading } = Astro.props;
 const H = level === 1 ? 'h1' : 'h2';
 const sub = level === 1 ? 2 : 3;
 const SH = sub === 2 ? 'h2' : 'h3';
@@ -89,5 +91,5 @@ const statusLabel: Record<string, string> = {
     )
   }
 
-  <ClassList sources={chapter.sources} level={sub} />
+  <ClassList sources={chapter.sources} level={sub} heading={classesHeading} />
 </article>

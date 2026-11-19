@@ -1,11 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
+import GlossaryList from '../components/GlossaryList.astro';
 import { glossary, loadGuide } from '../lib/content';
 import { chaptersTitle } from '../lib/chapters';
 
 const guide = loadGuide();
 const terms = glossary(guide);
-const base = import.meta.env.BASE_URL;
 const letters = [...new Set(terms.map((t) => t.term.charAt(0).toUpperCase()))];
 ---
 
@@ -29,29 +29,6 @@ const letters = [...new Set(terms.map((t) => t.term.charAt(0).toUpperCase()))];
         </nav>
       )
     }
-    <dl class="glossary">
-      {
-        terms.map((t, i) => {
-          const letter = t.term.charAt(0).toUpperCase();
-          const firstOfLetter = i === 0 || terms[i - 1]?.term.charAt(0).toUpperCase() !== letter;
-          return (
-            <div class="gloss-entry" id={firstOfLetter ? `letter-${letter}` : undefined}>
-              <dt>
-                <em>{t.term}</em>
-                <span class="term-he" lang="he" dir="rtl">
-                  {t.he}
-                </span>
-              </dt>
-              <dd>
-                {t.gloss}{' '}
-                <a class="gloss-where" href={`${base}chapter/${t.chapter}/#ch${t.chapter}-s${t.segment}`}>
-                  Chapter {t.chapter}, §{t.segment}
-                </a>
-              </dd>
-            </div>
-          );
-        })
-      }
-    </dl>
+    <GlossaryList terms={terms} />
   </div>
 </Base>

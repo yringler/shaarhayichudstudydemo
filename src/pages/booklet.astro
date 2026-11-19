@@ -3,9 +3,10 @@ import Base from '../layouts/Base.astro';
 import Chapter from '../components/Chapter.astro';
 import ViewSwitch from '../components/ViewSwitch.astro';
 import { loadGuide } from '../lib/content';
-import { chaptersTitle } from '../lib/chapters';
+import { BOOK_PDF, chaptersTitle } from '../lib/chapters';
 
 const { chapters } = loadGuide();
+const base = import.meta.env.BASE_URL;
 ---
 
 <Base title={`Booklet 1: ${chaptersTitle()}`} current="booklet">
@@ -14,6 +15,9 @@ const { chapters } = loadGuide();
       <p class="eyebrow"><span>Booklet 1</span></p>
       <h1 class="chapter-title">{chaptersTitle()} on one page</h1>
       <p class="muted">For printing in one go. Choose a view first; printing uses it.</p>
+      <p class="muted">
+        Or download the typeset book: <a href={`${base}${BOOK_PDF}`} download>PDF, 7 × 10 in</a> (Study guide view, with the draft notice).
+      </p>
     </header>
     <ViewSwitch printLabel="Print the booklet" />
     {chapters.map((c) => <Chapter chapter={c} level={2} />)}

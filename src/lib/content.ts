@@ -436,7 +436,7 @@ export function loadGuide(): Guide {
     sectionsCommit: sourcesFile.sectionsCommit,
     translation: chapters[0]?.translation ?? null,
   };
-  if (import.meta.env.PROD) cached = guide;
+  if (import.meta.env?.PROD) cached = guide; // env is undefined under tsx (scripts/build-pdf.ts)
   return guide;
 }
 
