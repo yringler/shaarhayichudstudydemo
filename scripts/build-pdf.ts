@@ -139,6 +139,7 @@ const MIME: Record<string, string> = {
   '.svg': 'image/svg+xml',
   '.woff2': 'font/woff2',
   '.woff': 'font/woff',
+  '.ttf': 'font/ttf',
   '.png': 'image/png',
   '.txt': 'text/plain; charset=utf-8',
   '.xml': 'application/xml',

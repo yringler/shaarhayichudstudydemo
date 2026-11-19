@@ -160,8 +160,19 @@ npm run pdf -- --no-build --out x.pdf    # reuse dist/, write elsewhere
   page; running heads (book title on the left, chapter on the right) and page
   numbers on the outside corners; none on the title and copyright pages.
   Transcripts, class topic lists, reviewer notes, audio and navigation are
-  never printed. Fonts (Source Serif 4, Source Sans 3, Frank Ruhl Libre) come
-  from `@fontsource` packages, so printing needs no network.
+  never printed.
+- **Fonts:** Source Serif 4, Source Sans 3 and Frank Ruhl Libre (SIL OFL),
+  vendored with their licences in `public/fonts/print/` and declared in
+  `src/styles/book.css`, so printing needs no network. They keep every
+  OpenType feature (real small caps, oldstyle and tabular figures, Hebrew mark
+  positioning), which the `@fontsource` subsets lack. They are static
+  instances because Chromium embeds variable fonts as Type 3: Source Serif 4
+  at optical size 12 for text, and `Source Serif 4 Display` at optical size 36
+  for large headings. `scripts/make-print-fonts.py` (Python with fontTools and
+  brotli) downloads and rebuilds them: Source Serif 4 and Frank Ruhl Libre
+  from google/fonts, instanced and subset to Latin, Hebrew and punctuation;
+  Source Sans 3 is Adobe's static TTF, unmodified because its licence reserves
+  the name "Source". The italic and the Hebrew have no small caps.
 - **Draft notice:** by default the title page, copyright page and the foot of
   every page say the book is a draft. `--final` removes them, and first prints
   a warning listing every section whose status is not `edited` or `reviewed`.
