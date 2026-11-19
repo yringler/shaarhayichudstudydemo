@@ -1,6 +1,6 @@
-# Builds the site and the print-ready KDP PDF (7 x 10 in, no bleed), puts the
-# PDF in the site root, and deploys to Cloudflare Pages. The PDF is also kept
-# as a workflow artifact.
+# Builds the site and the print-ready KDP PDFs (7 x 10 in, no bleed): the study
+# guide and the explanation-only edition. Puts both in the site root, and deploys
+# to Cloudflare Pages. The PDFs are also kept as workflow artifacts.
 #
 # Replaces Cloudflare's Git-connected build (its build image has no Chromium):
 # turn off automatic deployments for the Pages project, and add these repository
@@ -15,10 +15,10 @@ on:
   workflow_dispatch:
     inputs:
       view:
-        description: 'Content view of the PDF'
+        description: 'Content view: all builds the guide and the explanation PDFs (published); one view builds only that PDF (a one-off; it is not published)'
         type: choice
-        options: [guide, explanation, text]
-        default: guide
+        options: [all, guide, explanation, text]
+        default: all
       final:
         description: 'Final: remove the draft notices (only once every section is reviewed)'
         type: boolean
@@ -55,19 +55,59 @@ jobs:
           sudo apt-get install -y --no-install-recommends poppler-utils
 
       # npm run pdf runs npm run build first (content validation, then astro build into dist/).
-      - name: Build the site and the PDF
+      # --all prints the guide and the explanation PDFs from one build, each to its own file.
+      - name: Build the site and the PDFs
         env:
-          VIEW: ${{ inputs.view || 'guide' }}
+          VIEW: ${{ inputs.view || 'all' }}
           FINAL: ${{ inputs.final && '--final' || '' }}
-        run: npm run pdf -- --view "$VIEW" $FINAL
+        run: |
+          if [ "$VIEW" = all ]; then
+            npm run pdf -- --all $FINAL
+          else
+            npm run pdf -- --view "$VIEW" $FINAL
+          fi
 
-      - name: Put the PDF in the site
-        run: cp pdf/shaar-hayichud-booklet-1-7x10.pdf dist/
+      # The site links both (src/lib/chapters.ts, BOOK_PDFS). A one-off single view
+      # copies whatever it built; a deploy then lacks the other PDF, so the step fails
+      # rather than publish a broken link.
+      - name: Put the PDFs in the site
+        env:
+          VIEW: ${{ inputs.view || 'all' }}
+          DEPLOY: ${{ github.event_name == 'push' || inputs.deploy }}
+        run: |
+          cp pdf/*.pdf dist/
+          for f in shaar-hayichud-booklet-1-7x10.pdf shaar-hayichud-booklet-1-explanation-7x10.pdf; do
+            if [ ! -f "dist/$f" ] && [ "$DEPLOY" = true ]; then
+              echo "::error::dist/$f is missing: deploy with view 'all', or untick deploy for a one-off view."
+              exit 1
+            fi
+          done
 
-      - uses: actions/upload-artifact@v4
+      # One artifact per PDF (pdf/ holds only what this run built: it is not committed).
+      - name: Keep the study guide PDF
+        if: contains(fromJSON('["all", "guide"]'), inputs.view || 'all')
+        uses: actions/upload-artifact@v4
         with:
-          name: shaar-hayichud-booklet-1-7x10-${{ inputs.view || 'guide' }}${{ inputs.final && '-final' || '' }}
-          path: pdf/*.pdf
+          name: shaar-hayichud-booklet-1-7x10-guide${{ inputs.final && '-final' || '' }}
+          path: pdf/shaar-hayichud-booklet-1-7x10.pdf
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Keep the explanation PDF
+        if: contains(fromJSON('["all", "explanation"]'), inputs.view || 'all')
+        uses: actions/upload-artifact@v4
+        with:
+          name: shaar-hayichud-booklet-1-7x10-explanation${{ inputs.final && '-final' || '' }}
+          path: pdf/shaar-hayichud-booklet-1-explanation-7x10.pdf
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Keep the text-only PDF
+        if: inputs.view == 'text'
+        uses: actions/upload-artifact@v4
+        with:
+          name: shaar-hayichud-booklet-1-7x10-text${{ inputs.final && '-final' || '' }}
+          path: pdf/shaar-hayichud-booklet-1-text-7x10.pdf
           if-no-files-found: error
           retention-days: 30
 

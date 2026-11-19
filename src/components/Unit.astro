@@ -63,6 +63,11 @@ const extraAnchors = unit.segments.slice(1).map((s) => `ch${chapter}-s${s.n}`);
   {
     unit.explanationHtml !== null && (
       <div class="explanation">
+        {/* The passage's opening words, shown only in the "explanation only" view, where the passage is hidden. */}
+        <p class="incipit">
+          <span class="incipit-ref">{unit.label}</span>
+          <span class="incipit-he" lang="he" dir="rtl">{unit.incipit}</span>
+        </p>
         <div class="explanation-label">
           <span>Explanation</span>
           <span class="unit-ref">{unit.label}</span>
@@ -86,7 +91,7 @@ const extraAnchors = unit.segments.slice(1).map((s) => `ch${chapter}-s${s.n}`);
                   <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" /></svg>
                   {formatTime(block.startSeconds)}
                 </span>
-                <span class="listen-print">(class {classNumber(block.source.key)}, {formatTime(block.startSeconds)})</span>
+                <span class="listen-print">(class&nbsp;{classNumber(block.source.key)},&nbsp;{formatTime(block.startSeconds)})</span>
               </a>
               <span>Class {classNumber(block.source.key)} · {block.source.title}</span>
             </p>

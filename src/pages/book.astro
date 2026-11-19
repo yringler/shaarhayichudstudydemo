@@ -10,22 +10,11 @@
  * Query parameters (read by the inline script before first paint):
  *   ?view=guide|explanation|text  which blocks to show (default: guide)
  *   ?final=1                      drop the draft notices
- *   ?gutter=0.75                  inside margin in inches (default 0.625)
+ *   ?gutter=1                     inside margin in inches (default 0.9)
  *
- * Fonts are self-hosted (@fontsource) so the PDF never depends on the network.
+ * Fonts are self-hosted (the full-feature print fonts in public/fonts/print/,
+ * declared in book.css) so the PDF never depends on the network.
  */
-import '@fontsource/source-serif-4/400.css';
-import '@fontsource/source-serif-4/400-italic.css';
-import '@fontsource/source-serif-4/600.css';
-import '@fontsource/source-serif-4/600-italic.css';
-import '@fontsource/source-serif-4/700.css';
-import '@fontsource/source-serif-4/700-italic.css';
-import '@fontsource/frank-ruhl-libre/400.css';
-import '@fontsource/frank-ruhl-libre/500.css';
-import '@fontsource/frank-ruhl-libre/700.css';
-import '@fontsource/source-sans-3/400.css';
-import '@fontsource/source-sans-3/600.css';
-import '@fontsource/source-sans-3/700.css';
 import '../styles/global.css';
 import '../styles/print-content.css';
 import '../styles/book.css';
@@ -60,7 +49,8 @@ const cssString = (s: string): string => JSON.stringify(s);
 /** "Bina and tevuna: grasping a concept…" → "Bina and tevuna" for the running head. */
 const shortTitle = (s: string): string => (s.split(':')[0]?.trim() ?? s).replace(/\u2011/g, '-');
 
-const marginBox = `font-family: 'Source Serif 4', serif; font-size: 8pt; font-style: italic; color: #000;`;
+/** Matches the running heads in book.css: small spaced capitals. */
+const marginBox = `font-family: 'Source Serif 4', serif; font-size: 6.75pt; text-transform: uppercase; letter-spacing: 0.12em; color: #000;`;
 /** One named page per chapter, for the recto running head. */
 const chapterPagesCss = chapters
   .map(
@@ -70,7 +60,7 @@ const chapterPagesCss = chapters
   )
   .join('\n');
 /** The draft notice in the foot of every numbered page; removed with ?final=1. */
-const draftCss = `@page { @bottom-center { content: 'Draft — not reviewed. Do not distribute.'; font-family: 'Source Sans 3', sans-serif; font-size: 6.5pt; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #000; vertical-align: middle; } }`;
+const draftCss = `@page { @bottom-center { content: 'Draft — not reviewed. Do not distribute.'; font-family: 'Source Serif 4', serif; font-size: 7.5pt; font-style: italic; color: #000; vertical-align: top; padding-top: 0.3in; } }`;
 ---
 
 <!doctype html>
@@ -143,9 +133,13 @@ const draftCss = `@page { @bottom-center { content: 'Draft — not reviewed. Do 
         <p class="kdp-title-rule" aria-hidden="true"></p>
         <p class="kdp-title-guide">Study Guide</p>
         <p class="kdp-title-booklet">Booklet 1 · {chaptersTitle()}</p>
-        <p class="kdp-title-with">
+        <p class="kdp-title-with v-guide">
           The Hebrew text with the English translation of Rabbi Amiram Markel, and explanations following the classes of Rabbi Markel
         </p>
+        <p class="kdp-title-with v-explanation">
+          Explanations following the classes of Rabbi Amiram Markel, quoting his English translation
+        </p>
+        <p class="kdp-title-with v-text">The Hebrew text with the English translation of Rabbi Amiram Markel</p>
         <p class="kdp-title-draft draft-only">Draft for review · not for distribution</p>
       </section>
 
@@ -167,7 +161,7 @@ const draftCss = `@page { @bottom-center { content: 'Draft — not reviewed. Do 
             via Sefaria (sefaria.org, “The Gate of Unity”). Changes: formatting reduced to italics, bold and footnotes, and the Name spelled
             G-d. The footnotes are the translator’s.
           </p>
-          <p>
+          <p class="v-guide v-text">
             <strong>Hebrew text:</strong> from the Shaar HaYichud class archive (shaar-hayichud-sections{
               guide.sectionsCommit ? `, commit ${guide.sectionsCommit.slice(0, 7)}` : ''
             }).
@@ -208,7 +202,7 @@ const draftCss = `@page { @bottom-center { content: 'Draft — not reviewed. Do 
                     <li>
                       <a href={`#${k.id}`}>
                         <span class="kdp-toc-text" dir="auto">
-                          {k.title} <span class="kdp-toc-range">{segmentLabel(k.from, k.to)}</span>
+                          {k.title}{'\u00a0'}<span class="kdp-toc-range">{segmentLabel(k.from, k.to)}</span>
                         </span>
                         <span class="kdp-toc-leader" />
                         <span class="pageref" data-pageref={k.id} />
@@ -250,7 +244,8 @@ const draftCss = `@page { @bottom-center { content: 'Draft — not reviewed. Do 
           </p>
           <p class="v-explanation">
             This edition gives the explanations only, as continuous prose. They are drawn from Rabbi Markel’s recorded classes and follow the
-            text paragraph by paragraph; the paragraph numbers (§) are those of the English translation on Sefaria.
+            text paragraph by paragraph; the paragraph numbers (§) are those of the English translation on Sefaria. Each explanation is headed
+            by the opening words of its passage in Hebrew, beside the paragraph numbers, so that it can be found in the text.
           </p>
           <p class="v-text">
             This edition gives the Hebrew text beside Rabbi Amiram Markel’s English translation, numbered by paragraph (§) as on Sefaria, with

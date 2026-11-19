@@ -2,8 +2,9 @@
  * Builds the print-ready PDF of the booklet for Amazon KDP (paperback, trim
  * 7 × 10 in, no bleed, black and white interior) from the /book/ page.
  *
- *   npm run pdf                                   # npm run build, then print
+ *   npm run pdf                                   # npm run build, then print the study guide
  *   npm run pdf -- --view explanation             # guide | explanation | text
+ *   npm run pdf -- --all                          # the guide and the explanation PDFs (one build)
  *   npm run pdf -- --final                        # no draft notices (warns about unreviewed sections)
  *   npm run pdf -- --no-build                     # reuse dist/
  *   npm run pdf -- --out some/where.pdf
@@ -16,8 +17,16 @@
  * destinations, puts a blank page before any chapter that fell on a verso,
  * fills in the page numbers of the contents and glossary, pads to an even
  * count, and prints again until nothing changes. The result is checked (trim
- * size of every page, page count, fonts embedded, no colour) before it is
- * written.
+ * size of every page, page count, fonts embedded, no colour, printed folios)
+ * before it is written.
+ *
+ * Page numbering: the front matter (title, copyright, contents, About, and any
+ * blank page before chapter 1) is numbered i, ii, iii, … from the title page,
+ * and chapter 1's first page is 1. book.css prints the folios that way with a
+ * `folio` counter of its own (Chromium's page counter cannot be restarted);
+ * this script uses the same numbering for the contents and glossary page
+ * references (folioLabel), writes it into the PDF as /PageLabels so viewers
+ * show it too, and checks the printed folios against it (folioCheck).
  */
 import { spawnSync } from 'node:child_process';
 import { createReadStream, existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';
@@ -26,9 +35,9 @@ import type { AddressInfo } from 'node:net';
 import { tmpdir } from 'node:os';
 import { dirname, extname, join, normalize, resolve, sep } from 'node:path';
 import { parseArgs } from 'node:util';
-import { PDFArray, PDFDict, PDFDocument, PDFName, PDFRef, PDFString, PDFHexString } from 'pdf-lib';
-import { chromium, type Page } from 'playwright';
-import { BOOK_PDF } from '../src/lib/chapters';
+import { PDFArray, PDFDict, PDFDocument, PDFName, PDFNumber, PDFRef, PDFString, PDFHexString } from 'pdf-lib';
+import { chromium, type Browser, type Page } from 'playwright';
+import { BOOK_PDFS, BOOK_VIEWS, type BookView } from '../src/lib/chapters';
 import { loadGuide } from '../src/lib/content';
 
 // ---------------------------------------------------------------- settings
@@ -38,16 +47,23 @@ const TRIM_H_PT = 10 * 72; // 720
 const KDP_MIN_PAGES = 24;
 const KDP_MAX_PAGES = 828;
 /** The page's own gutter (book.css); a larger one is passed as ?gutter=. */
-const DEFAULT_GUTTER_IN = 0.625;
-const OUTSIDE_MARGIN_IN = 0.55;
+const DEFAULT_GUTTER_IN = 0.9;
+const OUTSIDE_MARGIN_IN = 0.8;
 const MAX_PASSES = 8;
-/** Text block height (book.css: 10 in less 0.8 in top and 0.75 in bottom margins). */
-const TEXT_HEIGHT_IN = 10 - 0.8 - 0.75;
-/** A passage pair taller than this share of the text block may break across pages. */
-const TALL_PAIR_SHARE = 0.45;
-const DEFAULT_OUT = `pdf/${BOOK_PDF}`;
-const VIEWS = ['guide', 'explanation', 'text'] as const;
-type View = (typeof VIEWS)[number];
+/** Bottom margin (book.css @page). */
+const BOTTOM_MARGIN_IN = 0.95;
+/** Text block height (book.css: 10 in less 0.85 in top and 0.95 in bottom margins). */
+const TEXT_HEIGHT_IN = 10 - 0.85 - BOTTOM_MARGIN_IN;
+/** A page that stops more than this short of the text block's foot is reported (pageDepthReport). */
+const SHORT_PAGE_IN = 0.6;
+/** A passage pair no taller than this (about four lines of translation) is kept whole. */
+const SHORT_PAIR_IN = 0.8;
+const VIEWS = BOOK_VIEWS;
+type View = BookView;
+/** The views `--all` prints: those the site publishes (the deploy workflow runs it). */
+const ALL_VIEWS: readonly View[] = ['guide', 'explanation'];
+/** Each view's PDF has its own name (src/lib/chapters.ts), so one never overwrites another. */
+const defaultOut = (view: View): string => `pdf/${BOOK_PDFS[view]}`;
 
 /** KDP's minimum inside margin (gutter) for a page count, in inches. */
 function kdpGutter(pages: number): number {
@@ -58,33 +74,74 @@ function kdpGutter(pages: number): number {
   return 0.875;
 }
 
+// ---------------------------------------------------------------- folios
+
+/** Lower-case roman numeral (1 → i), for the front-matter folios. */
+function roman(n: number): string {
+  const digits: [number, string][] = [
+    [1000, 'm'], [900, 'cm'], [500, 'd'], [400, 'cd'], [100, 'c'], [90, 'xc'],
+    [50, 'l'], [40, 'xl'], [10, 'x'], [9, 'ix'], [5, 'v'], [4, 'iv'], [1, 'i'],
+  ];
+  let out = '';
+  for (const [value, numeral] of digits) {
+    for (; n >= value; n -= value) out += numeral;
+  }
+  return out;
+}
+
+/**
+ * The folio of a 1-based PDF page, given the number of front-matter pages
+ * (those before chapter 1): roman in the front matter, arabic from 1 after it.
+ * The same numbering as the printed folios (book.css) and the /PageLabels.
+ */
+function folioLabel(page: number, frontPages: number): string {
+  return page > frontPages ? String(page - frontPages) : roman(page);
+}
+
+/** Front-matter pages: those before chapter 1's first page (0 if it has no page). */
+function frontPageCount(info: PdfInfo, firstChapter: string): number {
+  const p = firstChapter ? info.dests.get(firstChapter) : undefined;
+  return p === undefined ? 0 : p - 1;
+}
+
 // ---------------------------------------------------------------- arguments
 
-interface Options {
+/** One PDF to print: a view and where to write it. */
+interface Job {
   view: View;
+  out: string;
+}
+
+interface Options {
+  jobs: Job[];
   final: boolean;
   build: boolean;
-  out: string;
 }
 
 function parseOptions(): Options {
   const { values } = parseArgs({
     options: {
-      view: { type: 'string', default: 'guide' },
+      view: { type: 'string' },
+      all: { type: 'boolean', default: false },
       final: { type: 'boolean', default: false },
       'no-build': { type: 'boolean', default: false },
-      out: { type: 'string', default: DEFAULT_OUT },
+      out: { type: 'string' },
       help: { type: 'boolean', short: 'h', default: false },
     },
     strict: true,
   });
   if (values.help) {
-    console.log('Usage: npm run pdf -- [--view guide|explanation|text] [--final] [--no-build] [--out file.pdf]');
+    console.log('Usage: npm run pdf -- [--view guide|explanation|text | --all] [--final] [--no-build] [--out file.pdf]');
     process.exit(0);
   }
-  const view = values.view;
+  const common = { final: values.final, build: !values['no-build'] };
+  if (values.all) {
+    if (values.view !== undefined || values.out !== undefined) fail('--all prints every published view to its own file; it takes neither --view nor --out.');
+    return { ...common, jobs: ALL_VIEWS.map((view) => ({ view, out: resolve(defaultOut(view)) })) };
+  }
+  const view = values.view ?? 'guide';
   if (!isView(view)) fail(`--view must be one of ${VIEWS.join(', ')} (got "${view}").`);
-  return { view, final: values.final, build: !values['no-build'], out: resolve(values.out) };
+  return { ...common, jobs: [{ view, out: resolve(values.out ?? defaultOut(view)) }] };
 }
 
 function isView(v: string): v is View {
@@ -139,6 +196,7 @@ const MIME: Record<string, string> = {
   '.svg': 'image/svg+xml',
   '.woff2': 'font/woff2',
   '.woff': 'font/woff',
+  '.ttf': 'font/ttf',
   '.png': 'image/png',
   '.txt': 'text/plain; charset=utf-8',
   '.xml': 'application/xml',
@@ -224,6 +282,8 @@ interface Layout {
   recto: string[];
   /** Ids whose page numbers the page shows. */
   refs: string[];
+  /** Id of chapter 1 (the first article.chapter), whose first page is folio 1; '' if none. */
+  firstChapter: string;
 }
 
 async function layoutTargets(page: Page): Promise<Layout> {
@@ -243,25 +303,34 @@ async function layoutTargets(page: Page): Promise<Layout> {
     }
     const recto = [...document.querySelectorAll<HTMLElement>('[data-recto], article.chapter')].map((el) => el.id);
     const refs = [...new Set([...document.querySelectorAll<HTMLElement>('[data-pageref]')].map((el) => el.dataset['pageref'] ?? ''))];
-    return { recto, refs };
+    const firstChapter = document.querySelector<HTMLElement>('article.chapter[id]')?.id ?? '';
+    return { recto, refs, firstChapter };
   });
 }
 
 /**
  * Applies one pass of pagination fixes in the page and reports whether anything
  * changed. Inserting a blank page before an element moves everything after it
- * by exactly one page, so all fixes can be made in one pass.
+ * by exactly one page, so all fixes can be made in one pass. The page
+ * references are filled in from this pass's PDF (roman or arabic, folioLabel);
+ * if a blank page moved them, the next pass corrects them.
  */
 async function applyPass(page: Page, info: PdfInfo, layout: Layout): Promise<string[]> {
   const pageOf = Object.fromEntries(info.dests);
+  const front = frontPageCount(info, layout.firstChapter);
+  const labelOf = Object.fromEntries([...info.dests].map(([id, p]) => [id, folioLabel(p, front)]));
   return page.evaluate(
-    ({ pageOf, recto, pages }) => {
+    ({ pageOf, labelOf, recto, pages, firstChapter }) => {
       const changes: string[] = [];
       let shift = 0;
+      const first = firstChapter ? document.getElementById(firstChapter) : null;
       for (const id of recto) {
         const el = document.getElementById(id);
         const p = pageOf[id];
         if (!el || p === undefined) continue;
+        // A blank page before chapter 1 or anything ahead of it is front matter
+        // (.kdp-front: no folio, not counted in the arabic numbering, book.css).
+        const inFront = first !== null && (el === first || (el.compareDocumentPosition(first) & Node.DOCUMENT_POSITION_FOLLOWING) !== 0);
         const prev = el.previousElementSibling;
         const hasBlank = prev?.classList.contains('kdp-blank') ?? false;
         const at = p + shift;
@@ -272,7 +341,7 @@ async function applyPass(page: Page, info: PdfInfo, layout: Layout): Promise<str
             changes.push(`removed blank before #${id}`);
           } else {
             const blank = document.createElement('div');
-            blank.className = 'kdp-blank';
+            blank.className = inFront ? 'kdp-blank kdp-front' : 'kdp-blank';
             blank.setAttribute('aria-hidden', 'true');
             el.before(blank);
             shift += 1;
@@ -281,8 +350,7 @@ async function applyPass(page: Page, info: PdfInfo, layout: Layout): Promise<str
         }
       }
       for (const span of document.querySelectorAll<HTMLElement>('[data-pageref]')) {
-        const p = pageOf[span.dataset['pageref'] ?? ''];
-        const text = p === undefined ? '' : String(p);
+        const text = labelOf[span.dataset['pageref'] ?? ''] ?? '';
         if (span.textContent !== text) {
           span.textContent = text;
           if (changes.length < 50) changes.push(`page ref #${span.dataset['pageref']} → ${text || '(none)'}`);
@@ -304,21 +372,25 @@ async function applyPass(page: Page, info: PdfInfo, layout: Layout): Promise<str
       }
       return changes;
     },
-    { pageOf, recto: layout.recto, pages: info.pages },
+    { pageOf, labelOf, recto: layout.recto, pages: info.pages, firstChapter: layout.firstChapter },
   );
 }
 
 /**
- * Marks passage pairs taller than about half a page with .kdp-tall, which
- * book.css lets break inside; shorter pairs stay whole. Returns how many.
+ * Marks passage pairs of about four lines or fewer with .kdp-short, which
+ * book.css keeps whole: split, they leave a line or two of Hebrew (or a lone
+ * footnote) at the head of a page. Longer pairs break between lines, so pages
+ * fill to the foot. Returns how many were marked.
  */
-async function markTallPairs(page: Page, maxPx: number): Promise<number> {
+async function markShortPairs(page: Page, maxPx: number): Promise<number> {
   return page.evaluate((max) => {
     let n = 0;
     for (const pair of document.querySelectorAll<HTMLElement>('.seg-pair')) {
-      const tall = pair.getBoundingClientRect().height > max;
-      pair.classList.toggle('kdp-tall', tall);
-      if (tall) n++;
+      // A pair the view hides (all of them in "Explanation only") has no height and is not counted.
+      const h = pair.getBoundingClientRect().height;
+      const short = h > 0 && h <= max;
+      pair.classList.toggle('kdp-short', short);
+      if (short) n++;
     }
     return n;
   }, maxPx);
@@ -347,7 +419,100 @@ async function overflowCheck(page: Page, contentWidthPx: number): Promise<string
   }, contentWidthPx);
 }
 
+// ---------------------------------------------------------------- page labels
+
+/**
+ * Writes the folio numbering into the PDF's /PageLabels, so viewers (and the
+ * page box of a PDF reader) show i, ii, … for the front matter and 1, 2, …
+ * from chapter 1, as printed. Everything else in the PDF is kept as it is.
+ */
+async function withPageLabels(bytes: Uint8Array, frontPages: number): Promise<Uint8Array> {
+  const doc = await PDFDocument.load(bytes, { updateMetadata: false });
+  const ctx = doc.context;
+  const nums: (PDFNumber | PDFDict)[] = [];
+  if (frontPages > 0) nums.push(PDFNumber.of(0), ctx.obj({ S: PDFName.of('r') }));
+  nums.push(PDFNumber.of(frontPages), ctx.obj({ S: PDFName.of('D') }));
+  doc.catalog.set(PDFName.of('PageLabels'), ctx.obj({ Nums: nums }));
+  return doc.save({ useObjectStreams: false, updateFieldAppearances: false });
+}
+
 // ---------------------------------------------------------------- checks on the finished PDF
+
+/**
+ * Checks that the folios printed by book.css's counters match folioLabel (and
+ * so the page references and /PageLabels): in each window of pages, at least
+ * one page with text must show its expected folio at the outside edge of its
+ * first or last two lines (the first word on a verso, the last on a recto), so
+ * a heading such as "Chapter 1" is not taken for one. A window catches an offset or a drift (a page type that does
+ * not count) without failing on pages that print no folio, such as chapter
+ * openers or blank pages.
+ */
+function folioCheck(file: string, windows: { what: string; pages: number[] }[], frontPages: number): string[] {
+  if (!hasCommand('pdftotext')) {
+    warn('pdftotext (poppler-utils) not found: printed folios not checked.');
+    return [];
+  }
+  const problems: string[] = [];
+  for (const { what, pages } of windows) {
+    const seen: string[] = [];
+    let ok = false;
+    for (const p of pages) {
+      const r = spawnSync('pdftotext', ['-f', String(p), '-l', String(p), '-layout', file, '-'], { encoding: 'utf8' });
+      if (r.status !== 0) return [`pdftotext failed: ${r.stderr}`];
+      const lines = r.stdout.split('\n').map((l) => l.trim()).filter((l) => l !== '');
+      if (lines.length === 0) continue;
+      const label = folioLabel(p, frontPages);
+      const outside = [...lines.slice(0, 2), ...lines.slice(-2)].map((l) => {
+        const words = l.split(/\s+/);
+        return p % 2 === 0 ? words[0] : words.at(-1);
+      });
+      if (outside.includes(label)) {
+        ok = true;
+        break;
+      }
+      seen.push(`page ${p} (folio ${label}): "${lines.at(-1)?.replace(/\s+/g, ' ').slice(0, 60) ?? ''}"`);
+    }
+    if (!ok && seen.length > 0) problems.push(`the printed folios in the ${what} do not match the page labels (book.css folio counters?):\n    ${seen.join('\n    ')}`);
+  }
+  return problems;
+}
+
+/**
+ * Body pages whose text stops more than SHORT_PAGE_IN short of the foot of the
+ * text block. Not counted: the front matter, pages that start a recto section
+ * (chapter openers, whose key terms are kept whole on the next page), the last
+ * page before one (a chapter's end), a page before a blank one, and blank pages.
+ * Reported, not failed: a heading kept with its text can leave a short page that
+ * only an editor can mend.
+ */
+function pageDepthReport(file: string, pages: number, frontPages: number, skip: Set<number>): string[] {
+  if (!hasCommand('pdftotext')) return [];
+  const r = spawnSync('pdftotext', ['-bbox', file, '-'], { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 });
+  if (r.status !== 0) return [];
+  const footPt = TRIM_H_PT - BOTTOM_MARGIN_IN * 72;
+  const topPt = TRIM_H_PT - (TEXT_HEIGHT_IN + BOTTOM_MARGIN_IN) * 72;
+  // The lowest word of each page inside the text block (not the head or folio).
+  const lowest = r.stdout
+    .split('<page ')
+    .slice(1)
+    .map((pg) => {
+      let low = -1;
+      for (const m of pg.matchAll(/yMin="([\d.]+)" xMax="[\d.]+" yMax="([\d.]+)"/g)) {
+        const y0 = Number(m[1]);
+        const y1 = Number(m[2]);
+        if (y0 < footPt + 2 && y1 > topPt - 2) low = Math.max(low, y1);
+      }
+      return low;
+    });
+  const short: string[] = [];
+  for (let p = frontPages + 1; p < pages; p++) {
+    const low = lowest[p - 1] ?? -1;
+    if (low < 0 || skip.has(p) || (lowest[p] ?? -1) < 0) continue;
+    const gap = (footPt - low) / 72;
+    if (gap > SHORT_PAGE_IN) short.push(`${p} (${gap.toFixed(2)} in)`);
+  }
+  return short;
+}
 
 function pdffontsCheck(file: string): string[] {
   if (!hasCommand('pdffonts')) {
@@ -412,6 +577,152 @@ function readPpm(file: string): Uint8Array {
   return data.subarray(pos + 1);
 }
 
+// ---------------------------------------------------------------- printing one view
+
+/** A path relative to the working directory, for messages. */
+function relPath(file: string, cwd: string): string {
+  return file.startsWith(cwd + sep) ? file.slice(cwd.length + 1) : file;
+}
+
+/**
+ * Lays out and prints one view of /book/ (served on `port`) to `job.out`, in
+ * passes until the pagination settles, checks the result, and returns its page
+ * count. Throws BuildError if a check fails.
+ */
+async function printBook(browser: Browser, port: number, job: Job, final: boolean, cwd: string): Promise<number> {
+  let gutter = DEFAULT_GUTTER_IN;
+  let pdf: Uint8Array | undefined;
+  let info: PdfInfo | undefined;
+  let firstChapter = '';
+  let rectoIds: string[] = [];
+
+  // Up to two layouts: the default gutter, then KDP's gutter for the page count if that is larger.
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const page = await browser.newPage();
+    const query = new URLSearchParams({ view: job.view });
+    if (final) query.set('final', '1');
+    if (gutter !== DEFAULT_GUTTER_IN) query.set('gutter', String(gutter));
+    const url = `http://127.0.0.1:${port}/book/?${query}`;
+    console.log(`› ${url}`);
+
+    // Lay out at the text width in print media, wait for the fonts, check the margins.
+    const textWidthPx = Math.floor((7 - gutter - OUTSIDE_MARGIN_IN) * 96);
+    await page.setViewportSize({ width: textWidthPx, height: 960 });
+    await page.emulateMedia({ media: 'print' });
+    const failed: string[] = [];
+    page.on('requestfailed', (req) => failed.push(req.url()));
+    page.on('response', (res) => {
+      if (res.status() >= 400) failed.push(`${res.status()} ${res.url()}`);
+    });
+    await page.goto(url, { waitUntil: 'networkidle' });
+    await page.evaluate(async () => {
+      await document.fonts.ready;
+    });
+    const fontsLoaded = await page.evaluate(() =>
+      [...document.fonts].filter((f) => f.status === 'loaded').map((f) => `${f.family} ${f.weight} ${f.style}`),
+    );
+    if (failed.length > 0) throw new BuildError(`requests failed while loading the book:\n  ${failed.join('\n  ')}`);
+    // The book is set in the serifs only (book.css); Source Sans 3 is declared but no longer used.
+    for (const fam of ['Source Serif 4', 'Frank Ruhl Libre']) {
+      if (!fontsLoaded.some((f) => f.startsWith(fam))) throw new BuildError(`font ${fam} did not load (loaded: ${fontsLoaded.join(', ') || 'none'}).`);
+    }
+    const overflow = await overflowCheck(page, textWidthPx);
+    if (overflow.length > 0) throw new BuildError(`content runs into the margins:\n  ${overflow.join('\n  ')}`);
+    const short = await markShortPairs(page, SHORT_PAIR_IN * 96);
+    console.log(`  ${short} short passage pair(s) kept whole; longer ones may break across pages`);
+
+    const layout = await layoutTargets(page);
+    firstChapter = layout.firstChapter;
+    rectoIds = layout.recto;
+    let stable = false;
+    for (let pass = 1; pass <= MAX_PASSES; pass++) {
+      pdf = await page.pdf({ preferCSSPageSize: true, printBackground: true, outline: true, tagged: true });
+      info = await readPdf(pdf);
+      const changes = await applyPass(page, info, layout);
+      console.log(`  pass ${pass}: ${info.pages} pages${changes.length ? `; ${changes.length} change(s): ${changes.slice(0, 4).join('; ')}${changes.length > 4 ? '; …' : ''}` : '; stable'}`);
+      if (changes.length === 0) {
+        stable = true;
+        break;
+      }
+      await page.evaluate(async () => {
+        await document.fonts.ready;
+      });
+    }
+    await page.close();
+    if (!stable || !info || !pdf) throw new BuildError(`the pagination did not settle after ${MAX_PASSES} passes.`);
+
+    const missing = [...layout.recto, ...layout.refs].filter((id) => !info?.dests.has(id));
+    if (missing.length > 0) throw new BuildError(`no page found for: ${missing.join(', ')} (are they link targets?)`);
+    const verso = layout.recto.filter((id) => (info?.dests.get(id) ?? 1) % 2 === 0);
+    if (verso.length > 0) throw new BuildError(`these start on a left-hand page: ${verso.join(', ')}`);
+
+    const needed = kdpGutter(info.pages);
+    if (needed <= gutter) break;
+    if (attempt === 1) throw new BuildError(`${info.pages} pages need a ${needed} in gutter; the layout with it still did not fit.`);
+    console.log(`  ${info.pages} pages need KDP's ${needed} in gutter; laying out again.`);
+    gutter = needed;
+  }
+  if (!pdf || !info) throw new BuildError('no PDF was produced.');
+
+  // ---- page numbering: roman front matter, arabic from chapter 1 (see the header comment)
+  const front = frontPageCount(info, firstChapter);
+  if (front % 2 !== 0) throw new BuildError(`the front matter has ${front} pages, so chapter 1 is not on a right-hand page.`);
+  pdf = await withPageLabels(pdf, front);
+
+  // ---- checks
+  const problems: string[] = [];
+  info.sizes.forEach((s, i) => {
+    if (Math.abs(s.w - TRIM_W_PT) > 0.5 || Math.abs(s.h - TRIM_H_PT) > 0.5) problems.push(`page ${i + 1} is ${s.w} × ${s.h} pt, not ${TRIM_W_PT} × ${TRIM_H_PT}`);
+  });
+  if (info.pages % 2 !== 0) problems.push(`odd page count (${info.pages})`);
+  if (info.pages > KDP_MAX_PAGES) problems.push(`${info.pages} pages is over KDP's paperback maximum of ${KDP_MAX_PAGES}`);
+
+  // Written under a temporary name and moved into place only once it passes, so a
+  // PDF that failed the checks never sits at the name of a good one.
+  mkdirSync(dirname(job.out), { recursive: true });
+  const tmp = `${job.out}.tmp`;
+  const failedOut = job.out.replace(/(\.pdf)?$/i, '.failed.pdf');
+  writeFileSync(tmp, pdf);
+  const checkedFonts = hasCommand('pdffonts');
+  const checkedColour = hasCommand('pdftoppm');
+  const checkedFolios = hasCommand('pdftotext');
+  const range = (from: number, to: number): number[] => Array.from({ length: Math.max(0, Math.min(to, info?.pages ?? 0) - from + 1) }, (_, i) => from + i);
+  problems.push(
+    ...pdffontsCheck(tmp),
+    ...colourCheck(tmp),
+    ...folioCheck(
+      tmp,
+      [
+        { what: 'front matter', pages: range(3, front) },
+        { what: 'first pages of chapter 1', pages: range(front + 1, front + 4) },
+        { what: 'last pages', pages: range(Math.max(front + 1, info.pages - 5), info.pages) },
+      ],
+      front,
+    ),
+  );
+  if (problems.length > 0) {
+    rmSync(job.out, { force: true });
+    renameSync(tmp, failedOut);
+    throw new BuildError(`the PDF fails the KDP checks (kept for inspection as ${failedOut}; do not upload it):\n  ${problems.join('\n  ')}`);
+  }
+  rmSync(failedOut, { force: true });
+  renameSync(tmp, job.out);
+  const rectoPages = rectoIds.map((id) => info?.dests.get(id) ?? 0);
+  const short = pageDepthReport(job.out, info.pages, front, new Set([...rectoPages, ...rectoPages.map((p) => p - 1)]));
+  if (short.length > 0) warn(`${short.length} page(s) stop more than ${SHORT_PAGE_IN} in short of the foot (PDF page numbers): ${short.join(', ')}`);
+  if (info.pages < KDP_MIN_PAGES) warn(`${info.pages} pages is under KDP's paperback minimum of ${KDP_MIN_PAGES}.`);
+
+  const rel = relPath(job.out, cwd);
+  console.log(`
+✔ ${rel}
+  ${info.pages} pages, ${TRIM_W_PT} × ${TRIM_H_PT} pt (7 × 10 in, no bleed), view: ${job.view}${final ? ', final (no draft notices)' : ', draft notices on'}
+  folios: ${front > 0 ? `i–${roman(front)} (front matter), ` : ''}1–${info.pages - front} from chapter 1 (also as /PageLabels)
+  margins: inside ${gutter} in (KDP minimum for ${info.pages} pages: ${kdpGutter(info.pages)} in), outside ${OUTSIDE_MARGIN_IN} in
+  ${checkedFonts ? 'all fonts embedded (pdffonts)' : 'fonts NOT checked (no pdffonts)'}; ${checkedColour ? 'no colour (pdftoppm)' : 'colour NOT checked (no pdftoppm)'}; ${checkedFolios ? 'folios match (pdftotext)' : 'folios NOT checked (no pdftotext)'}
+  KDP: paperback, 7 x 10 in, no bleed, black & white interior, cream or white paper; upload the cover separately.`);
+  return info.pages;
+}
+
 // ---------------------------------------------------------------- main
 
 async function main(): Promise<void> {
@@ -432,108 +743,13 @@ async function main(): Promise<void> {
   const { port } = server.address() as AddressInfo;
   const browser = await chromium.launch();
   try {
-    let gutter = DEFAULT_GUTTER_IN;
-    let pdf: Uint8Array | undefined;
-    let info: PdfInfo | undefined;
-
-    // Up to two layouts: the default gutter, then KDP's gutter for the page count if that is larger.
-    for (let attempt = 0; attempt < 2; attempt++) {
-      const page = await browser.newPage();
-      const query = new URLSearchParams({ view: opts.view });
-      if (opts.final) query.set('final', '1');
-      if (gutter !== DEFAULT_GUTTER_IN) query.set('gutter', String(gutter));
-      const url = `http://127.0.0.1:${port}/book/?${query}`;
-      console.log(`› ${url}`);
-
-      // Lay out at the text width in print media, wait for the fonts, check the margins.
-      const textWidthPx = Math.floor((7 - gutter - OUTSIDE_MARGIN_IN) * 96);
-      await page.setViewportSize({ width: textWidthPx, height: 960 });
-      await page.emulateMedia({ media: 'print' });
-      const failed: string[] = [];
-      page.on('requestfailed', (req) => failed.push(req.url()));
-      page.on('response', (res) => {
-        if (res.status() >= 400) failed.push(`${res.status()} ${res.url()}`);
-      });
-      await page.goto(url, { waitUntil: 'networkidle' });
-      await page.evaluate(async () => {
-        await document.fonts.ready;
-      });
-      const fontsLoaded = await page.evaluate(() =>
-        [...document.fonts].filter((f) => f.status === 'loaded').map((f) => `${f.family} ${f.weight} ${f.style}`),
-      );
-      if (failed.length > 0) throw new BuildError(`requests failed while loading the book:\n  ${failed.join('\n  ')}`);
-      for (const fam of ['Source Serif 4', 'Frank Ruhl Libre', 'Source Sans 3']) {
-        if (!fontsLoaded.some((f) => f.startsWith(fam))) throw new BuildError(`font ${fam} did not load (loaded: ${fontsLoaded.join(', ') || 'none'}).`);
-      }
-      const overflow = await overflowCheck(page, textWidthPx);
-      if (overflow.length > 0) throw new BuildError(`content runs into the margins:\n  ${overflow.join('\n  ')}`);
-      const tall = await markTallPairs(page, TEXT_HEIGHT_IN * 96 * TALL_PAIR_SHARE);
-      if (tall > 0) console.log(`  ${tall} passage pair(s) taller than ${Math.round(TALL_PAIR_SHARE * 100)}% of a page may break across pages`);
-
-      const layout = await layoutTargets(page);
-      let stable = false;
-      for (let pass = 1; pass <= MAX_PASSES; pass++) {
-        pdf = await page.pdf({ preferCSSPageSize: true, printBackground: true, outline: true, tagged: true });
-        info = await readPdf(pdf);
-        const changes = await applyPass(page, info, layout);
-        console.log(`  pass ${pass}: ${info.pages} pages${changes.length ? `; ${changes.length} change(s): ${changes.slice(0, 4).join('; ')}${changes.length > 4 ? '; …' : ''}` : '; stable'}`);
-        if (changes.length === 0) {
-          stable = true;
-          break;
-        }
-        await page.evaluate(async () => {
-          await document.fonts.ready;
-        });
-      }
-      await page.close();
-      if (!stable || !info || !pdf) throw new BuildError(`the pagination did not settle after ${MAX_PASSES} passes.`);
-
-      const missing = [...layout.recto, ...layout.refs].filter((id) => !info?.dests.has(id));
-      if (missing.length > 0) throw new BuildError(`no page found for: ${missing.join(', ')} (are they link targets?)`);
-      const verso = layout.recto.filter((id) => (info?.dests.get(id) ?? 1) % 2 === 0);
-      if (verso.length > 0) throw new BuildError(`these start on a left-hand page: ${verso.join(', ')}`);
-
-      const needed = kdpGutter(info.pages);
-      if (needed <= gutter) break;
-      if (attempt === 1) throw new BuildError(`${info.pages} pages need a ${needed} in gutter; the layout with it still did not fit.`);
-      console.log(`  ${info.pages} pages need KDP's ${needed} in gutter; laying out again.`);
-      gutter = needed;
+    const pages: string[] = [];
+    for (const job of opts.jobs) {
+      if (opts.jobs.length > 1) console.log(`\n› view: ${job.view}`);
+      const n = await printBook(browser, port, job, opts.final, cwd);
+      pages.push(`${relPath(job.out, cwd)}: ${n} pages (${job.view})`);
     }
-    if (!pdf || !info) throw new BuildError('no PDF was produced.');
-
-    // ---- checks
-    const problems: string[] = [];
-    info.sizes.forEach((s, i) => {
-      if (Math.abs(s.w - TRIM_W_PT) > 0.5 || Math.abs(s.h - TRIM_H_PT) > 0.5) problems.push(`page ${i + 1} is ${s.w} × ${s.h} pt, not ${TRIM_W_PT} × ${TRIM_H_PT}`);
-    });
-    if (info.pages % 2 !== 0) problems.push(`odd page count (${info.pages})`);
-    if (info.pages > KDP_MAX_PAGES) problems.push(`${info.pages} pages is over KDP's paperback maximum of ${KDP_MAX_PAGES}`);
-
-    // Written under a temporary name and moved into place only once it passes, so a
-    // PDF that failed the checks never sits at the name of a good one.
-    mkdirSync(dirname(opts.out), { recursive: true });
-    const tmp = `${opts.out}.tmp`;
-    const failedOut = opts.out.replace(/(\.pdf)?$/i, '.failed.pdf');
-    writeFileSync(tmp, pdf);
-    const checkedFonts = hasCommand('pdffonts');
-    const checkedColour = hasCommand('pdftoppm');
-    problems.push(...pdffontsCheck(tmp), ...colourCheck(tmp));
-    if (problems.length > 0) {
-      rmSync(opts.out, { force: true });
-      renameSync(tmp, failedOut);
-      throw new BuildError(`the PDF fails the KDP checks (kept for inspection as ${failedOut}; do not upload it):\n  ${problems.join('\n  ')}`);
-    }
-    rmSync(failedOut, { force: true });
-    renameSync(tmp, opts.out);
-    if (info.pages < KDP_MIN_PAGES) warn(`${info.pages} pages is under KDP's paperback minimum of ${KDP_MIN_PAGES}.`);
-
-    const rel = opts.out.startsWith(cwd + sep) ? opts.out.slice(cwd.length + 1) : opts.out;
-    console.log(`
-✔ ${rel}
-  ${info.pages} pages, ${TRIM_W_PT} × ${TRIM_H_PT} pt (7 × 10 in, no bleed), view: ${opts.view}${opts.final ? ', final (no draft notices)' : ', draft notices on'}
-  margins: inside ${gutter} in (KDP minimum for ${info.pages} pages: ${kdpGutter(info.pages)} in), outside ${OUTSIDE_MARGIN_IN} in
-  ${checkedFonts ? 'all fonts embedded (pdffonts)' : 'fonts NOT checked (no pdffonts)'}; ${checkedColour ? 'no colour (pdftoppm)' : 'colour NOT checked (no pdftoppm)'}
-  KDP: paperback, 7 x 10 in, no bleed, black & white interior, cream or white paper; upload the cover separately.`);
+    if (opts.jobs.length > 1) console.log(`\n✔ ${opts.jobs.length} PDFs:\n  ${pages.join('\n  ')}`);
   } finally {
     await browser.close();
     server.close();

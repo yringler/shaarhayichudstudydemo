@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { loadGuide } from '../lib/content';
 import { segmentLabel } from '../lib/format';
-import { BOOK_PDF, chaptersTitle } from '../lib/chapters';
+import { BOOK_PDF, BOOK_PDF_EXPLANATION, chaptersTitle } from '../lib/chapters';
 
 const guide = loadGuide();
 const base = import.meta.env.BASE_URL;
@@ -19,6 +19,7 @@ const base = import.meta.env.BASE_URL;
         {guide.chapters[0] && <a class="btn btn-primary" href={`${base}chapter/${guide.chapters[0].n}/`}>Start with Chapter {guide.chapters[0].n}</a>}
         <a class="btn" href={`${base}booklet/`}>Whole booklet</a>
         <a class="btn" href={`${base}${BOOK_PDF}`} download>Book PDF (7 × 10 in)</a>
+        <a class="btn" href={`${base}${BOOK_PDF_EXPLANATION}`} download>Explanations PDF (7 × 10 in)</a>
       </div>
     </section>
 

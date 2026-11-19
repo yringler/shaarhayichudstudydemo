@@ -23,6 +23,17 @@ import {
 } from './schema';
 import { classNumber, formatTime, parseListenHref, segmentLabel } from './format';
 import { CHAPTERS } from './chapters';
+import {
+  REVERSED_BRACKET,
+  bindListenLinks,
+  ellipsizeLemmata,
+  fixBrackets,
+  hebrewMarks,
+  hebrewSource,
+  tagHebrew,
+  typographyHtml,
+  typographyText,
+} from './typography';
 
 /** Coverage confidence below which a listen position is flagged as approximate. */
 export const LOW_CONFIDENCE = 0.45;
@@ -70,6 +81,12 @@ export interface UnitModel {
   to: number;
   label: string;
   segments: Segment[];
+  /**
+   * The opening words of the unit's Hebrew (its dibbur hamaschil), shown before the
+   * explanation in the "explanation only" view, where the passage itself is hidden.
+   * See {@link incipit}.
+   */
+  incipit: string;
   /** Rendered explanation, or null when the section is empty. */
   explanationHtml: string | null;
   /** Some line of the unit is covered by a recording. */
@@ -148,7 +165,7 @@ export function listenLinkHtml(source: Source | undefined, key: string, seconds:
     `data-source="${escapeHtml(source.key)}" data-t="${t}" ` +
     `aria-label="Listen: class ${classNumber(source.key)} at ${time}${approximate ? ' (approximate)' : ''}">` +
     `<span class="listen-screen"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>${time}${approx}</span>` +
-    `<span class="listen-print">(class ${classNumber(source.key)}, ${time})</span></a>`
+    `<span class="listen-print">(class&nbsp;${classNumber(source.key)},&nbsp;${time})</span></a>`
   );
 }
 
@@ -180,14 +197,103 @@ export function nb(s: string): string {
   return s.replace(/\bG-d/g, 'G\u2011d');
 }
 
+/** Typography for rendered text (src/lib/typography.ts): smart quotes, Hebrew marks, bound class refs, tagged Hebrew. */
+function finish(html: string): string {
+  return tagHebrew(bindListenLinks(typographyHtml(nb(html))));
+}
+
 function renderBlock(src: string, context: RenderContext): string {
   ctx = context;
-  return nb(md.parse(src, { async: false }));
+  return finish(md.parse(src, { async: false }));
 }
 
 function renderInline(src: string, context: RenderContext): string {
   ctx = context;
-  return nb(md.parseInline(src, { async: false }));
+  return finish(md.parseInline(src, { async: false }));
+}
+
+/** A title or gloss: plain text, which Astro escapes. */
+function plain(s: string): string {
+  return typographyText(nb(s));
+}
+
+/** The data's segment with its typography finished (wording unchanged). */
+function finishSegment(s: Segment): Segment {
+  const en = tagHebrew(typographyHtml(nb(fixBrackets(s.en))));
+  if (REVERSED_BRACKET.test(en)) throw new Error(`§${s.n}: a reversed square bracket is left in the translation: ${en}`);
+  return {
+    ...s,
+    lines: s.lines.map((l) => ({ ...l, text: hebrewSource(l.text) })),
+    en,
+    footnotes: s.footnotes.map((f) => ({ ...f, html: tagHebrew(typographyHtml(nb(fixBrackets(f.html)))) })),
+  };
+}
+
+// ---------------------------------------------------------------- incipit
+
+/** A word that ends a clause: , : . ; possibly followed by a closing bracket or quote. */
+const CLAUSE_END = /[,:.;][)\]"״'׳]*$/;
+/** A clause longer than this many words is cut short... */
+const INCIPIT_MAX_WORDS = 14;
+/** ...to this many, followed by " וכו׳". */
+const INCIPIT_CUT_WORDS = 10;
+/** A clause of this many words or fewer runs on to the next clause break. */
+const INCIPIT_MIN_WORDS = 2;
+
+/**
+ * The dibbur hamaschil of a passage: its Hebrew up to the first clause
+ * punctuation (, : . ;), without the mark itself. A clause of two words or fewer runs on to the next
+ * break; one of more than fourteen is cut to ten words and ends "וכו׳". `text` is
+ * the source text as the site renders it ({@link hebrewSource}: footnote digits
+ * dropped, geresh and gershayim set), so the incipit reads as the passage does.
+ * The chapter letter that opens a chapter's first passage ("(ב)") is left out. A
+ * cut that falls inside a parenthesis ends before it, if that leaves a few words,
+ * and otherwise closes it.
+ */
+export function incipit(text: string): string {
+  const words = text
+    .trim()
+    .replace(/^\([א-ת]{1,2}\)\s+/, '')
+    .split(/\s+/)
+    .filter((w) => w !== '');
+  let end = words.length;
+  for (let i = 0; i < words.length; i++) {
+    if (CLAUSE_END.test(words[i] ?? '') && i + 1 > INCIPIT_MIN_WORDS) {
+      end = i + 1;
+      break;
+    }
+  }
+  let out: string[];
+  let cut = false;
+  if (end > INCIPIT_MAX_WORDS) {
+    out = words.slice(0, INCIPIT_CUT_WORDS);
+    // An open parenthesis the cut falls inside: end before it if three words are left.
+    const opener = unclosedParen(out);
+    if (opener >= 3) out = out.slice(0, opener);
+    const last = out.length - 1;
+    out[last] = (out[last] ?? '').replace(/[,:.;]+$/, '');
+    cut = true;
+  } else {
+    out = words.slice(0, end);
+  }
+  // The clause mark itself is left out (before a closing bracket or quote too).
+  let s = out.join(' ').replace(/[,:.;]+([)\]"״]*)$/, '$1').trimEnd();
+  const open = (s.match(/\(/g) ?? []).length - (s.match(/\)/g) ?? []).length;
+  if (open > 0) s += ')'.repeat(open);
+  // A cut after "כו׳" (etc.) already says so.
+  return cut && !/(?:^|\s)ו?כו׳$/.test(s) ? `${s} וכו׳` : s;
+}
+
+/** The index of the word that opens a parenthesis left open at the end of `words`, or -1. */
+function unclosedParen(words: string[]): number {
+  const stack: number[] = [];
+  words.forEach((w, i) => {
+    for (const ch of w) {
+      if (ch === '(') stack.push(i);
+      else if (ch === ')') stack.pop();
+    }
+  });
+  return stack[0] ?? -1;
 }
 
 export function escapeHtml(s: string): string {
@@ -244,7 +350,7 @@ function buildUnit(
   explanation: string,
   sources: Map<string, Source>,
 ): UnitModel {
-  const segments = chapter.segments.filter((s) => s.n >= from && s.n <= to);
+  const segments = chapter.segments.filter((s) => s.n >= from && s.n <= to).map(finishSegment);
   if (segments.length !== to - from + 1) throw new Error(`Chapter ${chapter.chapter}: no segments ${segmentLabel(from, to)} in data`);
   const coverage = segments.flatMap((s) => s.coverage);
   const approximate = coverage.length > 0 && coverage.every((c) => c.confidence < LOW_CONFIDENCE);
@@ -264,7 +370,8 @@ function buildUnit(
     to,
     label: segmentLabel(from, to),
     segments,
-    explanationHtml: explanation.trim() ? renderBlock(explanation, { sources, approximate }) : null,
+    incipit: incipit(segments[0]?.lines.map((l) => l.text).join(' ') ?? ''),
+    explanationHtml: explanation.trim() ? ellipsizeLemmata(renderBlock(explanation, { sources, approximate })) : null,
     covered: coverage.length > 0,
     approximate,
     transcript: blocks,
@@ -301,7 +408,7 @@ function loadConcepts(
     const slug = file.replace(/^\d+-/, '').replace(/\.md$/, '');
     concepts.push({
       id: `ch${n}-${slug}`,
-      title: nb(fm.title),
+      title: plain(fm.title),
       from,
       to,
       inShortHtml: fm.inShort ? renderInline(fm.inShort, { sources, approximate: false }) : null,
@@ -337,7 +444,7 @@ function withPlaceholders(
     if (!first || !last) return;
     out.push({
       id: `ch${n}-pending-${first.n}`,
-      title: sectionOf(first.n),
+      title: plain(sectionOf(first.n)),
       from: first.n,
       to: last.n,
       inShortHtml: null,
@@ -386,7 +493,7 @@ function loadChapter(n: number, sources: Source[]): ChapterModel | null {
   if (existsSync(chPath)) {
     const { data, body } = splitFrontmatter(readFileSync(chPath, 'utf8'), chPath);
     const fm = parseOrThrow(ChapterFrontmatterSchema, data, chPath);
-    title = nb(fm.title);
+    title = plain(fm.title);
     status = fm.status;
     for (const { match, text } of splitSections(body, /^## (.+)$/)) {
       const heading = (match[1] ?? '').trim().toLowerCase();
@@ -397,7 +504,7 @@ function loadChapter(n: number, sources: Source[]): ChapterModel | null {
   const termsPath = join(dir, '_terms.yaml');
   if (existsSync(termsPath)) {
     const parsed = parseOrThrow(z.array(TermSchema), parseYaml(readFileSync(termsPath, 'utf8')) ?? [], termsPath);
-    terms = parsed.map((t) => ({ ...t, gloss: nb(t.gloss), chapter: n }));
+    terms = parsed.map((t) => ({ ...t, term: plain(t.term), he: hebrewMarks(t.he), gloss: plain(t.gloss), chapter: n }));
   }
   if (hasGuide) concepts = loadConcepts(n, dir, chapter, transcript, byKey);
   concepts = withPlaceholders(n, concepts, chapter, transcript, byKey);
@@ -407,7 +514,7 @@ function loadChapter(n: number, sources: Source[]): ChapterModel | null {
     n,
     title,
     status,
-    heRef: chapter.heRef,
+    heRef: hebrewMarks(chapter.heRef),
     sefariaUrl: chapter.sefariaUrl,
     translation: chapter.translation,
     hasGuide,
