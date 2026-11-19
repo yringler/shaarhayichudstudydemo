@@ -5,6 +5,13 @@
  */
 export const CHAPTERS = [1, 2, 3, 4, 5, 10] as const;
 
+/**
+ * File name of the print-ready PDF (7 x 10 in, KDP). `npm run pdf` writes it to
+ * `pdf/`; the deploy workflow copies it to the site root, where /booklet/ and the
+ * cover link to it.
+ */
+export const BOOK_PDF = 'shaar-hayichud-booklet-1-7x10.pdf';
+
 export type ChapterNumber = (typeof CHAPTERS)[number];
 
 /** [1, 2, 3, 4, 5, 10] → "1–5 and 10"; [3] → "3". Consecutive runs become ranges. */

@@ -28,6 +28,7 @@ import { dirname, extname, join, normalize, resolve, sep } from 'node:path';
 import { parseArgs } from 'node:util';
 import { PDFArray, PDFDict, PDFDocument, PDFName, PDFRef, PDFString, PDFHexString } from 'pdf-lib';
 import { chromium, type Page } from 'playwright';
+import { BOOK_PDF } from '../src/lib/chapters';
 import { loadGuide } from '../src/lib/content';
 
 // ---------------------------------------------------------------- settings
@@ -44,7 +45,7 @@ const MAX_PASSES = 8;
 const TEXT_HEIGHT_IN = 10 - 0.8 - 0.75;
 /** A passage pair taller than this share of the text block may break across pages. */
 const TALL_PAIR_SHARE = 0.45;
-const DEFAULT_OUT = 'pdf/shaar-hayichud-booklet-1-7x10.pdf';
+const DEFAULT_OUT = `pdf/${BOOK_PDF}`;
 const VIEWS = ['guide', 'explanation', 'text'] as const;
 type View = (typeof VIEWS)[number];
 

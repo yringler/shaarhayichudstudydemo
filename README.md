@@ -180,11 +180,11 @@ npm run pdf -- --no-build --out x.pdf    # reuse dist/, write elsewhere
   `break-before: right` nor supports `target-counter()`, so the script prints
   in passes: it reads each heading's page from the PDF, adds blank pages and
   fills in the page numbers, and prints again until nothing changes.
-- **Without a local setup:** the "Book PDF" GitHub Actions workflow
-  (`.github/workflows/pdf.yml`) runs on every push to `main` that touches
-  `content/`, `data/`, `src/` or `scripts/`, and on demand (Actions → Book PDF →
-  Run workflow, choosing the view and whether it is final). The PDF is attached
-  to the run as an artifact.
+- **Without a local setup:** the "Build and deploy" GitHub Actions workflow
+  (`.github/workflows/deploy.yml`) builds the PDF on every push to `main` and
+  on demand (Actions → Build and deploy → Run workflow, choosing the view,
+  whether it is final, and whether to deploy). The PDF is attached to the run
+  as an artifact and published with the site (see below).
 
 Uploading to KDP (Paperback → Paperback Content): Print options **Black & white
 interior** on **cream or white paper**, trim size **7 × 10 in**, bleed
@@ -194,23 +194,31 @@ depends on the final page count and paper).
 
 ## Deploying to Cloudflare Pages
 
-No functions, adapters or secrets: `dist/` is plain static files.
+The site is plain static files (no functions or adapters), but the book PDF
+needs Chromium, which Cloudflare's Git-connected build does not have. So
+GitHub Actions builds and deploys: `.github/workflows/deploy.yml` runs
+`npm run pdf` (content validation, the site build, then the PDF), copies the
+PDF into `dist/` and runs `wrangler pages deploy`. A push to `main` deploys to
+production; running the workflow by hand on another branch makes a preview.
+The PDF is served at `/shaar-hayichud-booklet-1-7x10.pdf` (linked from the
+cover and `/booklet/`), with an `X-Robots-Tag: noindex` header from
+`public/_headers`.
 
-| Setting | Value |
-|---|---|
-| Project name | `shaarhayichudstudydemo` |
-| Production branch | `main` |
-| Framework preset | Astro (or None) |
-| Build command | `npm run build` |
-| Build output directory | `dist` |
-| Root directory | (repository root) |
-| Environment variable | `NODE_VERSION` = `22` (also in `.node-version`) |
+One-time setup:
 
-Connect the GitHub repository in the Cloudflare dashboard (Workers & Pages →
-Create → Pages → Connect to Git) with those settings, or deploy by hand:
+1. In Cloudflare, the Pages project `shaarhayichudstudydemo` (production
+   branch `main`). If it is connected to Git, turn off automatic production
+   and preview deployments (Settings → Builds & deployments), or both
+   Cloudflare and the workflow will deploy.
+2. A Cloudflare API token with **Account → Cloudflare Pages → Edit**.
+3. Repository secrets (Settings → Secrets and variables → Actions):
+   `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`.
+
+To deploy by hand instead:
 
 ```sh
-npm run build
+npm run pdf
+cp pdf/shaar-hayichud-booklet-1-7x10.pdf dist/
 npx wrangler pages deploy dist --project-name shaarhayichudstudydemo
 ```
 
