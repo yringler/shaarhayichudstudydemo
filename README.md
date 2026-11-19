@@ -161,9 +161,20 @@ npm run pdf -- --no-build --out x.pdf    # reuse dist/, write elsewhere
   numbers on the outside corners; none on the title and copyright pages.
   Transcripts, class topic lists, reviewer notes, audio and navigation are
   never printed.
-- **Fonts:** Source Serif 4, Source Sans 3 and Frank Ruhl Libre (SIL OFL),
-  vendored with their licences in `public/fonts/print/` and declared in
-  `src/styles/book.css`, so printing needs no network. They keep every
+- **Design** (`src/styles/book.css`): a 5.3 × 8.2 in text block (margins top
+  0.85, outside 0.8, bottom 0.95, inside 0.9 in), body 11 pt with oldstyle
+  figures, black ink only (KDP prints greys as halftone), hairline rules. Each
+  passage sets the translation and the Hebrew in two open columns without a
+  frame; the Hebrew is ragged, the English prose justified with hyphenation
+  limits and `text-wrap: pretty`. Labels are Source Serif small caps. Chapter
+  openers are sunk and centred and have no running head (the opener has its
+  own named page, `kprelim`, as Chromium has no `:first` for named pages); the
+  key terms start the following page.
+- **Fonts:** Source Serif 4 and Frank Ruhl Libre (SIL OFL) set the book;
+  Source Sans 3 (SIL OFL) is vendored and declared too, though the book no
+  longer uses it. They are vendored with their licences in
+  `public/fonts/print/` and declared in `src/styles/book.css`, so printing
+  needs no network. They keep every
   OpenType feature (real small caps, oldstyle and tabular figures, Hebrew mark
   positioning), which the `@fontsource` subsets lack. They are static
   instances because Chromium embeds variable fonts as Type 3: Source Serif 4
@@ -183,8 +194,8 @@ npm run pdf -- --no-build --out x.pdf    # reuse dist/, write elsewhere
   504 × 720 pt, a font is not embedded or is a system fallback (`pdffonts`),
   or any page has colour (`pdftoppm`). It pads to an even page count and warns
   under KDP's 24-page minimum. The summary gives the page count and the gutter
-  used against KDP's minimum for that count (0.625 in by default; the script
-  widens it itself past 500 pages). `pdffonts` and `pdftoppm` are in
+  used against KDP's minimum for that count (0.9 in by default, above KDP's
+  minimum for any page count; the script would widen it itself if not). `pdffonts` and `pdftoppm` are in
   poppler-utils; without them those two checks are skipped with a warning.
 - **Chromium:** Playwright 1.63.0 (`npx playwright install chromium` once, if
   it is not installed). Chromium neither inserts blank pages for

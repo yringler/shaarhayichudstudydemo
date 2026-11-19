@@ -5,59 +5,75 @@
    heads and the draft footer are inline styles in book.astro.
 
    Margins (KDP minimums: outside 0.25 in, gutter 0.375–0.875 in by page count):
-   outside 0.55 in, inside 0.625 in (enough for up to 500 pages; build-pdf.ts
-   passes ?gutter= for more), top 0.8 in and bottom 0.75 in to hold the running
-   heads and folios. Pages are numbered from the title page, so odd pages are
-   recto (right). */
+   top 0.85 in, outside 0.8 in, bottom 0.95 in, inside 0.9 in (more than KDP's
+   gutter for any page count; build-pdf.ts can still pass ?gutter=). That
+   leaves a 5.3 × 8.2 in text block: about 70 characters a line at 11 pt, and
+   two 2.5 in columns for the Hebrew and the translation. The bottom margin is
+   deeper than the top, as in a book, and holds the folio. Pages are numbered
+   from the title page, so odd pages are recto (right).
+
+   Everything is black: KDP prints greys as a halftone screen. Lighter elements
+   are lighter by weight (0.4–0.5 pt hairlines, italic, small sizes), not by
+   colour. Labels are Source Serif small caps (c2sc + smcp), never sans and
+   never italic small caps (the italic has none). */
 
 @page {
   size: 7in 10in;
-  margin: 0.8in 0.55in 0.75in 0.625in;
+  margin: 0.85in 0.8in 0.95in 0.9in;
 }
 
+/* Running heads in spaced capitals the height of the text's small caps:
+   Chromium ignores font-variant-caps and font-feature-settings in page margin
+   boxes, so real small caps cannot be had there. */
 @page :left {
-  margin-left: 0.55in;
-  margin-right: 0.625in;
+  margin-left: 0.8in;
+  margin-right: 0.9in;
 
   @top-left {
     content: 'Shaar HaYichud · Study Guide';
     font-family: 'Source Serif 4', serif;
-    font-size: 8pt;
-    font-style: italic;
+    font-size: 6.75pt;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
     color: #000;
     vertical-align: bottom;
-    padding-bottom: 0.14in;
+    padding-bottom: 0.24in;
   }
 
   @bottom-left {
     content: counter(page);
     font-family: 'Source Serif 4', serif;
     font-size: 9pt;
+    font-variant-numeric: lining-nums tabular-nums;
     color: #000;
-    vertical-align: middle;
+    vertical-align: top;
+    padding-top: 0.28in;
   }
 }
 
 @page :right {
-  margin-left: 0.625in;
-  margin-right: 0.55in;
+  margin-left: 0.9in;
+  margin-right: 0.8in;
 
   @top-right {
     content: none;
     font-family: 'Source Serif 4', serif;
-    font-size: 8pt;
-    font-style: italic;
+    font-size: 6.75pt;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
     color: #000;
     vertical-align: bottom;
-    padding-bottom: 0.14in;
+    padding-bottom: 0.24in;
   }
 
   @bottom-right {
     content: counter(page);
     font-family: 'Source Serif 4', serif;
     font-size: 9pt;
+    font-variant-numeric: lining-nums tabular-nums;
     color: #000;
-    vertical-align: middle;
+    vertical-align: top;
+    padding-top: 0.28in;
   }
 }
 
@@ -87,7 +103,7 @@
   @bottom-center { content: none; }
 }
 
-/* Contents and introduction: folios, no running heads. */
+/* Contents, introduction and the chapter openers: folios, no running heads. */
 @page kprelim {
   @top-left { content: none; }
   @top-right { content: none; }
@@ -263,9 +279,9 @@ html.kdp {
   }
 
   .kdp .book {
-    max-width: 5.825in;
+    max-width: calc(5.3in + 1.7in);
     margin: 2rem auto;
-    padding: 0.8in 0.6in;
+    padding: 0.85in 0.8in 0.95in 0.9in;
     background: #fff;
     box-shadow: 0 1px 6px rgb(0 0 0 / 0.15);
   }
@@ -302,12 +318,13 @@ html.kdp {
 /* ------------------------------------------------------------ print */
 
 @media print {
+  /* Black ink only, rules included. */
   html.kdp {
     --ink: #000;
     --ink-2: #000;
-    --muted: #333;
-    --rule: #999;
-    --rule-strong: #666;
+    --muted: #000;
+    --rule: #000;
+    --rule-strong: #000;
     --accent: #000;
     --accent-2: #000;
     --accent-tint: #fff;
@@ -321,12 +338,22 @@ html.kdp {
     --card: #fff;
     --paper: #fff;
     --paper-2: #fff;
+
+    /* the hairline used for every rule in the book */
+    --hair: 0.4pt solid #000;
   }
 
+  /* Oldstyle figures in running text; lining tabular figures where numbers
+     line up (contents, folios). Hyphenation: at least six letters in a word,
+     three on either side of the break, and Chromium's "pretty" wrapping, which
+     avoids a short word (or a class reference) alone on a paragraph's last
+     line. */
   .kdp body {
-    font-size: 10.5pt;
-    line-height: 1.42;
+    font-size: 11pt;
+    line-height: 1.4;
     overflow-wrap: break-word;
+    font-variant-numeric: oldstyle-nums proportional-nums;
+    hyphenate-limit-chars: 6 3 3;
   }
 
   .kdp p,
@@ -334,6 +361,41 @@ html.kdp {
   .kdp dd {
     orphans: 2;
     widows: 2;
+    text-wrap: pretty;
+  }
+
+  .kdp h1,
+  .kdp h2,
+  .kdp h3 {
+    hyphens: manual;
+  }
+
+  /* Bold at 700 is blotchy in a text face; quotations from the translation are
+     set semibold. */
+  .kdp strong,
+  .kdp b,
+  .kdp .prose strong {
+    font-weight: 600;
+  }
+
+  /* Small-cap labels: Source Serif roman, c2sc + smcp, spaced a little. */
+  .kdp .sub-head,
+  .kdp .class-list h2,
+  .kdp .class-list h3,
+  .kdp .explanation-label,
+  .kdp .kdp-toc-num,
+  .kdp .kdp-title-booklet,
+  .kdp .kdp-title-draft,
+  .kdp .kdp-draft-head,
+  .kdp .eyebrow,
+  .kdp .callout .lead {
+    font-family: var(--serif);
+    font-style: normal;
+    font-variant-caps: all-small-caps;
+    font-variant-numeric: lining-nums proportional-nums;
+    text-transform: none;
+    letter-spacing: 0.06em;
+    color: #000;
   }
 
   .kdp .book {
@@ -343,7 +405,7 @@ html.kdp {
   /* --- title page */
   .kdp .kdp-title {
     page: kfront;
-    height: 8.3in;
+    height: 8.2in;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -366,15 +428,16 @@ html.kdp {
 
   .kdp .kdp-title-main {
     margin-top: 0.12in !important;
+    font-family: var(--display);
     font-size: 30pt;
-    font-weight: 700;
-    letter-spacing: -0.005em;
+    font-weight: 600;
     line-height: 1.1;
   }
 
   .kdp .kdp-title-en {
     margin-top: 0.06in !important;
-    font-size: 15pt;
+    font-family: var(--display);
+    font-size: 16pt;
     font-style: italic;
   }
 
@@ -386,21 +449,19 @@ html.kdp {
   .kdp .kdp-title-rule {
     width: 1.2in;
     margin: 0.45in 0 0.4in !important;
-    border-top: 0.75pt solid #000;
+    border-top: 0.5pt solid #000;
   }
 
   .kdp .kdp-title-guide {
+    font-family: var(--display);
     font-size: 20pt;
     font-weight: 600;
   }
 
   .kdp .kdp-title-booklet {
     margin-top: 0.1in !important;
-    font-family: var(--ui);
-    font-size: 9.5pt;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+    font-size: 11pt;
+    letter-spacing: 0.1em;
   }
 
   .kdp .kdp-title-with {
@@ -413,20 +474,17 @@ html.kdp {
 
   .kdp .kdp-title-draft {
     margin-top: 0.6in !important;
-    padding: 0.06in 0.14in;
-    border: 0.75pt solid #000;
-    font-family: var(--ui);
-    font-size: 8pt;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    padding: 0.05in 0.14in 0.07in;
+    border: 0.5pt solid #000;
+    font-size: 9pt;
+    letter-spacing: 0.1em;
   }
 
   /* --- copyright page: credits set small at the foot */
   .kdp .kdp-copyright {
     page: kfront;
     break-before: page;
-    height: 8.3in;
+    height: 8.2in;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -436,12 +494,13 @@ html.kdp {
 
   .kdp .kdp-copyright p {
     margin: 0 0 0.09in;
+    hyphens: auto;
   }
 
   .kdp .kdp-draft-box {
     margin: 0.08in 0 0.16in;
     padding: 0.08in 0.12in;
-    border: 0.75pt solid #000;
+    border: 0.5pt solid #000;
   }
 
   .kdp .kdp-draft-box p {
@@ -449,23 +508,22 @@ html.kdp {
   }
 
   .kdp .kdp-draft-head {
-    font-family: var(--ui);
-    font-weight: 700;
-    font-size: 7.5pt;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    font-size: 9pt;
     margin-bottom: 0.03in !important;
   }
 
-  /* --- section titles (contents, introduction, glossary) */
+  /* --- section titles (contents, introduction, glossary): sunk like the chapter titles */
   .kdp .kdp-section-title {
-    margin: 0.35in 0 0.25in;
-    font-size: 20pt;
-    font-weight: 700;
-    line-height: 1.2;
+    margin: 0 0 0.3in;
+    padding-top: 0.9in;
+    font-family: var(--display);
+    font-size: 23pt;
+    font-weight: 600;
+    line-height: 1.15;
   }
 
-  /* --- contents (the heading links to itself so the PDF has a destination for it) */
+  /* --- contents: title left, folio flush right in lining figures, no leaders
+     (the heading links to itself so the PDF has a destination for it) */
   .kdp .kdp-self {
     color: inherit;
     text-decoration: none;
@@ -486,66 +544,68 @@ html.kdp {
   .kdp .kdp-toc a {
     display: flex;
     align-items: last baseline;
-    gap: 0.06in;
+    justify-content: space-between;
+    gap: 0.3in;
     color: #000;
     text-decoration: none;
   }
 
   .kdp .kdp-toc-text {
     min-width: 0;
+    max-width: 85%;
+    text-wrap: balance;
   }
 
   .kdp .kdp-toc-leader {
-    flex: 1 1 0.3in;
-    min-width: 0.3in;
-    border-bottom: 0.75pt dotted #000;
-    transform: translateY(-0.25em);
+    display: none;
   }
 
   .kdp .pageref {
     flex: none;
-    min-width: 2.2em;
+    min-width: 2em;
     text-align: right;
-    font-variant-numeric: tabular-nums;
+    font-variant-numeric: lining-nums tabular-nums;
   }
 
   .kdp .kdp-toc-front {
-    margin-bottom: 0.12in;
-    font-size: 10pt;
+    margin-bottom: 0.16in;
   }
 
   .kdp .kdp-toc-chapter {
-    margin-top: 0.14in;
+    margin-top: 0.2in;
     break-inside: avoid;
   }
 
   .kdp .kdp-toc-chapter > a {
-    font-size: 10.5pt;
-    font-weight: 700;
+    font-weight: 600;
   }
 
   .kdp .kdp-toc-num {
     display: block;
-    font-family: var(--ui);
-    font-size: 7.5pt;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    font-size: 9pt;
+    font-weight: 400;
+    letter-spacing: 0.1em;
   }
 
   .kdp .kdp-toc-concepts {
-    margin: 0.03in 0 0 0.2in;
-    font-size: 9pt;
+    margin: 0.04in 0 0 1.2em;
+    font-size: 9.5pt;
     line-height: 1.35;
   }
 
   .kdp .kdp-toc-concepts li {
-    margin-top: 0.025in;
+    margin-top: 0.035in;
+  }
+
+  /* wrapped entries hang under their first word */
+  .kdp .kdp-toc-concepts .kdp-toc-text {
+    padding-left: 1em;
+    text-indent: -1em;
   }
 
   .kdp .kdp-toc-range {
-    font-family: var(--ui);
-    font-size: 7pt;
+    font-size: 8.5pt;
+    font-style: italic;
     white-space: nowrap;
   }
 
@@ -556,9 +616,13 @@ html.kdp {
   }
 
   .kdp .kdp-intro .prose p {
-    margin: 0 0 0.1in;
+    margin: 0;
     text-align: justify;
     hyphens: auto;
+  }
+
+  .kdp .kdp-intro .prose p + p {
+    text-indent: 1.2em;
   }
 
   /* --- chapters: each starts on a recto (build-pdf.ts inserts the blank pages) */
@@ -566,154 +630,386 @@ html.kdp {
     break-before: page;
   }
 
+  /* The opener: sunk a little under a third of the page, centred: the chapter
+     number in spaced small caps, the title, then the Hebrew source line. The
+     eyebrow's two spans become grid items so the Hebrew can sit under the
+     title. The draft status chip is left to the draft footer. */
   .kdp .chapter-head {
+    display: grid;
+    justify-items: center;
+    text-align: center;
     break-after: avoid;
-    padding-top: 0.45in;
-    margin-bottom: 0.15in;
+    padding-top: 0.9in;
+    margin-bottom: 0.35in;
     border-bottom: 0;
   }
 
-  .kdp .chapter-title {
-    font-size: 21pt;
-    line-height: 1.15;
-    margin: 0.04in 0 0.08in;
-  }
-
   .kdp .eyebrow {
-    font-family: var(--ui);
-    font-size: 8pt;
+    display: contents;
+    font-size: 11pt;
+    letter-spacing: 0.14em;
   }
 
-  .kdp .status-chip {
-    border-radius: 0;
-    padding: 0 0.06in;
+  .kdp .eyebrow > span:first-child {
+    order: 1;
+  }
+
+  .kdp .chapter-title {
+    order: 2;
+    max-width: 4.6in;
+    margin: 0.12in 0 0;
+    font-family: var(--display);
+    font-size: 23pt;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: 0;
+    text-wrap: balance;
+  }
+
+  .kdp .eyebrow-he {
+    order: 3;
+    margin-top: 0.14in;
+    font-family: var(--hebrew);
+    font-size: 13pt;
+    font-variant-caps: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .kdp .chapter-meta {
+    display: none;
+  }
+
+  /* The opener page (the head and the overview) has a folio but no running
+     head. Chromium has no :first for named pages, so the opener gets its own
+     page name; the key terms, which never fit beside the overview, start the
+     next page under the chapter's running head. */
+  .kdp .chapter-head,
+  .kdp .overview {
+    page: kprelim;
+  }
+
+  .kdp .notice {
+    font-style: italic;
   }
 
   .kdp .sub-head,
   .kdp .class-list h3 {
-    font-size: 8.5pt;
+    margin: 0 0 0.06in;
+    font-size: 10pt;
+    font-weight: 400;
+    letter-spacing: 0.08em;
   }
 
   /* overview, then the key terms in two columns (a tall side box would not fit beside it) */
   .kdp .front-matter {
     display: block;
-    margin: 0.1in 0 0.15in;
+    margin: 0 0 0.2in;
   }
 
   .kdp .overview .prose p {
+    margin: 0;
     text-align: justify;
     hyphens: auto;
   }
 
-  /* Set tight enough to fit on the opener under the overview, and kept whole
-     so no stub of one or two terms is carried to the next page. */
+  .kdp .overview .prose p + p {
+    text-indent: 1.2em;
+  }
+
+  /* Key terms: no frame, a hairline above and below. Kept whole so no stub
+     of one or two terms is carried to the next page. */
   .kdp .key-terms {
-    margin-top: 0.12in;
-    padding: 0.08in 0.12in 0.04in;
+    margin-top: 0;
+    padding: 0.08in 0 0.06in;
+    border: 0;
+    border-top: var(--hair);
+    border-bottom: var(--hair);
     border-radius: 0;
-    font-size: 8.5pt;
+    background: none;
+    font-size: 9pt;
     line-height: 1.35;
     break-inside: avoid;
   }
 
-  .kdp .key-terms .sub-head {
-    margin-bottom: 0.04in;
-  }
-
   .kdp .key-terms dl {
     columns: 2;
-    column-gap: 0.25in;
+    column-gap: 0.3in;
   }
 
-  .kdp .key-terms .term {
-    padding: 0.035in 0;
+  .kdp .key-terms .term,
+  .kdp .key-terms .term:first-child {
+    padding: 0 0 0.05in;
+    border: 0;
     break-inside: avoid;
+  }
+
+  .kdp .key-terms dt,
+  .kdp .glossary dt {
+    font-weight: 400;
   }
 
   .kdp .key-terms dd {
+    margin: 0;
+    font-size: 1em;
     line-height: 1.3;
   }
 
-  .kdp .key-terms .term:first-child {
-    border-top: 1px solid var(--rule);
-    padding-top: 0.4rem;
+  .kdp .term-he {
+    font-weight: 400;
+  }
+
+  /* --- sections: a semibold heading over a hairline, the § range in small
+     italic at the right */
+  .kdp .concept {
+    margin-top: 0.34in;
   }
 
   .kdp .concept-title {
+    margin: 0 0 0.12in;
+    padding-bottom: 0.05in;
+    border-bottom: var(--hair);
     font-size: 13pt;
+    font-weight: 600;
     line-height: 1.25;
     break-inside: avoid;
+    break-after: avoid;
   }
 
-
-  /* text block: Hebrew right, English left */
-  .kdp .text-block {
-    border-color: #777;
+  .kdp .concept-range {
+    font-family: var(--serif);
+    font-size: 9pt;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0;
+    white-space: nowrap;
   }
 
-  .kdp .seg-he {
-    font-size: 12.5pt;
-    line-height: 1.6;
-    padding: 0.08in 0.1in;
-    text-align: justify;
+  .kdp .concept-note {
+    margin: 0 0 0.08in;
+    font-size: 10pt;
+    font-style: italic;
   }
 
-  .kdp .seg-en {
-    font-size: 9.25pt;
-    line-height: 1.45;
-    padding: 0.08in 0.1in;
-  }
-
-  .kdp .footnotes {
-    font-size: 7.5pt;
-    color: #000;
-  }
-
-  .kdp .footnotes li::marker,
-  .kdp .seg-num,
-  .kdp .seg-en sup[data-fn],
-  .kdp .unit-ref,
-  .kdp .line.not-in-sefaria {
-    color: #000;
-  }
-
-  .kdp .explanation .prose p {
+  /* "In short", "Key point", "Mashal": set off by a rule at the left only,
+     justified like the prose (they are nearly full measure) */
+  .kdp .callout {
+    margin: 0.1in 0 0.14in;
+    padding: 0 0 0 0.16in;
+    border: 0;
+    border-left: 0.75pt solid #000;
+    border-radius: 0;
+    background: none;
+    font-size: 10.5pt;
     text-align: justify;
     hyphens: auto;
   }
 
-  .kdp .callout {
-    background: none;
-    border-radius: 0;
-    border-left: 2pt solid #000;
+  .kdp .callout .lead {
+    font-weight: 600;
   }
 
-  .kdp .no-source,
-  .kdp .concept-note {
+  /* --- passages: the translation left, the Hebrew right, in two open columns
+     with no frame or rules; pairs are separated by space only. The Hebrew,
+     though set larger, runs shorter than the translation, so its column is
+     narrower. */
+  .kdp .unit {
+    margin: 0.14in 0 0.2in;
+  }
+
+  .kdp .text-block {
+    border: 0;
+    border-radius: 0;
+    background: none;
+    overflow: visible;
+  }
+
+  .kdp .seg-pair {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    column-gap: 0.25in;
+    break-inside: auto;
+  }
+
+  .kdp .seg-pair + .seg-pair {
+    margin-top: 0.12in;
+    border-top: 0;
+  }
+
+  .kdp .seg-pair p,
+  .kdp .seg-pair li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Hebrew ragged (Chromium can only justify it with wide word spaces) */
+  .kdp .seg-he {
+    padding: 0;
+    background: none;
+    font-size: 13pt;
+    line-height: 1.55;
+    text-align: right;
+  }
+
+  .kdp .seg-en {
+    padding: 0;
+    border: 0;
+    font-size: 9.5pt;
+    line-height: 1.42;
+    text-align: start;
+    hyphens: auto;
+  }
+
+  .kdp .seg-num {
+    margin-right: 0.15em;
+    font-family: var(--serif);
+    font-size: 1em;
+    font-weight: 600;
+    vertical-align: baseline;
+  }
+
+  .kdp .seg-en sup[data-fn] {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 0.7em;
+    font-variant-numeric: lining-nums;
+  }
+
+  /* "§21" cross-references in the prose */
+  .kdp .seg-ref {
+    font-family: var(--serif);
+    font-size: 1em;
     color: #000;
+  }
+
+  .kdp .line.not-in-sefaria {
+    color: #000;
+  }
+
+  /* the translator's notes: small, under a short rule (a border cut to
+     0.8 in by its image, so it stays with the first note when the list
+     breaks across pages) */
+  .kdp .footnotes {
+    margin: 0.06in 0 0;
+    padding: 0.04in 0 0 1.1em;
+    border-top: 0.4pt solid #000;
+    border-image: linear-gradient(to right, #000 0.8in, transparent 0.8in) 1;
+    font-size: 8pt;
+    line-height: 1.35;
+    color: #000;
+  }
+
+  .kdp .footnotes li::marker {
+    font-family: var(--serif);
+    font-weight: 400;
+    color: #000;
+  }
+
+  /* "No class recording covers this passage yet." under a passage: the
+     section's own note says it once when the whole section has no recording. */
+  .kdp .concept.status-no-source .no-source {
+    display: none;
+  }
+
+  .kdp .no-source {
+    display: block;
+    margin: 0.04in 0 0;
+    font-family: var(--serif);
+    font-size: 9pt;
+    font-style: italic;
+    color: #000;
+    break-before: avoid;
   }
 
   .kdp .no-source .icon {
     display: none;
   }
 
-  /* The note belongs to the passage box above it: never start a page with it. */
-  .kdp .no-source {
-    margin-top: 0.04in;
+  /* --- explanations */
+  .kdp .explanation {
+    margin-top: 0.14in;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .kdp .explanation-label {
+    justify-content: flex-start;
+    gap: 0.6em;
+    margin-bottom: 0.02in;
+    font-size: 9pt;
+    font-weight: 400;
+    break-after: avoid;
+  }
+
+  .kdp .unit-ref {
+    letter-spacing: 0.04em;
+    color: #000;
+  }
+
+  .kdp .explanation .prose p {
+    margin: 0;
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  .kdp .explanation .prose p + p {
+    text-indent: 1.2em;
+  }
+
+  .kdp .prose .callout p + p,
+  .kdp .callout p + p {
+    text-indent: 0;
+  }
+
+  .kdp .explanation .callout {
+    margin: 0.08in 0;
+  }
+
+  /* "Explanation only": one column at the book's measure (the Letter
+     booklet's two columns would be 2.5 in wide here, too narrow to justify) */
+  .kdp[data-view='explanation'] .concepts {
+    columns: auto;
+  }
+
+  .kdp[data-view='explanation'] .unit {
+    margin: 0.06in 0 0.12in;
+  }
+
+  /* class references: small italic, never split */
+  .kdp .listen {
+    color: #000;
+    font-size: 0.85em;
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  /* review questions and the class list: kept together at the chapter's end,
+     so the class list is never left alone on a page */
+  .kdp .review,
+  .kdp .class-list {
+    margin-top: 0.3in;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .kdp .review .prose ol,
+  .kdp .review .prose ul {
+    margin: 0;
+  }
+
+  .kdp .review li {
+    padding-left: 1.6em;
+  }
+
+  .kdp .review li::before {
+    font-weight: 400;
+    font-variant-numeric: lining-nums tabular-nums;
+    color: #000;
+  }
+
+  .kdp .class-list {
+    margin-top: 0.22in;
     break-before: avoid;
-  }
-
-  /* A passage pair taller than about half a page may break inside (build-pdf.ts
-     marks it), keeping at least three lines of each paragraph together; shorter
-     pairs stay whole (print-content.css). */
-  .kdp .seg-pair.kdp-tall {
-    break-inside: auto;
-  }
-
-  .kdp .seg-pair.kdp-tall p,
-  .kdp .seg-pair.kdp-tall li {
-    orphans: 3;
-    widows: 3;
+    break-inside: avoid;
   }
 
   /* class list: the classes are cited by number and time; no play links */
@@ -721,27 +1017,25 @@ html.kdp {
     display: none;
   }
 
-  /* review questions and the class list: compact, so a short class list can
-     follow the questions on the chapter's last page */
-  .kdp .review,
-  .kdp .class-list {
-    margin-top: 0.18in;
-    padding-top: 0.06in;
-    border-top-width: 0.75pt;
-  }
-
-  .kdp .class-list h3 {
-    margin-bottom: 0.02in;
-  }
-
   .kdp .classes {
-    margin-top: 0.02in;
-    line-height: 1.3;
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 9.5pt;
+    line-height: 1.35;
   }
 
   .kdp .class-item {
     padding: 0.01in 0;
-    border-bottom: 0.75pt solid #666;
+    border: 0;
+  }
+
+  .kdp .class-name {
+    font-weight: 400;
+  }
+
+  .kdp .class-dur {
+    color: #000;
+    font-variant-numeric: lining-nums tabular-nums;
   }
 
   /* "Topic lists are auto-generated…": the topic lists are not printed */
@@ -756,30 +1050,44 @@ html.kdp {
   }
 
   .kdp .kdp-glossary-lede {
-    margin: 0 0 0.15in;
+    margin: 0 0 0.2in;
     font-style: italic;
-    font-size: 9.5pt;
+    font-size: 10pt;
   }
 
   .kdp .glossary {
     columns: 2;
-    column-gap: 0.25in;
-    font-size: 9pt;
-    line-height: 1.4;
+    column-gap: 0.3in;
+    font-size: 9.5pt;
+    line-height: 1.38;
   }
 
   .kdp .gloss-entry {
     break-inside: avoid;
-    padding: 0.05in 0;
-    border-top: 0.75pt solid #666;
+    padding: 0 0 0.07in;
+    border-top: 0;
   }
 
   .kdp .glossary dt {
     flex-wrap: wrap;
   }
 
+  .kdp .glossary .term-he {
+    margin-left: auto;
+  }
+
+  .kdp .glossary dd {
+    margin: 0;
+    hyphens: auto;
+  }
+
+  /* the locator on a line of its own, in italic, so it does not run on
+     from the gloss */
   .kdp .gloss-where {
-    font-size: 7.5pt;
+    display: block;
+    font-family: var(--serif);
+    font-size: 1em;
+    font-style: italic;
     color: #000;
   }
 

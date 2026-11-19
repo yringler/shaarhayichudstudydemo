@@ -38,11 +38,11 @@ const TRIM_H_PT = 10 * 72; // 720
 const KDP_MIN_PAGES = 24;
 const KDP_MAX_PAGES = 828;
 /** The page's own gutter (book.css); a larger one is passed as ?gutter=. */
-const DEFAULT_GUTTER_IN = 0.625;
-const OUTSIDE_MARGIN_IN = 0.55;
+const DEFAULT_GUTTER_IN = 0.9;
+const OUTSIDE_MARGIN_IN = 0.8;
 const MAX_PASSES = 8;
-/** Text block height (book.css: 10 in less 0.8 in top and 0.75 in bottom margins). */
-const TEXT_HEIGHT_IN = 10 - 0.8 - 0.75;
+/** Text block height (book.css: 10 in less 0.85 in top and 0.95 in bottom margins). */
+const TEXT_HEIGHT_IN = 10 - 0.85 - 0.95;
 /** A passage pair taller than this share of the text block may break across pages. */
 const TALL_PAIR_SHARE = 0.45;
 const DEFAULT_OUT = `pdf/${BOOK_PDF}`;
@@ -463,7 +463,8 @@ async function main(): Promise<void> {
         [...document.fonts].filter((f) => f.status === 'loaded').map((f) => `${f.family} ${f.weight} ${f.style}`),
       );
       if (failed.length > 0) throw new BuildError(`requests failed while loading the book:\n  ${failed.join('\n  ')}`);
-      for (const fam of ['Source Serif 4', 'Frank Ruhl Libre', 'Source Sans 3']) {
+      // The book is set in the serifs only (book.css); Source Sans 3 is declared but no longer used.
+      for (const fam of ['Source Serif 4', 'Frank Ruhl Libre']) {
         if (!fontsLoaded.some((f) => f.startsWith(fam))) throw new BuildError(`font ${fam} did not load (loaded: ${fontsLoaded.join(', ') || 'none'}).`);
       }
       const overflow = await overflowCheck(page, textWidthPx);

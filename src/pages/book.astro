@@ -10,7 +10,7 @@
  * Query parameters (read by the inline script before first paint):
  *   ?view=guide|explanation|text  which blocks to show (default: guide)
  *   ?final=1                      drop the draft notices
- *   ?gutter=0.75                  inside margin in inches (default 0.625)
+ *   ?gutter=1                     inside margin in inches (default 0.9)
  *
  * Fonts are self-hosted (the full-feature print fonts in public/fonts/print/,
  * declared in book.css) so the PDF never depends on the network.
@@ -49,7 +49,8 @@ const cssString = (s: string): string => JSON.stringify(s);
 /** "Bina and tevuna: grasping a concept…" → "Bina and tevuna" for the running head. */
 const shortTitle = (s: string): string => (s.split(':')[0]?.trim() ?? s).replace(/\u2011/g, '-');
 
-const marginBox = `font-family: 'Source Serif 4', serif; font-size: 8pt; font-style: italic; color: #000;`;
+/** Matches the running heads in book.css: small spaced capitals. */
+const marginBox = `font-family: 'Source Serif 4', serif; font-size: 6.75pt; text-transform: uppercase; letter-spacing: 0.12em; color: #000;`;
 /** One named page per chapter, for the recto running head. */
 const chapterPagesCss = chapters
   .map(
@@ -59,7 +60,7 @@ const chapterPagesCss = chapters
   )
   .join('\n');
 /** The draft notice in the foot of every numbered page; removed with ?final=1. */
-const draftCss = `@page { @bottom-center { content: 'Draft — not reviewed. Do not distribute.'; font-family: 'Source Sans 3', sans-serif; font-size: 6.5pt; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #000; vertical-align: middle; } }`;
+const draftCss = `@page { @bottom-center { content: 'Draft — not reviewed. Do not distribute.'; font-family: 'Source Serif 4', serif; font-size: 7.5pt; font-style: italic; color: #000; vertical-align: top; padding-top: 0.3in; } }`;
 ---
 
 <!doctype html>
@@ -197,7 +198,7 @@ const draftCss = `@page { @bottom-center { content: 'Draft — not reviewed. Do 
                     <li>
                       <a href={`#${k.id}`}>
                         <span class="kdp-toc-text" dir="auto">
-                          {k.title} <span class="kdp-toc-range">{segmentLabel(k.from, k.to)}</span>
+                          {k.title}{'\u00a0'}<span class="kdp-toc-range">{segmentLabel(k.from, k.to)}</span>
                         </span>
                         <span class="kdp-toc-leader" />
                         <span class="pageref" data-pageref={k.id} />
