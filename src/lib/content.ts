@@ -81,6 +81,12 @@ export interface UnitModel {
   to: number;
   label: string;
   segments: Segment[];
+  /**
+   * The opening words of the unit's Hebrew (its dibbur hamaschil), shown before the
+   * explanation in the "explanation only" view, where the passage itself is hidden.
+   * See {@link incipit}.
+   */
+  incipit: string;
   /** Rendered explanation, or null when the section is empty. */
   explanationHtml: string | null;
   /** Some line of the unit is covered by a recording. */
@@ -223,6 +229,73 @@ function finishSegment(s: Segment): Segment {
   };
 }
 
+// ---------------------------------------------------------------- incipit
+
+/** A word that ends a clause: , : . ; possibly followed by a closing bracket or quote. */
+const CLAUSE_END = /[,:.;][)\]"״'׳]*$/;
+/** A clause longer than this many words is cut short... */
+const INCIPIT_MAX_WORDS = 14;
+/** ...to this many, followed by " וכו׳". */
+const INCIPIT_CUT_WORDS = 10;
+/** A clause of this many words or fewer runs on to the next clause break. */
+const INCIPIT_MIN_WORDS = 2;
+
+/**
+ * The dibbur hamaschil of a passage: its Hebrew up to the first clause
+ * punctuation (, : . ;), without the mark itself. A clause of two words or fewer runs on to the next
+ * break; one of more than fourteen is cut to ten words and ends "וכו׳". `text` is
+ * the source text as the site renders it ({@link hebrewSource}: footnote digits
+ * dropped, geresh and gershayim set), so the incipit reads as the passage does.
+ * The chapter letter that opens a chapter's first passage ("(ב)") is left out. A
+ * cut that falls inside a parenthesis ends before it, if that leaves a few words,
+ * and otherwise closes it.
+ */
+export function incipit(text: string): string {
+  const words = text
+    .trim()
+    .replace(/^\([א-ת]{1,2}\)\s+/, '')
+    .split(/\s+/)
+    .filter((w) => w !== '');
+  let end = words.length;
+  for (let i = 0; i < words.length; i++) {
+    if (CLAUSE_END.test(words[i] ?? '') && i + 1 > INCIPIT_MIN_WORDS) {
+      end = i + 1;
+      break;
+    }
+  }
+  let out: string[];
+  let cut = false;
+  if (end > INCIPIT_MAX_WORDS) {
+    out = words.slice(0, INCIPIT_CUT_WORDS);
+    // An open parenthesis the cut falls inside: end before it if three words are left.
+    const opener = unclosedParen(out);
+    if (opener >= 3) out = out.slice(0, opener);
+    const last = out.length - 1;
+    out[last] = (out[last] ?? '').replace(/[,:.;]+$/, '');
+    cut = true;
+  } else {
+    out = words.slice(0, end);
+  }
+  // The clause mark itself is left out (before a closing bracket or quote too).
+  let s = out.join(' ').replace(/[,:.;]+([)\]"״]*)$/, '$1').trimEnd();
+  const open = (s.match(/\(/g) ?? []).length - (s.match(/\)/g) ?? []).length;
+  if (open > 0) s += ')'.repeat(open);
+  // A cut after "כו׳" (etc.) already says so.
+  return cut && !/(?:^|\s)ו?כו׳$/.test(s) ? `${s} וכו׳` : s;
+}
+
+/** The index of the word that opens a parenthesis left open at the end of `words`, or -1. */
+function unclosedParen(words: string[]): number {
+  const stack: number[] = [];
+  words.forEach((w, i) => {
+    for (const ch of w) {
+      if (ch === '(') stack.push(i);
+      else if (ch === ')') stack.pop();
+    }
+  });
+  return stack[0] ?? -1;
+}
+
 export function escapeHtml(s: string): string {
   return s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 }
@@ -297,6 +370,7 @@ function buildUnit(
     to,
     label: segmentLabel(from, to),
     segments,
+    incipit: incipit(segments[0]?.lines.map((l) => l.text).join(' ') ?? ''),
     explanationHtml: explanation.trim() ? ellipsizeLemmata(renderBlock(explanation, { sources, approximate })) : null,
     covered: coverage.length > 0,
     approximate,

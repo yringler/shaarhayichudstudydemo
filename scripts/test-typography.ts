@@ -1,6 +1,7 @@
 /**
  * Checks for src/lib/typography.ts (smart quotes, Hebrew geresh and gershayim,
- * bound class references, lemma ellipses).
+ * bound class references, lemma ellipses) and the Hebrew incipit of each unit
+ * (`incipit` in src/lib/content.ts).
  *
  *   npm run test:typography
  */
@@ -14,6 +15,7 @@ import {
   typographyHtml,
   typographyText,
 } from '../src/lib/typography.ts';
+import { incipit } from '../src/lib/content.ts';
 
 const cases: [name: string, actual: string, expected: string][] = [
   // Hebrew marks in the source text.
@@ -66,6 +68,34 @@ const cases: [name: string, actual: string, expected: string][] = [
   ['lemma', ellipsizeLemmata('<p><strong>is what is called</strong>: x</p>'), '<p><strong>…is what is called</strong>: x</p>'],
   ['lemma em', ellipsizeLemmata('<p><strong><em>bina</em> is</strong></p>'), '<p><strong>…<em>bina</em> is</strong></p>'],
   ['capital lemma', ellipsizeLemmata('<p><strong>Now, it</strong></p>'), '<p><strong>Now, it</strong></p>'],
+
+  // Incipits (dibbur hamaschil), from the source text as rendered.
+  [
+    'incipit to comma',
+    incipit(hebrewSource("הנה כבר מבואר באריכות בקונטרס מיוחד בפרטי אופני ההתפעלות במוח ולב, ומחשבה שנולד מן ההתבוננות לפי סדר ה' מדריגות")),
+    'הנה כבר מבואר באריכות בקונטרס מיוחד בפרטי אופני ההתפעלות במוח ולב',
+  ],
+  ['incipit to period', incipit(hebrewSource("כי הנה ג' דברים הוא שיש בכל דבר מושכל. והם")), 'כי הנה ג׳ דברים הוא שיש בכל דבר מושכל'],
+  ['incipit to colon', incipit('ונמצא סדר המדרגות כך הם: חכמה ובינה'), 'ונמצא סדר המדרגות כך הם'],
+  [
+    'incipit long clause',
+    incipit('והנה מהות ההתבוננות בעצם הוא ענין ההסתכלות החזקה בעמקות הענין ולעמוד עליו הרבה עד שיבין אותו על בוריו בכל חלקיו'),
+    'והנה מהות ההתבוננות בעצם הוא ענין ההסתכלות החזקה בעמקות הענין וכו׳',
+  ],
+  ['incipit short clause', incipit('ודוגמא לכל, זה הוא כמו, שאנו רואים'), 'ודוגמא לכל, זה הוא כמו'],
+  ['incipit whole', incipit('והא בהא תליא'), 'והא בהא תליא'],
+  ['incipit mark before bracket', incipit('(וכל מה שכתבנו למעלה בכל פרטי כח"ב דבינה.) ועוד'), '(וכל מה שכתבנו למעלה בכל פרטי כח"ב דבינה)'],
+  ['incipit trailing space', incipit('וזהו כלל גדול בכל ההתבוננות  '), 'וזהו כלל גדול בכל ההתבוננות'],
+  ['incipit footnote digits', incipit(hebrewSource('וכמו שכתוב וד"ל16, ועוד')), 'וכמו שכתוב וד״ל'],
+  ['incipit chapter letter', incipit('(ב) והנה ידוע שיש בבינה עצמה ב\' מדרגות, מדרגה'), 'והנה ידוע שיש בבינה עצמה ב\' מדרגות'],
+  ['incipit parenthesis', incipit('(ולפ"ז מ"ש הבן בחכמה) והשאר'), '(ולפ"ז מ"ש הבן בחכמה) והשאר'],
+  [
+    'incipit cut before parenthesis',
+    incipit('וגם לזה הטעם בחינת המוחין שבמדות נמשך מבחינת התבונה (וכמו שכתוב לעיל באריכות גדולה מאד מאד) וכו'),
+    'וגם לזה הטעם בחינת המוחין שבמדות נמשך מבחינת התבונה וכו׳',
+  ],
+  ['incipit cut closes parenthesis', incipit('(מה שאין כן מי שנדמה לא שתופס היטב ההתהוות ואין לו שום תפיסה כלל באמת)'), '(מה שאין כן מי שנדמה לא שתופס היטב ההתהוות ואין) וכו׳'],
+  ['incipit cut after etc.', incipit('כנזכר לעיל שהעיון הוא בחינת כלי לבא לבחינת העומק כו׳ וכו׳ ויותר מזה עוד הרבה'), 'כנזכר לעיל שהעיון הוא בחינת כלי לבא לבחינת העומק כו׳'],
 ];
 
 let failed = 0;

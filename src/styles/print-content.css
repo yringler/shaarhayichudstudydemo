@@ -251,6 +251,31 @@
     font-size: 6.5pt;
   }
 
+  /* the passage's opening words before each explanation: Hebrew in the
+     Hebrew face, the § small on the English side, kept with what follows */
+  [data-view='explanation'] .incipit {
+    margin: 2.5mm 0 0.8mm;
+    gap: 3mm;
+    line-height: 1.3;
+    break-inside: avoid;
+    break-after: avoid;
+  }
+
+  [data-view='explanation'] .unit:first-child .incipit {
+    margin-top: 0;
+  }
+
+  [data-view='explanation'] .incipit-ref {
+    font-size: 6.5pt;
+    color: #000;
+  }
+
+  [data-view='explanation'] .incipit-he {
+    font-size: 11.5pt;
+    font-weight: 500;
+    color: #000;
+  }
+
   [data-view='explanation'] .prose p {
     margin: 0 0 1.5mm;
     text-align: justify;

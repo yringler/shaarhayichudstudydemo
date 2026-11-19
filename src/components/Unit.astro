@@ -63,6 +63,11 @@ const extraAnchors = unit.segments.slice(1).map((s) => `ch${chapter}-s${s.n}`);
   {
     unit.explanationHtml !== null && (
       <div class="explanation">
+        {/* The passage's opening words, shown only in the "explanation only" view, where the passage is hidden. */}
+        <p class="incipit">
+          <span class="incipit-ref">{unit.label}</span>
+          <span class="incipit-he" lang="he" dir="rtl">{unit.incipit}</span>
+        </p>
         <div class="explanation-label">
           <span>Explanation</span>
           <span class="unit-ref">{unit.label}</span>
