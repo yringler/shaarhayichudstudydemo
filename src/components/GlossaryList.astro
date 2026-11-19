@@ -1,0 +1,48 @@
+---
+import type { TermModel } from '../lib/content';
+
+interface Props {
+  terms: TermModel[];
+  /**
+   * "site": each entry links to its chapter page. "book": each entry links to
+   * the passage within the same page (/book/), and carries a page reference
+   * that scripts/build-pdf.ts fills in.
+   */
+  mode?: 'site' | 'book';
+}
+
+const { terms, mode = 'site' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<dl class="glossary">
+  {
+    terms.map((t, i) => {
+      const letter = t.term.charAt(0).toUpperCase();
+      const firstOfLetter = i === 0 || terms[i - 1]?.term.charAt(0).toUpperCase() !== letter;
+      const target = `ch${t.chapter}-s${t.segment}`;
+      return (
+        <div class="gloss-entry" id={firstOfLetter && mode === 'site' ? `letter-${letter}` : undefined}>
+          <dt>
+            <em>{t.term}</em>
+            <span class="term-he" lang="he" dir="rtl">
+              {t.he}
+            </span>
+          </dt>
+          <dd>
+            {t.gloss}{' '}
+            {mode === 'site' ? (
+              <a class="gloss-where" href={`${base}chapter/${t.chapter}/#${target}`}>
+                Chapter {t.chapter}, §{t.segment}
+              </a>
+            ) : (
+              <a class="gloss-where" href={`#${target}`}>
+                Chapter {t.chapter}, §{t.segment}<span class="pageref-wrap">, p.&nbsp;<span class="pageref" data-pageref={target} /></span>
+              </a>
+            )}
+          </dd>
+        </div>
+      );
+    })
+  }
+</dl>

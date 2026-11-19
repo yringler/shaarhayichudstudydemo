@@ -12,6 +12,7 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
 import { parseArgs } from 'node:util';
+import { marked } from 'marked';
 import { parse as parseYaml } from 'yaml';
 import { z } from 'zod';
 import { ChapterFileSchema, SourcesFileSchema, type ChapterFile, type Segment, type Source } from '../src/lib/schema.ts';
@@ -213,8 +214,18 @@ function parseUnits(file: string, body: string, bodyLine: number): Unit[] {
   return units;
 }
 
-/** Prose checks: spelling of the Name and untransliterated Hebrew. */
+/** Prose checks: spelling of the Name, emphasis that renders, and untransliterated Hebrew. */
 function checkProse(file: string, text: string, lineOf: (index: number) => number): void {
+  // Markdown that does not render prints its asterisks: e.g. "*Hitbonenut-*contemplation"
+  // (an italic closed right before a letter never closes, and takes any bold around it with it).
+  text.split('\n').forEach((line, i, lines) => {
+    if (!line.includes('**')) return;
+    const html = marked.parseInline(line, { async: false });
+    if (html.replace(/<[^>]*>/g, '').includes('**')) {
+      const offset = lines.slice(0, i).join('\n').length + (i > 0 ? 1 : 0);
+      error(file, lineOf(offset), 'a "**" bold marker does not render and would print literally; check the * and ** pairs on this line (keep punctuation such as "-" outside an *italic*)');
+    }
+  });
   for (const m of text.matchAll(/\b(God|Godly|Godliness|God's)\b/g)) {
     error(file, lineOf(m.index), `write "${m[1]!.replace('God', 'G-d')}", not "${m[1]}"`);
   }
