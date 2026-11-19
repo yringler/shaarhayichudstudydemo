@@ -1,0 +1,193 @@
+# Transliteration table for the study guide (spec §2.3).
+#
+# Terms appear in the class transcripts in Hebrew script. In the guide they are
+# written as *italic transliterations* in Chabad/Ashkenazi colloquial spelling,
+# using the `term` below. `gloss` is a short meaning a chapter may give at a
+# term's first use (in parentheses); it is a plain or literal meaning, not an
+# explanation of the concept.
+#
+# Read-only for the chapter writers. A term missing here goes in that chapter's
+# _terms.yaml, spelled consistently; the spellings are reconciled across
+# chapters afterwards. Several Hebrew spellings may share one `term`.
+#
+# Proper names (sefiros, worlds, partzufim, people, books) are capitalised;
+# common nouns are lower case.
+
+# --- intellect: chabad and its aspects
+- { he: "חכמה", term: "chachma", gloss: "wisdom; the first flash of an idea" }
+- { he: "בינה", term: "bina", gloss: "understanding; grasping and developing an idea" }
+- { he: "דעת", term: "daas", gloss: "knowledge; the mind's bond with what it understands" }
+- { he: "תבונה", term: "tevuna", gloss: "lit. understanding; drawing an idea out" }
+- { he: "חב\"ד", term: "Chabad", gloss: "chachma, bina and daas" }
+- { he: "חב״ד", term: "Chabad", gloss: "chachma, bina and daas" }
+- { he: "בינה שבבינה", term: "bina sheb'bina", gloss: "bina within bina" }
+- { he: "חכמה שבבינה", term: "chachma sheb'bina", gloss: "chachma within bina" }
+- { he: "בינה שבחכמה", term: "bina sheb'chachma", gloss: "bina within chachma" }
+- { he: "חכמה שבחכמה", term: "chachma sheb'chachma", gloss: "chachma within chachma" }
+- { he: "שכל", term: "sechel", gloss: "intellect" }
+- { he: "מוחין", term: "mochin", gloss: "lit. brains; the intellectual faculties" }
+- { he: "מחשבה", term: "machshava", gloss: "thought" }
+- { he: "עמקות הדעת", term: "amkus hadaas", gloss: "depth of daas" }
+- { he: "עומק הדעת", term: "omek hadaas", gloss: "depth of daas" }
+- { he: "דעת עליון", term: "daas elyon", gloss: "higher knowledge" }
+- { he: "דעת תחתון", term: "daas tachton", gloss: "lower knowledge" }
+
+# --- the work of contemplation
+- { he: "התבוננות", term: "hisbonenus", gloss: "contemplation" }
+- { he: "עיון", term: "iyun", gloss: "close analysis" }
+- { he: "גירסא", term: "girsa", gloss: "lit. reading; knowing the text by rote" }
+- { he: "השגה", term: "hasaga", gloss: "comprehension, grasp" }
+- { he: "הבנה", term: "havana", gloss: "understanding" }
+- { he: "השכלה", term: "haskala", gloss: "intellectual grasp" }
+- { he: "מושכל", term: "muskal", gloss: "the thing understood; the concept" }
+- { he: "עומק", term: "omek", gloss: "depth" }
+- { he: "עומק המושג", term: "omek hamusag", gloss: "the depth of the concept" }
+- { he: "אורך", term: "orech", gloss: "length" }
+- { he: "רוחב", term: "rochav", gloss: "breadth" }
+- { he: "קליטה", term: "kelita", gloss: "absorption, taking hold" }
+- { he: "תמצית", term: "tamtzis", gloss: "essence, gist" }
+- { he: "כלל", term: "klal", gloss: "the general idea, the whole" }
+- { he: "פרט", term: "prat", gloss: "a particular, a detail" }
+- { he: "פרטים", term: "pratim", gloss: "particulars, details" }
+- { he: "משל", term: "mashal", gloss: "analogy" }
+- { he: "משלים", term: "meshalim", gloss: "analogies" }
+- { he: "נמשל", term: "nimshal", gloss: "what an analogy stands for" }
+- { he: "סברא", term: "sevara", gloss: "a line of reasoning" }
+- { he: "כלי", term: "kli", gloss: "vessel" }
+- { he: "ענין", term: "inyan", gloss: "matter, concept" }
+- { he: "ענינים", term: "inyanim", gloss: "matters, concepts" }
+- { he: "מעין", term: "maayan", gloss: "spring, wellspring" }
+- { he: "תעלומות חכמה", term: "taalumos chachma", gloss: "the hidden depths of wisdom" }
+- { he: "שער הנון", term: "shaar hanun", gloss: "the fiftieth gate" }
+
+# --- emotion and service
+- { he: "מדות", term: "middos", gloss: "emotional attributes" }
+- { he: "מידות", term: "middos", gloss: "emotional attributes" }
+- { he: "התפעלות", term: "hispaalus", gloss: "emotional arousal, excitement" }
+- { he: "ביטול", term: "bittul", gloss: "self-nullification" }
+- { he: "תענוג", term: "taanug", gloss: "delight" }
+- { he: "רצון", term: "ratzon", gloss: "will" }
+- { he: "עבודה", term: "avoda", gloss: "divine service" }
+- { he: "תפלה", term: "tefilla", gloss: "prayer" }
+- { he: "תפילה", term: "tefilla", gloss: "prayer" }
+- { he: "דאווענען", term: "davenen", gloss: "(Yiddish) praying" }
+
+# --- G-dliness and the worlds
+- { he: "אלקות", term: "Elokus", gloss: "G-dliness" }
+- { he: "אלוקות", term: "Elokus", gloss: "G-dliness" }
+- { he: "אויבערשטער", term: "Aibershter", gloss: "(Yiddish) the One Above, G-d" }
+- { he: "אייבערשטער", term: "Aibershter", gloss: "(Yiddish) the One Above, G-d" }
+- { he: "עצמות", term: "Atzmus", gloss: "G-d's essence" }
+- { he: "ממלא כל עלמין", term: "memalei kol almin", gloss: "(the light) that fills all worlds" }
+- { he: "סובב כל עלמין", term: "sovev kol almin", gloss: "(the light) that encompasses all worlds" }
+- { he: "סדר השתלשלות", term: "seder hishtalshelus", gloss: "the chain of descending worlds" }
+- { he: "ספירות", term: "sefiros", gloss: "the Divine attributes" }
+- { he: "כתר", term: "Keser", gloss: "crown" }
+- { he: "מלכות", term: "Malchus", gloss: "kingship" }
+- { he: "אצילות", term: "Atzilus", gloss: "the world of Emanation" }
+- { he: "עשיה", term: "Asiya", gloss: "the world of Action" }
+- { he: "אריך", term: "Arich", gloss: "Arich Anpin, lit. the long countenance" }
+- { he: "עתיק", term: "Atik", gloss: "Atik Yomin, lit. the Ancient of Days" }
+- { he: "הפלאה", term: "hafla'a", gloss: "wondrousness; being beyond grasp" }
+- { he: "יש", term: "yesh", gloss: "something; existence" }
+- { he: "אין", term: "ayin", gloss: "nothing" }
+- { he: "מציאות", term: "metzius", gloss: "existence" }
+- { he: "עצם", term: "etzem", gloss: "essence" }
+- { he: "כח", term: "koach", gloss: "power" }
+- { he: "גילוי", term: "gilui", gloss: "revelation" }
+- { he: "העלם", term: "helem", gloss: "concealment" }
+- { he: "היולי", term: "hiyuli", gloss: "raw potential; formless matter" }
+- { he: "שבירה", term: "shevira", gloss: "the breaking (of the vessels)" }
+- { he: "קליפה", term: "kelipa", gloss: "lit. husk; what conceals G-dliness" }
+- { he: "יחודא עילאה", term: "yichuda ila'a", gloss: "the higher unity" }
+- { he: "יחודא תתאה", term: "yichuda tata'a", gloss: "the lower unity" }
+
+# --- people, books and everyday words
+- { he: "חסידות", term: "Chassidus", gloss: "Chassidic teaching" }
+- { he: "רבי", term: "Rebbe", gloss: "" }
+- { he: "אלטער רבי", term: "Alter Rebbe", gloss: "Rabbi Schneur Zalman of Liadi" }
+- { he: "אלטר רבי", term: "Alter Rebbe", gloss: "Rabbi Schneur Zalman of Liadi" }
+- { he: "מיטעלער רבי", term: "Mitteler Rebbe", gloss: "Rabbi DovBer of Lubavitch, the author" }
+- { he: "משה רבינו", term: "Moshe Rabbeinu", gloss: "Moses our teacher" }
+- { he: "דווקא", term: "davka", gloss: "specifically, precisely" }
+- { he: "דוקא", term: "davka", gloss: "specifically, precisely" }
+- { he: "ממש", term: "mamash", gloss: "actually, literally" }
+- { he: "חידוש", term: "chiddush", gloss: "a new insight" }
+
+# --- added when the chapters were reconciled (spellings the chapters share)
+# worlds, partzufim and Names
+- { he: "בריאה", term: "Beriya", gloss: "the world of Creation" }
+- { he: "יצירה", term: "Yetzira", gloss: "the world of Formation" }
+- { he: "עשייה", term: "Asiya", gloss: "the world of Action" }
+- { he: "בי״ע", term: "Beriya, Yetzira and Asiya", gloss: "the three lower worlds" }
+- { he: "אדם קדמון", term: "Adam Kadmon", gloss: "lit. primordial man; the first world" }
+- { he: "אריך אנפין", term: "Arich Anpin", gloss: "lit. the long countenance" }
+- { he: "עתיק יומין", term: "Atik Yomin", gloss: "lit. the Ancient of Days" }
+- { he: "אבא", term: "Abba", gloss: "lit. father; chachma as a partzuf" }
+- { he: "אמא", term: "Ima", gloss: "lit. mother; bina as a partzuf" }
+- { he: "אמא תתאה", term: "Ima tata'a", gloss: "the lower mother" }
+- { he: "ישראל סבא", term: "Yisroel Saba", gloss: "lit. Israel the elder" }
+- { he: "זעיר אנפין", term: "Zeir Anpin", gloss: "lit. the small countenance" }
+- { he: "נוקבא", term: "Nukva", gloss: "lit. the female" }
+- { he: "פרצוף", term: "partzuf", gloss: "lit. face; a stature of the sefiros" }
+- { he: "פרצופים", term: "partzufim", gloss: "lit. faces; the statures of the sefiros" }
+- { he: "אין סוף", term: "Ein Sof", gloss: "the Infinite" }
+- { he: "אור אין סוף", term: "Or Ein Sof", gloss: "the infinite light" }
+- { he: "קו", term: "Kav", gloss: "lit. line; the ray of light" }
+- { he: "צמצום", term: "tzimtzum", gloss: "contraction" }
+- { he: "הוי׳", term: "Havaya", gloss: "the four-letter Name" }
+- { he: "אלקים", term: "Elokim", gloss: "the Name that denotes power" }
+- { he: "אלהים", term: "Elokim", gloss: "the Name that denotes power" }
+- { he: "אדנות", term: "Adnus", gloss: "lordship; the Name Ad-nai" }
+- { he: "חסד", term: "chesed", gloss: "kindness" }
+- { he: "גבורה", term: "gevura", gloss: "might, restraint" }
+- { he: "קליפות", term: "kelipos", gloss: "lit. husks" }
+- { he: "גלגלים", term: "galgalim", gloss: "the celestial orbits (spheres)" }
+- { he: "אופנים", term: "Ofanim", gloss: "a class of angels" }
+- { he: "חיות", term: "Chayos", gloss: "a class of angels" }
+# contemplation and its terms
+- { he: "דרך כלל", term: "derech klal", gloss: "the general way" }
+- { he: "דרך פרט", term: "derech prat", gloss: "the particular way" }
+- { he: "יחוד פרטי", term: "yichud prati", gloss: "a particular unification" }
+- { he: "יחוד כללי", term: "yichud klali", gloss: "the general unification" }
+- { he: "מהות", term: "mahus", gloss: "what a thing is in itself" }
+- { he: "ראייה", term: "re'iya", gloss: "sight" }
+- { he: "ראיית השכל", term: "re'iyas hasechel", gloss: "sight of the intellect" }
+- { he: "שמיעה", term: "shemiya", gloss: "hearing" }
+- { he: "נבון", term: "navon", gloss: "a person of understanding" }
+- { he: "מעמיק", term: "ma'amik", gloss: "delving" }
+- { he: "העמקת הדעת", term: "ha'amakas hadaas", gloss: "deep concentration" }
+- { he: "איש תבונה", term: "ish tevuna", gloss: "a man of tevuna" }
+- { he: "תפסן", term: "tafsan", gloss: "a grasper" }
+- { he: "סברות", term: "sevaros", gloss: "lines of reasoning" }
+- { he: "משכיל", term: "maskil", gloss: "a person of intellect" }
+- { he: "משכילים", term: "maskilim", gloss: "people of intellect" }
+- { he: "בטל", term: "batel", gloss: "nullified" }
+- { he: "מילוי", term: "milui", gloss: "the spelling out of a letter's name" }
+- { he: "נו״ן", term: "nun", gloss: "the letter nun" }
+- { he: "התפשטות מן העצם", term: "hispashtus min ha'etzem", gloss: "spreading forth from the essence" }
+- { he: "גילוי ההעלם", term: "gilui ha'helem", gloss: "revelation of what is hidden" }
+- { he: "מוכרח בהשגה", term: "muchrach b'hasaga", gloss: "compelled by comprehension" }
+- { he: "אין עוד מלבדו", term: "ein od milvado", gloss: "there is nothing besides Him" }
+- { he: "עבודת הלב", term: "avodas halev", gloss: "service of the heart" }
+- { he: "עובד", term: "oved", gloss: "one who serves G-d" }
+- { he: "עובדים", term: "ovdim", gloss: "those who serve G-d" }
+- { he: "כוונה", term: "kavana", gloss: "intention" }
+- { he: "כוונות", term: "kavanos", gloss: "intentions" }
+- { he: "שמחה", term: "simcha", gloss: "joy" }
+- { he: "שפלות", term: "shiflus", gloss: "lowliness" }
+- { he: "עניוות", term: "anivus", gloss: "humility" }
+- { he: "לכתחילה אריבער", term: "lechatchila ariber", gloss: "(Yiddish) go over the top from the start" }
+# books and people
+- { he: "קונטרס ההתבוננות", term: "Kuntres HaHisbonenus", gloss: "the Tract on Contemplation" }
+- { he: "קונטרס ההתפעלות", term: "Kuntres HaHispaalus", gloss: "the Tract on Ecstasy" }
+- { he: "שער היחוד", term: "Shaar HaYichud", gloss: "the Gate of Unity" }
+- { he: "ספר יצירה", term: "Sefer Yetzira", gloss: "the Book of Formation" }
+- { he: "עץ חיים", term: "Etz Chaim", gloss: "the Arizal's Tree of Life" }
+- { he: "זוהר", term: "Zohar", gloss: "" }
+- { he: "אריז״ל", term: "Arizal", gloss: "Rabbi Isaac Luria" }
+- { he: "רמב״ם", term: "Rambam", gloss: "Maimonides" }
+- { he: "רבי מהר״ש", term: "Rebbe Maharash", gloss: "the fourth Lubavitcher Rebbe" }
+- { he: "משיח", term: "Moshiach", gloss: "" }
+- { he: "שבת", term: "Shabbos", gloss: "" }
+- { he: "סטנדר", term: "shtender", gloss: "(Yiddish) lectern" }

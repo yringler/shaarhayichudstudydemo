@@ -1,0 +1,18 @@
+---
+interface Props {
+  printLabel: string;
+}
+const { printLabel } = Astro.props;
+---
+
+<div class="toolbar">
+  <div class="view-switch" role="radiogroup" aria-label="View">
+    <button type="button" role="radio" data-view-btn="guide" aria-checked="true">Study guide</button>
+    <button type="button" role="radio" data-view-btn="explanation" aria-checked="false">Explanation <span class="hide-narrow">only</span></button>
+    <button type="button" role="radio" data-view-btn="text" aria-checked="false">Text <span class="hide-narrow">only</span></button>
+  </div>
+  <button type="button" class="print-btn" data-print>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10v4H7zM5 8h14a2 2 0 0 1 2 2v6h-4v4H7v-4H3v-6a2 2 0 0 1 2-2zm4 7v3h6v-3z"></path></svg>
+    <span>{printLabel}</span>
+  </button>
+</div>

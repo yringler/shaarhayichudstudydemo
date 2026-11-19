@@ -1,0 +1,93 @@
+---
+import type { ChapterModel } from '../lib/content';
+import Concept from './Concept.astro';
+import ClassList from './ClassList.astro';
+
+interface Props {
+  chapter: ChapterModel;
+  /** 1 on a chapter page, 2 inside the booklet. */
+  level: 1 | 2;
+}
+
+const { chapter, level } = Astro.props;
+const H = level === 1 ? 'h1' : 'h2';
+const sub = level === 1 ? 2 : 3;
+const SH = sub === 2 ? 'h2' : 'h3';
+const statusLabel: Record<string, string> = {
+  'ai-draft': 'AI draft · not reviewed',
+  'no-source': 'No recording',
+  edited: 'Edited · not reviewed',
+  reviewed: 'Reviewed',
+  pending: 'Guide not written yet',
+};
+---
+
+<article class={`chapter chapter-${chapter.n}`} id={`chapter-${chapter.n}`} data-chapter={chapter.n}>
+  <header class="chapter-head">
+    <p class="eyebrow">
+      <span>Chapter {chapter.n}</span>
+      <span class="eyebrow-he" lang="he" dir="rtl">{chapter.heRef}</span>
+    </p>
+    <H class="chapter-title">{chapter.title}</H>
+    <p class="chapter-meta">
+      <span class={`status-chip status-${chapter.status}`}>{statusLabel[chapter.status] ?? chapter.status}</span>
+      <a href={chapter.sefariaUrl} rel="noopener" target="_blank">Text on Sefaria</a>
+    </p>
+  </header>
+
+  {
+    !chapter.hasGuide && (
+      <p class="notice">The study guide for this chapter has not been written yet. The Hebrew text and translation are shown under the book’s own section labels.</p>
+    )
+  }
+
+  {
+    (chapter.overviewHtml || chapter.terms.length > 0) && (
+      <div class="front-matter">
+        {chapter.overviewHtml && (
+          <section class="overview">
+            <SH class="sub-head">Overview</SH>
+            <div class="prose">
+              <Fragment set:html={chapter.overviewHtml} />
+            </div>
+          </section>
+        )}
+        {chapter.terms.length > 0 && (
+          <aside class="key-terms" aria-label="Key terms">
+            <SH class="sub-head">Key terms</SH>
+            <dl>
+              {chapter.terms.map((t) => (
+                <div class="term">
+                  <dt>
+                    <em>{t.term}</em>
+                    <span class="term-he" lang="he" dir="rtl">{t.he}</span>
+                  </dt>
+                  <dd>{t.gloss}</dd>
+                </div>
+              ))}
+            </dl>
+          </aside>
+        )}
+      </div>
+    )
+  }
+
+  {chapter.hasGuide && <p class="method-note">The explanations follow Rabbi Markel’s classes on this chapter. ▶ buttons play the moment in the class where each point is made.</p>}
+
+  <div class="concepts">
+    {chapter.concepts.map((c) => <Concept concept={c} chapter={chapter.n} level={sub} />)}
+  </div>
+
+  {
+    chapter.reviewQuestionsHtml && (
+      <section class="review">
+        <SH class="sub-head">Review questions</SH>
+        <div class="prose">
+          <Fragment set:html={chapter.reviewQuestionsHtml} />
+        </div>
+      </section>
+    )
+  }
+
+  <ClassList sources={chapter.sources} level={sub} />
+</article>

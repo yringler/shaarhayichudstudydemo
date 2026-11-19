@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import { loadGuide } from '../lib/content';
+
+const guide = loadGuide();
+const t = guide.translation;
+const counts = { ai: 0, edited: 0, reviewed: 0, none: 0 };
+for (const c of guide.chapters) {
+  for (const k of c.concepts) {
+    if (k.status === 'reviewed') counts.reviewed++;
+    else if (k.status === 'edited') counts.edited++;
+    else if (k.status === 'ai-draft') counts.ai++;
+    else counts.none++;
+  }
+}
+---
+
+<Base title="About this guide" current="about">
+  <div class="page">
+    <header class="page-head">
+      <p class="eyebrow"><span>About</span></p>
+      <h1 class="chapter-title">How this guide was made</h1>
+    </header>
+    <div class="prose about">
+      <h2>Sources</h2>
+      <p>
+        The guide follows one series of recorded classes: <strong>Rabbi Markel’s advanced series</strong> on <em>Shaar HaYichud</em>. Each
+        recording was transcribed by machine, and each line of the Hebrew text was matched by machine to the moment in the class where it is
+        read. That matching is what the ▶ buttons use. Where it is uncertain, the button is marked <span class="approx">approx.</span>
+      </p>
+      <p>
+        The explanation of each passage was then drafted by AI from the part of the class that follows the reading of that passage: his
+        explanation, his analogies, and the questions he answered. It is meant to say only what he said. Logistics, side conversations and
+        unclear stretches were left out; unclear stretches are listed in a “For the reviewer” box on screen.
+      </p>
+      <p>
+        The opening of chapter 1 (§1–20) has no recording in this series, so those paragraphs appear with text and translation only.
+      </p>
+
+      <h2>What is and is not reviewed</h2>
+      <p>
+        <strong>Nothing in the explanations has been reviewed by Rabbi Markel yet.</strong> Of {guide.chapters.reduce((n, c) => n + c.concepts.length, 0)}
+        sections, {counts.ai} are AI drafts, {counts.edited} edited, {counts.reviewed} reviewed{counts.none > 0 ? `, and ${counts.none} have no explanation` : ''}.
+        The Hebrew text and the English translation are reproduced as published. Topic lists for the classes and the source transcripts are
+        machine-generated and unedited.
+      </p>
+
+      <h2>Attribution and licences</h2>
+      <ul>
+        <li>
+          <strong>English translation:</strong> {t ? `“${t.versionTitle}”, licence ${t.license}` : 'Rabbi Amiram Markel'}, from
+          {' '}{t ? <a href={t.source} rel="noopener">{t.source.replace(/^https?:\/\//, '')}</a> : 'neirot.com'}, via
+          <a href="https://www.sefaria.org/The_Gate_of_Unity" rel="noopener">Sefaria</a>. Footnotes are the translator’s.
+        </li>
+        <li>
+          <strong>Hebrew text:</strong> from the Shaar HaYichud class archive (shaar-hayichud-sections{guide.sectionsCommit ? `, commit ${guide.sectionsCommit.slice(0, 7)}` : ''}). Its licence is not yet confirmed.
+        </li>
+        <li><strong>Audio:</strong> Rabbi Markel’s classes, streamed from media.shaarhayichudresources.com.</li>
+        <li><strong>Transcripts and topic lists:</strong> machine-generated (Sofer.ai), shown unedited.</li>
+      </ul>
+
+      <h2>Printing</h2>
+      <p>
+        Every chapter prints as a booklet: running heads, page numbers and the draft notice in the footer (in Chrome and Edge; other browsers
+        print without the running heads). Printing follows the view you have chosen. In <em>Explanation only</em> the prose is set in two
+        columns. The whole booklet is on <a href={`${import.meta.env.BASE_URL}booklet/`}>one page</a> for printing in one go.
+      </p>
+    </div>
+  </div>
+</Base>

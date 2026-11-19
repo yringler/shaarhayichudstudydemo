@@ -1,0 +1,105 @@
+---
+import type { UnitModel } from '../lib/content';
+import { formatTime, classNumber } from '../lib/format';
+
+interface Props {
+  unit: UnitModel;
+  chapter: number;
+}
+
+const { unit, chapter } = Astro.props;
+const extraAnchors = unit.segments.slice(1).map((s) => `ch${chapter}-s${s.n}`);
+---
+
+<div class:list={['unit', { 'is-uncovered': !unit.covered, 'has-explanation': unit.explanationHtml !== null }]} id={`ch${chapter}-s${unit.from}`}>
+  {extraAnchors.map((id) => <span class="anchor" id={id} />)}
+  <div class="text-block">
+    {
+      unit.segments.map((seg) => (
+        <div class="seg-pair">
+          <div class="seg-he" lang="he" dir="rtl">
+            <p>
+              {seg.lines.map((line) => (
+                <>
+                  <span
+                    id={line.id}
+                    class:list={['line', { 'not-in-sefaria': line.notInSefaria }]}
+                    title={line.notInSefaria ? 'Not in the Sefaria edition' : undefined}
+                  >
+                    {line.text}
+                  </span>{' '}
+                </>
+              ))}
+            </p>
+          </div>
+          <div class="seg-en" lang="en">
+            <p>
+              <span class="seg-num" aria-label={`Paragraph ${seg.n}`}>§{seg.n}</span> <Fragment set:html={seg.en} />
+            </p>
+            {seg.footnotes.length > 0 && (
+              <ol class="footnotes">
+                {seg.footnotes.map((fn) => (
+                  <li value={fn.n}>
+                    <Fragment set:html={fn.html} />
+                  </li>
+                ))}
+              </ol>
+            )}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  {
+    !unit.covered && (
+      <p class="no-source">
+        <svg viewBox="0 0 16 16" aria-hidden="true" class="icon"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm.75 10.5h-1.5V7h1.5zm0-6h-1.5V4h1.5z" /></svg>
+        No class recording covers this passage yet.
+      </p>
+    )
+  }
+
+  {
+    unit.explanationHtml !== null && (
+      <div class="explanation">
+        <div class="explanation-label">
+          <span>Explanation</span>
+          <span class="unit-ref">{unit.label}</span>
+        </div>
+        <div class="prose">
+          <Fragment set:html={unit.explanationHtml} />
+        </div>
+      </div>
+    )
+  }
+
+  {
+    unit.transcript.length > 0 && (
+      <details class="transcript">
+        <summary>Source transcript <span class="muted">(auto-generated, unedited)</span></summary>
+        {unit.transcript.map((block) => (
+          <div class="transcript-block">
+            <p class="transcript-head">
+              <a class="listen" href={`${block.source.audioUrl}#t=${Math.floor(block.startSeconds)}`} data-source={block.source.key} data-t={Math.floor(block.startSeconds)}>
+                <span class="listen-screen">
+                  <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" /></svg>
+                  {formatTime(block.startSeconds)}
+                </span>
+                <span class="listen-print">(class {classNumber(block.source.key)}, {formatTime(block.startSeconds)})</span>
+              </a>
+              <span>Class {classNumber(block.source.key)} · {block.source.title}</span>
+            </p>
+            <p class="transcript-text">
+              {block.sentences.map((s) => (
+                <>
+                  <span dir="auto" title={formatTime(s.t)}>{s.text}</span>{' '}
+                </>
+              ))}
+            </p>
+          </div>
+        ))}
+      </details>
+    )
+  }
+</div>

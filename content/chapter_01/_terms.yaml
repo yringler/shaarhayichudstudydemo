@@ -1,0 +1,12 @@
+- { term: "girsa", he: "גירסא", gloss: "lit. reading; surface study that grasps a subject only at first glance", segment: 4 }
+- { term: "iyun", he: "עיון", gloss: "close analysis that sorts a matter into all its parts", segment: 4 }
+- { term: "omek hamusag", he: "עומק המושג", gloss: "the depth of the concept; its essential point, the essence left after working through the explanation", segment: 14 }
+- { term: "ha'amakas hadaas", he: "העמקת הדעת", gloss: "deep concentration; a vessel for reaching the depth, not the depth itself", segment: 21 }
+- { term: "ma'amik", he: "מעמיק", gloss: "delving; thinking a concept over and over until it reaches its root", segment: 22 }
+- { term: "taalumos chachma", he: "תעלומות חכמה", gloss: "the hidden depths of wisdom; the root, like an aquifer, that all wisdoms come from", segment: 23 }
+- { term: "tamtzis", he: "תמצית", gloss: "essence in the sense of an extract, like instant coffee from coffee beans", segment: 25 }
+- { term: "shaar hanun", he: "שער הנון", gloss: "the fiftieth gate of bina; the depth of the concept, whose root reaches the depth of chachma", segment: 26 }
+- { term: "bina sheb'bina", he: "בינה שבבינה", gloss: "analysis of a matter into all its parts; it gives a concept its length", segment: 27 }
+- { term: "chachma sheb'bina", he: "חכמה שבבינה", gloss: "new insight within the same field; it gives a concept its width", segment: 28 }
+- { term: "bina sheb'chachma", he: "בינה שבחכמה", gloss: "the power within an insight to be explained in many ways, and inwardly to understand one thing from another", segment: 29 }
+- { term: "navon", he: "נבון", gloss: "a person of understanding; one who understands one thing from another", segment: 30 }

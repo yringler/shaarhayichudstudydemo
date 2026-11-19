@@ -1,0 +1,89 @@
+---
+import Base from '../layouts/Base.astro';
+import { loadGuide } from '../lib/content';
+import { segmentLabel } from '../lib/format';
+
+const guide = loadGuide();
+const base = import.meta.env.BASE_URL;
+---
+
+<Base title="Shaar HaYichud Study Guide">
+  <div class="page cover-page">
+    <section class="cover">
+      <p class="cover-he" lang="he" dir="rtl">שער היחוד</p>
+      <h1 class="cover-title">Shaar HaYichud <span class="cover-dash">—</span> <span class="cover-sub">Study Guide</span></h1>
+      <p class="cover-booklet">Booklet 1: Chapters 1–5</p>
+      <p class="cover-from">Following the classes of Rabbi Markel</p>
+      <div class="cover-actions">
+        {guide.chapters[0] && <a class="btn btn-primary" href={`${base}chapter/${guide.chapters[0].n}/`}>Start with Chapter {guide.chapters[0].n}</a>}
+        <a class="btn" href={`${base}booklet/`}>Whole booklet</a>
+      </div>
+    </section>
+
+    <aside class="draft-full" aria-label="Draft notice">
+      <p class="draft-full-head">Draft for review</p>
+      <p>
+        The explanations were drafted by AI from recordings of Rabbi Markel’s classes and have not yet been reviewed by him. Do not rely on
+        them or distribute them.
+      </p>
+    </aside>
+
+    <section class="intro prose">
+      <h2>What this is</h2>
+      <p>
+        A preparation guide for the weekly class on the Mitteler Rebbe’s <em>Shaar HaYichud</em>. Each chapter gives the Hebrew text beside
+        Rabbi Amiram Markel’s English translation, and under each passage an explanation drawn from Rabbi Markel’s recorded classes on it.
+        The chapter is organised under headings that name the idea being taught, each with a one-line “In short”.
+      </p>
+      <p>Three views of the same page:</p>
+      <ul>
+        <li><strong>Study guide</strong> interleaves text and explanation.</li>
+        <li><strong>Explanation only</strong> reads as continuous prose, like a booklet.</li>
+        <li><strong>Text only</strong> gives the Hebrew and the translation.</li>
+      </ul>
+      <p>
+        Every explanation has ▶ buttons that play the moment in the class where the point is made, so anything here can be checked against
+        what was actually said.
+      </p>
+    </section>
+
+    <section class="toc" aria-labelledby="toc-h">
+      <h2 id="toc-h">Contents</h2>
+      <ol class="toc-chapters">
+        {
+          guide.chapters.map((c) => (
+            <li class="toc-chapter">
+              <a class="toc-chapter-link" href={`${base}chapter/${c.n}/`}>
+                <span class="toc-num">Chapter {c.n}</span>
+                <span class="toc-title">{c.title}</span>
+              </a>
+              <ol class="toc-concepts">
+                {c.concepts.map((k) => (
+                  <li>
+                    <a href={`${base}chapter/${c.n}/#${k.id}`}>
+                      <span class="toc-concept-title">{k.title}</span>
+                      <span class="toc-range">{segmentLabel(k.from, k.to)}</span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </li>
+          ))
+        }
+      </ol>
+      <p class="toc-more">
+        <a href={`${base}glossary/`}>Glossary of terms</a> · <a href={`${base}about/`}>How this guide was made</a>
+      </p>
+    </section>
+
+    <section class="credits small">
+      <h2>Credits</h2>
+      <p>
+        Explanations follow the classes of <strong>Rabbi Markel</strong> (Rabbi Markel Series, Advanced). English translation: “{
+          guide.translation?.versionTitle ?? 'Translated by Rabbi Amiram Markel'
+        }”, {guide.translation?.license ?? 'CC-BY'}, via <a href="https://www.sefaria.org/The_Gate_of_Unity" rel="noopener">Sefaria</a>.
+        Hebrew text, audio and alignments from the Shaar HaYichud class archive. Transcripts are machine-generated.
+      </p>
+    </section>
+  </div>
+</Base>

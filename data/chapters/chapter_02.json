@@ -1,0 +1,843 @@
+{
+  "schemaVersion": 1,
+  "chapter": 2,
+  "heRef": "נר מצוה ותורה אור; שער היחוד ב׳",
+  "sefariaUrl": "https://www.sefaria.org/The_Gate_of_Unity.2?lang=bi",
+  "translation": {
+    "versionTitle": "Translated by Rabbi Amiram Markel, 2023",
+    "license": "CC-BY",
+    "source": "http://neirot.com/the-gate-of-unity-with-hebrew/"
+  },
+  "sections": [
+    {
+      "label": "תבונה",
+      "fromSegment": 1,
+      "toSegment": 6
+    },
+    {
+      "label": "תפסן",
+      "fromSegment": 7,
+      "toSegment": 8
+    },
+    {
+      "label": "דוגמא",
+      "fromSegment": 9,
+      "toSegment": 14
+    },
+    {
+      "label": "תפסן",
+      "fromSegment": 9,
+      "toSegment": 13
+    },
+    {
+      "label": "בעל תבונה",
+      "fromSegment": 14,
+      "toSegment": 14
+    },
+    {
+      "label": "ז\"ת דבינה",
+      "fromSegment": 15,
+      "toSegment": 20
+    },
+    {
+      "label": "תבונה בן ובת",
+      "fromSegment": 21,
+      "toSegment": 26
+    },
+    {
+      "label": "עומק",
+      "fromSegment": 21,
+      "toSegment": 22
+    },
+    {
+      "label": "אורך",
+      "fromSegment": 23,
+      "toSegment": 23
+    },
+    {
+      "label": "רוחב",
+      "fromSegment": 24,
+      "toSegment": 24
+    },
+    {
+      "label": "ב\"ן וב\"ת",
+      "fromSegment": 25,
+      "toSegment": 26
+    },
+    {
+      "label": "מוחין שבמדות מתבונה",
+      "fromSegment": 27,
+      "toSegment": 34
+    }
+  ],
+  "segments": [
+    {
+      "n": 1,
+      "lines": [
+        {
+          "id": "dqtw2mat",
+          "text": "(ב) והנה ידוע שיש בבינה עצמה ב' מדרגות, בינה ותבונה, וענין התבונה הוא בחינת התפשטות אור הבינה (כמו שכתוב בזהר דאבא ואמא תתאין הם ישראל סבא ותבונה, ונקרא אימא תתאה כו')"
+        }
+      ],
+      "en": "Now, it is known that in <i>Binah</i> itself there are two levels; <i>Binah</i> and <i>Tvunah</i>. The matter of <i>Tvunah</i> is the aspect of the spreading forth of the light of <i>Binah.</i> (This is as stated in the Zohar,<sup data-fn=\"1\">1</sup> “The lower mother and father are <i>Yisroel Saba</i> and <i>Tvunah.</i>” ]<i>Tvunah</i> is[ called the lower mother.)",
+      "footnotes": [
+        {
+          "n": 1,
+          "html": "See Zohar Ha’azinu 290b and 291a. See also Etz Chayim (Shaar Av”I) Shaar 21, chapter 8."
+        }
+      ],
+      "coverage": [
+        {
+          "source": "018",
+          "lineId": "dqtw2mat",
+          "startSeconds": 15.02,
+          "endSeconds": 62.9,
+          "confidence": 0.931
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "lines": [
+        {
+          "id": "fx4uzm2l",
+          "text": "מצד קליטתה היטב בכלי המקבל ההשגה דבינה, על כן מתפשט בה להביאה בכמה ענינים נבדלים מעצם ההשגה, והוא הנקרא איש תבונה, כמו מים עמוקים כו' איש תבונה ידלנה."
+        }
+      ],
+      "en": "]This comes about[ because ]the concept[ is grasped very well in the vessel of the comprehension of <i>Binah</i>. Therefore, [through this], it spreads forth to bring it into many matters that are separate from the essential comprehension ]of the concept itself[. ]One who is capable of[ this is called “a man of <i>Tvunah</i>,” as in ]the verse],<sup data-fn=\"2\">2</sup> “Deep waters… a man of <i>Tevunah</i> shall draw them out.”",
+      "footnotes": [
+        {
+          "n": 2,
+          "html": "Proverbs 20:5"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "018",
+          "lineId": "fx4uzm2l",
+          "startSeconds": 62.9,
+          "endSeconds": 133.86,
+          "confidence": 0.891
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "lines": [
+        {
+          "id": "lg4oylvk",
+          "text": "מים עמוקים הם בחינת עמקות בינה שנשאר בהעלם העצמיות, ואיש תבונה דווקא ידלנה וישאבנה מן ההעלם להביאה להתפשטות בכמה אופנים שונים לרוות את המקבלים"
+        }
+      ],
+      "en": "The “deep waters” represent the aspect of the depths of <i>Binah</i> which remain concealed in the essential self. It is specifically the “man of <i>Tvunah</i>” who draws it out and brings it forth from its concealment, to bring it to spread forth in many different manners, in order to quench the thirst of the recipients.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "018",
+          "lineId": "lg4oylvk",
+          "startSeconds": 133.86,
+          "endSeconds": 187.54,
+          "confidence": 0.84
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "lines": [
+        {
+          "id": "wbbx7sao",
+          "text": "כמו הדולה מים עמוקים להשקות הצאן כו' והוא כמו שאנו רואים בחוש, שבהיות השכל והסברא עמוקים ביותר מהכיל בהשגת אדם, הנקרא מים עמוקים כו', שהוא בחינת עומק המושג הנזכר לעיל שהאורך והרוחב ממנו בא כו'"
+        }
+      ],
+      "en": "This is analogous to one who draws out deep waters to quench the thirst of the sheep. We may clearly observe that when the reasoning of a concept is too deep to be retained in the comprehension of man, this is called “deep waters,” which is the aspect of the depth of the comprehension (<i>Omek HaMoosag</i>), from which the length and width come, as previously explained.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "018",
+          "lineId": "wbbx7sao",
+          "startSeconds": 187.54,
+          "endSeconds": 293.15,
+          "confidence": 0.925
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "lines": [
+        {
+          "id": "ktlyq343",
+          "text": "ואיש בעל תבונה דווקא ידלנה, פירוש שיוציא לאור בחינת העלם העומק המושג עד שיכילנו השגת האדם, כאלו לא היה עמוק כלל, כמו הדולה מים עמוקים שמקרב את העומק כו'"
+        }
+      ],
+      "en": "It is specifically one who possesses the power of <i>Tvunah</i> who can “draw it out.” In other words, he brings to light the aspect of the hidden depth of the concept, until it may be retained within the comprehension of man, as if it was not deep at all. Just as [in the analogy of] one who draws the deep waters [out of the depths of the well], he brings the depth [itself] close.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "018",
+          "lineId": "ktlyq343",
+          "startSeconds": 293.15,
+          "endSeconds": 421.98,
+          "confidence": 0.993
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "lines": [
+        {
+          "id": "e6rnhnmx",
+          "text": "ולפי זה מוכרח לומר שכח התבונה הוא כח המתפשט מכח הבינה להביא עומקה לגילוי למטה למקבלים כו'"
+        }
+      ],
+      "en": "According to the above, we must say that the power of <i>Tvunah</i> is a power that spreads forth from the power of <i>Binah</i>, to bring its depth into revelation below to the recipients.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "018",
+          "lineId": "e6rnhnmx",
+          "startSeconds": 421.98,
+          "endSeconds": 658.12,
+          "confidence": 0.983
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "lines": [
+        {
+          "id": "3olgfxjf",
+          "text": "מה שאין כן כשאינו איש תבונות, גם שהוא בעל השגה במוח דבינה (שנקרא תפסן בלשון העולם) יוכל להיות שהשגתו נשארת רק כמו שהיא בעצם, במוח הבינה שלו שנקרא רוח בינתו לבד, ולא יבוא ממנה שום התפשטות למטה בענין נבדל שחוץ מן עצם ההשגה כלל"
+        }
+      ],
+      "en": "This is not the case with one who is not “a man of <i>Tvunah</i>.” Although he may be a man of comprehension in his mind of <i>Binah</i>, (which is called a “<i>Tafsan</i> –Grasper” in the terminology of the world,) it is possible that his comprehension remains as it is in the essence of his mind of <i>Binah</i>. ]That is, he only possesses[ “the spirit of <i>Binah</i>,” but there will not come from it any spreading down into separate matters, outside of the essential comprehension itself.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "018",
+          "lineId": "3olgfxjf",
+          "startSeconds": 658.12,
+          "endSeconds": 1084.38,
+          "confidence": 0.935
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "lines": [
+        {
+          "id": "2urk3tl6",
+          "text": "וגם שיש בהשגה אורך ורוחב ועומק כנזכר לעיל, הכל הוא רק בעצם ההשגה, כמו שהיא, אבל לא שיתגלה למטה בענין נבדל, ומכל שכן עומק המושג הרי נשאר בעומקו בהעלם לעצמו, וכן האורך והרוחב, הכל בעצם ההשגה כמו שהיא, שהיא במקומה לבד"
+        }
+      ],
+      "en": "Furthermore, although his comprehension is in the length, width and depth, as explained above, it is all in the essential comprehension, as it is. However, it will not be revealed below in separate matters, and certainly, the depth of the concept remains in its depth, concealed in itself. Likewise, the length and width all [remain] in the essential comprehension, as they are, in that state alone.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "018",
+          "lineId": "2urk3tl6",
+          "startSeconds": 1084.38,
+          "endSeconds": 1183.66,
+          "confidence": 0.921
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "lines": [
+        {
+          "id": "wdjketw2",
+          "text": "ודוגמא לכל זה,"
+        },
+        {
+          "id": "6wn65rrk",
+          "text": "הנה אנו רואים בעומק הפלפול בתלמוד וטעמים בסברות רבות כך וכך"
+        }
+      ],
+      "en": "An example of all this can be seen in the depth of the logical debate of the Talmud, in which there are many reasons and explanations to argue one way or another etc.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "018",
+          "lineId": "wdjketw2",
+          "startSeconds": 1183.66,
+          "endSeconds": 1185.92,
+          "confidence": 1
+        },
+        {
+          "source": "018",
+          "lineId": "6wn65rrk",
+          "startSeconds": 1185.92,
+          "endSeconds": 1192.1,
+          "confidence": 0.645
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "lines": [
+        {
+          "id": "rblvjh2o",
+          "text": "גם שבאים בהשגה דבינה, אבל לא יוכלו עדיין להוציא לאור מעצם השכל איזה פסק דין חייב או זכאי כלל"
+        }
+      ],
+      "en": "Although one may come to the comprehension of <i>Binah,</i> nonetheless, he still is incapable of bringing to light any actual verdict or ruling of “innocent” or “guilty” from the essential intellect.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "018",
+          "lineId": "rblvjh2o",
+          "startSeconds": 1192.1,
+          "endSeconds": 1360.1,
+          "confidence": 0.889
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "lines": [
+        {
+          "id": "4wuqv36w",
+          "text": "דהיינו שלא יוכל להוציא מתוך הסברה איזה חיוב על פי זה השכל ולא איזה זכות על פי זה השכל"
+        }
+      ],
+      "en": "In other words, one is not capable of bringing out any “guilty” verdict from this reasoning, nor any “innocent” verdict from this reasoning.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "018",
+          "lineId": "4wuqv36w",
+          "startSeconds": 1360.1,
+          "endSeconds": 1381.58,
+          "confidence": 0.972
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "lines": [
+        {
+          "id": "7pwfwk4y",
+          "text": "כי עדיין אין השכל והסברה רק השכלה שכליות לבד, בלתי ימצא ממנו שום התפשטות בהטיות לענין נבדל הימנה, שהוא לחייב על ידה או לזכות על ידה"
+        }
+      ],
+      "en": "This is because, as of yet, these concepts and explanations are only theoretical abstractions. One will, therefore, not find any spreading forth into matters which are separate from them. In other words, [he will not be capable] of applying these reasons and explanations [in practice] and state a “guilty” or an “innocent” verdict through them.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "018",
+          "lineId": "7pwfwk4y",
+          "startSeconds": 1381.58,
+          "endSeconds": 1408.04,
+          "confidence": 0.913
+        }
+      ]
+    },
+    {
+      "n": 13,
+      "lines": [
+        {
+          "id": "lgvfw7db",
+          "text": "והרי זה כמו דבר ההיולי שלא נודע עדיין מה ימצא ממנה ומה יעשה בה"
+        },
+        {
+          "id": "mhlftuki",
+          "text": "(בל\"א דער מושכל אליין כמו שהוא ער קאן מיט אים נישט טאן קיין זאך ניט צו קערין לזכות או לחוב כו')",
+          "notInSefaria": true
+        }
+      ],
+      "en": "Rather, it is like a <i>Heyulie</i> power, in which it is not yet known what will result from it or what could be done with it.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "018",
+          "lineId": "lgvfw7db",
+          "startSeconds": 1408.04,
+          "endSeconds": 1425.33,
+          "confidence": 0.905
+        },
+        {
+          "source": "018",
+          "lineId": "mhlftuki",
+          "startSeconds": 1425.33,
+          "endSeconds": 1449.32,
+          "confidence": 0.895
+        }
+      ]
+    },
+    {
+      "n": 14,
+      "lines": [
+        {
+          "id": "rok4avng",
+          "text": "ואמנם כח התבונה שמתפשט ממוח הבינה, היינו מה שביכולתו להביא עצם ההשגה לבחינת התפשטות למטה ממנה בכל ענין נבדל הימנה, או לחיוב או לזכות או להתפעל בלב, וכן להביאה במחשבה בכמה אופנים שונים כו'."
+        }
+      ],
+      "en": "]It is[ therefore ]understood that[ the power of <i>Tvunah</i>, which spreads forth from the mind of <i>Binah</i>, is the ability to bring the essential comprehension, to an aspect of spreading down from it, in all matters that are separate from ]the concept[ itself. ]That is to say, he is capable of arriving at a verdict[ whether for “guilt” or for “innocence” etc. Likewise, the arousal [of the emotions] of the heart [comes from this power]. Furthermore, [he is capable of] bringing it into thought in many various angles.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "018",
+          "lineId": "rok4avng",
+          "startSeconds": 1449.32,
+          "endSeconds": 2556.04,
+          "confidence": 0.826
+        }
+      ]
+    },
+    {
+      "n": 15,
+      "lines": [
+        {
+          "id": "z4uyw4pm",
+          "text": "אך לכאורה אנו רואים שיש בבינה עצמה בחינת מדות הנקרא ז׳ תחתונים דבינה, ונקרא מדות שבשכל המטה כלפי זכות או שכל מטה כלפי חוב כידוע"
+        }
+      ],
+      "en": "However, at first glance, we see that in <i>Binah</i> itself, there exists an aspect of emotions, which are called the seven lower <i>sefirot</i> of <i>Binah</i>. These are [also] called the emotions of the intellect that leans either towards merit, or the intellect that leans towards guilt, as known.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "019",
+          "lineId": "z4uyw4pm",
+          "startSeconds": 271.56,
+          "endSeconds": 340.84,
+          "confidence": 0.647
+        }
+      ]
+    },
+    {
+      "n": 16,
+      "lines": [
+        {
+          "id": "x7a3trji",
+          "text": "היינו כמו שהמדות שבשכל הן בעצם ההשגה עדיין בהעלם"
+        }
+      ],
+      "en": "However, these are only as the emotions still are concealed within the essential comprehension.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "019",
+          "lineId": "x7a3trji",
+          "startSeconds": 340.84,
+          "endSeconds": 372.22,
+          "confidence": 0.989
+        }
+      ]
+    },
+    {
+      "n": 17,
+      "lines": [
+        {
+          "id": "kpvuxwit",
+          "text": "אבל להביא בחינת התגלותן בדבר נבדל, כמו להורות בענין מקרה דבר מה על פי השכל והסברא הזאת, להטות את המשפט של זה הענין לחסד וגבורה שבו דוקא, הרי איש תבונה דווקא יוציא לאור מן המדות שבבינה כו'"
+        }
+      ],
+      "en": "Nonetheless, to bring these emotions out into revelation in a separate matter, such as to shed light upon a certain case according to this concept and reasoning, and to [actually] cause the judgment on this matter to lean either to kindness or sternness, specifically requires a man of <i>Tvunah</i>. ]It is specifically a man of <i>Tvunah</i>] who can bring out insight and light, from the emotional [<i>sefirot</i>] of <i>Binah</i>.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "019",
+          "lineId": "kpvuxwit",
+          "startSeconds": 372.22,
+          "endSeconds": 792.04,
+          "confidence": 0.899
+        }
+      ]
+    },
+    {
+      "n": 18,
+      "lines": [
+        {
+          "id": "sh5m4ohl",
+          "text": "ואיש תבונות היינו כח הקולט בכי טוב לעצם ההשגה, על כן מתפשטת ההשגה בו לעשות ולהורות בה כמה ענינים נבדלים לגמרי"
+        }
+      ],
+      "en": "The meaning of “a man of <i>Tvunah</i>” is that he has a thorough grasp of the essential comprehension. Because of this, the comprehension spreads forth in him, to do and to shed light upon many completely separate matters.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "019",
+          "lineId": "sh5m4ohl",
+          "startSeconds": 792.04,
+          "endSeconds": 820.36,
+          "confidence": 0.867
+        }
+      ]
+    },
+    {
+      "n": 19,
+      "lines": [
+        {
+          "id": "6xwunvmq",
+          "text": "וגם ביכולתו להביא את עומק בינה לידי גילוי כנזכר לעיל ודי למבין"
+        }
+      ],
+      "en": "He even is capable of bringing the depth of <i>Binah</i> itself into revelation, as explained above. This will suffice those of understanding.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "019",
+          "lineId": "6xwunvmq",
+          "startSeconds": 820.36,
+          "endSeconds": 860.08,
+          "confidence": 0.667
+        }
+      ]
+    },
+    {
+      "n": 20,
+      "lines": [
+        {
+          "id": "ucybbuqv",
+          "text": "(והיינו בחינת אבא ואמא תתאין ישראל סבא ותבונה ישראל סבא מדות דחכמה ותבונה מדות דבינה אך באין בבחינת הגילוי לחוץ ובחינת מלכות דתבונה הוא השכל הבא במחשבה הנקרא אותיות מחשבת שכל שהשכל מתלבש בה והוא בחינת כלי חיצוני למחשבה עיונית שהוא גלוי השגה דבינה עצמה מצד עצם השכל והסברא כו' ומבחינת מלכות דתבונה נמשך שרש אותיות המחשבה עצמה שנקרא לאה כו' והוא ד' רבתי דאחד)"
+        }
+      ],
+      "en": "(This then is the aspect of the lower father and mother, <i>Yisroel Sabba</i> and <i>Tvunah</i>. <i>Yisroel Sabba</i> is the aspect of the emotions of <i>Chochmah</i>, and <i>Tvunah</i> is the aspect of the emotions of <i>Binah</i>. However, these two are how these emotions come into revelation, to the outside. The aspect of <i>Malchut</i> of <i>Tvunah</i> is the aspect of the intellect which comes in thought, which is called the letters of intellectual thought (<i>Machshevet Sechel</i>), within which the intellect becomes invested. It is the external vessel for analytical thought (<i>Machshava Iyunit</i>), which is the revelation of the comprehension of <i>Binah</i> itself, from the aspect of the essence of the concept and explanation. From the aspect of <i>Malchut</i> of <i>Tvunah</i> is drawn the source of the letters of thought themselves, which is called <i>Leah</i>. This (<i>Malchut</i> of <i>Tvunah</i>) is the aspect of the large <i>Dalet</i> (ד) of the word<sup data-fn=\"3\">3</sup> <i>Echad</i>-אחד.)",
+      "footnotes": [
+        {
+          "n": 3,
+          "html": "Deuteronomy 6:4"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "019",
+          "lineId": "ucybbuqv",
+          "startSeconds": 860.08,
+          "endSeconds": 1233.61,
+          "confidence": 0.923
+        }
+      ]
+    },
+    {
+      "n": 21,
+      "lines": [
+        {
+          "id": "virffb7u",
+          "text": "וזהו שנקרא תבונה בן ובת כידוע, להיות כי גם בתבונה יש ג' דברים, עומק ואורך ורוחב."
+        },
+        {
+          "id": "7h7ajdbp",
+          "text": "העומק הוא עצם כח התבונה הזאת שבאותה ההשגה, כמו שהיא בשעה שקולטת אותה כו'"
+        }
+      ],
+      "en": "For this reason, <i>Tvunah</i> is also called <i>Ben U’Bat</i> – Son and Daughter, as known. This is because <i>Tvunah</i> likewise possesses the three [dimensions of] depth, length and width. Its depth is the essential strength of the power of <i>Tvunah</i> of this comprehension, as it is during the time which he grasps it.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "019",
+          "lineId": "virffb7u",
+          "startSeconds": 1233.61,
+          "endSeconds": 1298.87,
+          "confidence": 1
+        },
+        {
+          "source": "019",
+          "lineId": "7h7ajdbp",
+          "startSeconds": 1298.87,
+          "endSeconds": 1330.86,
+          "confidence": 0.923
+        }
+      ]
+    },
+    {
+      "n": 22,
+      "lines": [
+        {
+          "id": "hvkuw7gq",
+          "text": "ובה יוכל עומק ההשגה הנזכר לעיל לבוא לגלוי, כנזכר לעיל בפסוק איש תבונה ידלנה כו'"
+        }
+      ],
+      "en": "Through this (grasp) he is capable of bringing the [very] depths of the concept [out] into revelation, as was previously explained on the verse, “a man of <i>Tvunah</i> shall draw them (the deep waters) out.”",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "019",
+          "lineId": "hvkuw7gq",
+          "startSeconds": 1330.86,
+          "endSeconds": 1352.09,
+          "confidence": 0.657
+        }
+      ]
+    },
+    {
+      "n": 23,
+      "lines": [
+        {
+          "id": "uxwal6su",
+          "text": "והאורך הוא ירידתה בענין אחר הנבדל, להורות בו ולעשות מעשים רבים על ידה כו'"
+        }
+      ],
+      "en": "The length of <i>Tvunah</i> is the descent [of the concept] into a separate matter, to shed light upon it, or to accomplish many actions through it.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "019",
+          "lineId": "uxwal6su",
+          "startSeconds": 1352.09,
+          "endSeconds": 1375.71,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 24,
+      "lines": [
+        {
+          "id": "5qr26bde",
+          "text": "והרוחב הוא בחינת התפשטות התבונה בעצם ההשגה, להרחיבה במחשבה בכמה רבוי אופנים שונים ולא כמו שהיא לבד כו'"
+        }
+      ],
+      "en": "Its width is the aspect of the spreading forth of his <i>Tvunah</i> in the essential comprehension [itself], to expand it in his thought in many different manners, and not just [in the essential manner] that it is.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "019",
+          "lineId": "5qr26bde",
+          "startSeconds": 1375.71,
+          "endSeconds": 1445.84,
+          "confidence": 0.966
+        }
+      ]
+    },
+    {
+      "n": 25,
+      "lines": [
+        {
+          "id": "u7ixfupf",
+          "text": "ומה שכלולה התבונה מב''ן וב''ת, היינו מה שמתבונה דוקא יולדו המדות בגלוי מהות בפני עצמם, כי מבינה עצמה לא היו תולדות המדות אף על פי שנקרא אם הבנים כו' (אבל היא אימא עילאה)"
+        }
+      ],
+      "en": "]Now, the reason] that <i>Tvunah</i> is called <i>Ben U’Bat</i> – Son and Daughter, is because it is specifically <i>Tvunah</i> that gives birth to revealed emotions as matters in and of themselves. For although <i>Binah</i> is called the “mother of the children,”<sup data-fn=\"4\">4</sup> nonetheless, from <i>Binah</i> itself, there is no birth of the emotions (since it is the “upper mother”).<sup data-fn=\"5\">5</sup>",
+      "footnotes": [
+        {
+          "n": 4,
+          "html": "See Zohar parshat VaYechi 219a."
+        },
+        {
+          "n": 5,
+          "html": "See Etz Chayim (Shaar Av”I) Shaar 14, chapter 8."
+        }
+      ],
+      "coverage": [
+        {
+          "source": "019",
+          "lineId": "u7ixfupf",
+          "startSeconds": 1445.84,
+          "endSeconds": 1554.9,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 26,
+      "lines": [
+        {
+          "id": "p4zitoes",
+          "text": "מה שאין כן התבונה נקרא אימא תתאה להוליד המדות, והוא בחינת ב''ן וב''ת, אהבה ויראה, שבאים בהתכללות בתבונה דוקא, שהיא בחינת התפשטות אור הבינה למטה כנזכר לעיל"
+        }
+      ],
+      "en": "In contrast, <i>Tvunah</i> is called the “lower mother,” [for it is she] who gives birth to the emotions. These [emotions] are the aspects of “Son and Daughter” – love and fear, which specifically come about included in <i>Tvunah</i>. [This is because <i>Tvunah</i>] is the aspect of the spreading forth of the light of <i>Binah</i> downward, as explained above.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "019",
+          "lineId": "p4zitoes",
+          "startSeconds": 1554.9,
+          "endSeconds": 1660.48,
+          "confidence": 0.972
+        }
+      ]
+    },
+    {
+      "n": 27,
+      "lines": [
+        {
+          "id": "tpverqfr",
+          "text": "וגם לזה הטעם בחינת המוחין שבמדות נמשך מבחינת התבונה (וכמו שכתוב יהו״ה בחכמה יסד ארץ, דאבא יסד ברתא כו'"
+        }
+      ],
+      "en": "It is also for this reason that the aspect of the intellect of the emotions is drawn from the aspect of <i>Tvunah</i>. (This is as stated,<sup data-fn=\"6\">6</sup> “<i>HaShem</i>-יהו״ה founded the earth with <i>Chochmah</i>, [and established the heavens with <i>Tvunah</i>.” The first part of this verse, “<i>HaShem-</i>יהו״ה founded the earth with <i>Chochmah</i>,” refers to the fact] that “the father founded the daughter.”",
+      "footnotes": [
+        {
+          "n": 6,
+          "html": "Proverbs 3:19"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "019",
+          "lineId": "tpverqfr",
+          "startSeconds": 1660.48,
+          "endSeconds": 1688.64,
+          "confidence": 0.935
+        }
+      ]
+    },
+    {
+      "n": 28,
+      "lines": [
+        {
+          "id": "pteqr67h",
+          "text": "כונן שמים בתבונה, שמים הן בחינת המדות, אש מים כידוע"
+        }
+      ],
+      "en": "[The second part of the verse states], “He established the heavens with <i>Tvunah</i>.” As known, the “heavens-<i>Shamayim-</i>שמים” refers to the aspect of the emotions, fire-<i>Eish-</i>אש and water<i>-Mayim-</i>מים.<sup data-fn=\"7\">7</sup>",
+      "footnotes": [
+        {
+          "n": 7,
+          "html": "See tractate Chagiga 12a. There it states that the Hebrew word for “heaven – <i>Shamayim</i>” (שמים) is a conglomeration of two words, <i>Esh</i> (אש) and <i>Mayim</i> (מים), which mean fire and water. Firstly, these two elements correspond to <i>Chessed –</i> kindness, and <i>Gevurah</i> – might. Secondly, as will be explained later, the actual makeup of the emotions is from these two elements. Thirdly, it is the emotions which influence the speech and action, and therefore, the emotions (<i>Zeir Anpin</i>) are called “heaven” while speech and action (<i>Malchut</i>) which receives from the emotions, is called “earth.”"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "019",
+          "lineId": "pteqr67h",
+          "startSeconds": 1688.64,
+          "endSeconds": 1698.64,
+          "confidence": 0.868
+        }
+      ]
+    },
+    {
+      "n": 29,
+      "lines": [
+        {
+          "id": "swd6m54u",
+          "text": "וכן ובתבונה יתכונן, שהוא בחינת קיום המדות בבחינת המוחין דתבונה שבהם, כי התבונה כמו ממוצע להביא מוחין מבחינת מדות דבינה במדות שבלב"
+        }
+      ],
+      "en": "Similarly, [it is stated],<sup data-fn=\"8\">8</sup> “They are established with <i>Tvunah</i>.” This refers to the establishment of the emotions [because] of the aspect of the intellect of <i>Tvunah</i> which is in them, since the aspect of <i>Tvunah</i> is like an intermediary to bring the intellect from the aspect of the emotions of <i>Binah</i> into the emotions of the heart.",
+      "footnotes": [
+        {
+          "n": 8,
+          "html": "Proverbs 24:3"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "019",
+          "lineId": "swd6m54u",
+          "startSeconds": 1698.64,
+          "endSeconds": 1801.31,
+          "confidence": 0.984
+        }
+      ]
+    },
+    {
+      "n": 30,
+      "lines": [
+        {
+          "id": "4a3kdl7g",
+          "text": "שזהו כמו כח ההבאה בענין הנבדל, שהוא עיקר ענין התבונה כנזכר לעיל"
+        }
+      ],
+      "en": "This is similar to the power to bring [a concept] into a separate matter, which is the principal aspect of <i>Tvunah</i>, as explained above.)",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "019",
+          "lineId": "4a3kdl7g",
+          "startSeconds": 1801.31,
+          "endSeconds": 1893.14,
+          "confidence": 0.667
+        }
+      ]
+    },
+    {
+      "n": 31,
+      "lines": [
+        {
+          "id": "kga2nxgl",
+          "text": "וידוע גם כן שיש נו''ן כפופה ונו''ן פשוטה בבינה, להיות נו''ן כפופה הוא הרוחב ונו''ן פשוטה הוא האורך"
+        }
+      ],
+      "en": "Furthermore, as known, in <i>Binah</i> there is a bent <i>Nun</i> (נ) and a straight <i>Nun</i> (ן).<sup data-fn=\"9\">9</sup> That is, the bent <i>Nun</i> (נ) is the width, while the straight <i>Nun</i> (ן) is the length.",
+      "footnotes": [
+        {
+          "n": 9,
+          "html": "See the Magen David of the Radbaz on the letter <i>Nun</i>. Also see Pardes Rimonim of the Ramak, <i>Shaar HaOtiyot</i> (27:17)."
+        }
+      ],
+      "coverage": [
+        {
+          "source": "020",
+          "lineId": "kga2nxgl",
+          "startSeconds": 273.71,
+          "endSeconds": 302.75,
+          "confidence": 0.907
+        }
+      ]
+    },
+    {
+      "n": 32,
+      "lines": [
+        {
+          "id": "kt3ffmsq",
+          "text": "ונ' המלוי שלו בנ' פשוטה מה שאין כן בשאר מילוי האותיות"
+        }
+      ],
+      "en": "Furthermore, when expanded, the <i>Nun</i> which fills it is the straight <i>Nun</i>,<sup data-fn=\"10\">10</sup> which is not the case with the expansion of any other letters.",
+      "footnotes": [
+        {
+          "n": 10,
+          "html": "When one expands the letter <i>Nun</i> – נ (as opposed to just <i>N</i>) it would be spelled out as - נו\"ן. It then includes both the bent <i>Nun-</i>נ and the straight <i>Nun-</i>ן."
+        }
+      ],
+      "coverage": [
+        {
+          "source": "020",
+          "lineId": "kt3ffmsq",
+          "startSeconds": 302.75,
+          "endSeconds": 446.78,
+          "confidence": 0.967
+        }
+      ]
+    },
+    {
+      "n": 33,
+      "lines": [
+        {
+          "id": "63bj73g4",
+          "text": "כי האורך נכלל ברוחב וכך הוא בתבונה, ואמנם נון הכפל בענין הנקרא התבוננות, כמו עמי לא התבונן וכו', שזהו בחינת פנימית בינה הנקרא עיון, לעמוד על דבר כו'"
+        }
+      ],
+      "en": "This is because the length is included in the width. This is likewise the case with <i>Tvunah</i>. However, in regard to the double <i>Nun</i> in the matter which is called <i>Hitbonenut</i> (התבו<b>ננ</b>ות), as in the verse,<sup data-fn=\"11\">11</sup> “My nation does not contemplate – עמי לא התנו<b>נן</b>”; this is the inner aspect of <i>Binah</i>, which is called <i>Iyun</i>, to stand upon the subject etc.",
+      "footnotes": [
+        {
+          "n": 11,
+          "html": "Isaiah 1:3"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "020",
+          "lineId": "63bj73g4",
+          "startSeconds": 446.78,
+          "endSeconds": 501.86,
+          "confidence": 0.992
+        }
+      ]
+    },
+    {
+      "n": 34,
+      "lines": [
+        {
+          "id": "5lrvb2he",
+          "text": "שנקרא בינה שבבינה, הוא ממוצע בין בינה לתבונה על ידי הנו''ן פשוטה, שמחמתו נקרא התבוננות כו' ודי למבין:"
+        }
+      ],
+      "en": "This is called <i>Binah</i> of <i>Binah</i> and is an intermediary between <i>Binah</i> and <i>Tvunah</i>, through the aspect of the straight <i>Nun</i>. For this reason it is called <i>Hitbonenut</i>. This will suffice those of understanding.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "020",
+          "lineId": "5lrvb2he",
+          "startSeconds": 501.86,
+          "endSeconds": 1706.73,
+          "confidence": 0.483
+        }
+      ]
+    }
+  ]
+}

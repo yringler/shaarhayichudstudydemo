@@ -1,0 +1,12 @@
+- { term: "seder hishtalshelus", he: "סדר השתלשלות", gloss: "the chain of descending worlds", segment: 1 }
+- { term: "yesh", he: "יש", gloss: "something; existence", segment: 5 }
+- { term: "ayin", he: "אין", gloss: "nothing", segment: 6 }
+- { term: "hasaga", he: "השגה", gloss: "comprehension, grasp", segment: 9 }
+- { term: "re'iya", he: "ראיה", gloss: "sight; the mind's seeing, the mode of chachma", segment: 12 }
+- { term: "shemiya", he: "שמיעה", gloss: "hearing; full comprehension, the mode of bina", segment: 14 }
+- { term: "bittul", he: "ביטול", gloss: "self-nullification", segment: 13 }
+- { term: "simcha", he: "שמחה", gloss: "joy", segment: 15 }
+- { term: "hafla'a", he: "הפלאה", gloss: "wondrousness; being beyond grasp", segment: 17 }
+- { term: "muchrach b'hasaga", he: "מוכרח בהשגה", gloss: "compelled by comprehension; what the mind must conclude without grasping it", segment: 26 }
+- { term: "shiflus", he: "שפלות", gloss: "lowliness", segment: 35 }
+- { term: "anivus", he: "עניוות", gloss: "humility", segment: 35 }

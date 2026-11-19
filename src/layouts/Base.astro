@@ -1,0 +1,93 @@
+---
+import '../styles/global.css';
+import '../styles/print.css';
+import DraftBanner from '../components/DraftBanner.astro';
+import AudioBar from '../components/AudioBar.astro';
+import { loadGuide } from '../lib/content';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Which nav item is current: "home" | "booklet" | "glossary" | "about" | chapter number. */
+  current?: string | number;
+}
+
+const { title, description = 'A study guide to Shaar HaYichud, drafted from Rabbi Markel’s classes. Draft for review.', current } = Astro.props;
+const guide = loadGuide();
+const pageTitle = title === 'Shaar HaYichud Study Guide' ? title : `${title} · Shaar HaYichud Study Guide`;
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+<html lang="en" data-view="guide">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content={description} />
+    <title>{pageTitle}</title>
+    <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap"
+    />
+    <script is:inline>
+      // Apply the saved view before first paint (the module script keeps it in sync).
+      (function () {
+        var v = null;
+        try {
+          v = new URLSearchParams(location.search).get('view');
+          if (!v) v = localStorage.getItem('shy-view');
+        } catch (e) {}
+        if (v === 'guide' || v === 'explanation' || v === 'text') document.documentElement.setAttribute('data-view', v);
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <DraftBanner />
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href={base}>
+          <span class="brand-he" lang="he" dir="rtl">שער היחוד</span>
+          <span class="brand-en">Shaar HaYichud <span class="brand-sub">Study Guide</span></span>
+        </a>
+        <nav class="site-nav" aria-label="Site">
+          <ul class="chapter-pills" aria-label="Chapters">
+            {
+              guide.chapters.map((c) => (
+                <li>
+                  <a href={`${base}chapter/${c.n}/`} aria-current={current === c.n ? 'page' : undefined} title={`Chapter ${c.n}: ${c.title}`}>
+                    <span class="sr-only">Chapter </span>
+                    {c.n}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+          <ul class="nav-links">
+            <li><a href={`${base}booklet/`} aria-current={current === 'booklet' ? 'page' : undefined}>Booklet</a></li>
+            <li><a href={`${base}glossary/`} aria-current={current === 'glossary' ? 'page' : undefined}>Glossary</a></li>
+            <li><a href={`${base}about/`} aria-current={current === 'about' ? 'page' : undefined}>About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>
+        Draft for review. Explanations drafted by AI from Rabbi Markel’s classes; not yet reviewed by him. English translation by
+        Rabbi Amiram Markel (CC-BY), via Sefaria. <a href={`${base}about/`}>About this guide</a>.
+      </p>
+    </footer>
+    <AudioBar />
+    <script>
+      import '../scripts/player';
+      import '../scripts/view';
+    </script>
+  </body>
+</html>

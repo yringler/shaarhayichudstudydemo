@@ -1,0 +1,12 @@
+- { term: "derech klal", he: "דרך כלל", gloss: "the general way; contemplating a subject as a whole", segment: 1 }
+- { term: "derech prat", he: "דרך פרט", gloss: "the particular way; contemplating a subject detail by detail", segment: 1 }
+- { term: "memalei kol almin", he: "ממלא כל עלמין", gloss: "(the light) that fills all worlds", segment: 1 }
+- { term: "yichuda ila'a", he: "יחודא עילאה", gloss: "the higher unity", segment: 4 }
+- { term: "yichuda tata'a", he: "יחודא תתאה", gloss: "the lower unity", segment: 8 }
+- { term: "mahus", he: "מהות", gloss: "what a thing is in itself", segment: 13 }
+- { term: "metzius", he: "מציאות", gloss: "existence", segment: 13 }
+- { term: "galgalim", he: "גלגלים", gloss: "the celestial orbits (spheres)", segment: 15 }
+- { term: "partzufim", he: "פרצופים", gloss: "lit. faces; the statures of the sefiros", segment: 22 }
+- { term: "amkus hadaas", he: "עמקות הדעת", gloss: "depth of daas", segment: 26 }
+- { term: "yichud prati", he: "יחוד פרטי", gloss: "a particular unification", segment: 28 }
+- { term: "yichud klali", he: "יחוד כללי", gloss: "the general unification", segment: 28 }

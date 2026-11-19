@@ -1,0 +1,1125 @@
+{
+  "schemaVersion": 1,
+  "chapter": 4,
+  "heRef": "נר מצוה ותורה אור; שער היחוד ד׳",
+  "sefariaUrl": "https://www.sefaria.org/The_Gate_of_Unity.4?lang=bi",
+  "translation": {
+    "versionTitle": "Translated by Rabbi Amiram Markel, 2023",
+    "license": "CC-BY",
+    "source": "http://neirot.com/the-gate-of-unity-with-hebrew/"
+  },
+  "sections": [
+    {
+      "label": "בכלל ובפרט",
+      "fromSegment": 1,
+      "toSegment": 8
+    },
+    {
+      "label": "יחו\"ת בכלל",
+      "fromSegment": 1,
+      "toSegment": 2
+    },
+    {
+      "label": "דרך פרט",
+      "fromSegment": 3,
+      "toSegment": 3
+    },
+    {
+      "label": "יחו\"ע",
+      "fromSegment": 4,
+      "toSegment": 8
+    },
+    {
+      "label": "מעלות בשניהם",
+      "fromSegment": 9,
+      "toSegment": 28
+    },
+    {
+      "label": "דרך כלל",
+      "fromSegment": 9,
+      "toSegment": 10
+    },
+    {
+      "label": "דרך פרט",
+      "fromSegment": 11,
+      "toSegment": 14
+    },
+    {
+      "label": "יחו\"ת",
+      "fromSegment": 15,
+      "toSegment": 21
+    },
+    {
+      "label": "מעלת הפרט",
+      "fromSegment": 20,
+      "toSegment": 21
+    },
+    {
+      "label": "יחו\"ע",
+      "fromSegment": 22,
+      "toSegment": 28
+    },
+    {
+      "label": "חסרון דרך כלל",
+      "fromSegment": 24,
+      "toSegment": 25
+    },
+    {
+      "label": "מעלת הפרט",
+      "fromSegment": 26,
+      "toSegment": 28
+    },
+    {
+      "label": "יחוד",
+      "fromSegment": 28,
+      "toSegment": 36
+    },
+    {
+      "label": "יחוד פרטי",
+      "fromSegment": 29,
+      "toSegment": 32
+    },
+    {
+      "label": "יחוד כללי",
+      "fromSegment": 33,
+      "toSegment": 34
+    },
+    {
+      "label": "יחו\"ע",
+      "fromSegment": 35,
+      "toSegment": 36
+    },
+    {
+      "label": "צריך פרטי",
+      "fromSegment": 37,
+      "toSegment": 39
+    },
+    {
+      "label": "כוונה בפרטי",
+      "fromSegment": 40,
+      "toSegment": 45
+    },
+    {
+      "label": "הוראה למעשה",
+      "fromSegment": 46,
+      "toSegment": 48
+    }
+  ],
+  "segments": [
+    {
+      "n": 1,
+      "lines": [
+        {
+          "id": "6cakse44",
+          "text": "(ד) ומעתה יש לבאר באיכות ענין ההתבוננות, אם דרך כלל או דרך פרט דווקא,"
+        },
+        {
+          "id": "cbwgwjex",
+          "text": "כמו על דרך דוגמא בהשגה אלקית דבחינת ממלא כל עלמין, דרך כלל בג' עולמות בי''ע, הכל שרש ענין א' הוא בכל המשלים דזיו והתפשטות או אותיות כו', וכללותו רק ענין הגלוי מן ההעלם"
+        }
+      ],
+      "en": "We must now explain how one should contemplate (<i>Hitbonenut</i>), whether it should specifically be done in a general way, or in a way of particulars. For example, [this may be understood] in [regard to] the G-dly comprehension into the aspect of how <i>HaShem</i>’s-יהו״ה G-dliness fills all worlds (<i>Memaleh Kol Almin</i>). In the general comprehension [of how <i>HaShem</i>’s-יהו״ה G-dliness permeates] the three [created] worlds of <i>Briyah, Yetzirah,</i> and <i>Asiyah</i>, all the examples of the ray [emanating from the luminary], or of the spreading forth [of Divine influence], or of the letters [of speech] etc., are all rooted in one general matter, that of “the revelation of that which is the hidden.”<sup data-fn=\"1\">1</sup>",
+      "footnotes": [
+        {
+          "n": 1,
+          "html": "<i>Giluy HaHe’elem</i> (revelation of the hidden). This matter and all of its analogies will be explained later in chapter 19."
+        }
+      ],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "6cakse44",
+          "startSeconds": 5.36,
+          "endSeconds": 19.58,
+          "confidence": 1
+        },
+        {
+          "source": "022",
+          "lineId": "cbwgwjex",
+          "startSeconds": 19.58,
+          "endSeconds": 34.68,
+          "confidence": 0.952
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "lines": [
+        {
+          "id": "w5vczvps",
+          "text": "או כמו ערך הנבדל לבחינת בעל גבול מחודש לגבי בלתי בעל גבול דרך כלל, שיש בזה ריבוי אופנים, והכל בכלל, גם שנמצא בזה ענינים פרטים הרבה (כמו שיתבאר)"
+        }
+      ],
+      "en": "Likewise, in the general [comprehension of the great] difference between a created, limited being, relative to <i>HaShem</i>-יהו״ה, blessed is He, the Unlimited Being; [although] there are many particular ways to [understand] this and [although] there are many details (as will be explained), [nonetheless], it all is [understood in a] general [manner].",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "w5vczvps",
+          "startSeconds": 34.68,
+          "endSeconds": 106.43,
+          "confidence": 0.966
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "lines": [
+        {
+          "id": "rbofzdcy",
+          "text": "או דרך פרט, להתבונן בכל עולם ובכל נברא ובכל פרטי מדריגות חלוקים בסדרי ההשתלשלות מעילה לעילה בכל אחד בפני עצמו דוקא כו'"
+        }
+      ],
+      "en": "Or, [on the other hand], should one contemplate in a manner of particulars, [analyzing] each world, each creature and each of the various particular levels in the [entire] chaining down [of the worlds], from cause to [subsequent] cause, [analyzing] each one, specifically in and of itself?",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "rbofzdcy",
+          "startSeconds": 106.43,
+          "endSeconds": 147.75,
+          "confidence": 0.892
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "lines": [
+        {
+          "id": "m2zpt3ak",
+          "text": "וכך הוא השאלה בהתבוננות ביחודא עילאה באורות וכלים דאצילות בכל פרטי עשר ספירות עד עצמות אור אין סוף"
+        }
+      ],
+      "en": "This, likewise, is the question in regard to the contemplation of the “Upper Unity,” of the lights and vessels [of the world] of <i>Atzilut</i>, including all the details of the ten <i>sefirot,</i> until the Essential Self of the Limitless Light (<i>Atzmoot Ohr Ein Sof)</i>.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "m2zpt3ak",
+          "startSeconds": 147.75,
+          "endSeconds": 157.13,
+          "confidence": 0.732
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "lines": [
+        {
+          "id": "7bttavsf",
+          "text": "אם להתבונן בכללות ענין אור האצילות באיכות צמצומו מן העצמות ואיך שנבדל הערך לגבי עצמות המאציל"
+        }
+      ],
+      "en": "Should one contemplate this in a general manner, [that is] the matter of the light of <i>Atzilut</i>, how it comes about from the Essential Self of <i>HaShem</i>-יהו״ה, blessed is He, through <i>Tzimtzum</i>, and how it is incomparable to the Essential Self of the Emanator?",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "7bttavsf",
+          "startSeconds": 157.13,
+          "endSeconds": 165.89,
+          "confidence": 0.953
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "lines": [
+        {
+          "id": "zdts5g2i",
+          "text": "ואיך דאיהו וחיוהי חד כו' (גם שיש בו ענינים פרטיים הרבה מאד כמו שיתבאר)"
+        }
+      ],
+      "en": "Likewise [in regard to the general contemplation of] how “He and His life force are one” (although there are many particulars in this, as will be explained, [nonetheless, it still is a general contemplation]).",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "zdts5g2i",
+          "startSeconds": 165.89,
+          "endSeconds": 188.22,
+          "confidence": 0.762
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "lines": [
+        {
+          "id": "3rfvlpku",
+          "text": "בכמה מיני משלים כמו שלהבת הקשורה כו' שנזכר בספר יצירה או כענין גלוי ההעלם דכחות הנפש מעצמות הנפש דרך כלל כידוע"
+        }
+      ],
+      "en": "[He can understand this matter generally,] through various analogies, such as [the analogy] mentioned in <i>Sefer Yetzirah</i> of a flame that is bound [to the coal], or such as a general [understanding] of the revelation of the faculties of the soul from their concealment in the essence of the soul.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "3rfvlpku",
+          "startSeconds": 188.22,
+          "endSeconds": 200.01,
+          "confidence": 0.905
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "lines": [
+        {
+          "id": "4ps3yns6",
+          "text": "עד שאחר העיון יושג בחינת העומק מזה כנזכר לעיל בהשגה דממלא כל עלמין שנקרא יחודא תתאה כידוע."
+        }
+      ],
+      "en": "Through this analysis he will come to comprehend the depth [of the concept] of how the light of <i>HaShem</i>-יהו״ה, blessed is He, fills all worlds, which is called, “The Lower Unity,” as known.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "4ps3yns6",
+          "startSeconds": 200.01,
+          "endSeconds": 260.24,
+          "confidence": 0.494
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "lines": [
+        {
+          "id": "ecmvdyqt",
+          "text": "והנה באמת לא ראי זה כו'"
+        },
+        {
+          "id": "ymyj432g",
+          "text": "דיש מעלה בהתבוננות דרך כלל כדי שיוכל לבא לבחינת העומק בכלל שהוא בחינת עצמות אור האלקי"
+        }
+      ],
+      "en": "Now, in truth, the two [methods] are dissimilar [to each other]. [On the one hand] there is an advantage to general contemplation, that through it one will be able to come to the general depth [of the matter], which is the general aspect of the essence of the G-dly light.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "ecmvdyqt",
+          "startSeconds": 260.24,
+          "endSeconds": 266.08,
+          "confidence": 1
+        },
+        {
+          "source": "022",
+          "lineId": "ymyj432g",
+          "startSeconds": 266.08,
+          "endSeconds": 280,
+          "confidence": 0.912
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "lines": [
+        {
+          "id": "yaj77wry",
+          "text": "בבחינת הכלל, בין ביחודא עילאה בין ביחודא תתאה, שזהו עיקר התכלית בגלוי אלקות בנפש כו'"
+        }
+      ],
+      "en": "[However] he will reach this only in a general way, whether in [regard to the comprehension of] the “Upper Unity,” or the “Lower Unity.” This revelation of G-dliness in his soul is the ultimate purpose of contemplation.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "yaj77wry",
+          "startSeconds": 280,
+          "endSeconds": 421.38,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "lines": [
+        {
+          "id": "4wq4cyji",
+          "text": "ויש מעלה בהתבוננות דרך פרט דוקא מצד עוצם הקירוב גלוי אור האלקי בנפשו יותר, כי בהתבוננות דרך כלל יוכל להטעות את עצמו עד שנדמה לו כי מאד קרוב אליו הדבר"
+        }
+      ],
+      "en": "[On the other hand] there is also an advantage to contemplating specifically in a way of particulars, since [through it] the revelation of the G-dly light in his soul will be incredibly closer to him. For, through contemplation in a general way it is possible for one to delude himself, so that it appears to him that this matter is very close to him.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "4wq4cyji",
+          "startSeconds": 421.38,
+          "endSeconds": 443.98,
+          "confidence": 0.953
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "lines": [
+        {
+          "id": "eza4x224",
+          "text": "ובאמת מרחוק מאד יהו״ה נראה לו בהיותו דרך כלל לבד"
+        }
+      ],
+      "en": "However, in truth, when he only [contemplates] in a general manner, <i>HaShem</i>-יהו״ה appears to him from afar.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "eza4x224",
+          "startSeconds": 443.98,
+          "endSeconds": 487.84,
+          "confidence": 0.889
+        }
+      ]
+    },
+    {
+      "n": 13,
+      "lines": [
+        {
+          "id": "gl5dssvh",
+          "text": "מה שאין כן ההתבוננות דרך פרט, שכל פרטי בהשגה בדבר פרטי, הרי יוקבע בנפשו בבחינת הקירוב ביותר"
+        }
+      ],
+      "en": "This is not the case when one contemplates in a manner of particulars, to comprehend all the details of each particular. ]When he does this[, it becomes embedded in his soul in a very close way.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "gl5dssvh",
+          "startSeconds": 487.84,
+          "endSeconds": 802.58,
+          "confidence": 0.976
+        }
+      ]
+    },
+    {
+      "n": 14,
+      "lines": [
+        {
+          "id": "mioark6c",
+          "text": "וממנו יבוא להשגת דבר פרטי העליון הימנו בהדרגה, עד שיבוא לכלל ההשגה בכלליות, שאז מתאמת יותר בלתי הטעות את עצמו כלל"
+        }
+      ],
+      "en": "From this, he will come to comprehend a [higher] particular, on a higher level, until he comes to the general comprehension of the general matter. In this way [the comprehension] is truer, without deluding himself at all.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "mioark6c",
+          "startSeconds": 802.58,
+          "endSeconds": 956.27,
+          "confidence": 0.477
+        }
+      ]
+    },
+    {
+      "n": 15,
+      "lines": [
+        {
+          "id": "dy5e5akm",
+          "text": "כמו כשתחלה יתבונן דרך פרט בממלא כל עלמין באיכות התהוות שרש שפע ברוחניות דגלגלים ומזלות מאין ליש דעשיה, משמרי האופנים"
+        }
+      ],
+      "en": "For example, when he starts contemplating the matter of how the light of <i>HaShem</i>-יהו״ה, blessed is He, fills all worlds, in a manner of particulars, [he begins by contemplating] how the root of the spiritual influence of the orbits and constellations come into actuality, out of nothing, from the waste matter of the <i>Ophanim</i> angels.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "dy5e5akm",
+          "startSeconds": 956.27,
+          "endSeconds": 1008.25,
+          "confidence": 0.736
+        }
+      ]
+    },
+    {
+      "n": 16,
+      "lines": [
+        {
+          "id": "ux6ompgg",
+          "text": "ואחר כך יתבונן בפרטיות באופנים וחיות כו' עד בחינת מלכות דעשיה, כללות האור האלקי שמהוה עולם העשיה"
+        }
+      ],
+      "en": "Afterwards, he contemplates the <i>Ophanim</i> angels, and the <i>Chayot</i> angels in a manner of particulars etc. ]This contemplation continues[ until ]he reaches[ the aspect of <i>Malchut</i> [of the world] of <i>Asiyah,</i> which is the general G-dly light that brings the world of <i>Asiyah</i> into being.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "ux6ompgg",
+          "startSeconds": 1008.25,
+          "endSeconds": 1044.96,
+          "confidence": 0.854
+        }
+      ]
+    },
+    {
+      "n": 17,
+      "lines": [
+        {
+          "id": "dipad6g6",
+          "text": "ועל דרך זה בפרטי י׳ ספירות דעשיה עד בחינת מלכות דיצירה שנעשה כתר לעשיה"
+        }
+      ],
+      "en": "[He continues] in this way, [contemplating] the details of the ten <i>sefirot</i> [of the world] of <i>Asiyah</i> until he [reaches] the aspect of <i>Malchut</i> of <i>Yetzirah</i>, which becomes the <i>Keter</i> [for the world] of <i>Asiyah</i>.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "dipad6g6",
+          "startSeconds": 1044.96,
+          "endSeconds": 1066.49,
+          "confidence": 0.923
+        }
+      ]
+    },
+    {
+      "n": 18,
+      "lines": [
+        {
+          "id": "mv2hugwv",
+          "text": "וכן על דרך זה בפרטיות דיצירה ובפרטיות דבריאה כו'"
+        }
+      ],
+      "en": "In this manner [he contemplates] the particulars [of the world] of <i>Yetzirah</i>, and [then] the particulars [of the world] of <i>Briyah</i>.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "mv2hugwv",
+          "startSeconds": 1066.49,
+          "endSeconds": 1089.32,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 19,
+      "lines": [
+        {
+          "id": "rde6lkyu",
+          "text": "עד בחינת מלכות דאצילות כללות הכל כו' שנקרא שם אלהי״ם בכלל כידוע"
+        }
+      ],
+      "en": "[He continues in this way] until [he reaches] the aspect of <i>Malchut</i> of <i>Atzilut</i>, [which is] the totality of everything, and is generally called by the name G-d-<i>Elohi”m-</i>אלהי״ם, as known.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "rde6lkyu",
+          "startSeconds": 1089.32,
+          "endSeconds": 1298.84,
+          "confidence": 0.5
+        }
+      ]
+    },
+    {
+      "n": 20,
+      "lines": [
+        {
+          "id": "rfkeroz7",
+          "text": "שאז מתאמת הדבר יותר בקירוב כו', כי אחר העיון היטב בכל הפרטים, הגם שכל פרט בפני עצמו אינו ענין אלהות בכללות ואינו רק בחינת טפל פרטי לבד, אבל כאשר יתחבר כל העיון מכל הפרטים אל הכלל, אז יוקבע יותר בנפש בחינת הכלל"
+        }
+      ],
+      "en": "In this way, after thorough analysis, he realizes the truth of the matter, in a way of great closeness. For, although, in and of itself, each particular of his contemplation is generally not a matter of G-dliness and is only a particular that is of secondary importance, nonetheless, when his whole analysis of all the particulars, comes together and becomes bound to the general principle, then the general principle will become embedded in his soul to a greater degree.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "rfkeroz7",
+          "startSeconds": 1298.84,
+          "endSeconds": 1644.52,
+          "confidence": 0.885
+        }
+      ]
+    },
+    {
+      "n": 21,
+      "lines": [
+        {
+          "id": "ozsyxvkr",
+          "text": "כאשר בדוק ומנוסה לכל עוסק בעמקות בהתבוננות"
+        }
+      ],
+      "en": "This has been tried and tested by all those who have toiled deeply in <i>Hitbonenut</i> contemplation.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "ozsyxvkr",
+          "startSeconds": 1644.52,
+          "endSeconds": 1658.75,
+          "confidence": 0.971
+        }
+      ]
+    },
+    {
+      "n": 22,
+      "lines": [
+        {
+          "id": "5vrj527z",
+          "text": "וגם ביחודא עילאה בהתבוננות דרך פרט בכל פרטי העשר ספירות בפרצופים דזעיר אנפין ונוקבא ואבא ואמא ואריך אנפין ועתיק יומין עד ראשית הקו באדם קדמון כו'"
+        }
+      ],
+      "en": "Likewise, the contemplation of the “Upper Unity” should be in a manner of particulars [as well]; to understand each particular detail of the ten <i>sefirot</i> of the statures of <i>Zeir Anpin</i> and <i>Nukvah, Abba</i> and <i>Imma</i>, <i>Arich Anpin</i> and <i>Atik Yomin</i>, all the way to the beginning of the <i>Kav</i> in <i>Adam Kadmon</i> etc.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "5vrj527z",
+          "startSeconds": 1658.75,
+          "endSeconds": 1696.94,
+          "confidence": 0.639
+        }
+      ]
+    },
+    {
+      "n": 23,
+      "lines": [
+        {
+          "id": "dn6asu54",
+          "text": "דרך פרט דוקא, הוא המועיל לקבוע בנפש מבחינת כללות עצמות המאציל הכוללם יחד"
+        }
+      ],
+      "en": "It is specifically [the contemplation of all this], in a manner of particulars, that will cause the general light of the essence of the Emanator, which includes and unifies everything, to be implanted in his soul.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "dn6asu54",
+          "startSeconds": 1696.94,
+          "endSeconds": 1771.84,
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "n": 24,
+      "lines": [
+        {
+          "id": "u7ddzurz",
+          "text": "מה שאין כן ההתבוננות דרך כלל לבד כנזכר לעיל שמרחוק יהו״ה נראה לו"
+        }
+      ],
+      "en": "However, this is not the case if one only contemplates in a general manner, so that <i>HaShem</i>-יהו״ה appears to him from afar, as mentioned previously.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "u7ddzurz",
+          "startSeconds": 1771.84,
+          "endSeconds": 1786.09,
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "n": 25,
+      "lines": [
+        {
+          "id": "btuptc4q",
+          "text": "(עד שיוכל ליפול בדמיונות כוזבות כשוטים וחסרי הדעת מצד צמצום כלי מוחו רק בדבר א' והוא כללי כו')"
+        }
+      ],
+      "en": "(For, through this, it is possible for him to fall into false delusions, as do fools and those who lack <i>Da’at</i>. ]This comes about[ because they focus their entire mind solely on one general matter.)",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "022",
+          "lineId": "btuptc4q",
+          "startSeconds": 1786.09,
+          "endSeconds": 1859.69,
+          "confidence": 0.47
+        },
+        {
+          "source": "023",
+          "lineId": "btuptc4q",
+          "startSeconds": 37.94,
+          "endSeconds": 54.92,
+          "confidence": 0.5
+        }
+      ]
+    },
+    {
+      "n": 26,
+      "lines": [
+        {
+          "id": "uh5vf7sj",
+          "text": "אבל צמצום העמקת הדעת בכל פרט הוא ההיפוך מן הטעות והריחוק"
+        }
+      ],
+      "en": "However, the focusing and delving of one’s concentration into each detail is the opposite of error and distance [from <i>HaShem</i>-יהו״ה].",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "uh5vf7sj",
+          "startSeconds": 54.92,
+          "endSeconds": 107.54,
+          "confidence": 0.879
+        }
+      ]
+    },
+    {
+      "n": 27,
+      "lines": [
+        {
+          "id": "uhtyhr74",
+          "text": "אדרבא, על ידי זה מתקרב הדבר יותר אצלו בהיותו הולך מפרט לפרט העליון הימנו עד שכוללם יחד, ליחד יחוד כללי ולא יחוד פרטי"
+        }
+      ],
+      "en": "On the contrary, through this, the matter becomes closer to his [mind] since he goes from one particular to a higher particular until he unifies them all in a general unification, rather than a unification of particulars.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "uhtyhr74",
+          "startSeconds": 107.54,
+          "endSeconds": 172.1,
+          "confidence": 0.849
+        }
+      ]
+    },
+    {
+      "n": 28,
+      "lines": [
+        {
+          "id": "h7aoass4",
+          "text": "כמו לך יהו״ה הגדולה כו'"
+        },
+        {
+          "id": "bcsqcn75",
+          "text": "שענין היחוד האלקי הוא בחינת עומק ההשגה בביטול היש לאין ביחודא עילאה ויחודא תתאה"
+        }
+      ],
+      "en": "This may be understood from the unification (<i>Yichud</i>) of “Yours, <i>HaShem</i>-יהו״ה, is the greatness.” The [general] matter of G-dly unification is the aspect of the depth of comprehending the nullification of the “something” to the “nothing,” [both] in [the comprehension of] the “Upper Unity” and the “Lower Unity.”",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "h7aoass4",
+          "startSeconds": 172.1,
+          "endSeconds": 180.24,
+          "confidence": 1
+        },
+        {
+          "source": "023",
+          "lineId": "bcsqcn75",
+          "startSeconds": 180.24,
+          "endSeconds": 235.97,
+          "confidence": 0.825
+        }
+      ]
+    },
+    {
+      "n": 29,
+      "lines": [
+        {
+          "id": "aryg5wsm",
+          "text": "ויש יחוד פרטי בדבר פרטי, כמו לך יהו״ה הגדולה שהוא בחינת חסד שבמלכות דאצילות בבי''ע דרך פרט בכל עולם כו'"
+        }
+      ],
+      "en": "Now there [also] is a particular unification for each particular thing. For example, in “Yours <i>HaShem</i>-יהו״ה is the greatness,” this is the aspect of <i>Chessed</i><sup data-fn=\"2\">2</sup> of <i>Malchut</i> [of the world] of <i>Atzilut</i> [as it is invested] in [the worlds of] <i>Briyah, Yetzirah</i> and <i>Asiyah</i>, in a particular way for each world.",
+      "footnotes": [
+        {
+          "n": 2,
+          "html": "Greatness refers to <i>Chessed</i>."
+        }
+      ],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "aryg5wsm",
+          "startSeconds": 235.97,
+          "endSeconds": 264.58,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 30,
+      "lines": [
+        {
+          "id": "jv7slzlo",
+          "text": "וגם כללותו אינו אלא פרט מדה א' ממדה שבמלכות כו'"
+        }
+      ],
+      "en": "That is, even the general matter here is only a single particular quality of a particular quality of <i>Malchut</i>.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "jv7slzlo",
+          "startSeconds": 264.58,
+          "endSeconds": 323.88,
+          "confidence": 0.862
+        }
+      ]
+    },
+    {
+      "n": 31,
+      "lines": [
+        {
+          "id": "yl7nvrbz",
+          "text": "ולך יהו״ה הגבורה בכללותו ופרטיו בכל עולם נקרא יחוד פרטי"
+        }
+      ],
+      "en": "Likewise, [when one contemplates] “Yours <i>HaShem</i>-יהו״ה is the might,” both in general and in its particulars in each world, [it] is, [nonetheless], considered to be a particular unification.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "yl7nvrbz",
+          "startSeconds": 323.88,
+          "endSeconds": 328.31,
+          "confidence": 0.728
+        }
+      ]
+    },
+    {
+      "n": 32,
+      "lines": [
+        {
+          "id": "s2jqfu2i",
+          "text": "ועל דרך זה בכל יחודים פרטיים שבי׳ ספירות דבי''ע כידוע"
+        }
+      ],
+      "en": "The same [principle] applies to the unifications of all the particulars of the ten <i>sefirot</i> [of each of the worlds] of <i>Briyah</i>, <i>Yetzirah,</i> and <i>Asiyah</i>, as known.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "s2jqfu2i",
+          "startSeconds": 328.31,
+          "endSeconds": 346.16,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 33,
+      "lines": [
+        {
+          "id": "7ydzweo3",
+          "text": "אבל יחוד הכללי הוא כמו מה שכתוב הנה מקום אתי או המלך המרומם כו' המתנשא מכל ימות עולם דו׳ קצוות ומוחין חכמה ובינה שבהם כו'"
+        }
+      ],
+      "en": "In contrast, a general unification is like [the understanding of], “Behold, the place is with Me,” or, “The exalted King… who is aloof from the days of the world.” [In other words, He is aloof from “the days of the world,” which refers to] the six directions (the emotional <i>Sefirot</i>) and the intellect of <i>Chochmah</i> and <i>Binah</i> [of the worlds].",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "7ydzweo3",
+          "startSeconds": 346.16,
+          "endSeconds": 399.56,
+          "confidence": 0.955
+        }
+      ]
+    },
+    {
+      "n": 34,
+      "lines": [
+        {
+          "id": "o57vid2s",
+          "text": "וגם זה פרט יחשב לגבי עצמות בחינת המלכות שהוא כתר מל'"
+        }
+      ],
+      "en": "However, in comparison to the essence of <i>Malchut</i> of <i>Atzilut</i>, which is <i>Keter Malchut</i>, even this is, [likewise], only considered to be a particular.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "o57vid2s",
+          "startSeconds": 399.56,
+          "endSeconds": 446.13,
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "n": 35,
+      "lines": [
+        {
+          "id": "vr3kwue2",
+          "text": "וכה\"ג בע\"ס דאצי' כו' עד עצמות בחינת מלכות דאין סוף בראשית הקו, יש יחודים פרטים הרבה בכל ספירה ופרצוף כו'"
+        }
+      ],
+      "en": "In a similar manner [there is a contemplation of] all the other <i>sefirot</i> [of the world] of <i>Atzilut</i>, until the essence of the aspect of <i>Malchut</i> of <i>Ein Sof</i> (the Unlimited One), at the beginning of the <i>Kav</i>. There are many unifications of the many particulars in each <i>sefirah</i> and <i>partzuf</i> (stature).",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "vr3kwue2",
+          "startSeconds": 446.13,
+          "endSeconds": 488.55,
+          "confidence": 0.92
+        }
+      ]
+    },
+    {
+      "n": 36,
+      "lines": [
+        {
+          "id": "2p5ilpn2",
+          "text": "ויחוד הכללי בכללות ביטול כל ההשתלשלות דקו כו' לגבי עצמות אור אין סוף כידוע."
+        }
+      ],
+      "en": "The general unification, [however], is the general nullification of the entire chaining down of the <i>Kav,</i> relative to the Essential Self of the Limitless Light (<i>Atzmoot Ohr Ein Sof</i>), as known.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "2p5ilpn2",
+          "startSeconds": 488.55,
+          "endSeconds": 510.2,
+          "confidence": 0.956
+        }
+      ]
+    },
+    {
+      "n": 37,
+      "lines": [
+        {
+          "id": "qknviiwj",
+          "text": "אך הנה מי שלא העמיק דעתו ביחודים פרטים ומתחיל מבחינת הכלל, גם שבא לו ביגיעה רבה בהשגות רבות באיכות ענין הביטול בכלל, כמו כשלהבת כו' וכהאי גוונא, לא יוקבע בנפשו אמיתית ענינו כל כך, כמו אחר עיון היטב בכל פרטיים, עד שמהם יבוא לבחינת בכלל."
+        }
+      ],
+      "en": "However, [this is not the case with] one who has not delved his concentration into particular unifications, but, [rather], begins with the general aspect. Even though he toils greatly in [comprehending] the many general concepts of how everything is generally sublimated to <i>HaShem</i>-יהו״ה, blessed is He, such as the aforementioned analogy of the flame, and other such [concepts], [nonetheless], the truth of the matter will not become as embedded in his soul, as much as it would have been, had he gone through a thorough analysis into the particular details, which would bring him to [truly understand] the general [concept].",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "qknviiwj",
+          "startSeconds": 510.2,
+          "endSeconds": 566.02,
+          "confidence": 0.984
+        }
+      ]
+    },
+    {
+      "n": 38,
+      "lines": [
+        {
+          "id": "zn3lz4x4",
+          "text": "והיינו דפרט אצטריך לכלל וכלל אצטריך לפרט, מפני שאין כלל בלא פרט כו'"
+        }
+      ],
+      "en": "This then, is the meaning of, “the particular requires the general and the general requires the particular,”<sup data-fn=\"3\">3</sup> for no general [concept] can exist without particulars.",
+      "footnotes": [
+        {
+          "n": 3,
+          "html": "See Zohar Shmot 3a, Terumah 161b, V’Etchanan 264a."
+        }
+      ],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "zn3lz4x4",
+          "startSeconds": 566.02,
+          "endSeconds": 651.21,
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "n": 39,
+      "lines": [
+        {
+          "id": "vcbhnpks",
+          "text": "(ודבר זה כבר נחלקו בו הרבה מגדולי הראשונים כמו הרמב''ם והטור, אם לכוון בפירוש המלות דרך פרט בגדלות יהו״ה, אם לכוון דרך כלל, לפני מי אתה עומד ומתפלל כו' כמו שכתוב בכתבים)"
+        }
+      ],
+      "en": "(This matter has already been debated by many of the foremost <i>Rishonim,</i> such as the Rambam and the Tur. [That is], whether [during prayer] one’s intentions should be focused on the particular meanings of the words, such as [contemplating] the greatness of <i>HaShem</i>-יהו״ה [in a way of particulars]? Or, whether one’s intent should rather be to realize, in a general way, before Whom he is standing and praying? This matter is discussed in [Chassidic] manuscripts).",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "vcbhnpks",
+          "startSeconds": 651.21,
+          "endSeconds": 697.14,
+          "confidence": 0.986
+        }
+      ]
+    },
+    {
+      "n": 40,
+      "lines": [
+        {
+          "id": "c7f2eggx",
+          "text": "והגם שהמחשבה כללית עם המחשבה פרטית לא ישכנו כאחד, מכל מקום מי שהוא מעמיק בכל לבו ובכל חפצו לעצמות האלקות דוקא, הנה גם בעיונו בפרטיות יכוין הכל אל המחשבה הכללית דעצמות דוקא"
+        }
+      ],
+      "en": "Now, although [as a rule] a general thought and a particular thought cannot exist simultaneously, nonetheless, he who delves with all his heart and with all his desire, specifically to [contemplate] the essence of <i>HaShem</i>’s-יהו״ה G-dliness, even though his analysis is into the particulars, he will specifically direct everything to the general thought of <i>HaShem</i>’s-יהו״ה Essential Self.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "c7f2eggx",
+          "startSeconds": 697.14,
+          "endSeconds": 775.07,
+          "confidence": 0.844
+        }
+      ]
+    },
+    {
+      "n": 41,
+      "lines": [
+        {
+          "id": "5i6usyit",
+          "text": "ולא יפול מכללות הכונה כלל מחמת צמצום הכונה הפרטיות, מאחר שכל הפרטים אינם נמשכים והולכים רק אחר הכלל דוקא, כידוע לכל הולך בדרך אמת, ליהו״ה לבדו דוקא, כמו שכתבו זכרונם לברכה אליו ולא למדותיו"
+        }
+      ],
+      "en": "He will not fall from the general intention at all, as a result of focusing on the particulars. This is because all the particulars are drawn to and follow the general principle, as known to all who travel upon the “Path of Truth,” [who direct themselves] specifically only to <i>HaShem</i>-יהו״ה, blessed is He. Likewise, this is as stated by the Sages, “[pray] to Him rather than to His qualities.”",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "5i6usyit",
+          "startSeconds": 775.07,
+          "endSeconds": 871.34,
+          "confidence": 0.855
+        }
+      ]
+    },
+    {
+      "n": 42,
+      "lines": [
+        {
+          "id": "xgtmunuk",
+          "text": "רק כללות ענין ההתבוננות בפרטי מדותיו הוא רק כדי שיבא לעצמותו ומהותו דוקא"
+        }
+      ],
+      "en": "[This is to say that] the main intent of the matter of contemplating the particulars is solely for the specific purpose of coming to the Essential Self and being of <i>HaShem</i>-יהו״ה Himself.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "xgtmunuk",
+          "startSeconds": 871.34,
+          "endSeconds": 880.09,
+          "confidence": 0.977
+        }
+      ]
+    },
+    {
+      "n": 43,
+      "lines": [
+        {
+          "id": "zgrqgxhr",
+          "text": "ולא לכוון העיקר רק בכוונה של הפרט, כמו בשביל איזה לימוד לעצמו."
+        }
+      ],
+      "en": "[In other words], one should never consider the particulars to be the main thing, such as studying a subject for itself [rather than to know <i>HaShem</i>-יהו״ה].",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "zgrqgxhr",
+          "startSeconds": 880.09,
+          "endSeconds": 924.2,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 44,
+      "lines": [
+        {
+          "id": "5456xgdn",
+          "text": "גם בעיונו בספר הזוהר ובכתבי האריז''ל צריך להיות על דרך זה דוקא ודי למבין"
+        }
+      ],
+      "en": "Likewise, one’s analysis of the Zohar and the writings of the Ari’zal must specifically be in this manner. This will suffice those of understanding.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "5456xgdn",
+          "startSeconds": 924.2,
+          "endSeconds": 950.43,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 45,
+      "lines": [
+        {
+          "id": "zjpzclgm",
+          "text": "(וכאשר מקובל היה אבי אדוני מורי ורבי זכרונו לברכה נשמתו עדן בדבר זה מפי הרב המגיד זכרונו לברכה בפירוש גמור וכך שמעתי מפיו זכרונו לברכה)"
+        }
+      ],
+      "en": "(My father, our master, mentor and teacher [the Alter Rebbe] of blessed memory, whose soul is in <i>Eden</i>, received this teaching from the mouth of the <i>Rav,</i> the <i>Maggid</i> [of Mezeritch] of blessed memory, with a full explanation, and this is how I heard it from his mouth.)",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "zjpzclgm",
+          "startSeconds": 950.43,
+          "endSeconds": 971.82,
+          "confidence": 0.716
+        }
+      ]
+    },
+    {
+      "n": 46,
+      "lines": [
+        {
+          "id": "r5obmubs",
+          "text": "ובזה מתורץ שאלת השואלים על פירוש המלות דרך פרט ליודעים בהם, איך שאינם מבלבלים את מחשבת הכלל"
+        }
+      ],
+      "en": "Through all of the above we have answered the question of those who inquire regarding the specific [kabbalistic] meanings of the words [of the prayers]. How is it that those who know them do not become confused [and distracted] from the general intent?",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "r5obmubs",
+          "startSeconds": 971.82,
+          "endSeconds": 1033.42,
+          "confidence": 0.924
+        }
+      ]
+    },
+    {
+      "n": 47,
+      "lines": [
+        {
+          "id": "mq4fqasn",
+          "text": "אלא אדרבא כוונות פירוש המלות על פי המלות עפ\"י הקבלה מסייעים לחזק את עומק השגת הכלל בעצמות אלקות, כידוע לטועמי טעם בהם דרך פרט כו'"
+        }
+      ],
+      "en": "Rather, on the contrary, the intent of the meaning of the words [of prayer], as explained by Kabbalah, serves to strengthen the depth of one’s general grasp of the Essential Self of <i>HaShem</i>-יהו״ה, as known to those who have tasted [the contemplation of the words of the prayers] in a way of particulars.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "mq4fqasn",
+          "startSeconds": 1033.42,
+          "endSeconds": 1084,
+          "confidence": 0.916
+        }
+      ]
+    },
+    {
+      "n": 48,
+      "lines": [
+        {
+          "id": "lnibmlc5",
+          "text": "רק החדשים יותר טוב להם להעמיק דרך כלל תחלה, עד שיורגלו מעט מעט בדרך הפרט דווקא ודי למבין:"
+        }
+      ],
+      "en": "However, for those who are novices, it is best that, at first, they should delve in a general way, until they become accustomed, little by little, to specifically contemplate the particulars [during prayer]. This will suffice those of understanding.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "023",
+          "lineId": "lnibmlc5",
+          "startSeconds": 1084,
+          "endSeconds": 1643.23,
+          "confidence": 0.939
+        }
+      ]
+    }
+  ]
+}

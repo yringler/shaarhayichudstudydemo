@@ -1,0 +1,1106 @@
+{
+  "schemaVersion": 1,
+  "chapter": 1,
+  "heRef": "נר מצוה ותורה אור; שער היחוד א׳",
+  "sefariaUrl": "https://www.sefaria.org/The_Gate_of_Unity.1?lang=bi",
+  "translation": {
+    "versionTitle": "Translated by Rabbi Amiram Markel, 2023",
+    "license": "CC-BY",
+    "source": "http://neirot.com/the-gate-of-unity-with-hebrew/"
+  },
+  "sections": [
+    {
+      "label": "פתיחה",
+      "fromSegment": 1,
+      "toSegment": 4
+    },
+    {
+      "label": "גירסא",
+      "fromSegment": 5,
+      "toSegment": 8
+    },
+    {
+      "label": "בינה",
+      "fromSegment": 9,
+      "toSegment": 16
+    },
+    {
+      "label": "רוחב",
+      "fromSegment": 10,
+      "toSegment": 10
+    },
+    {
+      "label": "אורך",
+      "fromSegment": 11,
+      "toSegment": 11
+    },
+    {
+      "label": "עומק",
+      "fromSegment": 12,
+      "toSegment": 16
+    },
+    {
+      "label": "עיון",
+      "fromSegment": 17,
+      "toSegment": 21
+    },
+    {
+      "label": "מעמיק",
+      "fromSegment": 22,
+      "toSegment": 26
+    },
+    {
+      "label": "עומק חכ'",
+      "fromSegment": 22,
+      "toSegment": 25
+    },
+    {
+      "label": "מעלתו לגבי עומק המושג",
+      "fromSegment": 25,
+      "toSegment": 25
+    },
+    {
+      "label": "מעלת עומק המושג",
+      "fromSegment": 26,
+      "toSegment": 26
+    },
+    {
+      "label": "הבן בחכ' וכו'",
+      "fromSegment": 27,
+      "toSegment": 37
+    },
+    {
+      "label": "חכם בבינה",
+      "fromSegment": 27,
+      "toSegment": 28
+    },
+    {
+      "label": "כתר דבינה",
+      "fromSegment": 28,
+      "toSegment": 28
+    },
+    {
+      "label": "הבן בחכמה",
+      "fromSegment": 29,
+      "toSegment": 33
+    },
+    {
+      "label": "חכ' דחכ'",
+      "fromSegment": 32,
+      "toSegment": 32
+    },
+    {
+      "label": "חכ' דבינה",
+      "fromSegment": 33,
+      "toSegment": 33
+    },
+    {
+      "label": "סדר המדריגות",
+      "fromSegment": 34,
+      "toSegment": 37
+    },
+    {
+      "label": "בינה שבבינה",
+      "fromSegment": 34,
+      "toSegment": 35
+    },
+    {
+      "label": "חכמה שבבינה",
+      "fromSegment": 36,
+      "toSegment": 36
+    },
+    {
+      "label": "כתר דבינה",
+      "fromSegment": 37,
+      "toSegment": 37
+    },
+    {
+      "label": "דעת",
+      "fromSegment": 38,
+      "toSegment": 48
+    },
+    {
+      "label": "אורך ורוחב ועומק",
+      "fromSegment": 40,
+      "toSegment": 40
+    },
+    {
+      "label": "ועומק",
+      "fromSegment": 41,
+      "toSegment": 48
+    }
+  ],
+  "segments": [
+    {
+      "n": 1,
+      "lines": [
+        {
+          "id": "xazelgse",
+          "text": "הנה כבר מבואר באריכות בקונטרס מיוחד בפרטי אופני ההתפעלות במוח ולב, ומחשבה שנולד מן ההתבוננות לפי סדר ה' מדריגות נפש רוח נשמה חיה יחידה כו'."
+        }
+      ],
+      "en": "We already have explained at length in a special pamphlet,<sup data-fn=\"1\">1</sup> concerning the particular manners in which one may be aroused in his mind and heart, and the thought that is born of contemplation (<i>hitbonenut</i>), according to the five levels of the soul, the <i>Nefesh</i>, <i>Ru’ach</i>, <i>Neshamah</i>, <i>Chayah</i>, and <i>Yechidah.</i>",
+      "footnotes": [
+        {
+          "n": 1,
+          "html": "Referring to <i>Kuntrus Ha’hitpa’alut</i>, also authored by Rabbi Dov Ber of Lubavitch, translated into English under the title Divine Inspiration."
+        }
+      ],
+      "coverage": []
+    },
+    {
+      "n": 2,
+      "lines": [
+        {
+          "id": "mrqahnmm",
+          "text": "ומעתה יש לבאר היטב במהות גוף ענין ההתבוננות, מה היא בעצם ובמה יתבונן."
+        }
+      ],
+      "en": "We must now clearly explain the matter of contemplation itself, [to understand] what it essentially is, and what one should contemplate.",
+      "footnotes": [],
+      "coverage": []
+    },
+    {
+      "n": 3,
+      "lines": [
+        {
+          "id": "g4fdcli2",
+          "text": "והנה מהות ההתבוננות בעצם הוא ענין ההסתכלות החזקה בעמקות הענין ולעמוד עליו הרבה עד שיבין אותו על בוריו בכל חלקיו בפרטי פרטיות"
+        }
+      ],
+      "en": "In essence, contemplation (<i>hitbonenut</i>) is the matter of gazing strongly into the depths of a concept, keeping [one’s mind] upon it for long periods, until he understands it thoroughly in all of its particular parts and details.",
+      "footnotes": [],
+      "coverage": []
+    },
+    {
+      "n": 4,
+      "lines": [
+        {
+          "id": "edcbjtrl",
+          "text": "והוא בחינת פנימיות בינה הנקרא בלשון הגמרא בשם עיון, כמו שאמר במסכת סוכה הא למגרס והא לעיוני"
+        }
+      ],
+      "en": "This is the inner aspect of the faculty of <i>Binah</i> (Understanding). In the terminology of the Talmud, it is called by the term “<i>Iyun</i>” – עיון, (in depth study). This is as stated in tractate Sukka,<sup data-fn=\"2\">2</sup> “There is <i>Girsa</i> – גירסא (surface study), and there is <i>Iyun</i> – עיון (in depth study).”",
+      "footnotes": [
+        {
+          "n": 2,
+          "html": "See tractate Sukka 28b."
+        }
+      ],
+      "coverage": []
+    },
+    {
+      "n": 5,
+      "lines": [
+        {
+          "id": "3aem2a2q",
+          "text": "פירוש הגירסא הוא רק הבנת הדבר בהשקפה ראשונה, שהולכת ונובעת במהירות בלתי עכוב והעמדה כלל כידוע"
+        }
+      ],
+      "en": "The explanation of surface study is that one understands the subject matter only at first glance. That is, [he] flows quickly through the subject matter [which he studies], without restraining [himself] and pausing at all, as known.",
+      "footnotes": [],
+      "coverage": []
+    },
+    {
+      "n": 6,
+      "lines": [
+        {
+          "id": "iobezm3p",
+          "text": "על דרך משל המביט בעינו על דבר מה ואינו מתבונן כלל על הדבר באיכותו ומהותו בכל חלקיו הפנימים וחיצונים, רק דרך מעביר בעלמא"
+        }
+      ],
+      "en": "For example, one may gaze upon a certain object without contemplating it at all, [to understand the nature of] how or what it is. [He does not investigate] all of its inner and outer parts, except in a passing fashion.",
+      "footnotes": [],
+      "coverage": []
+    },
+    {
+      "n": 7,
+      "lines": [
+        {
+          "id": "ffb3yrwq",
+          "text": "שבמשך זמן ודאי ישכח עליו לגמרי וגם לא יוכל לספר לזולתו רק כלליות ענין אותו הדבר שראה בהעברת העין ולא בטביעת עין כלל"
+        }
+      ],
+      "en": "Certainly, with the passage of time, he will forget about it altogether. Furthermore, he will only be able to relate the general matter of what he saw to his fellowman. [This is because his eyes only fell upon it] in a passing fashion, without keeping his eyes upon it at all.",
+      "footnotes": [],
+      "coverage": []
+    },
+    {
+      "n": 8,
+      "lines": [
+        {
+          "id": "tigfmarz",
+          "text": "וכן העברת עין השכל באיזה סברא בהשקפה ראשונה בלתי עכוב והעמדה לעיין בו היטב, ולא ידע בסברא זו לתכליתה כלל"
+        }
+      ],
+      "en": "This is likewise the case when the mind’s eye gazes upon a specific logical construct in just a passing fashion. [Because he understands the concept] only at first glance without pausing and restraining [himself] to analyze and investigate it properly, he will not come to know the concept to its ultimate depth at all.",
+      "footnotes": [],
+      "coverage": []
+    },
+    {
+      "n": 9,
+      "lines": [
+        {
+          "id": "cy46bzo7",
+          "text": "כי הנה ג' דברים הוא שיש בכל דבר מושכל. עומק ואורך ורוחב."
+        }
+      ],
+      "en": "Now, there are three matters in every intellectual concept. [These are;] depth, length and width.",
+      "footnotes": [],
+      "coverage": []
+    },
+    {
+      "n": 10,
+      "lines": [
+        {
+          "id": "kbu523ut",
+          "text": "הרוחב הוא בחינת הסבר המושכל לכל צד בפרטים הרבה כרוחב הנהר, ולא דברים כהווייתן לבד, כנהר קצר."
+        }
+      ],
+      "en": "The width is the explanation of the concept from all angles, with many particulars. This is analogous to the width of a wide river. In contrast, the understanding of a concept simply, as it is, is similar to a narrow river.",
+      "footnotes": [],
+      "coverage": []
+    },
+    {
+      "n": 11,
+      "lines": [
+        {
+          "id": "67ihjptr",
+          "text": "ואורך הוא עוצם ירידות ההשכלה להלביש את המושכל במשלים שונים עד להביאו בהשגות התינוק קטן כו', כנהר שהולך ומתמשך לאורך (וכמו שמבואר באריכות בכתבים בענין אורך היריעה כו')"
+        }
+      ],
+      "en": "The length [of a concept] is the tremendous descent of the concept, to invest it into various different analogies so that it may even be brought within the reach of a small child. This is analogous to a flowing river that draws out to its length. (This concept is explained at length in [Chassidic] manuscripts<sup data-fn=\"3\">3</sup> in regard to the matter of the length of the hides.)",
+      "footnotes": [
+        {
+          "n": 3,
+          "html": "See Biurei Zohar (of the Mittler Rebbe), Pekudei &amp; Noach."
+        }
+      ],
+      "coverage": []
+    },
+    {
+      "n": 12,
+      "lines": [
+        {
+          "id": "j7dd3yah",
+          "text": "והעומק הוא כעומק הנהר שמשם מתרחב ובעצמו אינו רחב כלל, אבל הוא עיקר עצם הנהר (הנקרא שטרוים) שהוא עיקר מרוצת הילוכו ממקורו"
+        }
+      ],
+      "en": "The depth [of a concept] is analogous to the depth of a river. From [its depth the river] widens, but in and of itself, it is not wide at all. However, it is the main essence of the river (which is called the “undercurrent”), for it is the main strength of its flow from its source.",
+      "footnotes": [],
+      "coverage": []
+    },
+    {
+      "n": 13,
+      "lines": [
+        {
+          "id": "vuobhjav",
+          "text": "ומים שעל גביו בגובה ולצדדי העומק טפלים אליו, שאינן רק בחינת התגברות התפשטותו בלבד, לצדדים ברוחב ובגובה ובאורך ההילוך כו'"
+        }
+      ],
+      "en": "The waters that are above [the depth], to its height or to its sides and [even] to its length, are secondary to it, for they only represent the spreading forth of its strength.",
+      "footnotes": [],
+      "coverage": []
+    },
+    {
+      "n": 14,
+      "lines": [
+        {
+          "id": "ceetsykf",
+          "text": "כך עומק המושכל הוא בחינת עצם נקודתו כמו שהוא, ונקרא עומק המושג"
+        }
+      ],
+      "en": "Likewise, the depth of the concept is the aspect of its essential point, as it is [in and of itself]. This is what is called “The depth of that which is comprehended” (<i>Omek Ha’Moosag</i>).",
+      "footnotes": [],
+      "coverage": []
+    },
+    {
+      "n": 15,
+      "lines": [
+        {
+          "id": "2ub5ct7q",
+          "text": "שכל מה שנתפשט בהסבר ההשגה לכל צד, ברוחב גדול בכמה פרטים, וכן לאורך בעוצם הירידה, וגם בחינת הגובה למעלה, להשכיל ממנו עוד למעלה ממנו הרבה, (עד בחינת עומק רום כמו התגברות המים למעלה מעלה בזמן המבול שכזה יהיה לימות המשיח ברוחניות בשנת ת\"ר לחיי נח כמו שכתוב בזוהר דאתפתחו מבועין דחכמתא כו' והיינו מעיינות תהום החכמה שיתגברו למעלה מעלה ויכסו כל ההרים כו' וארובות השמים נפתחו כו' להמשיך מן המים שמעל השמים הנקרא עומק רום שתלוי בעומק תחת כי נעוץ תחילתן בסופן כמו העמק שאלה או הגבה למעלה כו' וכמו שכתוב בכתבים) הכל נמשך מעצם עומק נקודתו כמו שהוא נובע מן החכמה הנקרא אין, וכמו שכתוב ונהר יוצא מעדן כו'"
+        }
+      ],
+      "en": "Everything that spreads forth in the explanation of this concept, [either] the great width with many angles and details, and also the great descent of the length, and even the height above, to understand higher [concepts] through this [concept], (all the way until the depth of the heights (<i>Omek Rom</i>), like the overpowering of the waters in the time of the flood [during the times of Noah]. Likewise, there will be a spiritual flood in the days of Moshiach, in the 600th year of the life of Noah. This is as stated in the Zohar<sup data-fn=\"4\">4</sup> that “the wellsprings of wisdom will open.” These are the springs of the depths of wisdom, “which will overpower and rise up and will cover all the mountains.” Then, “the reservoirs of the heavens shall open up,” and there shall be drawn down “the waters that are above the heavens.”<sup data-fn=\"5\">5</sup> This is called the depth of the height (<i>Omek Rom</i>), which is dependent upon the depth below (<i>Omek Tachat</i>), because,<sup data-fn=\"6\">6</sup> “The beginning is bound up with the end,” as in the verse,<sup data-fn=\"7\">7</sup> “Cast your questions to the depths or raise it on high”) are all drawn from the essential depth of the point [of the concept], which is how it spreads forth from the insight of <i>Chochmah</i> – Wisdom, which is called “<i>ein -</i> nothing.”<sup data-fn=\"8\">8</sup> This is as stated, “A river goes out from <i>Eden</i>.”",
+      "footnotes": [
+        {
+          "n": 4,
+          "html": "Zohar I 117a"
+        },
+        {
+          "n": 5,
+          "html": "Genesis 7"
+        },
+        {
+          "n": 6,
+          "html": "Sefer Yetzirah 1:7"
+        },
+        {
+          "n": 7,
+          "html": "Isaiah 7:11"
+        },
+        {
+          "n": 8,
+          "html": "See Tikkunei Zohar, Tikkun 42; <i>Maamarei Admor HaEmtza’ee</i>, <i>Bereshit</i> p.2"
+        }
+      ],
+      "coverage": []
+    },
+    {
+      "n": 16,
+      "lines": [
+        {
+          "id": "hnicuvea",
+          "text": "שהבינה נקרא נהר והחכמה נקרא מעיין, כידוע"
+        }
+      ],
+      "en": "<i>Binah</i> (understanding) is called a river, while <i>Chochmah</i> (insight) is called a spring, as known.",
+      "footnotes": [],
+      "coverage": []
+    },
+    {
+      "n": 17,
+      "lines": [
+        {
+          "id": "4svvsngr",
+          "text": "והוא הנקרא עיון, שעומד על דבר המושכל ומעיין בו הרבה מאד, שהוא העיכוב היפך המהירות"
+        }
+      ],
+      "en": "This then, is [the mode of study] called <i>Iyun</i> (in depth study); that he keeps his mind on the concept and analyzes it greatly. This is [a] slow [in depth study] which is the opposite of [the] quick [surface level of study].",
+      "footnotes": [],
+      "coverage": []
+    },
+    {
+      "n": 18,
+      "lines": [
+        {
+          "id": "7rhzbe7q",
+          "text": "דהיינו כדי לבא לעומקו של המושכל כמו שהוא בעצם פנימיותו ותוך תוכו דווקא"
+        }
+      ],
+      "en": "The purpose of this is specifically to reach the depth of the concept, as it is in its innermost essential point.",
+      "footnotes": [],
+      "coverage": []
+    },
+    {
+      "n": 19,
+      "lines": [
+        {
+          "id": "ii5vundu",
+          "text": "כמו המסתכל על דבר מה בעינו ולא בהעברה בעלמא, אלא בפקוח וטביעת עינו בעיכוב גדול, עד שיודע אותו היטב בכל חלקיו הפנימים ותוך תוכו כו'"
+        }
+      ],
+      "en": "This is analogous to one who gazes his eyes upon a certain object, but not in a passing manner. Rather, [he keeps his eyes upon it] with great attention and scrutiny, taking his time until he knows it well, in all of its internal and innermost components.",
+      "footnotes": [],
+      "coverage": []
+    },
+    {
+      "n": 20,
+      "lines": [
+        {
+          "id": "m523heuq",
+          "text": "והוא הנקרא התבוננות בנו''ן הכפול דוקא, דהיינו שמתבונן ומעיין בו הרבה וכמו שפירש רש''י: בעיוני, לעמוד על הדבר להבינו על בוריו כו'."
+        }
+      ],
+      "en": "This [type of study] is called <i>Hitbonenut</i> – contemplation. [The word <i>Hitbonenut</i> (התבו<b>ננ</b>ות) is] specifically spelled with two <i>Nuns</i> (נ – N), to signify that one [is to] contemplate it and analyze it greatly. This is in accordance with the explanation of Rashi [on the word] <i>Iyun</i>,<sup data-fn=\"9\">9</sup> “To stand upon the subject, to understand it clearly.”",
+      "footnotes": [
+        {
+          "n": 9,
+          "html": "See Rashi on tractate Sukka, 28b."
+        }
+      ],
+      "coverage": []
+    },
+    {
+      "n": 21,
+      "lines": [
+        {
+          "id": "rdgog5tv",
+          "text": "ונמצא בחינת העיון הזה הוא רק בחינת כלי לבחינת ההעמקה דבינה עצמה, כי לכאורה בחינת העיון הזה נקרא העמקת הדעת בלשון בעולם, ואינו כן, דהעמקת הדעת היינו בחינת כלי לבד לבוא לעומק של הענין ממש"
+        }
+      ],
+      "en": "We find that this aspect of <i>Iyun</i> is only an aspect of a receptacle for the delving of <i>Binah</i> itself. For, at first glance, this aspect of <i>Iyun</i> is called “the delving of the concentration”<sup data-fn=\"10\">10</sup> in common usage. [In truth], this is not the case, for the delving of the concentration is only a vessel, [that allows one] to come to the actual depth of the concept.",
+      "footnotes": [
+        {
+          "n": 10,
+          "html": "<i>Ha’amakat Ha’da’at</i>"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "015",
+          "lineId": "rdgog5tv",
+          "startSeconds": 29.65,
+          "endSeconds": 373.08,
+          "confidence": 0.895
+        }
+      ]
+    },
+    {
+      "n": 22,
+      "lines": [
+        {
+          "id": "pshrmzmb",
+          "text": "ולמעלה מזה הוא נקרא מעמיק, שמגיע למעלה גם מן החכמה עצמה,"
+        },
+        {
+          "id": "cfysav74",
+          "text": "שהגם שהחכמה היא בחינת האין ממש של המושכל, קודם שבא לכלל עומק נקודת המושג שבבינה, כמעיין לגבי נהר כנזכר לעיל"
+        }
+      ],
+      "en": "[A] higher [level than the level of the “delving of the concentration” (<i>Ha’amakat Ha’da’at</i>)], is what is called “delving” (<i>Ma’amik</i>). [This method of delving allows one] to reach higher than even <i>Chochmah</i> itself.<sup data-fn=\"11\">11</sup> Now, seemingly, <i>Chochmah</i> is literally an aspect of the intangible “nothingness” of the concept, [as it exists even] before it comes into the category of being the essential depth or point of the concept in the comprehension of <i>Binah</i>. As mentioned previously, it is like the waters of a spring in comparison to the waters of a river.",
+      "footnotes": [
+        {
+          "n": 11,
+          "html": "See the explanations of the famed Chassid of the Mittler Rebbe, Rabbi Hillel of Paritch, to Chapter 1, translated and annotated under the title Listen Israel."
+        }
+      ],
+      "coverage": [
+        {
+          "source": "015",
+          "lineId": "pshrmzmb",
+          "startSeconds": 373.08,
+          "endSeconds": 521.54,
+          "confidence": 0.982
+        },
+        {
+          "source": "015",
+          "lineId": "cfysav74",
+          "startSeconds": 521.54,
+          "endSeconds": 556.4,
+          "confidence": 0.75
+        }
+      ]
+    },
+    {
+      "n": 23,
+      "lines": [
+        {
+          "id": "ugupmtsr",
+          "text": "אבל בחינת העמקה בשרש של המושכל, שרשה מגיע בשרש הממשיך לנביעת מעיין דחכמה כו', ונקרא עמקי החכמה או תעלומות חכמה, כי כמו שיש עומק ואורך ורוחב בבינה שנקרא יש כנזכר לעיל, כך יש עומק ואורך ורוחב במעיין דחכמה שנקרא אין"
+        }
+      ],
+      "en": "Nonetheless, the aspect of delving in [this] source of the concept, its source reaches into the very source of the flow of the waters of the spring of <i>Chochmah</i>, which is called “the depths of <i>Chochmah</i>” or “the hidden-ness of <i>Chochmah.</i>”<sup data-fn=\"12\">12</sup> For, just as there are depth, length and width in <i>Binah</i>, which is called “<i>yesh</i> – something,” there is likewise a depth, length and width in the spring of <i>Chochmah</i>, which is called “<i>ein</i> – nothing.”",
+      "footnotes": [
+        {
+          "n": 12,
+          "html": "<i>Omkei Chochmah</i> or <i>Ta’alumot Chochmah</i>. See also Job 11:6"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "015",
+          "lineId": "ugupmtsr",
+          "startSeconds": 556.4,
+          "endSeconds": 651.79,
+          "confidence": 0.876
+        }
+      ]
+    },
+    {
+      "n": 24,
+      "lines": [
+        {
+          "id": "en4s7zas",
+          "text": "ועומק המעיין היינו תחילת שרש מחצבו בעומקו, שמשם מתפשט נביעתו למעלה עד שבוקע ויוצא טיפין טיפין בגילוי מהעלמו, ותכלית העלמו הוא תכלית עמקו למטה, כמו מעיינות תהום נבקעו, דארעא חלחולי מחלחלא כו' בגידין שיש להם עומק ראשון, ובזה נאמר והחכמה מאין, מהעלם החכמה הנקרא עומק החכמה"
+        }
+      ],
+      "en": "The depth of the spring is the beginning and source of its inception, at its very depth. From there its flow spreads upward until drops of water burst forth into revelation from their concealment [within the ground]. Its utmost concealment is in its ultimate depth below (in the aquifer), as [in the verse], “the wellsprings of the abyss burst forth.”<sup data-fn=\"13\">13</sup> For, the earth is riddled with fissures<sup data-fn=\"14\">14</sup> and veins [of water], which have a primary depth. About this it is stated,<sup data-fn=\"15\">15</sup> “<i>Chochmah</i> is [found] from nothing,” that is, from the concealed <i>Chochmah</i> which is called the depth of <i>Chochmah</i>.",
+      "footnotes": [
+        {
+          "n": 13,
+          "html": "Genesis 7:11"
+        },
+        {
+          "n": 14,
+          "html": "Talmud Bavli, tractate Chagiga 22a"
+        },
+        {
+          "n": 15,
+          "html": "Job 28:12"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "015",
+          "lineId": "en4s7zas",
+          "startSeconds": 651.79,
+          "endSeconds": 831.12,
+          "confidence": 0.977
+        }
+      ]
+    },
+    {
+      "n": 25,
+      "lines": [
+        {
+          "id": "6dfmnw2o",
+          "text": "והחכמה הוא המצאת שכל החדש שיוצא כברק כו' כידוע, ומקור מחצבו בהעלם עומקו הוא עיקר עצמיות ותוך תוכו"
+        },
+        {
+          "id": "clembo3b",
+          "text": "כנ\"ל בביאור ענין עומק המושג דבינה שאינ' רק העומק של ההשגה דבינה המורגש בבחינת יש בהבנת דבר מה בסברא נגלית, שעומק של הסבר ההשגה הוא בחינת אין של היש דהשגה בלבד, ואין לו ערך לגבי אין דחכמה טרם שבא לכלל השגה כלל, גם לא בבחינת העומק שבה, שהוא תמציתה"
+        }
+      ],
+      "en": "Now, <i>Chochmah</i> is the discovery of new insight which emerges like a bolt of lightning, as known. [The source of its inception in its hidden depths is its innermost essence. This is similar to the previous explanation of the matter of the depth of the comprehended concept (<i>Omek Ha’Moosag</i>) of <i>Binah</i>.] However, that was only in regard to the depth of the comprehension of <i>Binah</i> which is felt in a tangible way, with revealed explanations [on a subject]. The depth of this explanation of the concept is only the aspect of the “nothing of the something” of comprehension. Therefore, its depth, which is its essential point, is of no comparison to the “nothing” of <i>Chochmah</i> before it comes into the category of comprehension altogether.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "015",
+          "lineId": "6dfmnw2o",
+          "startSeconds": 831.12,
+          "endSeconds": 976.32,
+          "confidence": 0.859
+        },
+        {
+          "source": "015",
+          "lineId": "clembo3b",
+          "startSeconds": 976.32,
+          "endSeconds": 1396.16,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 26,
+      "lines": [
+        {
+          "id": "pimwc3gh",
+          "text": "ואמנם עומק המושג נקרא שער הנו''ן דבינה, גם שנמשך מאין דחכמה ליש, (כמו מעיין יוצא מבית קדש הקדשים תחלתו כקרני חגבים כו' וכהאי גוונא) שרשו מגיע בעומק דחכמה הנזכר לעיל, וכנראה בחוש שכל מעמיק רק בעומק המושג, הוא ממציא למקור ושרש המושכל, להמציא בחינת חדשות דאור החכמה בבינה, והוא הנקרא מעמיק לשון מפעיל, שמפעיל לעומ' דחו\"ב"
+        }
+      ],
+      "en": "Nevertheless, although the depth of the comprehension, which is called the 50th gate of <i>Binah</i>, is drawn from the “nothing” of <i>Chochmah</i> to “something,” (like the teaching,<sup data-fn=\"16\">16</sup> “A spring will flow out of the chamber of the Holy of Holies; its beginning will be like the antennae of a grasshopper, and it will then widen into the expanse of a river,” and the like,) its source also reaches into the depths of <i>Chochmah</i> itself. It is clearly observable that the delving specifically into the depth of the comprehension (<i>omek hamoosag</i> of <i>Binah</i>) will bring one to the source and root of the concept, thus enabling him to bring new light of <i>Chochmah</i> (insight) into <i>Binah</i> (tangible comprehension). This, then, is what is called <i>Ma’amik</i> – delving, which is an active verb, for he is activating the depths of <i>Chochmah</i> and <i>Binah.</i>",
+      "footnotes": [
+        {
+          "n": 16,
+          "html": "Talmud Bavli, Yoma 77b"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "015",
+          "lineId": "pimwc3gh",
+          "startSeconds": 1396.16,
+          "endSeconds": 1873.76,
+          "confidence": 0.954
+        }
+      ]
+    },
+    {
+      "n": 27,
+      "lines": [
+        {
+          "id": "wctxrksu",
+          "text": "(ולפ\"ז מ\"ש הבן בחכמה וחכם בבינה"
+        },
+        {
+          "id": "7oyqxyo6",
+          "text": "שמבואר בכתבים, דהיינו ע''ב דס''ג חכם בבינה, שהוא רק להבין דבר חידוש אחר מתוך המושג דבינה, שזה אינו אלא על ידי בחינת העיון הנזכר לעיל, שהוא המברר כל חלקיו על בוריו, ונקרא בינה שבבינה"
+        }
+      ],
+      "en": "(According to what we have explained, we may understand the statement,<sup data-fn=\"17\">17</sup> “Understand with wisdom and be wise in understanding.” In [Chassidic] manuscripts it is explained that “wise in understanding” refers to <i>A”b</i> of <i>Sa”G</i><sup data-fn=\"18\">18</sup> (<i>Chochmah</i> of <i>Binah</i>). This is [the ability] to understand a new insight within the comprehension of <i>Binah</i>. This only comes through the aspect of <i>Iyun</i> – the analysis mentioned earlier, which clarifies all the particular parts until they are clear. This <i>Iyun</i> (analysis) is what is called <i>Binah</i> of <i>Binah</i>.",
+      "footnotes": [
+        {
+          "n": 17,
+          "html": "See Sefer Yetzirah 1:4"
+        },
+        {
+          "n": 18,
+          "html": "The four letters of the Name <i>HaShem</i>-יהו״ה correspond to the ten <i>sefirot</i>. The thorn of the letter <i>Yod</i> (י) corresponds to <i>Keter</i>. The body of the letter <i>Yod</i> (י) corresponds to <i>Chochmah</i>. The first letter <i>Heh</i> (ה) corresponds to how the seminal point of the <i>Yod</i> of <i>Chochmah</i> becomes expanded into the length and width of the <i>Heh</i> of <i>Binah</i>. The <i>Vav</i> (ו) which has a numerical value of six corresponds to the six emotional <i>sefirot</i>. The last <i>Heh</i> (ה) corresponds to <i>Malchut</i>. This will all be explained later in greater detail. What is relevant here is that the four-letter name <i>HaShem</i>-יהו״ה can be expanded. In other words, instead of <i>Y</i> (י) the letter <i>Yod</i> would be spelled out as יוד. The same is done with the other three letters of the name. Now, when it is spelled out with <i>Yod’s</i> (i.e. יו\"ד ה\"י וי\"ו ה\"י) it has a numerical value of 72 and corresponds to <i>Chochmah</i>, which is the name <i>A”b</i> – ע\"ב (meaning 72). When it is spelled out with <i>Yod’s</i> and an <i>Aleph</i> (יו\"ד ה\"י וא\"ו ה\"י) its numerical value is 63 and corresponds to <i>Binah</i>. This is the name <i>Sa”G</i> – ס\"ג, which equals 63. We may now understand the above statement that, “be wise in understanding” refers to <i>A”b</i> of <i>Sa”G</i>. In other words, it refers to the <i>sefirah</i>; <i>Chochmah</i> of <i>Binah</i>. Likewise, the aspect of <i>Sa”G</i> of <i>A”b</i> corresponds to <i>Binah</i> of <i>Chochmah</i>. The Mittler Rebbe will now explain this further. (The explanation of the expansions of the Name <i>HaShem</i>-יהו״ה will be discussed later in the book.)"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "015",
+          "lineId": "wctxrksu",
+          "startSeconds": 1873.76,
+          "endSeconds": 1876.82,
+          "confidence": 1
+        },
+        {
+          "source": "015",
+          "lineId": "7oyqxyo6",
+          "startSeconds": 1876.82,
+          "endSeconds": 2478.74,
+          "confidence": 0.438
+        }
+      ]
+    },
+    {
+      "n": 28,
+      "lines": [
+        {
+          "id": "66dcrnqt",
+          "text": "ואחר כך יוכל להוליד ולהתחכם להמציא הבנה והשגה חדשה, אבל רק בהשגה זו עצמה שנקרא חכמה שבבינה,"
+        },
+        {
+          "id": "r5wkpae2",
+          "text": "אבל כתר דבינה הוא עומק המושג הנזכר לעיל, המגיע שרשו בעומק החכמה כנזכר לעיל."
+        }
+      ],
+      "en": "After [a person has done this] he will be capable of bringing new insight into understanding and comprehension, but only within the subject matter itself. This insight is what is called <i>Chochmah</i> of <i>Binah</i>. Now, <i>Keter</i> of <i>Binah</i> is the aforementioned depth of the comprehension (the <i>Omek HaMoosag</i>) the source of which reaches into the depth of <i>Chochmah</i>, as explained above.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "015",
+          "lineId": "66dcrnqt",
+          "startSeconds": 2478.74,
+          "endSeconds": 2563.73,
+          "confidence": 0.994
+        },
+        {
+          "source": "015",
+          "lineId": "r5wkpae2",
+          "startSeconds": 2563.73,
+          "endSeconds": 2593.76,
+          "confidence": 0.621
+        }
+      ]
+    },
+    {
+      "n": 29,
+      "lines": [
+        {
+          "id": "7mt3upbi",
+          "text": "והבן בחכמה היינו ס''ג דע''ב, שהוא כח ההסבר בחכמה עצמה, שיוכל להביאו בפנים מסבירות הרבה, והוא למעלה מן ההשגה דבינה עדיין"
+        }
+      ],
+      "en": "Now, “understand with wisdom” refers to <i>Sa”G</i> of <i>A”b</i> (<i>Binah</i> of <i>Chochmah</i>). This is the power of explanation within <i>Chochmah</i> itself, that he is capable of bringing it into many different explanations and facets. Nonetheless, it is still higher than the comprehension of <i>Binah</i>.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "015",
+          "lineId": "7mt3upbi",
+          "startSeconds": 2593.76,
+          "endSeconds": 2662.56,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 30,
+      "lines": [
+        {
+          "id": "47u5u6vn",
+          "text": "ומה שאמרו נבונים לא אשתכחו, שהוא המבין דבר מתוך דבר דוקא"
+        }
+      ],
+      "en": "[This type of understanding may be understood from the explanation of] the statement<sup data-fn=\"19\">19</sup> [regarding Moshe], “He could not find ‘men of understanding’ (<i>Nevonim</i>).” [This (<i>Navon</i>) specifically] refers to “one who understands one thing from another.”<sup data-fn=\"20\">20</sup>",
+      "footnotes": [
+        {
+          "n": 19,
+          "html": "See tractate Eruvin 100b"
+        },
+        {
+          "n": 20,
+          "html": "See tractate Chagigah 14a"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "015",
+          "lineId": "47u5u6vn",
+          "startSeconds": 2662.56,
+          "endSeconds": 2696.33,
+          "confidence": 0.432
+        }
+      ]
+    },
+    {
+      "n": 31,
+      "lines": [
+        {
+          "id": "7xlwb6pw",
+          "text": "היינו מצד שרש כח זה דהבן בחכמה שמגיע בעומק דחכמה הנזכר לעיל, על כן יוכל להבין דבר חכמה אחרת לגמרי מתוך דבר חכמה זאת"
+        }
+      ],
+      "en": "The reason [he is capable of this] is because of the source of this power of “understand with wisdom” (<i>Binah</i> of <i>Chochmah</i>) that reaches into the depths of <i>Chochmah</i>, which was mentioned previously. For this reason, from one subject matter and wisdom he will be capable of understanding a completely different wisdom.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "016",
+          "lineId": "7xlwb6pw",
+          "startSeconds": 5.74,
+          "endSeconds": 254.66,
+          "confidence": 0.458
+        }
+      ]
+    },
+    {
+      "n": 32,
+      "lines": [
+        {
+          "id": "feq46pb4",
+          "text": "שזהו למעלה במדריגה מן החכם, דהיינו מגופה של המצאות החכמה זו מאין, שאינו מבין ממנה חכמה ושכל אחר"
+        }
+      ],
+      "en": "This [aspect of understanding] is much greater in level than that of a <i>Chacham</i>. That is, [a <i>Chacham</i> only has] insights from “nothing” into the particular subject matter of [his] investigation, but he does not understand an entirely different wisdom from it.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "016",
+          "lineId": "feq46pb4",
+          "startSeconds": 254.66,
+          "endSeconds": 355.83,
+          "confidence": 0.968
+        }
+      ]
+    },
+    {
+      "n": 33,
+      "lines": [
+        {
+          "id": "fbecfg7n",
+          "text": "(ומכל מקום מה שבהשגה דבינה מבין השגה חדשה מתוך ההשגה זו, שרשה בהבן דחכמה, שמבין דבר מתוך דבר, רק שזה בהעלם מקור השכל כו' ודי למבין)."
+        }
+      ],
+      "en": "(Nonetheless, the source of the comprehension of a new insight within [the field of] his comprehension is also the matter of “understand with wisdom” (<i>Binah</i> of <i>Chochmah</i>). In other words, its source is in the ability to understand one thing from another. However, this remains concealed in the source of the intellect. This will suffice those of understanding.)",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "016",
+          "lineId": "fbecfg7n",
+          "startSeconds": 355.83,
+          "endSeconds": 396.22,
+          "confidence": 0.97
+        }
+      ]
+    },
+    {
+      "n": 34,
+      "lines": [
+        {
+          "id": "vrsgqwdc",
+          "text": "ונמצא סדר המדרגות כך הם,"
+        },
+        {
+          "id": "ykpa7sqa",
+          "text": "בחינת עיון הנזכר לעיל לעמוד על בוריו כו' נקרא בינה שבבינה, להבחין תכלית ההבחנה בפנימיות וחיצוניות"
+        }
+      ],
+      "en": "We find that the order of levels is as follows; [first is] the aspect of <i>Iyun –</i> analysis, mentioned earlier. [That is], to keep one’s mind on [the concept, and investigate its particulars], until it is completely clear. This is called <i>Binah</i> of <i>Binah</i>; to clarify and distinguish between all the inner and outer specifics, with the utmost precision.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "016",
+          "lineId": "vrsgqwdc",
+          "startSeconds": 396.22,
+          "endSeconds": 403.24,
+          "confidence": 0.58
+        },
+        {
+          "source": "016",
+          "lineId": "ykpa7sqa",
+          "startSeconds": 403.24,
+          "endSeconds": 428.8,
+          "confidence": 0.848
+        }
+      ]
+    },
+    {
+      "n": 35,
+      "lines": [
+        {
+          "id": "fuudukmx",
+          "text": "וגם מזה יוכל להיות בחינת האורך, להוריד ההשגה בלבושים רבים עד שתתגשם להשגות התינוק כנזכר לעיל, אבל לא בחינת הרוחב בהסברים שונים לכל צד כו'"
+        }
+      ],
+      "en": "From this, it also is possible for there to be the aspect of a length, to lower the concept through many investments,<sup data-fn=\"21\">21</sup> until it is made tangible to the comprehension of a child, as explained previously. Nonetheless, [he does] not [yet have] the aspect of a width, with various explanations of all its angles.",
+      "footnotes": [
+        {
+          "n": 21,
+          "html": "In analogies."
+        }
+      ],
+      "coverage": [
+        {
+          "source": "016",
+          "lineId": "fuudukmx",
+          "startSeconds": 428.8,
+          "endSeconds": 466.31,
+          "confidence": 0.871
+        }
+      ]
+    },
+    {
+      "n": 36,
+      "lines": [
+        {
+          "id": "qipfrgb7",
+          "text": "ואחר כך מבחינת חכמה שבבינה, להמציא חדשות בהשגה א' כנזכר לעיל, הוא הנקרא רוחב, וממנו כח דבינה שבבינה העושה בחינת אורך"
+        }
+      ],
+      "en": "Following this is the aspect of <i>Chochmah</i> of <i>Binah</i>, which is [the ability] to bring forth insights, [but only] in the specific subject [under his investigation], as previously explained. This is [the aspect of] the width, from which the aspect of <i>Binah</i> of <i>Binah</i> creates a length.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "016",
+          "lineId": "qipfrgb7",
+          "startSeconds": 466.31,
+          "endSeconds": 506.34,
+          "confidence": 0.876
+        }
+      ]
+    },
+    {
+      "n": 37,
+      "lines": [
+        {
+          "id": "zfgfsjbt",
+          "text": "אבל שיעור האורך והרוחב דחכמה ובינה שבבינה, הוא תלוי בבחינת עומק המושג שנקרא כתר דבינה, וכנראה בחוש שלפי ערך העומק כך יהיה ערך הרוחב והאורך בכל השגת דבר מה וד\"ל)."
+        }
+      ],
+      "en": "Nonetheless, the extent of the length and width of <i>Chochmah</i> and <i>Binah</i> is dependent upon the aspect of the depth of the comprehension, which is called <i>Keter</i> of <i>Binah</i>. It is clearly observable with any comprehension of any subject matter that according to the measure of the depth will be the measures of the length and width. This will suffice those of understanding.)",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "016",
+          "lineId": "zfgfsjbt",
+          "startSeconds": 506.34,
+          "endSeconds": 1695.64,
+          "confidence": 0.517
+        }
+      ]
+    },
+    {
+      "n": 38,
+      "lines": [
+        {
+          "id": "inf44erc",
+          "text": "ולפ\"ז מה שקוראים העולם העמקת הדעת, אין זה גופה של העמקה, כמו עומק המושג דבינה, שלזה לא יש שייכות לדעת"
+        }
+      ],
+      "en": "According to what we have explained, what is commonly called <i>ha’amakat ha’da’at</i> – the delving of the concentration (or meditation), is not the actual delving into the depth of the comprehension (the <i>omek hamoosag</i>). This is because the faculty of <i>Da’at</i> has no relation to it.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "017",
+          "lineId": "inf44erc",
+          "startSeconds": 31.51,
+          "endSeconds": 141.8,
+          "confidence": 0.913
+        }
+      ]
+    },
+    {
+      "n": 39,
+      "lines": [
+        {
+          "id": "v676iwfg",
+          "text": "אך הדעת הוא בחינת התקשרות הרגשתו במושג ביותר, והוא שמביא לידי בחינת העמקה במושג, אחר בחינת העיון הנזכר לעיל, שהוא רק כמו בחינת כלי לעומק ההשגה כנזכר לעיל."
+        }
+      ],
+      "en": "Rather, the faculty of <i>Da’at</i> is the aspect of the strong connection of one’s feelings to a concept.<sup data-fn=\"22\">22</sup> It [is this type of concentration which] brings one to the depth of the comprehended concept, [but only] after the aforementioned analysis (<i>Iyun</i>), which acts as a receptacle for the depth of the comprehension (<i>omek hamoosag</i>), as previously explained.",
+      "footnotes": [
+        {
+          "n": 22,
+          "html": "Concentration and interest. See Tanya Ch. 3"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "017",
+          "lineId": "v676iwfg",
+          "startSeconds": 141.8,
+          "endSeconds": 510.78,
+          "confidence": 0.814
+        }
+      ]
+    },
+    {
+      "n": 40,
+      "lines": [
+        {
+          "id": "5663nwe6",
+          "text": "וגם בדעת יש אורך ורוחב ועומק, כמו יש מי שדעתו קצרה ויש שדעתו ארוכה ויש שדעתו רחבה ולא ארוכה ודעת חזק או דעת קל כנשים שדעתן קלות, הוא בלתי עומק הדעת וממילא דעתו קצרה כו'"
+        }
+      ],
+      "en": "Now, <i>Da’at</i> – concentration, also possesses the three dimensions of length, width and depth. For example, there are those who have a short attention span, and those who have a long attention span. There are those who have a broad attention span, but not a long attention span. There are those who possess strong concentration, and those of weak concentration, like “women who have a light <i>Da’at.</i>”<sup data-fn=\"23\">23</sup> That is, because they lack the depth of concentration, subsequently their concentration is short.",
+      "footnotes": [
+        {
+          "n": 23,
+          "html": "See Tractate Shabbat 33b"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "017",
+          "lineId": "5663nwe6",
+          "startSeconds": 510.78,
+          "endSeconds": 710.95,
+          "confidence": 0.576
+        }
+      ]
+    },
+    {
+      "n": 41,
+      "lines": [
+        {
+          "id": "b4ghv6uq",
+          "text": "והפרש זה בין קלי הדעת לעומקי הדעת, בין גדול לקטן ידוע, שהתינוק שדעתו קל, היינו שאין בו כח המרגיש והתקשרות כלל לדבר זה שמבין או רוצה בו, רק בחיצוניות מאד"
+        }
+      ],
+      "en": "The difference between a weak concentration and a deep concentration can be understood by the difference between a child and an adult, as known. A child has a weak concentration. This is to say that he only possesses a very external connection or feelings towards the object of his understanding or desire.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "017",
+          "lineId": "b4ghv6uq",
+          "startSeconds": 710.95,
+          "endSeconds": 749.35,
+          "confidence": 0.925
+        }
+      ]
+    },
+    {
+      "n": 42,
+      "lines": [
+        {
+          "id": "frjdgmr3",
+          "text": "על כן יתפתה להיפוכו, מה שאין כן הגדול שדעתו עמוקה באותו דבר שמבין או רוצה בו, הוא הנקרא העמקת הדעת, שממילא נמשך אורך הדעת ורוחב הדעת כנזכר לעיל בבינה."
+        }
+      ],
+      "en": "For this reason, a child can be easily seduced into desiring the very opposite [of his original desire]. In contrast, an adult has a deep connection to the object of his understanding and desire, which is called the depth of concentration (or interest). ]Because he possesses this depth[, this automatically draws out a length of concentration and a width of concentration, as we previously explained regarding <i>Binah</i>.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "017",
+          "lineId": "frjdgmr3",
+          "startSeconds": 749.35,
+          "endSeconds": 819.24,
+          "confidence": 0.759
+        }
+      ]
+    },
+    {
+      "n": 43,
+      "lines": [
+        {
+          "id": "t3kfsj3c",
+          "text": "וסימן להעמקת הדעת הוא אשר נראה כענין צמצום וכיווץ כלי המוח, לעוצם עומק התקשרותו במושכל, (בל\"א ער איז דרינן פר נומען פר קוועצט שטארק זייער ביז עס3 איז זייער מצומצם רק בתנוע' אחת4 וסקירה אחת לבד כו') שמזה דוקא בא עצם עומק השגה על ידי העיון דבינה"
+        }
+      ],
+      "en": "The sign for [this] deep concentration is that [because of the great depth of his connection to the concept] it appears as if he is contracting and focusing the vessel of his brain. It is specifically through this deep concentration that he can come to an essential and deep comprehension of the subject matter, through the aforementioned analysis of <i>Binah</i>.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "017",
+          "lineId": "t3kfsj3c",
+          "startSeconds": 819.24,
+          "endSeconds": 1053.84,
+          "confidence": 0.858
+        }
+      ]
+    },
+    {
+      "n": 44,
+      "lines": [
+        {
+          "id": "7jdikglb",
+          "text": "שהוא היפך הצמצום והכיווץ, שהרי העיון דבינה, גם שעומד ומעוכב בצמצום וכיווץ בתחלתו, אבל מיד מתפשת לרוחב הרבה בכל פרטי חלקיו, בהבחנת פרטיות הרבה כידוע"
+        }
+      ],
+      "en": "]However, the aspect of analysis] is the very opposite of contraction and focus (of all his mental capacities). Although, initially, [the analysis of <i>Binah</i>] begins with focus and contraction, it nonetheless immediately spreads forth with great expansiveness, with the clarification of all the particular components and details, as known.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "017",
+          "lineId": "7jdikglb",
+          "startSeconds": 1053.84,
+          "endSeconds": 1120.2,
+          "confidence": 0.883
+        }
+      ]
+    },
+    {
+      "n": 45,
+      "lines": [
+        {
+          "id": "inpfbvtq",
+          "text": "מה שאין כן הצמצום והכיווץ דהעמקת הדעת, אדרבה, הוא רק הצמצום, שהוא הקיבוץ והאסיפה מכל כח שכלו להתקשר רק במושכל זה"
+        }
+      ],
+      "en": "This is not the case with the contraction and focus of the delving of the concentration. On the contrary, [the concentration] is only the contraction and focus, the aspect of gathering all of one’s mental capacities to connect only to this specific matter.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "017",
+          "lineId": "inpfbvtq",
+          "startSeconds": 1120.2,
+          "endSeconds": 1165.57,
+          "confidence": 0.935
+        }
+      ]
+    },
+    {
+      "n": 46,
+      "lines": [
+        {
+          "id": "zarq44py",
+          "text": "שזה היפך בחינת התפשטות העיון בהרחבת ענין המושכל, (בל\"א דער קלעפ מיט דעם אריין לייגין זיך גאר כו') ואמנם על ידי העמקת הדעת בא לידי עמקות המושכל עד שרשו בעמקי החכמה ובינה"
+        }
+      ],
+      "en": "This is the very opposite of the spreading forth of the analysis with a great breadth into the subject matter. However, it is through the delving of the concentration that one can come to the depth of the concept, until its very source in the depths of <i>Chochmah</i> and <i>Binah</i>.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "017",
+          "lineId": "zarq44py",
+          "startSeconds": 1165.57,
+          "endSeconds": 1297.36,
+          "confidence": 0.833
+        }
+      ]
+    },
+    {
+      "n": 47,
+      "lines": [
+        {
+          "id": "r3exqicw",
+          "text": "(עד בחינת דעת עליון דמזווג חכמה לבינה כמו שכתוב למעלה בענין עומק המושג דבינה, והיינו דדעת גנוז בפומא דאימא כו'"
+        }
+      ],
+      "en": "([Through the above he is capable of] reaching the aspect of the upper <i>Da’at</i> which unites <i>Chochmah</i> and <i>Binah</i>, as was explained previously regarding the matter of the depth of the comprehension (<i>Omek HaMoosag</i>) of <i>Binah</i>. This is the meaning of the statement,<sup data-fn=\"24\">24</sup> “<i>Da’at</i> is hidden in the mouth of <i>Imma</i>.”<sup data-fn=\"25\">25</sup>",
+      "footnotes": [
+        {
+          "n": 24,
+          "html": "See Zohar (Idra D’Mishkena) Mishpatim 123, 1."
+        },
+        {
+          "n": 25,
+          "html": "<i>Imma –</i> Mother, refers to <i>Binah,</i> while <i>Abba</i> – Father, refers to <i>Chochmah</i>. This will be discussed in much greater detail later in the book."
+        }
+      ],
+      "coverage": [
+        {
+          "source": "017",
+          "lineId": "r3exqicw",
+          "startSeconds": 1297.36,
+          "endSeconds": 1453.24,
+          "confidence": 0.924
+        }
+      ]
+    },
+    {
+      "n": 48,
+      "lines": [
+        {
+          "id": "4uo54llm",
+          "text": "וכמו שאמרו, משה שהוא הדעת, זכה לבינה שהוא שער הנון, כי הא בהא תליא, וכמה שכתוב בכתבים בכמה דוכתי ודי למבין."
+        }
+      ],
+      "en": "It is likewise stated, “<i>Moshe,</i> who corresponds to [the faculty of] <i>Da’at,</i> merited <i>Binah</i>,” which refers [specifically] to the fiftieth gate [of <i>Binah</i>]. These [two faculties] are interdependent, as explained in various writings and [Chassidic] manuscripts. This will suffice those of understanding.)",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "017",
+          "lineId": "4uo54llm",
+          "startSeconds": 1453.24,
+          "endSeconds": 1618.85,
+          "confidence": 0.657
+        }
+      ]
+    }
+  ]
+}

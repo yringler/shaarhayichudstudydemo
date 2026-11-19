@@ -1,0 +1,1085 @@
+{
+  "schemaVersion": 1,
+  "chapter": 5,
+  "heRef": "נר מצוה ותורה אור; שער היחוד ה׳",
+  "sefariaUrl": "https://www.sefaria.org/The_Gate_of_Unity.5?lang=bi",
+  "translation": {
+    "versionTitle": "Translated by Rabbi Amiram Markel, 2023",
+    "license": "CC-BY",
+    "source": "http://neirot.com/the-gate-of-unity-with-hebrew/"
+  },
+  "sections": [
+    {
+      "label": "פתיחה",
+      "fromSegment": 1,
+      "toSegment": 4
+    },
+    {
+      "label": "תוצאות ההתבוננות",
+      "fromSegment": 5,
+      "toSegment": 11
+    },
+    {
+      "label": "ביטול היש",
+      "fromSegment": 6,
+      "toSegment": 7
+    },
+    {
+      "label": "האין",
+      "fromSegment": 8,
+      "toSegment": 11
+    },
+    {
+      "label": "התפעלות",
+      "fromSegment": 12,
+      "toSegment": 18
+    },
+    {
+      "label": "חכמה",
+      "fromSegment": 12,
+      "toSegment": 13
+    },
+    {
+      "label": "בינה",
+      "fromSegment": 14,
+      "toSegment": 16
+    },
+    {
+      "label": "חכמה",
+      "fromSegment": 17,
+      "toSegment": 18
+    },
+    {
+      "label": "הכלל",
+      "fromSegment": 19,
+      "toSegment": 20
+    },
+    {
+      "label": "מתבונן בהתהוות הגלגלים",
+      "fromSegment": 21,
+      "toSegment": 27
+    },
+    {
+      "label": "במלאכים",
+      "fromSegment": 23,
+      "toSegment": 23
+    },
+    {
+      "label": "תוצאה",
+      "fromSegment": 24,
+      "toSegment": 24
+    },
+    {
+      "label": "האין",
+      "fromSegment": 25,
+      "toSegment": 27
+    },
+    {
+      "label": "התבוננות באצילות",
+      "fromSegment": 28,
+      "toSegment": 35
+    },
+    {
+      "label": "התהוות",
+      "fromSegment": 28,
+      "toSegment": 31
+    },
+    {
+      "label": "אין",
+      "fromSegment": 32,
+      "toSegment": 35
+    },
+    {
+      "label": "ביטול ושמחה",
+      "fromSegment": 36,
+      "toSegment": 45
+    }
+  ],
+  "segments": [
+    {
+      "n": 1,
+      "lines": [
+        {
+          "id": "ygnb62xw",
+          "text": "(ה) והנה אחר שנתבאר שצריך להתבונן דרך פרט דוקא, הרי מן ההכרח לידע כל פרטי חילוקי המדריגות בכל פרטי סדרי ההשתלשלות דאבי''ע, להתבונן בהם"
+        }
+      ],
+      "en": "After having explained the need to contemplate specifically in a manner of particulars, it follows, of necessity, that one must know all the particular levels in all the details of the chaining down of the worlds (<i>Seder HaHishtalshelut</i>) of <i>Atzilut, Briyah, Yetzirah,</i> and <i>Asiyah,</i> so that one may contemplate them.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "ygnb62xw",
+          "startSeconds": 43.68,
+          "endSeconds": 54.92,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "lines": [
+        {
+          "id": "gd7a2tk6",
+          "text": "אשר אינם מובנים לכל מכללי התורות כו'"
+        }
+      ],
+      "en": "These particulars cannot be understood by everyone through the general teachings [of Kabbalah and Chassidus].",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "gd7a2tk6",
+          "startSeconds": 54.92,
+          "endSeconds": 100.6,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "lines": [
+        {
+          "id": "yz4pfxd3",
+          "text": "ויבוארו כולם בקונטרס מיוחד, מן הצריך מכל פרט, וממילא יובן למבין ויודע כמה פרטים אחרים"
+        }
+      ],
+      "en": "Therefore, whatever needs explanation in each detail, will be explained in a special pamphlet,<sup data-fn=\"1\">1</sup> so that a person of understanding will automatically understand them and will come to know many other details.",
+      "footnotes": [
+        {
+          "n": 1,
+          "html": "That is, from chapter 10 and on of this book."
+        }
+      ],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "yz4pfxd3",
+          "startSeconds": 100.6,
+          "endSeconds": 183.52,
+          "confidence": 0.92
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "lines": [
+        {
+          "id": "pdfwxinp",
+          "text": "אך תחילה צריך להקדים באיכות ההתבוננות גם בדרך פרט, עוד ענין אחד הצריך ביותר לכל החפץ באמת בקרבת אלהי״ם ואינו רוצה לצאת ידי חובתו להטעות את עצמו כו'"
+        }
+      ],
+      "en": "However, it first is necessary to introduce one more point (which also will be explained in detail) of how <i>Hitbonenut</i> contemplation should be done. This is extremely necessary for all those who truly desire closeness to <i>HaShem</i>-יהו״ה and do not seek to merely fulfill their obligations and deceive themselves [that they thereby are truly serving Him] etc.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "pdfwxinp",
+          "startSeconds": 183.52,
+          "endSeconds": 230.79,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "lines": [
+        {
+          "id": "pkznyhp2",
+          "text": "והוא בהיותו ידוע שבכל התבוננות בענין אלה״י דהתהוות יש מאין בכל מקום לפי מה שהוא, הרי כולל ב' ענינים"
+        }
+      ],
+      "en": "As known, every contemplation upon the G-dly matter of the coming into being of something from nothing, each contemplation, according to its place [in the order of things], includes two matters;",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "pkznyhp2",
+          "startSeconds": 230.79,
+          "endSeconds": 251.34,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "lines": [
+        {
+          "id": "gtbbdu52",
+          "text": "הא' בחינת ביטול היש לאין, שזהו השגת ערך הבעל גבול תחילה באיכות אופן התהוות מציאותו מאין כו'"
+        }
+      ],
+      "en": "The first is the aspect of the nullification of the “something” to the “nothing.” This begins with the comprehension of the relativity of limited beings, by understanding how their existence is derived from the “nothingness.”",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "gtbbdu52",
+          "startSeconds": 251.34,
+          "endSeconds": 266.31,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "lines": [
+        {
+          "id": "7l225e54",
+          "text": "שזה קרוב אל השכל ביותר על ידי כמה מיני הסברים ודמיונות המשלים, וכהאי גוונא עד שנתאמת במוח היטב"
+        },
+        {
+          "id": "vgbyyblu",
+          "text": "(בל\"א עש לייגט זיך אין מוח זייער כו')",
+          "notInSefaria": true
+        }
+      ],
+      "en": "This is brought close to the intellect through various explanations and analogies and the like, until the truth of it becomes well settled in his mind.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "7l225e54",
+          "startSeconds": 266.31,
+          "endSeconds": 291.37,
+          "confidence": 0.872
+        },
+        {
+          "source": "060",
+          "lineId": "vgbyyblu",
+          "startSeconds": 291.37,
+          "endSeconds": 300.44,
+          "confidence": 0.833
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "lines": [
+        {
+          "id": "nhwh7v5l",
+          "text": "והב' ענין בחינת האין האלה״י המהווה אותו ואיך שהוא נבדל בערך, להיותו בלתי בעל גבול כו'"
+        }
+      ],
+      "en": "The second matter is the aspect of the G-dly “nothingness” that bring him into being, and how <i>HaShem</i>-יהו״ה, blessed is He, is totally separate, relative [to created beings], since He has no limitations.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "nhwh7v5l",
+          "startSeconds": 300.44,
+          "endSeconds": 334.07,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "lines": [
+        {
+          "id": "pwrbb6gc",
+          "text": "וזהו הנעלם מעיני השכל בהשגה גמורה"
+        }
+      ],
+      "en": "This matter is concealed from the eyes of the intellect and cannot be fully grasped.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "pwrbb6gc",
+          "startSeconds": 334.07,
+          "endSeconds": 341.6,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "lines": [
+        {
+          "id": "u24q357u",
+          "text": "רק מכל מקום יוברק כמו ברק בסקירה בעלמא במוחו אמיתת ענינו כמו שהוא"
+        }
+      ],
+      "en": "However, the truth of it will, nonetheless, flash like lightning in his brain, so that he will glimpse the truth of the matter, as it is.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "u24q357u",
+          "startSeconds": 341.6,
+          "endSeconds": 382.16,
+          "confidence": 0.877
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "lines": [
+        {
+          "id": "lgkhj5jr",
+          "text": "אבל הוא בבחינת ההעלם כאילו נתאמת הדבר בראיה חושיית"
+        }
+      ],
+      "en": "However, although it is in an aspect of concealment, it will be as true for him as if he saw it with physical sight.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "lgkhj5jr",
+          "startSeconds": 382.16,
+          "endSeconds": 508.16,
+          "confidence": 0.989
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "lines": [
+        {
+          "id": "qmf4a6xz",
+          "text": "והוא ההפרש"
+        },
+        {
+          "id": "eadoqao5",
+          "text": "בין בחינת ראיה דחכמה כח מ''ה שבנפש, שרואה ולא בראיה חושיית כי אם ראיה שכליית בהברקה למעלה מן השגה הגמורה"
+        }
+      ],
+      "en": "This is the difference between the aspect of the “sight” of <i>Chochmah</i>, [and the aspect of the “hearing” of <i>Binah</i>]. The sight of <i>Chochmah</i>, the <i>Koach Ma”h</i><sup data-fn=\"2\">2</sup> (the power of “what”), is the sight of the soul that sees, but not with tangible sight. Rather, it is a flash of intellectual sight which is beyond full comprehension.",
+      "footnotes": [
+        {
+          "n": 2,
+          "html": "The letters of <i>Chochmah</i> (חכמה) can be rearranged to spell <i>Koach Mah</i> (כח מה), meaning “the power of ‘what’.” This represents the aspect of the sublimation to <i>HaShem</i>-יהו״ה of <i>Chochmah</i>, as in the verse (Ex. 16:7-8), “<i>V’Nachnu Mah</i> – and what are we.”"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "qmf4a6xz",
+          "startSeconds": 508.16,
+          "endSeconds": 509,
+          "confidence": 1
+        },
+        {
+          "source": "060",
+          "lineId": "eadoqao5",
+          "startSeconds": 509,
+          "endSeconds": 529.22,
+          "confidence": 0.947
+        }
+      ]
+    },
+    {
+      "n": 13,
+      "lines": [
+        {
+          "id": "spyrpezj",
+          "text": "ועל כן ההתפעלות מזה אינו רק בחינת הביטול שהוא רק העדר הרגשת עצמו מכל וכל כו'"
+        },
+        {
+          "id": "5a7vfmsj",
+          "text": "(בל\"א ער ווערט צו רירט פון ארט ואינו מרגיש גם זה גופא כו')",
+          "notInSefaria": true
+        }
+      ],
+      "en": "Therefore, the arousal that results from this is nothing but the aspect of nullification, which is the complete absence of awareness of self.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "spyrpezj",
+          "startSeconds": 529.22,
+          "endSeconds": 558.76,
+          "confidence": 1
+        },
+        {
+          "source": "060",
+          "lineId": "5a7vfmsj",
+          "startSeconds": 558.76,
+          "endSeconds": 606.34,
+          "confidence": 0.873
+        }
+      ]
+    },
+    {
+      "n": 14,
+      "lines": [
+        {
+          "id": "k7bckltv",
+          "text": "ובין בחינת שמיעה דבינה, שבאה בהשגה גמורה ממש, שהוא באיכות התהוות היש מאין כנזכר לעיל"
+        }
+      ],
+      "en": "The aspect of the “hearing” of <i>Binah</i>, on the other hand, comes with full comprehension, literally. This is to say that he comprehends how the “something” comes into existence from the “nothing,” as explained above.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "k7bckltv",
+          "startSeconds": 606.34,
+          "endSeconds": 661.12,
+          "confidence": 0.808
+        }
+      ]
+    },
+    {
+      "n": 15,
+      "lines": [
+        {
+          "id": "56p3cwfd",
+          "text": "שההתפעלות מזה הוא השמחה במורגש וטוב לב"
+        }
+      ],
+      "en": "The resulting arousal is a tangible feeling of joy and good-heartedness.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "56p3cwfd",
+          "startSeconds": 661.12,
+          "endSeconds": 677.56,
+          "confidence": 0.954
+        }
+      ]
+    },
+    {
+      "n": 16,
+      "lines": [
+        {
+          "id": "q55y6wh5",
+          "text": "כל שמשיג יותר, יותר טוב לו, (בל\"א עש איז זייער גוט ומחי' לנפש כו') וכל שמעמיק יותר, יותר משיג"
+        }
+      ],
+      "en": "The more he grasps, the better he feels and the more he delves into it, the more he grasps.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "q55y6wh5",
+          "startSeconds": 677.56,
+          "endSeconds": 720.78,
+          "confidence": 0.976
+        }
+      ]
+    },
+    {
+      "n": 17,
+      "lines": [
+        {
+          "id": "ss7vqfmm",
+          "text": "ובבחינת הראיה דחכמה הוא להיפוך, כל שיעמיק יותר, יותר יפלא ממנו מהות בחינת האין האלה״י המהווה כו'"
+        }
+      ],
+      "en": "In contrast, the aspect of the “sight” of <i>Chochmah</i> is the opposite. The more he delves into it, the more the G-dly “nothingness” that creates, becomes removed and astounding to him.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "ss7vqfmm",
+          "startSeconds": 720.78,
+          "endSeconds": 836.13,
+          "confidence": 0.956
+        }
+      ]
+    },
+    {
+      "n": 18,
+      "lines": [
+        {
+          "id": "c354otpt",
+          "text": "בהפלאת הערך יותר ויותר כו' עד שיצטער וידאג כו' (כמ\"ש בכתבי'12)"
+        }
+      ],
+      "en": "This astonishment over the awesome gap and absence of any comparison [between <i>HaShem</i>-יהו״ה, blessed is He, who is beyond all limit, and himself], grows and grows, until he is bewildered and consternated over it etc., (as it is written in the Chassidic manuscripts).",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "c354otpt",
+          "startSeconds": 836.13,
+          "endSeconds": 857.28,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 19,
+      "lines": [
+        {
+          "id": "iujm3ylb",
+          "text": "ולפי\"ז הרי בכל מעיין בדרך פרט יבוא לכלל ב' ענינים האלה בהתבוננות, בהעלם וגילוי"
+        }
+      ],
+      "en": "Accordingly, all those who contemplate in a manner of particulars [rather than a general manner] will become [aware of] these two aspects through their contemplation; the concealed aspect and the revealed aspect.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "iujm3ylb",
+          "startSeconds": 857.28,
+          "endSeconds": 872.26,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 20,
+      "lines": [
+        {
+          "id": "yk6kcz2a",
+          "text": "והתפעלות הנולד ב' הפכים הם, לבו דואג בקרבו על עוצם הפלאת ההשגה באין האלה״י המהווה כו', והשמחה מהשגתו בכי טוב באיכות התהוות המתהווה כו'"
+        }
+      ],
+      "en": "Accordingly, the arousal that is born of it [is comprised of] two opposites; “His heart is worried within him”<sup data-fn=\"3\">3</sup> because he comprehends the astounding greatness of the G-dly “nothing” that brings [everything] into being, and he is [simultaneously] joyful because of his thorough grasp of how all that exists comes into being.",
+      "footnotes": [
+        {
+          "n": 3,
+          "html": "See Tractate Chagigah 13a"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "yk6kcz2a",
+          "startSeconds": 872.26,
+          "endSeconds": 1045.52,
+          "confidence": 0.874
+        }
+      ]
+    },
+    {
+      "n": 21,
+      "lines": [
+        {
+          "id": "2r2cbx4p",
+          "text": "כמו על דרך דוגמא המתבונן דרך פרט בהתהוות הגלגלים מאין האלה״י שהיא מבחינת כלים חיצונים דמלכות דמלכות דעשיה"
+        }
+      ],
+      "en": "This may be understood by example of one who contemplates in a manner of particulars into the coming into being of the planetary orbits from the G-dly “nothing,” which comes about from the aspect of the external vessels of <i>Malchut</i> of <i>Malchut</i> of <i>Asiyah</i>.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "2r2cbx4p",
+          "startSeconds": 1045.52,
+          "endSeconds": 1074.96,
+          "confidence": 0.888
+        }
+      ]
+    },
+    {
+      "n": 22,
+      "lines": [
+        {
+          "id": "lw6pmbuk",
+          "text": "שהוא רק מבחינת כלי חיצוניות, הארה דהארה לבד, המאיר בנפש של זה הגלגל בהשגה במהווה אותו"
+        }
+      ],
+      "en": "In other words, he comprehends how it is only from the external vessels and is merely a glimmer of a glimmer, which radiates within the soul of the celestial orb<sup data-fn=\"4\">4</sup> as it grasps that which gives it its existence.",
+      "footnotes": [
+        {
+          "n": 4,
+          "html": "That is, a star or planet"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "lw6pmbuk",
+          "startSeconds": 1074.96,
+          "endSeconds": 1084.42,
+          "confidence": 0.906
+        }
+      ]
+    },
+    {
+      "n": 23,
+      "lines": [
+        {
+          "id": "ohhmqokm",
+          "text": "ועל דרך זה גם במלאכים דבריאה דאימה מקננא כו' שמשיגים כח האלה״י דמלכות דמלכות דאצילות כו' המהווה אותם"
+        }
+      ],
+      "en": "Likewise, he understands how the angels of the world of <i>Briyah,</i> (“In which <i>Imma</i> (<i>Binah</i> of <i>Atzilut</i>) resides”), comprehend the G-dly power of <i>Malchut</i> of <i>Malchut</i> of <i>Atzilut</i> which brings them into existence.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "ohhmqokm",
+          "startSeconds": 1084.42,
+          "endSeconds": 1143.34,
+          "confidence": 0.851
+        }
+      ]
+    },
+    {
+      "n": 24,
+      "lines": [
+        {
+          "id": "npmfa52r",
+          "text": "הרי זהו המושג בהשגה, ויתפעל מגדולת הבורא ואיך שהמה בטלים בתמידות, כמו שכתוב וצבא השמים לך משתחווים, בסיבובם כו'"
+        }
+      ],
+      "en": "He grasps these concepts in a way of comprehension, and he becomes aroused by the greatness of the Creator, and how they [the angels, stars and planets] are constantly sublimated [to Him], as stated, “And the hosts of the heavens bow down to You,” in their orbits etc.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "npmfa52r",
+          "startSeconds": 1143.34,
+          "endSeconds": 1182.88,
+          "confidence": 0.814
+        }
+      ]
+    },
+    {
+      "n": 25,
+      "lines": [
+        {
+          "id": "4wl2vjml",
+          "text": "אבל בחינת האין האלה״י דמלכות דעשיה המהווה, נעלם מהותו מן ההשגה"
+        }
+      ],
+      "en": "However, the aspect of the G-dly “nothingness,” the essential creative force of <i>Malchut</i> of <i>Asiyah</i>, is concealed from his grasp.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "4wl2vjml",
+          "startSeconds": 1182.88,
+          "endSeconds": 1203.78,
+          "confidence": 0.99
+        }
+      ]
+    },
+    {
+      "n": 26,
+      "lines": [
+        {
+          "id": "r6gsf4qi",
+          "text": "רק שממילא הוא מוכרח בהשגה, אחר התאמת אופן הענין של ההתהוות היש כו'"
+        }
+      ],
+      "en": "However, it is automatically forced into his comprehension, because the understanding of how the “something” comes into existence has become true for him.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "r6gsf4qi",
+          "startSeconds": 1203.78,
+          "endSeconds": 1324.62,
+          "confidence": 0.845
+        }
+      ]
+    },
+    {
+      "n": 27,
+      "lines": [
+        {
+          "id": "y5zmdcx2",
+          "text": "ובבחינת ההעלם לבד הוא מושג, ובהפלאת הערך נבדל דוקא"
+        }
+      ],
+      "en": "Furthermore, it is only comprehended in a concealed way, specifically because of the astonishment over the total absence of comparison.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "y5zmdcx2",
+          "startSeconds": 1324.62,
+          "endSeconds": 1392.9,
+          "confidence": 0.783
+        }
+      ]
+    },
+    {
+      "n": 28,
+      "lines": [
+        {
+          "id": "2uwwbnxe",
+          "text": "וכך הוא בהתבוננות פרטיות באצילות באורות וכלים,"
+        },
+        {
+          "id": "d4rv5z6u",
+          "text": "כמו באצילות אור חסד שבמלכות או באצילות אור חסד שבחכמה ואיך שנאצל"
+        }
+      ],
+      "en": "This is likewise so in the contemplation of the particulars of the world of <i>Atzilut</i>, in its lights and vessels. For example, the contemplation on the light of <i>Chessed</i> of <i>Malchut</i> of <i>Atzilut</i>, or the contemplation on the light of <i>Chessed</i> of <i>Chochmah</i> of <i>Atzilut</i>, to understand how they were emanated.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "2uwwbnxe",
+          "startSeconds": 1392.9,
+          "endSeconds": 1397.42,
+          "confidence": 0.971
+        },
+        {
+          "source": "060",
+          "lineId": "d4rv5z6u",
+          "startSeconds": 1397.42,
+          "endSeconds": 1411.86,
+          "confidence": 0.742
+        }
+      ]
+    },
+    {
+      "n": 29,
+      "lines": [
+        {
+          "id": "x6kenv74",
+          "text": "יושג על דרך דמיון מאור הנאצל למטה בגילוי מהעלם העצמות"
+        }
+      ],
+      "en": "This can be comprehended by way of analogy from how light is emanated into revelation from its concealment in the essence [of the luminary], here below [in the physical world].",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "x6kenv74",
+          "startSeconds": 1411.86,
+          "endSeconds": 1434.3,
+          "confidence": 0.972
+        }
+      ]
+    },
+    {
+      "n": 30,
+      "lines": [
+        {
+          "id": "olabsbxi",
+          "text": "כמו ויאצל מן הרוח דמשה כו' וכהאי גוונא"
+        }
+      ],
+      "en": "This is also similar to how Moshe, “emanated from his spirit,”<sup data-fn=\"5\">5</sup> and the like.",
+      "footnotes": [
+        {
+          "n": 5,
+          "html": "Numbers 11:25"
+        }
+      ],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "olabsbxi",
+          "startSeconds": 1434.3,
+          "endSeconds": 1447.51,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 31,
+      "lines": [
+        {
+          "id": "qbvyvu4l",
+          "text": "ויושג גם כן בענין התהוות מדות דאצילות גם שהן בחינת מקוריים נבדלים מן השפעה האלהי״ת בנבראים כו'"
+        }
+      ],
+      "en": "Furthermore, although the emotive qualities (<i>Midot</i>) of the world of <i>Atzilut</i> are only in the aspect of sources, and are separate from the G-dly influence as it is within creation, he nonetheless will comprehend how they come into being.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "qbvyvu4l",
+          "startSeconds": 1447.51,
+          "endSeconds": 1501.66,
+          "confidence": 0.947
+        }
+      ]
+    },
+    {
+      "n": 32,
+      "lines": [
+        {
+          "id": "yni5f2hs",
+          "text": "אבל בחינת אין האמיתי המאיר עליהם מאור עצמות המאצילם, לא יושג אף בדמיון שכל כי אם בהעלם לבד, והוא בבחינת ראית השכל שלמעלה מן השגה ותפיסא ממש"
+        }
+      ],
+      "en": "However, the aspect of the true “nothingness” that shines upon them from the light of the Essential Self of <i>HaShem</i>-יהו״ה, blessed is He, who emanates them, cannot be grasped even through intellectual comparisons. Rather, it may only be [grasped] in a concealed fashion, which is the aspect of the intellectual sight, which is higher than actual comprehension and grasp.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "060",
+          "lineId": "yni5f2hs",
+          "startSeconds": 1501.66,
+          "endSeconds": 1646.93,
+          "confidence": 0.915
+        }
+      ]
+    },
+    {
+      "n": 33,
+      "lines": [
+        {
+          "id": "bpu36mgf",
+          "text": "וכמאמר לית מחשבה תפיסא בך כו', שהוא מחשבה דבינה כו'"
+        }
+      ],
+      "en": "This is like the saying, “No thought can grasp You,” which refers to the thought of <i>Binah</i>.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "061",
+          "lineId": "bpu36mgf",
+          "startSeconds": 10.04,
+          "endSeconds": 27.6,
+          "confidence": 0.987
+        }
+      ]
+    },
+    {
+      "n": 34,
+      "lines": [
+        {
+          "id": "zwu5awdx",
+          "text": "דהיינו שזהו היפך ההשגה, כי כל שמעמיק יותר, יותר מופלא הימנו עצמיות אור המאציל כו'"
+        }
+      ],
+      "en": "In other words, this is the opposite of comprehension, for the more he delves [into it], the more astounding will the essential light of the Emanator be for him.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "061",
+          "lineId": "zwu5awdx",
+          "startSeconds": 27.6,
+          "endSeconds": 62.2,
+          "confidence": 0.986
+        }
+      ]
+    },
+    {
+      "n": 35,
+      "lines": [
+        {
+          "id": "bpqt4mzz",
+          "text": "והסימן לזה הוא הנולד מזה, בחינת הביטול ביותר כנזכר לעיל"
+        }
+      ],
+      "en": "The indication of this [type of arousal] is that a very great aspect of nullification is born [in him].",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "061",
+          "lineId": "bpqt4mzz",
+          "startSeconds": 62.2,
+          "endSeconds": 210.82,
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "n": 36,
+      "lines": [
+        {
+          "id": "wvniethc",
+          "text": "ונמצא בחינת הביטול והשמחה שמסתעפים ונולדים מחכמה ובינה שבכל פרט, בהכרח שבאים כאחד דוקא"
+        }
+      ],
+      "en": "[From all the above] we find, that of necessity, the [opposite] aspects of nullification and joy, which branch out and are born of the <i>Chochmah</i> and <i>Binah</i> [that is, the contemplation] of each particular, specifically come together, as one.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "061",
+          "lineId": "wvniethc",
+          "startSeconds": 210.82,
+          "endSeconds": 266.8,
+          "confidence": 0.967
+        }
+      ]
+    },
+    {
+      "n": 37,
+      "lines": [
+        {
+          "id": "iov27o2n",
+          "text": "בכל התבוננות בכל פרט ופרט דווקא"
+        }
+      ],
+      "en": "This is true of all <i>Hitbonenut-</i>contemplation of each particular detail, specifically.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "061",
+          "lineId": "iov27o2n",
+          "startSeconds": 266.8,
+          "endSeconds": 276.24,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 38,
+      "lines": [
+        {
+          "id": "2o5mbc3x",
+          "text": "והא בהא תליא, ואם לא השמחה ביש מההשגה בטוב, לא יבוא להפלאת וריחוק ההשגה באי''ן"
+        }
+      ],
+      "en": "These two aspects are interdependent. If he has no joy from the thorough comprehension of the “something,” then he will also not come to the astonishment and sense of distance in his inability to grasp the “nothingness.”",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "061",
+          "lineId": "2o5mbc3x",
+          "startSeconds": 276.24,
+          "endSeconds": 337.86,
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "n": 39,
+      "lines": [
+        {
+          "id": "76futtl7",
+          "text": "ולפי ערך השמחה כך ערך הביטול ממש, כי כפי ערך ההשגה במתהווה, כך ערך ההפלאה בהבדל המהווה כו'"
+        }
+      ],
+      "en": "The degree of his joy is, literally, commensurate to the degree of his nullification, for his comprehension of the created is commensurate to his astonishment at the separateness of the Creator.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "061",
+          "lineId": "76futtl7",
+          "startSeconds": 337.86,
+          "endSeconds": 375.04,
+          "confidence": 0.988
+        }
+      ]
+    },
+    {
+      "n": 40,
+      "lines": [
+        {
+          "id": "5msq7wwo",
+          "text": "וזהו כלל גדול בכל ההתבוננות בפרט ובכלל"
+        }
+      ],
+      "en": "This is an important principle [that applies to] every <i>Hitbonenut</i>-contemplation, whether general or particular.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "061",
+          "lineId": "5msq7wwo",
+          "startSeconds": 375.04,
+          "endSeconds": 402.06,
+          "confidence": 0.914
+        }
+      ]
+    },
+    {
+      "n": 41,
+      "lines": [
+        {
+          "id": "byd4h6cl",
+          "text": "(מה שאין כן מי שנדמה לא שתופס היטב ההתהוות ואין לו בחינת ביטול מצד המהווה, לא השיג כלום בוודאי בלי ספק"
+        }
+      ],
+      "en": "(In contrast, if it appears to someone that he thoroughly grasps the aspect of creation, but he lacks the aspect of nullification to the Creator, then, without a doubt, it is a certainty that he has not grasped anything.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "061",
+          "lineId": "byd4h6cl",
+          "startSeconds": 402.06,
+          "endSeconds": 421,
+          "confidence": 0.943
+        }
+      ]
+    },
+    {
+      "n": 42,
+      "lines": [
+        {
+          "id": "3l576k5y",
+          "text": "ומי שידמה לו בחינת הביטול בעצמו מצד הפלאת ערך המהווה כו' ולא השיג בכי טוב לאופן המתהוה כו', דמיון שווא הוא ואין לו בחינת ביטול כלל"
+        }
+      ],
+      "en": "Likewise, if someone imagines that he possesses the aspect of nullification through the realization of the wondrousness of the Creator, but does not thoroughly comprehend the manner of how [everything] comes into being, it is a false imagination and he has no nullification whatsoever.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "061",
+          "lineId": "3l576k5y",
+          "startSeconds": 421,
+          "endSeconds": 451.58,
+          "confidence": 0.918
+        },
+        {
+          "source": "062",
+          "lineId": "3l576k5y",
+          "startSeconds": 391.98,
+          "endSeconds": 425.12,
+          "confidence": 0.36
+        }
+      ]
+    },
+    {
+      "n": 43,
+      "lines": [
+        {
+          "id": "5jllzwqj",
+          "text": "כי הא בהא תליא לפי ערך דווקא מטעם הנזכר לעיל"
+        }
+      ],
+      "en": "These two are interdependent and commensurate to each other, for the above-mentioned reason.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "061",
+          "lineId": "5jllzwqj",
+          "startSeconds": 451.58,
+          "endSeconds": 478.72,
+          "confidence": 0.59
+        },
+        {
+          "source": "062",
+          "lineId": "5jllzwqj",
+          "startSeconds": 425.12,
+          "endSeconds": 786.32,
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "n": 44,
+      "lines": [
+        {
+          "id": "6poehxhz",
+          "text": "וכידוע לכל טועמי טעם בהתבוננות באמת ואינם מטעים את עצמו כלל"
+        }
+      ],
+      "en": "This is known to all who have tasted true <i>Hitbonenut</i>, and do not at all delude themselves.",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "061",
+          "lineId": "6poehxhz",
+          "startSeconds": 478.72,
+          "endSeconds": 489.06,
+          "confidence": 0.761
+        }
+      ]
+    },
+    {
+      "n": 45,
+      "lines": [
+        {
+          "id": "cay5uw3u",
+          "text": "וכאשר יובן כל זה לרגילים בדברי חסידות מנעוריהם כו' ורבים מאד יטעו בעצמם בכל זה בכמה אופנים שונים וכו'):"
+        }
+      ],
+      "en": "This is likewise understood by those who are accustomed to the teachings of <i>Chassidut</i> from their youth. However, a great many people delude themselves in all this, in many different ways etc.)",
+      "footnotes": [],
+      "coverage": [
+        {
+          "source": "061",
+          "lineId": "cay5uw3u",
+          "startSeconds": 489.06,
+          "endSeconds": 661.4,
+          "confidence": 0.922
+        }
+      ]
+    }
+  ]
+}

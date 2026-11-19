@@ -1,0 +1,1785 @@
+{
+  "schemaVersion": 1,
+  "chapter": 3,
+  "preambles": [
+    {
+      "source": "021",
+      "sentences": [
+        {
+          "t": 0,
+          "text": "Chapter three."
+        },
+        {
+          "t": 3.93,
+          "text": "Or it's basically chapter three is the conclusion of chapter two."
+        }
+      ]
+    }
+  ],
+  "spans": [
+    {
+      "source": "021",
+      "lineId": "enmyervp",
+      "segment": 1,
+      "startSeconds": 11.15,
+      "endSeconds": 24.82,
+      "confidence": 1,
+      "sentences": [
+        {
+          "t": 11.15,
+          "text": "וכל זה יובן בענין ההתבוננות, so actually it's a conclusion of chapter one and two."
+        },
+        {
+          "t": 17.94,
+          "text": "כל זה יובן בענין ההתבוננות בהשגת אלקות, שיש ב׳ מדרגות, בינה ותבונה."
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "lqzwk7h2",
+      "segment": 1,
+      "startSeconds": 24.82,
+      "endSeconds": 38.1,
+      "confidence": 0.775,
+      "sentences": [
+        {
+          "t": 24.82,
+          "text": "בינה, היינו בחינת עצם ההשגה באלקות בכל פרט."
+        },
+        {
+          "t": 28.54,
+          "text": "ענין שמתבונן איך הוא, ומה הוא, ועיון הדבר בעיון רב בכל פרטי הלכות, וכולו כנ״ל, in other words, the actual learning,"
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "sjzn4y5q",
+      "segment": 2,
+      "startSeconds": 38.1,
+      "endSeconds": 45.87,
+      "confidence": 0.927,
+      "sentences": [
+        {
+          "t": 38.1,
+          "text": "כמו בהשגה פרטית דממלא כל עלמין, שהוא התהוות יש מאין, הנקרא כח הפועל בנפעל, וכולו."
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "3kkjkkyl",
+      "segment": 3,
+      "startSeconds": 45.87,
+      "endSeconds": 109.68,
+      "confidence": 0.907,
+      "sentences": [
+        {
+          "t": 45.87,
+          "text": "והוא בחינת שם אדם ושם אלקים, לשון כח, כידוע."
+        },
+        {
+          "t": 52.12,
+          "text": "הנה יש בזה כמה חילוקי פרטים Is that שם אדם?"
+        },
+        {
+          "t": 57.39,
+          "text": "Yeah, שם אדם."
+        },
+        {
+          "t": 59.17,
+          "text": "אדנות?"
+        },
+        {
+          "t": 59.95,
+          "text": "It says here שם אדם."
+        },
+        {
+          "t": 62.84,
+          "text": "אדם is מ״ה."
+        },
+        {
+          "t": 64.29,
+          "text": "What does it say?"
+        },
+        {
+          "t": 66.63,
+          "text": "It says א״ד in my my ספר."
+        },
+        {
+          "t": 69.13,
+          "text": "Here it says אדם."
+        },
+        {
+          "t": 71.71,
+          "text": "Okay."
+        },
+        {
+          "t": 73.16,
+          "text": "Maybe it's שם השם."
+        },
+        {
+          "t": 75.21,
+          "text": "Go ahead."
+        },
+        {
+          "t": 76.15,
+          "text": "That's what it says here, and I have the the רש״י."
+        },
+        {
+          "t": 79.2,
+          "text": "The old one."
+        },
+        {
+          "t": 79.89,
+          "text": "Okay."
+        },
+        {
+          "t": 80.17,
+          "text": "But the the way you have it, it makes more sense."
+        },
+        {
+          "t": 83.3,
+          "text": "Right."
+        },
+        {
+          "t": 83.85,
+          "text": "Actually it makes more sense."
+        },
+        {
+          "t": 87.18,
+          "text": "כידוע הנה יש בזה כמה חילוקי פרטים בחיצוניות, באופני חיצוניות הענין, עד שיוסבר תוך תוך הענין הזה בפנימיותו ועצמי, איך שהוא בעצם, וכולו, the ענין of ממלא כל עלמין, שזהו נקרא עומק המושג וכולו כנ״ל."
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "wv5wjecb",
+      "segment": 4,
+      "startSeconds": 109.68,
+      "endSeconds": 120.16,
+      "confidence": 0.767,
+      "sentences": [
+        {
+          "t": 109.68,
+          "text": "שהעיון הוא בחינת כלי לבוא לבחינת העומק וכולו."
+        },
+        {
+          "t": 113.5,
+          "text": "The the עיון into, in other words, later on the whole ענין of how the the פנימי works in the סדר השתלשלות."
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "wqvnzsho",
+      "segment": 4,
+      "startSeconds": 120.16,
+      "endSeconds": 140.84,
+      "confidence": 0.825,
+      "sentences": [
+        {
+          "t": 120.16,
+          "text": "והאורך הוא בחינת הסברת הענין הזה אל השכל במשלים שונים הידועים."
+        },
+        {
+          "t": 126.18,
+          "text": "I'm not I'm not translating or explaining because it's pretty much They're recapping."
+        },
+        {
+          "t": 131.78,
+          "text": "They're he's recapping what he's already said."
+        },
+        {
+          "t": 134.46,
+          "text": "He's recapping."
+        },
+        {
+          "t": 135.32,
+          "text": "It's pretty much self-explanatory, right."
+        },
+        {
+          "t": 137.55,
+          "text": "הסברת הענין הזה אל השכל במשלים שונים הידועים,"
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "hrbox7uu",
+      "segment": 5,
+      "startSeconds": 140.84,
+      "endSeconds": 164.12,
+      "confidence": 0.833,
+      "sentences": [
+        {
+          "t": 140.84,
+          "text": "עד שיהיה הדבר הזה קרוב במוחו מאד."
+        },
+        {
+          "t": 143.72,
+          "text": "בלשון אידיש, ער האָט געבראַכט זייער דעם שׂכל צו זיך."
+        },
+        {
+          "t": 148.92,
+          "text": "He brings the שכל very close to himself."
+        },
+        {
+          "t": 152.24,
+          "text": "בלבוש הגשמי, in other words the משלים is a לבוש הגשמי, עד שיוכל תינוק להשיג וכולו."
+        },
+        {
+          "t": 158.76,
+          "text": "כגון וכו', basically, like this thing."
+        },
+        {
+          "t": 163.4,
+          "text": "כנ״ל."
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "ikcdi6z4",
+      "segment": 6,
+      "startSeconds": 164.12,
+      "endSeconds": 171.66,
+      "confidence": 1,
+      "sentences": [
+        {
+          "t": 164.12,
+          "text": "והרוחב היינו להרחיב זה הדבר כמו שהוא בכמה אופנים שונים ולא באופן אחד לבד,"
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "trmgsqs5",
+      "segment": 7,
+      "startSeconds": 171.66,
+      "endSeconds": 184.2,
+      "confidence": 0.948,
+      "sentences": [
+        {
+          "t": 171.66,
+          "text": "כמו המשל מזה הדבר מחית הנפש בגוף, שאין זה רק התפשטות מן העצם, כידוע."
+        },
+        {
+          "t": 179.6,
+          "text": "The חיות הנפש בגוף is התפשטות מן העצם."
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "yewkdy6h",
+      "segment": 8,
+      "startSeconds": 184.2,
+      "endSeconds": 208.7,
+      "confidence": 0.97,
+      "sentences": [
+        {
+          "t": 184.2,
+          "text": "ויש ריבוי אופנים למאד בהתפשטות מן העצם."
+        },
+        {
+          "t": 187.54,
+          "text": "There's various משלים, in other words, in התפשטות מן העצם."
+        },
+        {
+          "t": 191.42,
+          "text": "וגם בגילוי ההעלם."
+        },
+        {
+          "t": 192.58,
+          "text": "So, in other words, a few ways that it's explained, the ענין of ממלא כל עלמין, one is the ways of התפשטות מן העצם, another one which itself has a bunch of משלים, and then another way is בגילוי ההעלם,"
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "ikyjneua",
+      "segment": 8,
+      "startSeconds": 208.7,
+      "endSeconds": 239.6,
+      "confidence": 0.749,
+      "sentences": [
+        {
+          "t": 208.7,
+          "text": "כתנועת החי, וכיוצא, ודבור, וכולו."
+        },
+        {
+          "t": 210.87,
+          "text": "Which, which, which now he says, in so in גילוי מן ההעלם is also various אופנים."
+        },
+        {
+          "t": 216.41,
+          "text": "הן כהתחכמות מעצם החכמה, הן כגילוי הראיה דעין, הן כגילוי שלהבת מן הגחלת, וכולו."
+        },
+        {
+          "t": 223.28,
+          "text": "In other words, each one is a a different, a different way of saying it, or explaining it."
+        },
+        {
+          "t": 230.06,
+          "text": "וכל זה נקרא גילוי ההעלם, and all it is is the רוחב of one אורך, of גילוי ההעלם."
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "o3s6ornj",
+      "segment": 9,
+      "startSeconds": 239.6,
+      "endSeconds": 257.83,
+      "confidence": 0.712,
+      "sentences": [
+        {
+          "t": 239.6,
+          "text": "מה שאין כן משל זיו השמש, והאור הנר, והכח הפועל, וכולו, שנקרא התפשטות מן העצם וכולו."
+        },
+        {
+          "t": 248.8,
+          "text": "And, and, and that's that's a different אורך, and itself, it also has various ways to explain it, וכיוצא בזה."
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "i5vmuhbb",
+      "segment": 10,
+      "startSeconds": 257.83,
+      "endSeconds": 293.46,
+      "confidence": 0.9,
+      "sentences": [
+        {
+          "t": 257.83,
+          "text": "הרי כל זה בעצם הענין, but all of this is still about the עצם הענין of the ממלא כל עלמין."
+        },
+        {
+          "t": 265.52,
+          "text": "רק שנתרחב, he he widens it out."
+        },
+        {
+          "t": 270.52,
+          "text": "וההפך מזה הוא הקיצור, רק באופן אחד, means narrow, וגם הוא בדרך קצרה, and also that in a short way of length."
+        },
+        {
+          "t": 281.8,
+          "text": "So the shortness of width and the shortness of length."
+        },
+        {
+          "t": 285.38,
+          "text": "נזכר במוח בבלתי התפשטות להרחיבו כלל, וכולו."
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "2eioe6hk",
+      "segment": 11,
+      "startSeconds": 293.46,
+      "endSeconds": 316.97,
+      "confidence": 0.664,
+      "sentences": [
+        {
+          "t": 293.46,
+          "text": "אבל, so that's, by the way, the קיצור, that's the קיצור before."
+        },
+        {
+          "t": 298.78,
+          "text": "אבל כמו שזה הדבר אבל כמו שזה הדבר נתפס בעומק בעצם אחר כל ריבוי ההסברים והמשלים, הוא נקרא עומק בתמצית עמוקה כנ״ל."
+        },
+        {
+          "t": 309.38,
+          "text": "It looks the same like the the קיצור, but it really isn't."
+        },
+        {
+          "t": 316.31,
+          "text": "Right."
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "e4b6odef",
+      "segment": 12,
+      "startSeconds": 316.97,
+      "endSeconds": 360.92,
+      "confidence": 0.796,
+      "sentences": [
+        {
+          "t": 316.97,
+          "text": "ודווקא אחר האריכות והרוחב והמשלים בעיון רב יבוא לבחינת העומק שמובן מהם."
+        },
+        {
+          "t": 325.4,
+          "text": "Like the thing we said about the אלטר רבי or the דייטשל and the מת."
+        },
+        {
+          "t": 329.54,
+          "text": "Right."
+        },
+        {
+          "t": 331.04,
+          "text": "בלשון אידיש דערהערן די טיפקייט פון דעם ווי די זאך איז באמת, to understand the real deepness of this thing, how the thing really is."
+        },
+        {
+          "t": 341.76,
+          "text": "דהיינו אחר ההלבשה שבחיצוניותה בכל הענין הרב כולו ודי למבין."
+        },
+        {
+          "t": 348.75,
+          "text": "So basically, he just recapped chapter one in one really."
+        },
+        {
+          "t": 354.18,
+          "text": "Up to now he explained ענין of בינה, and he applied it to ממלא"
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "55ajiqto",
+      "segment": 13,
+      "startSeconds": 360.92,
+      "endSeconds": 461.14,
+      "confidence": 0.903,
+      "sentences": [
+        {
+          "t": 360.92,
+          "text": "כל עלמין."
+        },
+        {
+          "t": 361.44,
+          "text": "Like for instance, in a in the way of a ממלא כל עלמין, it is the ענין of the בינה in it, to go through it and understand it with all the פרטים, and with all the different משלים, and with all the different explanations,"
+        },
+        {
+          "t": 374.7,
+          "text": "whether it's פשטות or גילוי, whatever."
+        },
+        {
+          "t": 376.77,
+          "text": "Right."
+        },
+        {
+          "t": 377.14,
+          "text": "That's the רחב."
+        },
+        {
+          "t": 378.14,
+          "text": "And the אורך is to bring each thing down into משלים."
+        },
+        {
+          "t": 381.19,
+          "text": "Like, in other words, if פשטות is brought like like for instance the גילוי מן ההעלם is like the אותיות הדיבור which reveal the אותיות המחשבה."
+        },
+        {
+          "t": 396.06,
+          "text": "That's a משל."
+        },
+        {
+          "t": 397.93,
+          "text": "Right."
+        },
+        {
+          "t": 398.71,
+          "text": "Or like the משל of a river."
+        },
+        {
+          "t": 402.68,
+          "text": "And that's the thing that the length is to מגשם, to bring it down into גשמיות."
+        },
+        {
+          "t": 407.46,
+          "text": "וכמו שמבואר למעלה בכל פרטי כח״ב דבינה."
+        },
+        {
+          "t": 411.52,
+          "text": "And the whole thing was explained above in chapter one in כתר, חכמה, ובינה דבינה, that the the בינה of בינה is the התבוננות, the חכמה of בינה is the to to discover a new thing within the same thing, and the כתר is עומק"
+        },
+        {
+          "t": 424.72,
+          "text": "המושג, and then the deeper כתר of the שער הנו״ן."
+        },
+        {
+          "t": 429.63,
+          "text": "הכל ימצא בהשגה פרטית כזה כזאת."
+        },
+        {
+          "t": 433.82,
+          "text": "In any השגה פרטית throughout the book, you'll find this whole ענין of the הבנה of the בינה of the thing."
+        },
+        {
+          "t": 442.07,
+          "text": "וככהאי גוונא, the same like you'll find it in the ענין of ממלא כל עלמין, ובכל השגות אלוקות הפרטים כמו שיתבאר."
+        },
+        {
+          "t": 450.39,
+          "text": "In any השגה of אלוקות, the פרטים of it, and how it's going to be explained later in the book."
+        },
+        {
+          "t": 457.01,
+          "text": "So he recapped what the ענין of בינה is."
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "6orefpip",
+      "segment": 14,
+      "startSeconds": 461.14,
+      "endSeconds": 467.78,
+      "confidence": 0.819,
+      "sentences": [
+        {
+          "t": 461.14,
+          "text": "ובחינת הדעת הוא בחינת ההכרה וההרגשה במושכל בהתקשרות כנ״ל, like he explained before."
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "43abtns6",
+      "segment": 15,
+      "startSeconds": 467.78,
+      "endSeconds": 553.17,
+      "confidence": 0.97,
+      "sentences": [
+        {
+          "t": 467.78,
+          "text": "ועל זה נאמר וידעת גו׳, דע את אלקי אביך גו׳, שהוא בהשגה זו דממלא כל עלמין דווקא, כאילו."
+        },
+        {
+          "t": 478.94,
+          "text": "This ענין of the מצוה of דעת הוי׳ is דווקא in the ענין of ממלא כל עלמין."
+        },
+        {
+          "t": 490.08,
+          "text": "So this is one of the things, you know, it says ומלאה הארץ דעה את ה׳ כמים לים מכסים."
+        },
+        {
+          "t": 498.16,
+          "text": "So basically now he's telling you the ענין of דעת הוי׳ is דווקא in the סדר השתלשלות, Right."
+        },
+        {
+          "t": 507.05,
+          "text": "in the ממלא כל עלמין."
+        },
+        {
+          "t": 510.16,
+          "text": "And really, I think if you look at it even closer, the real ענין of דעת הוי׳ that will is is really דווקא in דבי״ע, Right."
+        },
+        {
+          "t": 521.97,
+          "text": "more more in דבי״ע than in the actual higher up thing."
+        },
+        {
+          "t": 527.88,
+          "text": "But but nonetheless, really הוי׳ is basically the four עולמות, אצילות, בריאה, יצירה, עשיה."
+        },
+        {
+          "t": 534.88,
+          "text": "So that's the ענין of דעת."
+        },
+        {
+          "t": 539.17,
+          "text": "So the דעת is דווקא in the השגה to be connected to to have a דעת enter השגה דווקא of דעת הוי׳, of of I mean of a ממלא כל עלמין."
+        },
+        {
+          "t": 552.08,
+          "text": "בלשון אידיש"
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "ge6fzkfn",
+      "segment": 16,
+      "startSeconds": 553.17,
+      "endSeconds": 585.94,
+      "confidence": 0.919,
+      "sentences": [
+        {
+          "t": 553.17,
+          "text": "דער קלעפ כולו כנ״ל באורך, the I think קלעפ is the holding onto the דווקא in the length of the thing."
+        },
+        {
+          "t": 562.85,
+          "text": "שהוא דווקא מביא לבחינת עומקא דכולא, that that דווקא, דווקא the התבוננות is דווקא what brings to the עומקא דכולא, meaning what?"
+        },
+        {
+          "t": 575.1,
+          "text": "דהיינו לעומק דחכמה, the תעלומות חכמה like like he explained before, which comes after the התבוננות, שמאין תמצא כנ״ל."
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "auqhqc25",
+      "segment": 17,
+      "startSeconds": 585.94,
+      "endSeconds": 653.42,
+      "confidence": 0.913,
+      "sentences": [
+        {
+          "t": 585.94,
+          "text": "דהיינו בבחינת עומק ראיית השכל בהשגה זו דבחינת ממלא כל עלמין שלמעלה מהשגת השכל, means when you see the thing with your mind."
+        },
+        {
+          "t": 596.76,
+          "text": "And the thing of seeing the thing He's talking about ראיית השכל is not like the ראייה of נבואה."
+        },
+        {
+          "t": 604.26,
+          "text": "The ראייה of נבואה is to see ממש with the eyes."
+        },
+        {
+          "t": 607.37,
+          "text": "ראיית השכל means is that I explain something to you enough till you see the truth of it."
+        },
+        {
+          "t": 613.19,
+          "text": "Right."
+        },
+        {
+          "t": 613.53,
+          "text": "You ממש see the truth of it."
+        },
+        {
+          "t": 615.26,
+          "text": "It's not anymore an explanation, but you actually see the truth of it."
+        },
+        {
+          "t": 619.2,
+          "text": "Oh, the רבי says even a ראייה גשמית will come out of התבוננות."
+        },
+        {
+          "t": 623.98,
+          "text": "Oh, yeah."
+        },
+        {
+          "t": 624.86,
+          "text": "The ראייה גשמית does come out of Everything comes out of התבוננות, but what he's talking about here is ראיית השכל."
+        },
+        {
+          "t": 630.82,
+          "text": "Okay, but when the רבי says in the שיחה, מורה באצבע ואומר זה, that's not with a ראיית השכל, that's דווקא with a ראייה גשמית."
+        },
+        {
+          "t": 640.6,
+          "text": "That's what I said."
+        },
+        {
+          "t": 641.12,
+          "text": "That's ראייה of the eyes, but over here, that's not what he's talking about."
+        },
+        {
+          "t": 646.12,
+          "text": "Right."
+        },
+        {
+          "t": 646.65,
+          "text": "Okay."
+        },
+        {
+          "t": 647.1,
+          "text": "Talking about the ראיית השכל, which is called the ראייה of חכמה."
+        },
+        {
+          "t": 652.89,
+          "text": "Right."
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "4w6bgsze",
+      "segment": 18,
+      "startSeconds": 653.42,
+      "endSeconds": 798.91,
+      "confidence": 0.679,
+      "sentences": [
+        {
+          "t": 653.42,
+          "text": "וכמו שנאמר ברעיא מהימנא, דעינא דשכל דבליבא יתחזי כולה."
+        },
+        {
+          "t": 657.93,
+          "text": "With the with the eye of the of the שכל within the heart, everything is seen."
+        },
+        {
+          "t": 663.48,
+          "text": "ונגלה לאסתכלא ביקרא דמלכא."
+        },
+        {
+          "t": 665.34,
+          "text": "And this is called to see the כבוד of the king."
+        },
+        {
+          "t": 669.72,
+          "text": "וגם מזה יש בחינת עומק כנ\"ל באריכות."
+        },
+        {
+          "t": 672.18,
+          "text": "This also has an עומק."
+        },
+        {
+          "t": 673.48,
+          "text": "Like we explained before, that that when you get to חכמה, there's also a a length and a width and a depth."
+        },
+        {
+          "t": 683.22,
+          "text": "So in the ראייה of חכמה, there's also an עומק."
+        },
+        {
+          "t": 685.77,
+          "text": "So that's the ענין of chapter one up to here."
+        },
+        {
+          "t": 689.25,
+          "text": "Now he's getting to chapter two."
+        },
+        {
+          "t": 693.75,
+          "text": "ובחינת התבונה, so, what's the thing of תבונה?"
+        },
+        {
+          "t": 698.44,
+          "text": "Which, remember, the the whole ענין of the גלות is דווקא because of the lack of תבונה."
+        },
+        {
+          "t": 705.57,
+          "text": "Right."
+        },
+        {
+          "t": 706.24,
+          "text": "I mean, it's a lot of בינה also."
+        },
+        {
+          "t": 709.93,
+          "text": "It says עמי לא יתבונן, it's really that is missing both of them, but it's it's even more the lack of תבונה."
+        },
+        {
+          "t": 717.28,
+          "text": "היינו לדלות על ידה מעומק זה הנעלם במוח שזה דממלא כל עלמין הנ\"ל, once you get to the עומק הנעלם, it means not just עומק of בינה, but עומק of חכמה, where you get to the point where you ממש see the the the the"
+        },
+        {
+          "t": 733.26,
+          "text": "verity of the explanation, meaning not that you see the explanation, but you you ממש, through the explanation, you see how it actually is, in a mental way."
+        },
+        {
+          "t": 746.22,
+          "text": "But where he brings it לידי גילוי through תבונה."
+        },
+        {
+          "t": 751.92,
+          "text": "See, and and by the way, this is where the the actual visual seeing with the eye comes in."
+        },
+        {
+          "t": 761.15,
+          "text": "Right."
+        },
+        {
+          "t": 761.86,
+          "text": "In other words, to see this, to bring this so that you can ממש see the G-dliness in the physical world."
+        },
+        {
+          "t": 768.99,
+          "text": "Right."
+        },
+        {
+          "t": 770.06,
+          "text": "In what's actually happening, so that when you see the physical world, Hello, שמעון?"
+        },
+        {
+          "t": 775.95,
+          "text": "Yeah, you can start."
+        },
+        {
+          "t": 779.4,
+          "text": "Is שמעון there?"
+        },
+        {
+          "t": 782.1,
+          "text": "I don't think שמעון is on."
+        },
+        {
+          "t": 786.9,
+          "text": "He is."
+        },
+        {
+          "t": 788.11,
+          "text": "Yeah, hello?"
+        },
+        {
+          "t": 790.06,
+          "text": "Yeah, okay."
+        },
+        {
+          "t": 791.86,
+          "text": "Oh, my microphone was off."
+        },
+        {
+          "t": 796.36,
+          "text": "Yeah, go ahead."
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "26j4ds4w",
+      "segment": 19,
+      "startSeconds": 798.91,
+      "endSeconds": 1149.54,
+      "confidence": 0.424,
+      "sentences": [
+        {
+          "t": 798.91,
+          "text": "ובחינת התבונה, היינו לדלות על ידה מעומק זה הנעלם במוח שזה דממלא כל עלמין הנ\"ל לידי גילוי, into a revelation."
+        },
+        {
+          "t": 808.98,
+          "text": "And like I said, that's the the real thing of seeing with the eyes is like that."
+        },
+        {
+          "t": 814.44,
+          "text": "To have the תבונה to to to to bring the actual תבונה that once you understand the whole understanding, it's no longer just an abstract thing, but you bring it all the way down into the actuality of what you're seeing, and you see, you"
+        },
+        {
+          "t": 831.16,
+          "text": "know, this is what the There's a story of the אלטער רבי and the מיטעלער רבי."
+        },
+        {
+          "t": 836.72,
+          "text": "That the אלטער רבי asked the מיטעלער רבי, what did you דאווען with?"
+        },
+        {
+          "t": 840.78,
+          "text": "And he told him that he דאווענד with something about א\"ק, התבוננות about א\"ק."
+        },
+        {
+          "t": 848.52,
+          "text": "And then he asked the the רבי, and what did you דאווען with?"
+        },
+        {
+          "t": 852.32,
+          "text": "And the the אלטער רבי told him, with the סטנדר."
+        },
+        {
+          "t": 854.92,
+          "text": "Right."
+        },
+        {
+          "t": 855.89,
+          "text": "What does it mean with the סטנדר?"
+        },
+        {
+          "t": 861.39,
+          "text": "What, he was holding on to the סטנדר, that's how he דאווענד, that's what he meant like a joke?"
+        },
+        {
+          "t": 865.3,
+          "text": "No."
+        },
+        {
+          "t": 865.54,
+          "text": "The thing is that he דאווענד with the actual fact that he saw that the סטנדר itself is אלוקות."
+        },
+        {
+          "t": 872.22,
+          "text": "That's the תבונה."
+        },
+        {
+          "t": 877.06,
+          "text": "התבונה is to to look around and you apply that whole thing of the בינה, and you realize that you're looking at at nothing but G-d, אין עוד מלבדו."
+        },
+        {
+          "t": 886.4,
+          "text": "You're actually looking at G-d right now."
+        },
+        {
+          "t": 888.82,
+          "text": "Right."
+        },
+        {
+          "t": 889.56,
+          "text": "And the thing is, not just you're looking at G-d, you were looking at Him the whole time."
+        },
+        {
+          "t": 898.02,
+          "text": "Okay, but the thing Thing is that you know how to parse it."
+        },
+        {
+          "t": 901.34,
+          "text": "Right."
+        },
+        {
+          "t": 901.78,
+          "text": "This is like the basically, like you say, to see."
+        },
+        {
+          "t": 905.38,
+          "text": "So so what do you see G-d more than somebody else sees G-d?"
+        },
+        {
+          "t": 908.66,
+          "text": "Somebody else is seeing the same physical world that you're seeing."
+        },
+        {
+          "t": 912.52,
+          "text": "And this is like the thing, you know, find the ten bunnies."
+        },
+        {
+          "t": 915.89,
+          "text": "What is that?"
+        },
+        {
+          "t": 918.16,
+          "text": "You know what I'm talking about?"
+        },
+        {
+          "t": 919.62,
+          "text": "There's these little kid There's these little kiddie games, you know, these little kiddie puzzles they have in kiddie magazines."
+        },
+        {
+          "t": 925.26,
+          "text": "Right."
+        },
+        {
+          "t": 925.66,
+          "text": "There's a picture."
+        },
+        {
+          "t": 926.97,
+          "text": "And you have to find the ten Waldo?"
+        },
+        {
+          "t": 930.25,
+          "text": "Huh?"
+        },
+        {
+          "t": 930.63,
+          "text": "Like Find Waldo?"
+        },
+        {
+          "t": 932.08,
+          "text": "Whatever, you have to find the ten bunnies in the picture."
+        },
+        {
+          "t": 934.97,
+          "text": "Right, okay."
+        },
+        {
+          "t": 935.68,
+          "text": "And they're hidden."
+        },
+        {
+          "t": 936.64,
+          "text": "There's like a tree and if you look at the leaves, you see there's a bunny there."
+        },
+        {
+          "t": 939.63,
+          "text": "Ah right, right."
+        },
+        {
+          "t": 940.47,
+          "text": "It looks like leaves, you know, and then you look closely, you see, oh, there's a there's an upside-down bunny over there."
+        },
+        {
+          "t": 945.09,
+          "text": "Right."
+        },
+        {
+          "t": 945.38,
+          "text": "You know what I'm talking about?"
+        },
+        {
+          "t": 946.96,
+          "text": "Yeah, and the cartoons they have in the in the newspapers."
+        },
+        {
+          "t": 949.96,
+          "text": "Right, right."
+        },
+        {
+          "t": 950.75,
+          "text": "Now when you look at the When you look at the picture, you're seeing the ten bunnies."
+        },
+        {
+          "t": 956.94,
+          "text": "Right."
+        },
+        {
+          "t": 957.44,
+          "text": "You're just not aware of them."
+        },
+        {
+          "t": 959.98,
+          "text": "Yeah, but you're seeing them."
+        },
+        {
+          "t": 961.88,
+          "text": "You're seeing them the same thing before you found the ten bunnies and after you found the ten bunnies, you saw them."
+        },
+        {
+          "t": 970.2,
+          "text": "But after you found them, then right away you say, \"You see, there it is.\""
+        },
+        {
+          "t": 973.68,
+          "text": "And and not only that, as a matter of fact, Like those 3D Like before it looked to you just like a bunch of leaves."
+        },
+        {
+          "t": 979.12,
+          "text": "Once you found the bunny, it's hard to make it look like leaves again."
+        },
+        {
+          "t": 983.68,
+          "text": "Right."
+        },
+        {
+          "t": 984.48,
+          "text": "You know what I'm talking about?"
+        },
+        {
+          "t": 986.59,
+          "text": "Yeah."
+        },
+        {
+          "t": 986.92,
+          "text": "Like with these optical illusions, once you see it properly, it's hard to see it not properly anymore."
+        },
+        {
+          "t": 994.1,
+          "text": "Right."
+        },
+        {
+          "t": 994.66,
+          "text": "So over here it's also it's a thing like אתה אל מסתתר."
+        },
+        {
+          "t": 998.91,
+          "text": "He's hiding."
+        },
+        {
+          "t": 1000.96,
+          "text": "But Right."
+        },
+        {
+          "t": 1002.12,
+          "text": "But the thing is once you see it, In other words, or if somebody else will show it to you."
+        },
+        {
+          "t": 1009.7,
+          "text": "You say, \"Where's ten bunnies?\""
+        },
+        {
+          "t": 1010.88,
+          "text": "Here, look, you see over here?"
+        },
+        {
+          "t": 1011.87,
+          "text": "There's his nose and there's his feet."
+        },
+        {
+          "t": 1014.48,
+          "text": "\"Oh, yeah.\""
+        },
+        {
+          "t": 1015.39,
+          "text": "Right."
+        },
+        {
+          "t": 1016.03,
+          "text": "You know."
+        },
+        {
+          "t": 1017.03,
+          "text": "So over here basically, once it's like basically what the Rebbe is going to show us in this book where the ten bunnies are."
+        },
+        {
+          "t": 1025.29,
+          "text": "Right."
+        },
+        {
+          "t": 1026.78,
+          "text": "You know."
+        },
+        {
+          "t": 1029.12,
+          "text": "And then once you see it, you say, \"Oh, yeah.\""
+        },
+        {
+          "t": 1031.36,
+          "text": "But the thing is that even though before when you looked at the picture, you saw everything there is to see in the picture."
+        },
+        {
+          "t": 1041.41,
+          "text": "Right."
+        },
+        {
+          "t": 1041.91,
+          "text": "So how come you didn't see the bunny?"
+        },
+        {
+          "t": 1045.15,
+          "text": "You didn't notice it."
+        },
+        {
+          "t": 1046.95,
+          "text": "You didn't notice it."
+        },
+        {
+          "t": 1048.46,
+          "text": "But really, after you after somebody told you where the bunnies are, you're not really seeing more than you saw before."
+        },
+        {
+          "t": 1055.62,
+          "text": "Right."
+        },
+        {
+          "t": 1056.3,
+          "text": "You're seeing exactly the same picture what you saw before."
+        },
+        {
+          "t": 1060.16,
+          "text": "And yet, now you see the bunnies with your physical eyes."
+        },
+        {
+          "t": 1064.7,
+          "text": "Not just an explanation that they told you, but the explanation tells you in this picture there's ten bunnies."
+        },
+        {
+          "t": 1071.9,
+          "text": "So same thing like in an explanation people tell you, \"You see this picture you see in front of your eyes right now?"
+        },
+        {
+          "t": 1077.38,
+          "text": "There's ten bunnies there.\""
+        },
+        {
+          "t": 1079.34,
+          "text": "\"Well, where are they?\""
+        },
+        {
+          "t": 1081.78,
+          "text": "Right."
+        },
+        {
+          "t": 1082.36,
+          "text": "Right?"
+        },
+        {
+          "t": 1082.82,
+          "text": "But now you'll see, oh like with the the the that here is here is his hand, חסד דרועא ימינא, here's the other hand, גבורה דרועא שמאלא, right?"
+        },
+        {
+          "t": 1096.1,
+          "text": "Right."
+        },
+        {
+          "t": 1097.76,
+          "text": "And you can see and say, \"Oh right, here's the hand of G-d,\" like it says that that when the Jews went up out of Egypt and they saw the finger of G-d the חרטומים, the חרטומים saw the finger of G-d and later on"
+        },
+        {
+          "t": 1110.58,
+          "text": "they saw the hand of G-d."
+        },
+        {
+          "t": 1111.85,
+          "text": "Right."
+        },
+        {
+          "t": 1112.45,
+          "text": "You know, so what do you see?"
+        },
+        {
+          "t": 1115.47,
+          "text": "They didn't see anything."
+        },
+        {
+          "t": 1117.36,
+          "text": "They didn't see any hand, but they saw a thing that was the hand of G-d like."
+        },
+        {
+          "t": 1124.81,
+          "text": "Right."
+        },
+        {
+          "t": 1126.05,
+          "text": "Okay, so כי ביתר קליפת החיצונים לא עצם ההשגה הזאת."
+        },
+        {
+          "t": 1132.44,
+          "text": "In other words, it's not enough to understand the ענין of of what he's going to explain us here."
+        },
+        {
+          "t": 1139.92,
+          "text": "But you have to go over it a few more times till you absorb it."
+        },
+        {
+          "t": 1143.51,
+          "text": "Right."
+        },
+        {
+          "t": 1144.54,
+          "text": "אך כן יוכל להביא בכמה ענינים נבדלים ממנה,"
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "glinfuoq",
+      "segment": 20,
+      "startSeconds": 1149.54,
+      "endSeconds": 1166.6,
+      "confidence": 0.934,
+      "sentences": [
+        {
+          "t": 1149.54,
+          "text": "כמו בכמה פרטי מציאות עולמות הנבראים, איך הם נתהוו מאין ליש, מבחינת ממלא דרך פרט, אשר נעלם בכללות השגה זו."
+        },
+        {
+          "t": 1160.06,
+          "text": "This is hidden like the bunnies in the general השגה that he had before."
+        },
+        {
+          "t": 1165.56,
+          "text": "Right."
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "4ftwo65p",
+      "segment": 21,
+      "startSeconds": 1166.6,
+      "endSeconds": 1251.82,
+      "confidence": 0.758,
+      "sentences": [
+        {
+          "t": 1166.6,
+          "text": "ובבלתי כח התבונה הזאת בהשגה זו דממלא כל עלמין, like like we we see that there's a whole bunch of people all over the place studying חסידות, and yet, they they don't have no תבונה in it."
+        },
+        {
+          "t": 1182.64,
+          "text": "Why?"
+        },
+        {
+          "t": 1183.18,
+          "text": "הרי נשארת השגה זו רק במוחא ונפשא לבד."
+        },
+        {
+          "t": 1188.27,
+          "text": "Oh, excuse me."
+        },
+        {
+          "t": 1191.65,
+          "text": "ולא ידע מה לעשות בה."
+        },
+        {
+          "t": 1194,
+          "text": "And he doesn't know what to do with it."
+        },
+        {
+          "t": 1196.13,
+          "text": "Like people say, \"So so let's say you learn ע״ב, but what do you \"What's it good for?"
+        },
+        {
+          "t": 1200.47,
+          "text": "Is it going to make me any money?"
+        },
+        {
+          "t": 1202.82,
+          "text": "Is it going to improve my, my מדות?"
+        },
+        {
+          "t": 1208.76,
+          "text": "If I read a מוסר book, it will improve my מדות, but how, what is this?"
+        },
+        {
+          "t": 1211.82,
+          "text": "It's just an intellectual thing, it's good for like people who like to do mathematical acrostic puzzles.\""
+        },
+        {
+          "t": 1220.3,
+          "text": "Right."
+        },
+        {
+          "t": 1221.04,
+          "text": "\"You know?"
+        },
+        {
+          "t": 1222.21,
+          "text": "But what I mean what do you do with it?"
+        },
+        {
+          "t": 1227.42,
+          "text": "Like they say, to דאווען, how how does this help with the דאווענען?"
+        },
+        {
+          "t": 1230.89,
+          "text": "Right."
+        },
+        {
+          "t": 1231.89,
+          "text": "ואיך להביא זאת ההתבוננות ואיך ענין ההתהוות יש מאין כלל כמבואר בעולם העבודה And how to bring this whole התבוננות into an actual הבנה of how the actual world comes something from nothing, rather than just a bunch of abstract explanations."
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "ss7hcl2q",
+      "segment": 22,
+      "startSeconds": 1251.82,
+      "endSeconds": 1496.18,
+      "confidence": 0.922,
+      "sentences": [
+        {
+          "t": 1251.82,
+          "text": "ומזה מובן סיבת המניעה בחדשים וגם בישנים Why?"
+        },
+        {
+          "t": 1258.96,
+          "text": "Because בחסרי תבונה."
+        },
+        {
+          "t": 1260.92,
+          "text": "גם שמשיגים היטב החילוק בשעה ששומעים ורואים."
+        },
+        {
+          "t": 1265.54,
+          "text": "They learn חסידות actually, and they understood it."
+        },
+        {
+          "t": 1267.89,
+          "text": "They understood the שיחות, whatever, they understood."
+        },
+        {
+          "t": 1270.1,
+          "text": "I mean, maybe they didn't understand every last detail, but they understood something over there."
+        },
+        {
+          "t": 1274.94,
+          "text": "לא יוכלו להביא הדבר כלל בהתבוננות בתפלה בענין התהוות העולמות."
+        },
+        {
+          "t": 1282.38,
+          "text": "They cannot bring it in the התבוננות of the תפלה, which is not necessarily a תפלה, but in it's in terms of התבוננות in terms of actual relationship to the world."
+        },
+        {
+          "t": 1293.51,
+          "text": "Right."
+        },
+        {
+          "t": 1294.45,
+          "text": "Also, by the way, תפלה in terms of תפלה they also when people think of התבוננות בתפלה, they think that during the תפלה they will think about abstract things."
+        },
+        {
+          "t": 1308.38,
+          "text": "That's what means התבוננות."
+        },
+        {
+          "t": 1309.85,
+          "text": "Right."
+        },
+        {
+          "t": 1310.5,
+          "text": "So they will sit there in the תפלה and space out."
+        },
+        {
+          "t": 1313.33,
+          "text": "Right."
+        },
+        {
+          "t": 1314.15,
+          "text": "You know?"
+        },
+        {
+          "t": 1315.44,
+          "text": "But the תפלה actually the the height of the whole תפלה is that you're asking the אייבערשטער, \"Make me healthy."
+        },
+        {
+          "t": 1325.98,
+          "text": "Give me money."
+        },
+        {
+          "t": 1328.44,
+          "text": "Bring us back to Jerusalem."
+        },
+        {
+          "t": 1332.6,
+          "text": "Build the בית המקדש.\""
+        },
+        {
+          "t": 1335.32,
+          "text": "Exactly."
+        },
+        {
+          "t": 1336.06,
+          "text": "That's the height of the whole תפלה."
+        },
+        {
+          "t": 1337.54,
+          "text": "In other words, תפלה means you're asking the אייבערשטער to connect, like they say, ברוך אתה."
+        },
+        {
+          "t": 1344.78,
+          "text": "Bring Yourself down to here."
+        },
+        {
+          "t": 1347.02,
+          "text": "You know, ברוך means to bring down, בריכה, you know."
+        },
+        {
+          "t": 1350.82,
+          "text": "Right, right."
+        },
+        {
+          "t": 1351.65,
+          "text": "So so bring Yourself down to here."
+        },
+        {
+          "t": 1354.07,
+          "text": "Bring the dead people back, מחיה מתים."
+        },
+        {
+          "t": 1360.6,
+          "text": "You know, סלח לנו אבינו כי חטאנו."
+        },
+        {
+          "t": 1365.02,
+          "text": "Then you say, what do you call it?"
+        },
+        {
+          "t": 1368.84,
+          "text": "Give us פרנסה."
+        },
+        {
+          "t": 1370,
+          "text": "Give us health."
+        },
+        {
+          "t": 1372.73,
+          "text": "Right."
+        },
+        {
+          "t": 1374.83,
+          "text": "Rebuild bring us back to Jerusalem, and rebuild the temple, and bring back the עבודה into the temple, and we can all sit and we can all sit and learn חסידות the whole time."
+        },
+        {
+          "t": 1389.26,
+          "text": "So, that also, that their whole thing, because they have no תבונה, they think that התבוננות in the תפלה means that you'll sit and you'll space out on these abstract things."
+        },
+        {
+          "t": 1400.16,
+          "text": "Right."
+        },
+        {
+          "t": 1401.42,
+          "text": "When really תפלה means that you're going to bring G-dliness down into the world, and you're asking this to come in terms of actual physical things."
+        },
+        {
+          "t": 1412.34,
+          "text": "Right."
+        },
+        {
+          "t": 1413.92,
+          "text": "And basically the תפלה is part of the thing that you're asking the אייבערשטער to take over the world."
+        },
+        {
+          "t": 1418.82,
+          "text": "Exactly."
+        },
+        {
+          "t": 1419.82,
+          "text": "That's what it says there."
+        },
+        {
+          "t": 1424.1,
+          "text": "To bring משיח and take over the world."
+        },
+        {
+          "t": 1426.44,
+          "text": "There's a prayer for that."
+        },
+        {
+          "t": 1428.24,
+          "text": "Right."
+        },
+        {
+          "t": 1429.04,
+          "text": "And stuff like that."
+        },
+        {
+          "t": 1431.78,
+          "text": "And they they don't understand, what does it have to do the התבוננות of how עתיק and אריך are two sides of the same thing, what does that have to do with I'm going to get money?"
+        },
+        {
+          "t": 1447.8,
+          "text": "Right."
+        },
+        {
+          "t": 1448.76,
+          "text": "What does it have to do with anything?"
+        },
+        {
+          "t": 1455.1,
+          "text": "And he's talking here about basically עבודת ה עבודת הלב and תפלה, and עבודת ה עבודת המוחין even, and certainly דעת הוי׳, which will be the the the real thing of משיח, it's not just during the תפלה, but everything that you do you're supposed"
+        },
+        {
+          "t": 1474.96,
+          "text": "to see that this is not just like some accidental thing that's happening, but it's literally the אייבערשטער's doing it all."
+        },
+        {
+          "t": 1481.02,
+          "text": "Right."
+        },
+        {
+          "t": 1482.04,
+          "text": "You're supposed to see that, not just believe it."
+        },
+        {
+          "t": 1484.96,
+          "text": "Right."
+        },
+        {
+          "t": 1485.16,
+          "text": "There's a matter of that the belief in השגחה פרטית, and this is you're supposed to see it, you're supposed to actually see it."
+        },
+        {
+          "t": 1493.14,
+          "text": "So even though they understand it fine, but they have no understanding"
+        }
+      ]
+    },
+    {
+      "source": "021",
+      "lineId": "cvbi6rqh",
+      "segment": 23,
+      "startSeconds": 1496.18,
+      "endSeconds": 1681.6,
+      "confidence": 0.681,
+      "sentences": [
+        {
+          "t": 1496.18,
+          "text": "עד שישאר בתפלה בענין התהוות העולמות."
+        },
+        {
+          "t": 1499.01,
+          "text": "Actually יש עולם, מה לעשות because what am I gonna do with all this חסידות?"
+        },
+        {
+          "t": 1503.31,
+          "text": "What's it good for?"
+        },
+        {
+          "t": 1504.72,
+          "text": "Huh?"
+        },
+        {
+          "t": 1505.02,
+          "text": "Yeah."
+        },
+        {
+          "t": 1505.39,
+          "text": "What's it good for?"
+        },
+        {
+          "t": 1506.8,
+          "text": "There's a תועלת צריכים הזה."
+        },
+        {
+          "t": 1508.81,
+          "text": "Well, there's a תועלת צריכים הזה, what do I need this for?"
+        },
+        {
+          "t": 1512.57,
+          "text": "And and basically, really, there's a even higher thing, that not that the חסידות is for the money, but when when you're asking for פרנסה, the חסידות is the פרנסה."
+        },
+        {
+          "t": 1524.95,
+          "text": "Right."
+        },
+        {
+          "t": 1525.53,
+          "text": "That's the whole thing he wants."
+        },
+        {
+          "t": 1527.33,
+          "text": "The main thing he wants is the דווקא the חסידות itself."
+        },
+        {
+          "t": 1530.09,
+          "text": "Not the not the what do I need the חסידות for in order to get the other things?"
+        },
+        {
+          "t": 1535.18,
+          "text": "Right."
+        },
+        {
+          "t": 1535.63,
+          "text": "But then he knows that the חסידות is the main thing that he needs."
+        },
+        {
+          "t": 1540.87,
+          "text": "Right."
+        },
+        {
+          "t": 1541.33,
+          "text": "And if if anything, the money is for the חסידות."
+        },
+        {
+          "t": 1545.08,
+          "text": "Right, why?"
+        },
+        {
+          "t": 1545.86,
+          "text": "כי תרי דברים נבדלים המה בדעתו, the חסידות and the world, by him, is two different things, has nothing to do with each other."
+        },
+        {
+          "t": 1554.8,
+          "text": "There's a world and there's חסידות."
+        },
+        {
+          "t": 1557.3,
+          "text": "Right."
+        },
+        {
+          "t": 1557.71,
+          "text": "The world is the world, and on שבת you go and you sit with your friends, and you play a crossword puzzle of חסידות a little bit, and that's it."
+        },
+        {
+          "t": 1567.86,
+          "text": "It has nothing to do with with They have nothing to do with each other."
+        },
+        {
+          "t": 1570.55,
+          "text": "Why?"
+        },
+        {
+          "t": 1570.74,
+          "text": "מפני שאינו שייך רק בחינת עבודה עצמה ומוחו נבדל וגם מבכל ענין וכולי."
+        },
+        {
+          "t": 1576.25,
+          "text": "וואס שניידט מען ניט אז די מושכל אליין פאַר זיך וכולי."
+        },
+        {
+          "t": 1581.69,
+          "text": "Nothing but a Nothing but the idea itself is is what he has."
+        },
+        {
+          "t": 1586.77,
+          "text": "He has nothing but the idea itself, but the idea is not connected to anything."
+        },
+        {
+          "t": 1594.56,
+          "text": "ודי למבין."
+        },
+        {
+          "t": 1595.66,
+          "text": "Right."
+        },
+        {
+          "t": 1596.44,
+          "text": "And just a bunch of abstract thoughts that have no relationship to Absolutely no relationship to anything."
+        },
+        {
+          "t": 1605.11,
+          "text": "to uh to uh the world, to to his life."
+        },
+        {
+          "t": 1607.36,
+          "text": "Right."
+        },
+        {
+          "t": 1607.7,
+          "text": "Right."
+        },
+        {
+          "t": 1608.03,
+          "text": "Yeah, but not just that."
+        },
+        {
+          "t": 1608.98,
+          "text": "The other thing he said here, because there's two different things by him."
+        },
+        {
+          "t": 1612.52,
+          "text": "Right."
+        },
+        {
+          "t": 1613.58,
+          "text": "In other words, there's various levels."
+        },
+        {
+          "t": 1614.8,
+          "text": "One is where it's totally abstract and it has nothing to do with with even the things in the תפילה."
+        },
+        {
+          "t": 1621.57,
+          "text": "The other thing is it has to do to bring down the light into the things so that you'll get things in the world, but it's still two different things."
+        },
+        {
+          "t": 1630.45,
+          "text": "Right."
+        },
+        {
+          "t": 1631.03,
+          "text": "There's G-d and there's the world, and you're asking G-d to help you."
+        },
+        {
+          "t": 1635.03,
+          "text": "In other words, you already have some תבונה that there's gonna be something come out of it."
+        },
+        {
+          "t": 1639.38,
+          "text": "Right."
+        },
+        {
+          "t": 1640.44,
+          "text": "That's not the real תבונה."
+        },
+        {
+          "t": 1641.53,
+          "text": "The real תבונה is the אין עוד מלבדו, that what what you really want is the חסידות."
+        },
+        {
+          "t": 1646.66,
+          "text": "Right."
+        },
+        {
+          "t": 1647.07,
+          "text": "And the whole reason that you want the health is not that you want the חסידות to help you with the health, it's the opposite."
+        },
+        {
+          "t": 1653.34,
+          "text": "You want the health to help you with the חסידות and the money."
+        },
+        {
+          "t": 1659.54,
+          "text": "Like if we were all healthy and we had a whole bunch of money, we could all sit together and learn חסידות all the time."
+        },
+        {
+          "t": 1664.5,
+          "text": "Right."
+        },
+        {
+          "t": 1667.5,
+          "text": "And it's all one thing."
+        },
+        {
+          "t": 1670.52,
+          "text": "And well, we did a whole chapter."
+        },
+        {
+          "t": 1671.84,
+          "text": "This this was really a recap chapter."
+        }
+      ]
+    }
+  ]
+}

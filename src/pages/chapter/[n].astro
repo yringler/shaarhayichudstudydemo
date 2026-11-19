@@ -1,0 +1,57 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import Chapter from '../../components/Chapter.astro';
+import ViewSwitch from '../../components/ViewSwitch.astro';
+import { loadGuide } from '../../lib/content';
+
+export const getStaticPaths = (() => {
+  const { chapters } = loadGuide();
+  return chapters.map((chapter, i) => ({
+    params: { n: String(chapter.n) },
+    props: { index: i },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  index: number;
+}
+
+const { index } = Astro.props;
+const { chapters } = loadGuide();
+const chapter = chapters[index];
+if (!chapter) throw new Error(`No chapter at index ${index}`);
+const prev = chapters[index - 1];
+const next = chapters[index + 1];
+const base = import.meta.env.BASE_URL;
+---
+
+<Base title={`Chapter ${chapter.n}: ${chapter.title}`} current={chapter.n}>
+  <div class="page guide" data-guide-root>
+    <ViewSwitch printLabel="Print this chapter" />
+    <Chapter chapter={chapter} level={1} />
+    <nav class="pager" aria-label="Chapters">
+      {
+        prev ? (
+          <a class="pager-link prev" href={`${base}chapter/${prev.n}/`}>
+            <span class="pager-dir">← Chapter {prev.n}</span>
+            <span class="pager-title">{prev.title}</span>
+          </a>
+        ) : (
+          <a class="pager-link prev" href={base}>
+            <span class="pager-dir">← Contents</span>
+            <span class="pager-title">Booklet 1: Chapters 1–5</span>
+          </a>
+        )
+      }
+      {
+        next && (
+          <a class="pager-link next" href={`${base}chapter/${next.n}/`}>
+            <span class="pager-dir">Chapter {next.n} →</span>
+            <span class="pager-title">{next.title}</span>
+          </a>
+        )
+      }
+    </nav>
+  </div>
+</Base>

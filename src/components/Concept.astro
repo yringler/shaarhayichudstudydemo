@@ -1,0 +1,48 @@
+---
+import type { ConceptModel } from '../lib/content';
+import { segmentLabel } from '../lib/format';
+import Unit from './Unit.astro';
+
+interface Props {
+  concept: ConceptModel;
+  chapter: number;
+  /** Heading level for the concept title. */
+  level: 2 | 3;
+}
+
+const { concept, chapter, level } = Astro.props;
+const H = level === 2 ? 'h2' : 'h3';
+---
+
+<section class:list={['concept', `status-${concept.status}`]} id={concept.id} aria-labelledby={`${concept.id}-h`}>
+  <H class="concept-title" id={`${concept.id}-h`}>
+    <span class="concept-title-text" dir="auto">{concept.title}</span>
+    <span class="concept-range">{segmentLabel(concept.from, concept.to)}</span>
+  </H>
+  {concept.status === 'pending' && <p class="concept-note">The explanation of this passage has not been written yet. The heading is the book’s own section label.</p>}
+  {concept.status === 'no-source' && <p class="concept-note">The classes in this series begin after this passage. The text and translation are given without explanation.</p>}
+  {
+    concept.inShortHtml && (
+      <aside class="callout callout-in-short">
+        <p>
+          <strong class="lead">In short:</strong> <Fragment set:html={concept.inShortHtml} />
+        </p>
+      </aside>
+    )
+  }
+  <div class="units">
+    {concept.units.map((unit) => <Unit unit={unit} chapter={chapter} />)}
+  </div>
+  {
+    concept.reviewNotes.length > 0 && (
+      <aside class="reviewer" aria-label="Notes for the reviewer">
+        <p class="reviewer-head">For the reviewer</p>
+        <ul>
+          {concept.reviewNotes.map((note) => (
+            <li>{note}</li>
+          ))}
+        </ul>
+      </aside>
+    )
+  }
+</section>

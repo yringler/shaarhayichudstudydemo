@@ -1,0 +1,49 @@
+---
+import type { Source } from '../lib/schema';
+import { listenLinkHtml } from '../lib/content';
+import { classNumber, formatTime } from '../lib/format';
+
+interface Props {
+  sources: Source[];
+  level: 2 | 3;
+}
+
+const { sources, level } = Astro.props;
+const H = level === 2 ? 'h2' : 'h3';
+---
+
+{
+  sources.length > 0 && (
+    <section class="class-list">
+      <H>Listen to the full classes</H>
+      <p class="muted small">Rabbi Markel, {sources[0]?.series}. Topic lists are auto-generated from the recordings.</p>
+      <ol class="classes">
+        {sources.map((s) => (
+          <li class="class-item">
+            <div class="class-head">
+              <Fragment set:html={listenLinkHtml(s, s.key, 0)} />
+              <span class="class-name">
+                Class {classNumber(s.key)} · {s.title}
+              </span>
+              <span class="class-dur">{formatTime(s.durationSeconds)}</span>
+            </div>
+            {s.outline.length > 0 && (
+              <details class="outline">
+                <summary>
+                  Topics <span class="muted">(auto-generated)</span>
+                </summary>
+                <ul>
+                  {s.outline.map((o) => (
+                    <li>
+                      <Fragment set:html={listenLinkHtml(s, s.key, o.startSeconds)} /> <span dir="auto">{o.title}</span>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}

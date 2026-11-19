@@ -1,0 +1,5077 @@
+{
+  "schemaVersion": 1,
+  "chapter": 1,
+  "preambles": [
+    {
+      "source": "015",
+      "sentences": [
+        {
+          "t": 8.6,
+          "text": "Everything tied up?"
+        },
+        {
+          "t": 9.68,
+          "text": "Yeah."
+        },
+        {
+          "t": 10.2,
+          "text": "And it's recording and everything?"
+        },
+        {
+          "t": 12.08,
+          "text": "Okay."
+        },
+        {
+          "t": 12.45,
+          "text": "At least I hope so."
+        },
+        {
+          "t": 13.95,
+          "text": "Yeah."
+        },
+        {
+          "t": 14.33,
+          "text": "Hold on for a minute."
+        },
+        {
+          "t": 17.71,
+          "text": "We're like at the end of the first page in chapter one."
+        },
+        {
+          "t": 22.29,
+          "text": "Yeah, I marked in my in my ספר exactly where it is."
+        },
+        {
+          "t": 27.45,
+          "text": "Yeah."
+        },
+        {
+          "t": 28.03,
+          "text": "I'll tell you"
+        }
+      ]
+    },
+    {
+      "source": "016",
+      "sentences": [
+        {
+          "t": 0,
+          "text": "Yeah."
+        },
+        {
+          "t": 2.87,
+          "text": "Yeah."
+        }
+      ]
+    },
+    {
+      "source": "017",
+      "sentences": [
+        {
+          "t": 0,
+          "text": "Go ahead."
+        },
+        {
+          "t": 3.29,
+          "text": "You ready?"
+        },
+        {
+          "t": 6.89,
+          "text": "Yeah."
+        },
+        {
+          "t": 8.69,
+          "text": "Okay, so where were we exactly?"
+        },
+        {
+          "t": 13.47,
+          "text": "We were talking about Oh yeah, we were getting to דעה לבינה."
+        },
+        {
+          "t": 19.74,
+          "text": "Right."
+        },
+        {
+          "t": 20.88,
+          "text": "So that was talking about חכמה and בינה and all this stuff."
+        },
+        {
+          "t": 27.34,
+          "text": "Now he's going to be talking about דעת."
+        },
+        {
+          "t": 29.58,
+          "text": "Right."
+        }
+      ]
+    }
+  ],
+  "spans": [
+    {
+      "source": "015",
+      "lineId": "rdgog5tv",
+      "segment": 21,
+      "startSeconds": 29.65,
+      "endSeconds": 373.08,
+      "confidence": 0.895,
+      "sentences": [
+        {
+          "t": 29.65,
+          "text": "ונמצא בחינת העיון הזה הוא רק בחינת כלי לבחינת עומק הבינה עצמה."
+        },
+        {
+          "t": 35.81,
+          "text": "All right, that's what we were talking about till now that basically the עיון, meaning בינה שבבינה, is a כלי for the השגה which is the עומק, עומק המושג, which is כתר שבבינה."
+        },
+        {
+          "t": 55.95,
+          "text": "So in other words that the learning is the is the כלי for the understanding of the explanation."
+        },
+        {
+          "t": 67.35,
+          "text": "Right."
+        },
+        {
+          "t": 67.95,
+          "text": "The השגה, this he doesn't say here, but basically the השגה is a כלי for the הבנה, which means חיצוניות חכמה, to actually see the thing, means to have actual הבנה of really what it is, not just the explanation, but the actual thing."
+        },
+        {
+          "t": 88.59,
+          "text": "Actual understanding what it is, not not just The השגה means to understand the explanation."
+        },
+        {
+          "t": 95.09,
+          "text": "Right."
+        },
+        {
+          "t": 95.9,
+          "text": "The הבנה means to see the thing, that's the חכמה."
+        },
+        {
+          "t": 98.95,
+          "text": "Right."
+        },
+        {
+          "t": 99.67,
+          "text": "The the the the הבנה is the כלי for the חכמה, which means תעלומות חכמה means to really see the inner essence of the thing."
+        },
+        {
+          "t": 108.74,
+          "text": "Right."
+        },
+        {
+          "t": 109.46,
+          "text": "And and that's already a thing of also of of knowing it, which which know knowing means דעת, but that's דעת עליון, which is כתר, you know, because תעלומות חכמה is already in כתר."
+        },
+        {
+          "t": 123.63,
+          "text": "And that's the כלי for the רדל\"א."
+        },
+        {
+          "t": 127.09,
+          "text": "רדל\"א means that to actually experience the experiencing the actual thing itself without anything from yourself at all."
+        },
+        {
+          "t": 135.82,
+          "text": "דלא ידע means that you don't have any self-concept involved in it."
+        },
+        {
+          "t": 141.27,
+          "text": "Right?"
+        },
+        {
+          "t": 142.3,
+          "text": "Right."
+        },
+        {
+          "t": 143.33,
+          "text": "Okay, and and this goes on and on and on."
+        },
+        {
+          "t": 148.71,
+          "text": "Each each lower level, as we know, is a is a כלי for a higher level."
+        },
+        {
+          "t": 152.92,
+          "text": "Right."
+        },
+        {
+          "t": 153.48,
+          "text": "Okay, but now he's saying, he's going to go now we're going to go down a little bit, instead of going up."
+        },
+        {
+          "t": 161.68,
+          "text": "כי לכאורה this is where we left off basically."
+        },
+        {
+          "t": 165.13,
+          "text": "כי לכאורה בחינת העיון הזה נקרא עומק הדעת בלשון העולם."
+        },
+        {
+          "t": 169.14,
+          "text": "This עיון, this thing of עיון is called by everybody contemplation or meditation."
+        },
+        {
+          "t": 174.98,
+          "text": "If you notice, everybody seems to think that this is the it says קונטרס ההתבוננות and they call it the the קונטרס of meditation or contemplation."
+        },
+        {
+          "t": 188.61,
+          "text": "Right."
+        },
+        {
+          "t": 189.44,
+          "text": "Okay, but he says בלשון העולם, that's what people call it, ואינו כן, it's not like that at all."
+        },
+        {
+          "t": 199.6,
+          "text": "שהעומק הדעת היינו בחינת כלי לבד לבוא לעומק של העניין ממש, because the the concentration is also a כלי to hold all these other things."
+        },
+        {
+          "t": 209.21,
+          "text": "In other words, at each level, the the דעת is the חיצוניות כלי."
+        },
+        {
+          "t": 215.18,
+          "text": "In other words, on the level of בינה שבבינה, if you don't have concentration, the בינה שבבינה won't work."
+        },
+        {
+          "t": 222.48,
+          "text": "Right."
+        },
+        {
+          "t": 223.36,
+          "text": "Okay, but then on the next level up, when you're going from בינה from from עומק המושג to the actual השכלה of the thing, also you need דעת."
+        },
+        {
+          "t": 235.4,
+          "text": "And the same thing to go from the הבנה of חכמה to פנימיות חכמה, you also need דעת."
+        },
+        {
+          "t": 243.07,
+          "text": "So at at every point at every point, the the דעת is in other words, you have to concentrate on it, so in other words, once you know the explanation, you have to concentrate on that explanation in order to go to the next deeper"
+        },
+        {
+          "t": 256.26,
+          "text": "level."
+        },
+        {
+          "t": 257.78,
+          "text": "So, the דעת is a כלי to go deeper and deeper into it, but it's not the actual עומק."
+        },
+        {
+          "t": 264.2,
+          "text": "Right."
+        },
+        {
+          "t": 264.75,
+          "text": "It's the instrument by which to arrive at the It's an instrument."
+        },
+        {
+          "t": 270.7,
+          "text": "Right."
+        },
+        {
+          "t": 271.25,
+          "text": "Right, the concentration is not the actual thing."
+        },
+        {
+          "t": 275.58,
+          "text": "Right."
+        },
+        {
+          "t": 276.12,
+          "text": "And this is a basic this is a basic It's not just it's not the actual thing."
+        },
+        {
+          "t": 282.07,
+          "text": "The בינה the בינה שבבינה is also not the actual thing."
+        },
+        {
+          "t": 284.68,
+          "text": "Right, it's also it's a it's also an instrument."
+        },
+        {
+          "t": 287.08,
+          "text": "It's also an instrument, but this is, but the דעת is is not even that kind of an instrument."
+        },
+        {
+          "t": 292.4,
+          "text": "The דעת is an instrument for an instrument."
+        },
+        {
+          "t": 294.64,
+          "text": "Right, because the בינה שבבינה will actually get you there."
+        },
+        {
+          "t": 298.96,
+          "text": "Because the בינה שבבינה is on the explanation."
+        },
+        {
+          "t": 302.8,
+          "text": "Right."
+        },
+        {
+          "t": 303.46,
+          "text": "Whereas דעת by itself, and this is the whole mistake of of עבודה זרה basically."
+        },
+        {
+          "t": 311.25,
+          "text": "Right."
+        },
+        {
+          "t": 312.02,
+          "text": "And this is a matter of fact what עבודה זרה is, that they they see the דעת as being the primary instrument."
+        },
+        {
+          "t": 321.12,
+          "text": "Right."
+        },
+        {
+          "t": 321.88,
+          "text": "In other words, they might even understand, yeah, well of course that the concentration is not the actual thing, the whatever, the G-d realization or whatever they want to call it, that's the actual thing."
+        },
+        {
+          "t": 333.62,
+          "text": "But they arrive at it directly from the דעת."
+        },
+        {
+          "t": 336.45,
+          "text": "From דעת."
+        },
+        {
+          "t": 336.99,
+          "text": "In other words, you you concentrate, and you think G-d, G-d, G-d, or something like that, Right."
+        },
+        {
+          "t": 343.02,
+          "text": "and and the concentration will get you to that."
+        },
+        {
+          "t": 345.6,
+          "text": "But really, the thing is that what he's saying, it's a כלי, not to the actual ענין, but just to go deeper into the ענין."
+        },
+        {
+          "t": 355.78,
+          "text": "In other words, you already have to have the ענין to start off with."
+        },
+        {
+          "t": 358.97,
+          "text": "Right."
+        },
+        {
+          "t": 359.45,
+          "text": "And here's the thing."
+        },
+        {
+          "t": 360.82,
+          "text": "In other words, that that the basic thing is that the דעת has to have a תוכן."
+        },
+        {
+          "t": 365.23,
+          "text": "Right."
+        },
+        {
+          "t": 366.16,
+          "text": "And the דעת itself does not supply the תוכן."
+        },
+        {
+          "t": 368.6,
+          "text": "It's the בינה שבבינה which supplies the תוכן."
+        },
+        {
+          "t": 371.56,
+          "text": "Right."
+        }
+      ]
+    },
+    {
+      "source": "015",
+      "lineId": "pshrmzmb",
+      "segment": 22,
+      "startSeconds": 373.08,
+      "endSeconds": 521.54,
+      "confidence": 0.982,
+      "sentences": [
+        {
+          "t": 373.08,
+          "text": "ולמעלה מזה הוא נקרא מעמיק."
+        },
+        {
+          "t": 376.13,
+          "text": "So, but מעמיק is also concentration, it's all the same thing."
+        },
+        {
+          "t": 381.2,
+          "text": "It's just that when it's on the בינה שבבינה, it's Well, if you can't have a בינה שבבינה, then that's the lower דעת that he's talking about here?"
+        },
+        {
+          "t": 396.46,
+          "text": "That's כל העמקת הדעת."
+        },
+        {
+          "t": 398.36,
+          "text": "That's to be העמקת הדעת, which is the lower one, lower one."
+        },
+        {
+          "t": 402.27,
+          "text": "And then, the מעמיק is when you're concentrating on the עומק המושג, and even when you have it in a way of a משל, the מעמיק means that you you keep concentrating and thinking it over and over, and then, this מגיע למעלה גם מן"
+        },
+        {
+          "t": 425.94,
+          "text": "החכמה עצמה."
+        },
+        {
+          "t": 426.78,
+          "text": "In other words, that gets you to the not not just to a general oversight of understanding."
+        },
+        {
+          "t": 431.38,
+          "text": "In other words, the חיצוניות החכמה means that you just get the explanation in a way of seeing."
+        },
+        {
+          "t": 436.3,
+          "text": "Right."
+        },
+        {
+          "t": 437.02,
+          "text": "It's not a actual seeing into the actual thing."
+        },
+        {
+          "t": 440.28,
+          "text": "Right."
+        },
+        {
+          "t": 440.79,
+          "text": "That's תעלומות חכמה."
+        },
+        {
+          "t": 442.56,
+          "text": "עצמה."
+        },
+        {
+          "t": 443.08,
+          "text": "You see the explanation, huh?"
+        },
+        {
+          "t": 445.51,
+          "text": "The חיצוניות החכמה is you see the explanation."
+        },
+        {
+          "t": 449.78,
+          "text": "You don't just see the explanation, you actually see what the explanation is about."
+        },
+        {
+          "t": 454.64,
+          "text": "But you don't see ממש what the actual thing is about, and not only that, in תעלומות חכמה, it can be even higher than that, because that's תעלומות חכמה actually, once you get in in the way of תעלומות חכמה, you can even see what"
+        },
+        {
+          "t": 472.12,
+          "text": "some other things are about, because it gets to the שורש of the thing, Right."
+        },
+        {
+          "t": 476.66,
+          "text": "not just the thing, but the actual root of the thing."
+        },
+        {
+          "t": 479.47,
+          "text": "Right."
+        },
+        {
+          "t": 479.91,
+          "text": "In other words, like for instance, in terms of physics, like like like in terms of physics, there's the explanation."
+        },
+        {
+          "t": 490.74,
+          "text": "Then there's the thing where like a real physicist actually has it in a way of that he already understands more than just the explanation."
+        },
+        {
+          "t": 498.54,
+          "text": "Right."
+        },
+        {
+          "t": 499.12,
+          "text": "But it doesn't mean that he he has the actual root of the physics, which is like metaphysics."
+        },
+        {
+          "t": 504.66,
+          "text": "Right."
+        },
+        {
+          "t": 505.36,
+          "text": "That's the root of the physics already, because the root of the physics really will answer questions in other fields, also."
+        },
+        {
+          "t": 513.34,
+          "text": "Right."
+        },
+        {
+          "t": 513.83,
+          "text": "That's the תעלומות חכמה."
+        },
+        {
+          "t": 519.12,
+          "text": "Why?"
+        }
+      ]
+    },
+    {
+      "source": "015",
+      "lineId": "cfysav74",
+      "segment": 22,
+      "startSeconds": 521.54,
+      "endSeconds": 556.4,
+      "confidence": 0.75,
+      "sentences": [
+        {
+          "t": 521.54,
+          "text": "שהגם שהחכמה בחינת האין ממש על המושכל קודם שבא לכלל עומק נקודת המושג שבבינה, in other words, it's the חכמה is is when the concept is still not in a particular way or a particular explanation."
+        },
+        {
+          "t": 539.16,
+          "text": "Right."
+        },
+        {
+          "t": 539.95,
+          "text": "And עומק המושג means that's the עומק המושג דוקא according to this particular explanation."
+        },
+        {
+          "t": 547.22,
+          "text": "So even though the חכמה is in a way of an אין compared to the עומק נקודת המושג שבבינה כמים לגבי נהר כנ\"ל,"
+        }
+      ]
+    },
+    {
+      "source": "015",
+      "lineId": "ugupmtsr",
+      "segment": 23,
+      "startSeconds": 556.4,
+      "endSeconds": 651.79,
+      "confidence": 0.876,
+      "sentences": [
+        {
+          "t": 556.4,
+          "text": "אבל בחינת העמקה בשרש של המושכל שרשו מגיע בשרש הממשיך נביעת מים דחכמה."
+        },
+        {
+          "t": 563.14,
+          "text": "In other words, like the thing is that you can just look deeply in terms like like physics or something like that, like a scientist who'll look deeply into this thing and get all kinds of השכלות and stuff like that, but he won't look"
+        },
+        {
+          "t": 578.3,
+          "text": "even deeper."
+        },
+        {
+          "t": 578.91,
+          "text": "I mean, how did the whole thing come into existence in the first place?"
+        },
+        {
+          "t": 582.54,
+          "text": "Right."
+        },
+        {
+          "t": 583.7,
+          "text": "In other words, yeah, okay, there's laws like like, and and this is the thing, you see that they're actually missing the thing even from their own language."
+        },
+        {
+          "t": 590.04,
+          "text": "Like they say, the laws of nature."
+        },
+        {
+          "t": 592.7,
+          "text": "A law, even the word they use, a law means that somebody's making this law."
+        },
+        {
+          "t": 598.87,
+          "text": "Right."
+        },
+        {
+          "t": 599.39,
+          "text": "Where does this law come from?"
+        },
+        {
+          "t": 602.02,
+          "text": "You know, they in other words, what's the שורש of the מושכל?"
+        },
+        {
+          "t": 608.14,
+          "text": "Right."
+        },
+        {
+          "t": 608.84,
+          "text": "So, if if you don't keep thinking more about the שורש of the מושכל, you don't get, you know, then you can get you can get to the אין where you understand the חכמה not in a way of an explanation, but you didn't think"
+        },
+        {
+          "t": 622.12,
+          "text": "about it any further."
+        },
+        {
+          "t": 623.47,
+          "text": "Right."
+        },
+        {
+          "t": 624.11,
+          "text": "אבל בבחינת עומק בשורש של המושכל, שורשו מגיע בשרש הממשיך ומביא את מעין דחכמה וכולי."
+        },
+        {
+          "t": 632.14,
+          "text": "That's where the whole מעין of the חכמה comes from."
+        },
+        {
+          "t": 634.34,
+          "text": "ונקרא אם כן החכמה או תעלומות חכמה, the hidden the hidden parts of the חכמה."
+        },
+        {
+          "t": 639.34,
+          "text": "וכמו שיש עומק ואורך ורוחב בבינה שנקרא יש כנ\"ל, כך יש עומק ואורך ורוחב במעין דחכמה שנקרא אין."
+        },
+        {
+          "t": 651,
+          "text": "Right."
+        }
+      ]
+    },
+    {
+      "source": "015",
+      "lineId": "en4s7zas",
+      "segment": 24,
+      "startSeconds": 651.79,
+      "endSeconds": 831.12,
+      "confidence": 0.977,
+      "sentences": [
+        {
+          "t": 651.79,
+          "text": "ועומק המעין, היינו תחילת שורש מחצבו בעומקו שמשם מתפשט נביעתו למעלה, עד שבוקע ויוצא טיפין טיפין בגלוי, מהעלמו, ותכלית העלמו הוא תכלית עומקו למטה."
+        },
+        {
+          "t": 668.06,
+          "text": "Under the the it's called the aquifer."
+        },
+        {
+          "t": 670.93,
+          "text": "Right."
+        },
+        {
+          "t": 671.38,
+          "text": "The aquifer is like there's a giant ocean under the ground that the מעין comes from."
+        },
+        {
+          "t": 681.28,
+          "text": "Now, the thing is you'll see one מעין, and you'll see another מעין, really they both connect to the same תעלומות חכמה."
+        },
+        {
+          "t": 691.15,
+          "text": "Right."
+        },
+        {
+          "t": 692.1,
+          "text": "So, in other words, if you'll follow physics, or if you follow psychology, really they come from the same place."
+        },
+        {
+          "t": 700.18,
+          "text": "Right."
+        },
+        {
+          "t": 700.75,
+          "text": "If you follow them to their ultimate conclusion, they really come from the same source."
+        },
+        {
+          "t": 705.4,
+          "text": "Yeah, the same like a מעין, this מעין and that מעין, when you go to the עומק, it's the same aquifer."
+        },
+        {
+          "t": 711.04,
+          "text": "Right."
+        },
+        {
+          "t": 711.57,
+          "text": "It's not really two different things."
+        },
+        {
+          "t": 713.51,
+          "text": "On the on the surface, it's two different things."
+        },
+        {
+          "t": 715.81,
+          "text": "This one is this one is in Pittsburgh, that one's in California."
+        },
+        {
+          "t": 719.62,
+          "text": "But when you go down far enough, you see there's really one big ocean down there that they're both coming from."
+        },
+        {
+          "t": 728.04,
+          "text": "Right."
+        },
+        {
+          "t": 730.46,
+          "text": "ונקרא אם כן חכמה תעלומות חכמה, וכמו שיש עומק ואורך ורוחב בבינה שנקרא יש, כך יש עומק ואורך ורוחב מעין דחכמה שנקרא אין."
+        },
+        {
+          "t": 739.13,
+          "text": "ועומק המעין, היינו תחילת שורש מחצבו בעומקו, שמשם מתפשט נביעתו למעלה, עד שבוקע ויוצא טיפין טיפין בגלוי, that's the actual external מעין, מהעלמו, ותכלית העלמו הוא תכלית עומקו למטה, כמו מעינות תהום נבקעו, that the מעינות תהום, the the real מעין is what we call"
+        },
+        {
+          "t": 764.04,
+          "text": "the spring is really the the tail of the spring."
+        },
+        {
+          "t": 769.61,
+          "text": "Right."
+        },
+        {
+          "t": 770.1,
+          "text": "It's not the actual spring."
+        },
+        {
+          "t": 772.31,
+          "text": "It's just the end of the spring."
+        },
+        {
+          "t": 774.8,
+          "text": "Right."
+        },
+        {
+          "t": 775.63,
+          "text": "It's like the מלכות of the spring, it's not the כתר of the spring."
+        },
+        {
+          "t": 779.81,
+          "text": "Right."
+        },
+        {
+          "t": 780.95,
+          "text": "ונבקעו, דארעא חלחולה מחלחלא, בגידין."
+        },
+        {
+          "t": 785.3,
+          "text": "It has what do you call it?"
+        },
+        {
+          "t": 788.2,
+          "text": "Veins in it."
+        },
+        {
+          "t": 790.62,
+          "text": "Fissures."
+        },
+        {
+          "t": 792.24,
+          "text": "And these veins is is in all kinds of things."
+        },
+        {
+          "t": 794.78,
+          "text": "Same thing like like with oil."
+        },
+        {
+          "t": 799.35,
+          "text": "You know?"
+        },
+        {
+          "t": 801.9,
+          "text": "Right."
+        },
+        {
+          "t": 803.01,
+          "text": "שיש להם עומק ראשון, that these מעינות, what you're seeing out here, that's not the actual, real מהות of the מעין."
+        },
+        {
+          "t": 814.24,
+          "text": "The real the real thing that makes the מעין is עומק ראשון, the the aquifer."
+        },
+        {
+          "t": 819.96,
+          "text": "ובזה נאמר והחכמה מאין תמצא."
+        },
+        {
+          "t": 824.3,
+          "text": "החכמה מאין, מהעלם החכמה נקרא עמק החכמה."
+        },
+        {
+          "t": 828.83,
+          "text": "Right."
+        },
+        {
+          "t": 829.54,
+          "text": "In other words, compared to that, it says,"
+        }
+      ]
+    },
+    {
+      "source": "015",
+      "lineId": "6dfmnw2o",
+      "segment": 25,
+      "startSeconds": 831.12,
+      "endSeconds": 976.32,
+      "confidence": 0.859,
+      "sentences": [
+        {
+          "t": 831.12,
+          "text": "והחכמה מאין תמצא, means the חכמה is already a מציאות."
+        },
+        {
+          "t": 835.08,
+          "text": "Right."
+        },
+        {
+          "t": 836.18,
+          "text": "And the real אין of the חכמה is the תעלומות חכמה."
+        },
+        {
+          "t": 842.1,
+          "text": "And what is חכמה?"
+        },
+        {
+          "t": 843.64,
+          "text": "Now he's giving the definition: החכמה הוא המצאת שכל החדש, שיוצא כברק."
+        },
+        {
+          "t": 849.84,
+          "text": "It's a discovery of a new idea which comes out like a lightning."
+        },
+        {
+          "t": 856.91,
+          "text": "Lightning bolt."
+        },
+        {
+          "t": 858.24,
+          "text": "Like the But the lightning, this lightning here is really יסוד אבא already."
+        },
+        {
+          "t": 862.86,
+          "text": "That's when it comes out when it when it becomes a ברק, that's already the יש of the חכמה, even in the in the Right."
+        },
+        {
+          "t": 869.26,
+          "text": "Even in the חכמה הגלויה, when it comes out like a ברק, the ברק, the ברק is already something that can like, you know, יסוד is is already the connection to the outside."
+        },
+        {
+          "t": 883.38,
+          "text": "Right."
+        },
+        {
+          "t": 883.99,
+          "text": "The ברק is where you can bring the idea into an actual יש already."
+        },
+        {
+          "t": 888.86,
+          "text": "The the בינה brings out, like when when somebody has a new thought, it brings out from this ברק."
+        },
+        {
+          "t": 897.85,
+          "text": "So this ברק is already In terms of the חכמה, the ברק is already the יש of the ברק."
+        },
+        {
+          "t": 902.8,
+          "text": "In another place it explains it's called יסוד אבא."
+        },
+        {
+          "t": 904.51,
+          "text": "That's already connect- That's that שיצא כברק, it's coming out."
+        },
+        {
+          "t": 908.8,
+          "text": "It come, it comes out."
+        },
+        {
+          "t": 910.45,
+          "text": "In other words, he's saying two things here, that it's it's the it's the המצאת שכל החדש שיצא כברק, right, comes out like a lightning, כידוע."
+        },
+        {
+          "t": 926.4,
+          "text": "ומקור מחשבתו, but however, the the actual root of it, the the source of it, בהעלם עומקו הוא עיקר עצמיות תכונתו."
+        },
+        {
+          "t": 935.5,
+          "text": "That's the real עצמיות of the חכמה."
+        },
+        {
+          "t": 937.57,
+          "text": "The real the real ענין of חכמה is really תעלומות חכמה in the כתר."
+        },
+        {
+          "t": 942.44,
+          "text": "Which that's why, you know, in a lot of the Kabbalistic and Chassidic books when you read, sometimes they say חכמה and it means the חכמה גלויה, and a lot of times you say, it says חכמה, and it really means חכמה of אריך."
+        },
+        {
+          "t": 958.96,
+          "text": "Right."
+        },
+        {
+          "t": 959.6,
+          "text": "You know?"
+        },
+        {
+          "t": 960.6,
+          "text": "And as a matter of fact, when it says that the that תורה comes from חכמה, it really is from חכמה of אריך."
+        },
+        {
+          "t": 968.44,
+          "text": "Right."
+        },
+        {
+          "t": 968.78,
+          "text": "It doesn't it doesn't mean from the the חכמה גלויה of אצילות, it means it's from חכמה of אריך, really."
+        }
+      ]
+    },
+    {
+      "source": "015",
+      "lineId": "clembo3b",
+      "segment": 25,
+      "startSeconds": 976.32,
+      "endSeconds": 1396.16,
+      "confidence": 1,
+      "sentences": [
+        {
+          "t": 976.32,
+          "text": "כנ״ל בביאור ענין עומק המושג דבינה."
+        },
+        {
+          "t": 981.5,
+          "text": "And this is the same thing."
+        },
+        {
+          "t": 982.94,
+          "text": "So now he's using the בינה as a משל on the חכמה, שאינו רק העומק של ההשגה דבינה המורגש בבחינת יש בהבנת דבר מה בסברא נגלית, that that the עומק המושג is the depth of the explanation, right, that's felt in a in a in"
+        },
+        {
+          "t": 1004.66,
+          "text": "a actual way of a somethingness when you understand something in the סברא נגלית."
+        },
+        {
+          "t": 1009.8,
+          "text": "A סברא means a a particular סברא."
+        },
+        {
+          "t": 1012.3,
+          "text": "A סברא is already a יש, a סברא is like a theory."
+        },
+        {
+          "t": 1017.36,
+          "text": "Right."
+        },
+        {
+          "t": 1019.53,
+          "text": "שהעומק של הסבר ההשגה הוא בבחינת אין של היש דהשגה בלבד."
+        },
+        {
+          "t": 1027.8,
+          "text": "In other words, when you understand the explanation, it's in a way of an אין, but it's only the אין of the יש of this explanation."
+        },
+        {
+          "t": 1037.93,
+          "text": "Right."
+        },
+        {
+          "t": 1038.66,
+          "text": "ואין לו ערך לגבי אין דחכמה טרם שבא לכלל השגה כלל גם לא בבחינת העומק ש שבה."
+        },
+        {
+          "t": 1048.06,
+          "text": "In other words, where the חכמה still not in a way of this particular explanation altogether."
+        },
+        {
+          "t": 1053.92,
+          "text": "But even in the חכמה, remember, now he's not explaining, he's not really explaining so much בינה, he's explaining חכמה, the בינה is a as a thing on a A משל for it."
+        },
+        {
+          "t": 1062.58,
+          "text": "A משל, so the thing is that the flash is the over here he's telling you that the עומק המושג is the אין of the יש."
+        },
+        {
+          "t": 1071.53,
+          "text": "Right."
+        },
+        {
+          "t": 1072.13,
+          "text": "And over there, what it is, the flash is the יש of the אין."
+        },
+        {
+          "t": 1078.31,
+          "text": "Right."
+        },
+        {
+          "t": 1078.91,
+          "text": "And there's a deeper אין of the אין, and there's a even deeper than that, the אין in the תעלומות חכמה, which is the total אין, which which even has nothing to do with this particular חכמה altogether."
+        },
+        {
+          "t": 1093.46,
+          "text": "All the חכמות come from it."
+        },
+        {
+          "t": 1094.51,
+          "text": "It's not just this מעין that comes from it, it's all the מעיינות come from it."
+        },
+        {
+          "t": 1098.46,
+          "text": "Right."
+        },
+        {
+          "t": 1099,
+          "text": "שהיא תמציתה, that this this עומק המושג is the תמצית."
+        },
+        {
+          "t": 1107.06,
+          "text": "The תמצית means the essence."
+        },
+        {
+          "t": 1108.48,
+          "text": "By the way, in English, somehow they use essence for self."
+        },
+        {
+          "t": 1113.14,
+          "text": "Essence means תמצית."
+        },
+        {
+          "t": 1115.07,
+          "text": "You know what a תמצית is?"
+        },
+        {
+          "t": 1117.65,
+          "text": "Yeah, it's an essence."
+        },
+        {
+          "t": 1119.67,
+          "text": "An an essence means like, you know, essence of almond or something like that?"
+        },
+        {
+          "t": 1123.4,
+          "text": "Right, that's why I was going to ask you, why does he use דווקא this term over here?"
+        },
+        {
+          "t": 1128.42,
+          "text": "A תמצית is usually the essence that is a derivative after you've already processed it and you've come to the ultimate conclusion after the process."
+        },
+        {
+          "t": 1140.83,
+          "text": "Right, that's the עומק המושג."
+        },
+        {
+          "t": 1143.64,
+          "text": "He's saying the עומק המושג is the תמצית."
+        },
+        {
+          "t": 1146,
+          "text": "Right, after you process the whole explanation and you come to the תמצית of it, which now you understand like addition."
+        },
+        {
+          "t": 1153.4,
+          "text": "So how do you translate עצמות or, you know, עצמות is selfness."
+        },
+        {
+          "t": 1158.09,
+          "text": "Right, okay."
+        },
+        {
+          "t": 1159.62,
+          "text": "It's always mistranslated."
+        },
+        {
+          "t": 1161.58,
+          "text": "They call it quintessential and stuff like that, but it's not It's really a very bad mistranslation."
+        },
+        {
+          "t": 1167.02,
+          "text": "Essence means תמצית."
+        },
+        {
+          "t": 1170.84,
+          "text": "And a תמצית means that you process the whole thing and got the got the taste out of it."
+        },
+        {
+          "t": 1178.25,
+          "text": "In other words, like like instant coffee is תמצית of coffee beans, where you got out just the part you need out of it."
+        },
+        {
+          "t": 1188.98,
+          "text": "So like, for instance, like in addition, you sit down and they sit down with little kids and they tell them one fishy plus one fishy is two fishies, and then they understand after a while, but The time they get to second or third"
+        },
+        {
+          "t": 1200.6,
+          "text": "grade, they don't even have to learn like that, they say like one plus one is two, and then they teach them all the different things how to add the all kinds of things, and then they have a whole bunch of examples and you"
+        },
+        {
+          "t": 1215.26,
+          "text": "do your homework."
+        },
+        {
+          "t": 1217.22,
+          "text": "But finally, like for instance, I know how to add, so which which example do I know how to add?"
+        },
+        {
+          "t": 1223.8,
+          "text": "All of them."
+        },
+        {
+          "t": 1225.78,
+          "text": "I know all of them, but how do I how do I know all of them?"
+        },
+        {
+          "t": 1229.63,
+          "text": "Because you know the..."
+        },
+        {
+          "t": 1230.34,
+          "text": "I mean, do I have do I have a fantastic computer in my brain that has every single number addition in it, like 2,500 plus 7,600?"
+        },
+        {
+          "t": 1243.22,
+          "text": "No, I just have the תמצית of the whole thing."
+        },
+        {
+          "t": 1247.38,
+          "text": "Right."
+        },
+        {
+          "t": 1248.67,
+          "text": "I I just have the תמצית."
+        },
+        {
+          "t": 1250.32,
+          "text": "Same like the coffee, the instant coffee is the תמצית of the coffee beans."
+        },
+        {
+          "t": 1254.7,
+          "text": "I I I threw away now all the parts that I don't need, like like all the examples that I had to sit down and do, and I just have the תמצית of the of the way how to add."
+        },
+        {
+          "t": 1270.02,
+          "text": "And that But but that תמצית is just the עומק המושג."
+        },
+        {
+          "t": 1276.14,
+          "text": "Right."
+        },
+        {
+          "t": 1277.2,
+          "text": "That עומק המושג means that when you went through the whole הסברה, then then you have the the תמצית."
+        },
+        {
+          "t": 1289.62,
+          "text": "And the thing is like this: the תמצית is, it explains in other places, there's there's the As a matter of fact, I think it's in קונטרס ההתפעלות."
+        },
+        {
+          "t": 1300.7,
+          "text": "There's the there's the קיצור before the התבוננות and the קיצור after the התבוננות."
+        },
+        {
+          "t": 1307.69,
+          "text": "Right."
+        },
+        {
+          "t": 1308.3,
+          "text": "So the קיצור before the התבוננות is there's a G-d in the world."
+        },
+        {
+          "t": 1312.96,
+          "text": "You know, like the story with the דייטשל or some some people say it was the אלטר רבי with his father-in-law, that he asked him that, \"So what did you learn?\""
+        },
+        {
+          "t": 1322.6,
+          "text": "He said, \"I learned there's a G-d in the world.\""
+        },
+        {
+          "t": 1324.61,
+          "text": "Right."
+        },
+        {
+          "t": 1325.4,
+          "text": "And he said, \"Hey, the maid knows that.\""
+        },
+        {
+          "t": 1327.04,
+          "text": "And he called the maid, he said, \"Do you know there's a G-d in the world?\""
+        },
+        {
+          "t": 1329.28,
+          "text": "She says, \"Sure, who does not know there's a G-d in the world?\""
+        },
+        {
+          "t": 1331.86,
+          "text": "So said So the the the the the דייטשל or the אלטר רבי answered, \"She she thinks there's a G-d in the world."
+        },
+        {
+          "t": 1339.66,
+          "text": "I know there's a G-d in the world.\""
+        },
+        {
+          "t": 1341.43,
+          "text": "Right."
+        },
+        {
+          "t": 1341.83,
+          "text": "In other words, he had the קיצור after the התבוננות, and she had the קיצור before the התבוננות."
+        },
+        {
+          "t": 1348.58,
+          "text": "And there's the thing that, again, where there's another point where they make their their mistake, that the the קיצור before and the קיצור after look exactly the same."
+        },
+        {
+          "t": 1358.18,
+          "text": "On the surface."
+        },
+        {
+          "t": 1360.22,
+          "text": "On the surface."
+        },
+        {
+          "t": 1362.27,
+          "text": "I mean, he said exactly what the maid said."
+        },
+        {
+          "t": 1366.61,
+          "text": "Right."
+        },
+        {
+          "t": 1367.6,
+          "text": "He said, \"I know there's a G-d in the world,\" and the maid said also, \"I know there's a G-d in the world.\""
+        },
+        {
+          "t": 1371.62,
+          "text": "So what's the difference?"
+        },
+        {
+          "t": 1372.52,
+          "text": "What makes him the the the big רבי and she's just a stupid maid?"
+        },
+        {
+          "t": 1377.5,
+          "text": "Why?"
+        },
+        {
+          "t": 1377.76,
+          "text": "Because he had the תמצית afterwards."
+        },
+        {
+          "t": 1380.7,
+          "text": "Not only that, really he had after the תמצית, like he's going to explain, that even the תמצית is not There's more after the תמצית."
+        },
+        {
+          "t": 1387.64,
+          "text": "Right."
+        },
+        {
+          "t": 1388.76,
+          "text": "Where are we here?"
+        },
+        {
+          "t": 1392.08,
+          "text": "תמציתה."
+        },
+        {
+          "t": 1394.1,
+          "text": "So that's עומק המושג."
+        }
+      ]
+    },
+    {
+      "source": "015",
+      "lineId": "pimwc3gh",
+      "segment": 26,
+      "startSeconds": 1396.16,
+      "endSeconds": 1873.76,
+      "confidence": 0.954,
+      "sentences": [
+        {
+          "t": 1396.16,
+          "text": "ואמנם עומק המושג נקרא שער הנון דבינה."
+        },
+        {
+          "t": 1401.74,
+          "text": "He says, \"But wait a minute, there's another עומק המושג."
+        },
+        {
+          "t": 1406.01,
+          "text": "There's the שער הנון of בינה."
+        },
+        {
+          "t": 1407.94,
+          "text": "There's the the thing of the עומק המושג where you where you understand the explanation, So the so the אמנם here means \"but\"?"
+        },
+        {
+          "t": 1420.14,
+          "text": "Yeah."
+        },
+        {
+          "t": 1420.76,
+          "text": "However, the עומק המושג usually in other places the עומק המושג of בינה is called the שער הנון of בינה."
+        },
+        {
+          "t": 1428.47,
+          "text": "Right."
+        },
+        {
+          "t": 1429.28,
+          "text": "Now, the שער הנון of בינה is not so simple like that, because we say that even משה רבינו had a hard time to get to the שער הנון of בינה."
+        },
+        {
+          "t": 1437.16,
+          "text": "Right."
+        },
+        {
+          "t": 1438.06,
+          "text": "So how come if it's just the תמצית of the explanation and that's the עומק of בינה?"
+        },
+        {
+          "t": 1444.59,
+          "text": "It says there's there's עומק and there's עומקא דעומקא."
+        },
+        {
+          "t": 1449.65,
+          "text": "Right."
+        },
+        {
+          "t": 1450.24,
+          "text": "גם שנמשך מאין דחכמה ליש, even though the שער הנון is in בינה, and it's in a way of bringing from the אין of חכמה to an actual יש of an explanation, to a somethingness, Right."
+        },
+        {
+          "t": 1465.28,
+          "text": "כמו מעין יוצא מבית קדשי הקדשים, תחילתו כקרני חגבים כולי כהאי גוונא, it starts off, this מעין starts off like a a a horn."
+        },
+        {
+          "t": 1477.05,
+          "text": "Huh?"
+        },
+        {
+          "t": 1477.67,
+          "text": "Like the antenna of a locust."
+        },
+        {
+          "t": 1482.02,
+          "text": "Antenna of a locust."
+        },
+        {
+          "t": 1484.6,
+          "text": "And also that's why the בינה's also called a שופר, that it starts You know, the שופר starts in a narrow and ends up wide."
+        },
+        {
+          "t": 1492.62,
+          "text": "Right."
+        },
+        {
+          "t": 1493.56,
+          "text": "And that's also, you know, the the horn of plenty?"
+        },
+        {
+          "t": 1496.91,
+          "text": "Right, the cornucopia."
+        },
+        {
+          "t": 1498.51,
+          "text": "Is that what it's called?"
+        },
+        {
+          "t": 1500.82,
+          "text": "The horn of plenty also starts short, starts narrow on one side and opens up on the other side."
+        },
+        {
+          "t": 1506.96,
+          "text": "So, this this שער הנון, even though it comes from the עין of חכמה to the יש of בינה, שורשו מגיע בעומק דחכמה הנ״ל."
+        },
+        {
+          "t": 1516.04,
+          "text": "The real עומק of the real עומק of בינה is not there's the first עומק which is כתר, כתר of בינה."
+        },
+        {
+          "t": 1525,
+          "text": "כתר of בינה."
+        },
+        {
+          "t": 1526.14,
+          "text": "Means כתר of בינה of אצילות."
+        },
+        {
+          "t": 1529.66,
+          "text": "But then there's a same like חכמה has an עומק which is in חכמה of אריך, really there's also בינה of אריך."
+        },
+        {
+          "t": 1538.18,
+          "text": "Right."
+        },
+        {
+          "t": 1539.98,
+          "text": "And really there's even a deeper one, the שער הנון keeps going and the שער הנון keeps going even higher than that, then there's בינה of עתיק."
+        },
+        {
+          "t": 1549.16,
+          "text": "And it really keeps going into רדל״א."
+        },
+        {
+          "t": 1553.68,
+          "text": "And really, like he explains later, that נגילה ונשמחה בך ממש."
+        },
+        {
+          "t": 1558.05,
+          "text": "Right."
+        },
+        {
+          "t": 1558.86,
+          "text": "Which which is in a way even higher than the חכמה."
+        },
+        {
+          "t": 1563.4,
+          "text": "And this is what he explains about the the the לויתן, that the לויתן can jump from the upper water to the lower water, from the lower water to the upper water."
+        },
+        {
+          "t": 1573.73,
+          "text": "Right."
+        },
+        {
+          "t": 1574.5,
+          "text": "שורשו מגיע בעומק דחכמה הנ״ל, it goes all the way into the actual עומק of חכמה."
+        },
+        {
+          "t": 1582.66,
+          "text": "וכנראה בחוש, like we see in actuality, שכל מעמיק רק בעומק המושג, הוא ממציא לעומקו ושורש המושכל."
+        },
+        {
+          "t": 1594.64,
+          "text": "Like we see over here, that we are basically מעמיק in the explanation of the שער היחוד."
+        },
+        {
+          "t": 1599.95,
+          "text": "Right."
+        },
+        {
+          "t": 1600.5,
+          "text": "Which basically The עומק המושג."
+        },
+        {
+          "t": 1603.37,
+          "text": "עומק המושג, which basically explains like over here it explains what these concepts are, and later on the the basic book, like over here he explains what התבוננות is, these first few chapters, and later chapter 10 onwards, really what he he doesn't explain about"
+        },
+        {
+          "t": 1617.96,
+          "text": "G-d, he really is explaining about how the world came into existence."
+        },
+        {
+          "t": 1621.99,
+          "text": "Right."
+        },
+        {
+          "t": 1622.9,
+          "text": "The סדר השתלשלות."
+        },
+        {
+          "t": 1625.76,
+          "text": "But nonetheless, it's להמשיך בחינות חדשות דאור החכמה בבינה."
+        },
+        {
+          "t": 1629.98,
+          "text": "This looking into the עומק המושג, even though you're only concentrating on the עומק המושג and on the explanation, nonetheless it brings a new light of חכמה into the בינה, like like שמעון says a lot of times, that each time he reads the book,"
+        },
+        {
+          "t": 1650.03,
+          "text": "it's like it's a whole new book."
+        },
+        {
+          "t": 1651.86,
+          "text": "Right."
+        },
+        {
+          "t": 1652.2,
+          "text": "So what do you mean it's a whole new book?"
+        },
+        {
+          "t": 1654.77,
+          "text": "It's the same book."
+        },
+        {
+          "t": 1655.91,
+          "text": "How could it be a whole new book?"
+        },
+        {
+          "t": 1657.59,
+          "text": "It's the same book with exactly the same letters."
+        },
+        {
+          "t": 1660.1,
+          "text": "The book didn't change, there's no funny thing happened and the book changed, and yet what do you mean it's a whole book?"
+        },
+        {
+          "t": 1667.2,
+          "text": "Because now he sees it in a whole new light of חכמה in the בינה."
+        },
+        {
+          "t": 1671.32,
+          "text": "Right."
+        },
+        {
+          "t": 1672.76,
+          "text": "That even though all he concentrated the first time, he just learned the explanation."
+        },
+        {
+          "t": 1679.74,
+          "text": "And the second time, even though he learned it in a new way, but again, he just learned the explanation."
+        },
+        {
+          "t": 1685.88,
+          "text": "And even some of the things that we are already sometimes talking about things that are not even explained in the book, and yet where did we get them?"
+        },
+        {
+          "t": 1696.72,
+          "text": "We got them from the book."
+        },
+        {
+          "t": 1698.28,
+          "text": "Right."
+        },
+        {
+          "t": 1700.81,
+          "text": "והוא הנקרא מעמיק, and that's why it's called a מעמיק."
+        },
+        {
+          "t": 1706.86,
+          "text": "עומק הדעת means just to concentrate on your first learning."
+        },
+        {
+          "t": 1711.96,
+          "text": "When you're learning it, you concentrate on it."
+        },
+        {
+          "t": 1713.9,
+          "text": "But then after you learn it, then like In other words, right now we're doing it with עומק הדעת."
+        },
+        {
+          "t": 1720.03,
+          "text": "We're We're using the power of our concentration to concentrate on what we're talking about."
+        },
+        {
+          "t": 1727.46,
+          "text": "Right."
+        },
+        {
+          "t": 1728.38,
+          "text": "But then later on, after we finish talking, so we're going to be walking around thinking about it."
+        },
+        {
+          "t": 1735.18,
+          "text": "Right."
+        },
+        {
+          "t": 1735.89,
+          "text": "What does it really mean?"
+        },
+        {
+          "t": 1737.94,
+          "text": "In other words, what is the שורש of this thing?"
+        },
+        {
+          "t": 1741.68,
+          "text": "And that מעמיק is לשון מפעיל, you know, how do you say that, activation, שמפעיל לעומק דכולהו, that it activates the depth of חכמה and בינה, in in in אריך, and then in עתיק, and even more than that."
+        },
+        {
+          "t": 1761.16,
+          "text": "Okay, now I don't know if he says this later, but there's a there's a a special, a better thing in בינה than חכמה in the terms that the שער הנון, even though it's in a way of a יש, but when it reaches in,"
+        },
+        {
+          "t": 1785.08,
+          "text": "when the שער הנון reaches into the into the into the עומק of the חכמה, it can bring it out."
+        },
+        {
+          "t": 1793.89,
+          "text": "It it it it כאפ'ס it in a way of a יש so that so that he can take it out and bring it out to other people, and he can bring it, he can bring it into an explanation, whereas somebody who just gets"
+        },
+        {
+          "t": 1806.64,
+          "text": "a a a spiritual insight or an intuitive feeling into it, it doesn't he might he might not even be able Not only he won't be able to explain it to somebody else, but he might even lose the idea to himself."
+        },
+        {
+          "t": 1820.51,
+          "text": "Right."
+        },
+        {
+          "t": 1821.15,
+          "text": "You know, in a few days later, you know, It dissipates."
+        },
+        {
+          "t": 1828.08,
+          "text": "It dissipates."
+        },
+        {
+          "t": 1829.18,
+          "text": "And this is the thing, you know, like people, you know, sometimes get real drunk or stoned or something like that, and they have this flash of wisdom, and the next day they don't remember what it was at all."
+        },
+        {
+          "t": 1842.48,
+          "text": "Right."
+        },
+        {
+          "t": 1843.58,
+          "text": "Or else this the thing that it says about, you know, the the story about Edison and other people that, you know, sometimes they would have a flash of חכמה, if they wouldn't write it down right away, they would forget it actually."
+        },
+        {
+          "t": 1855.82,
+          "text": "Not not only they wouldn't be able to explain it to themselves, but they would ממש lose it."
+        },
+        {
+          "t": 1860.39,
+          "text": "Right."
+        },
+        {
+          "t": 1861.08,
+          "text": "Whereas the שער הנון of בינה, he gets it in a way he he goes just as deep as the עומק of חכמה, but he gets it in a way of a יש."
+        },
+        {
+          "t": 1873.36,
+          "text": "Right."
+        }
+      ]
+    },
+    {
+      "source": "015",
+      "lineId": "wctxrksu",
+      "segment": 27,
+      "startSeconds": 1873.76,
+      "endSeconds": 1876.82,
+      "confidence": 1,
+      "sentences": [
+        {
+          "t": 1873.76,
+          "text": "ולפי זה מה שנאמר הבן בחכמה וחכם בבינה"
+        }
+      ]
+    },
+    {
+      "source": "015",
+      "lineId": "7oyqxyo6",
+      "segment": 27,
+      "startSeconds": 1876.82,
+      "endSeconds": 2478.74,
+      "confidence": 0.438,
+      "sentences": [
+        {
+          "t": 1876.82,
+          "text": "שמבואר בכתבים דהיינו עד דסלק חכם בבינה means חכמה of בינה, שהוא רק, what is חכמה of בינה?"
+        },
+        {
+          "t": 1885.72,
+          "text": "שהוא רק להבין דבר חידוש אחר מתוך המושג דבינה."
+        },
+        {
+          "t": 1892.46,
+          "text": "In other words, to understand just a new חידוש, but in this same בינה."
+        },
+        {
+          "t": 1899.7,
+          "text": "So like for instance in computers, an innovation in computers, you notice is not made by by somebody who went in the Himalayas and meditated."
+        },
+        {
+          "t": 1914.95,
+          "text": "Right."
+        },
+        {
+          "t": 1915.69,
+          "text": "It's made דווקא by the people who work with computers over and over again, and think about it and think, and what do they think about?"
+        },
+        {
+          "t": 1925.04,
+          "text": "I mean, obviously they couldn't have thought about the innovation because they didn't know the innovation."
+        },
+        {
+          "t": 1929.63,
+          "text": "Right."
+        },
+        {
+          "t": 1930.34,
+          "text": "So they must have thought about what they already know."
+        },
+        {
+          "t": 1937.26,
+          "text": "And yet they came up with with an innovation."
+        },
+        {
+          "t": 1940.32,
+          "text": "Same thing with cars, like you see that the cars are getting better and better all the time."
+        },
+        {
+          "t": 1947.78,
+          "text": "You know, a car right now is not like a Model T from the 1930s."
+        },
+        {
+          "t": 1952.57,
+          "text": "Right."
+        },
+        {
+          "t": 1952.98,
+          "text": "And yet who came up with the better cars was the car companies, the people, the engineers that work for the car companies."
+        },
+        {
+          "t": 1961.2,
+          "text": "And where did they come up with it?"
+        },
+        {
+          "t": 1963.74,
+          "text": "They came up with it from going over they went when In other words, when they went to college, for instance, let's say a guy is now going to innovate a new thing in cars."
+        },
+        {
+          "t": 1971.9,
+          "text": "How did he learn about cars?"
+        },
+        {
+          "t": 1973.08,
+          "text": "He went to college."
+        },
+        {
+          "t": 1973.92,
+          "text": "What did he learn in college?"
+        },
+        {
+          "t": 1975.08,
+          "text": "He learned about the cars that we already have."
+        },
+        {
+          "t": 1977.53,
+          "text": "Right."
+        },
+        {
+          "t": 1978.36,
+          "text": "He he's an engineer according to what we have, or an engineer in in in waterworks or an engineer in electricity or whatever you want to say."
+        },
+        {
+          "t": 1988.04,
+          "text": "Right."
+        },
+        {
+          "t": 1989.44,
+          "text": "What he learns in college or a doctor, they learn דווקא what we already know."
+        },
+        {
+          "t": 1994.54,
+          "text": "Right."
+        },
+        {
+          "t": 1995.5,
+          "text": "They don't learn what what what what they're going to invent."
+        },
+        {
+          "t": 1999.86,
+          "text": "And yet they invent a new thing, but the invention is דווקא in their field."
+        },
+        {
+          "t": 2004.06,
+          "text": "In other words, like an engineer in computers is not going to invent a new invention of a new drug that will cure certain diseases."
+        },
+        {
+          "t": 2013.58,
+          "text": "Right, right."
+        },
+        {
+          "t": 2014.37,
+          "text": "He's going to invent a better computer."
+        },
+        {
+          "t": 2017.25,
+          "text": "Like they had the the Pentium, now they have the Pentium II, then the Pentium III, and the Pentium 4, and soon they're going to have some other things, you know."
+        },
+        {
+          "t": 2025.98,
+          "text": "Right."
+        },
+        {
+          "t": 2027.44,
+          "text": "And already they're thinking maybe they'll make a computer you won't even need a keyboard, you'll just talk to it, and they already have like all kinds of these things, and they're getting better and better."
+        },
+        {
+          "t": 2037.32,
+          "text": "So how are they getting better and better?"
+        },
+        {
+          "t": 2038.68,
+          "text": "That's the ענין of חכמה שבבינה."
+        },
+        {
+          "t": 2040.24,
+          "text": "When you go over the בינה שבבינה this and this again, what he's talking about here is the which is the activating power."
+        },
+        {
+          "t": 2050.71,
+          "text": "Right."
+        },
+        {
+          "t": 2051.46,
+          "text": "The activating power of all the other powers, and and later on in various places going to explain also the activation of the lower powers of the מדות also comes דווקא from בינה שבבינה."
+        },
+        {
+          "t": 2064.81,
+          "text": "And the way it works, it has to be like this."
+        },
+        {
+          "t": 2068.27,
+          "text": "It's בינה שבבינה within the כלי of דעת."
+        },
+        {
+          "t": 2072.24,
+          "text": "Right."
+        },
+        {
+          "t": 2073.64,
+          "text": "But in other words, somebody who is going to be a computer genius, but he's not really interested in computers in the first place, so you tell him, so why you why do you want to be a computer genius?"
+        },
+        {
+          "t": 2088.06,
+          "text": "He says, well, I want to make computer inventions, and then I'll be a millionaire."
+        },
+        {
+          "t": 2093.14,
+          "text": "Right."
+        },
+        {
+          "t": 2094.18,
+          "text": "He's probably not going to invent nothing new."
+        },
+        {
+          "t": 2096.86,
+          "text": "Right, because really what he wants to be as a millionaire, he's not interested in computers."
+        },
+        {
+          "t": 2101.18,
+          "text": "Okay, but look, but he's going to college, and you know, and stuff like that, and he's learning the he's learning the information, not in the subject."
+        },
+        {
+          "t": 2109.36,
+          "text": "He's learning the he's doing the בינה שבבינה, but he doesn't have the כלי of דעת."
+        },
+        {
+          "t": 2114.76,
+          "text": "In other words, the דעת is also something."
+        },
+        {
+          "t": 2118.38,
+          "text": "It's not like totally nothing, but it's a כלי."
+        },
+        {
+          "t": 2121.58,
+          "text": "Prime כלי in it."
+        },
+        {
+          "t": 2122.78,
+          "text": "It's a כלי, and it's a necessary כלי, but the thing is that if you have the כלי without the it's it's basically like a glass of water."
+        },
+        {
+          "t": 2132.78,
+          "text": "If you don't have the glass, the water will just spill out."
+        },
+        {
+          "t": 2136.21,
+          "text": "Right."
+        },
+        {
+          "t": 2137.26,
+          "text": "But on the other hand, if if a if there's a guy in the desert and he's he's dying from thirst, and you give him a glass, that's not going to help him nothing."
+        },
+        {
+          "t": 2145.88,
+          "text": "Right."
+        },
+        {
+          "t": 2146.34,
+          "text": "The same thing, if you just give him water without a glass, it'll just spill in the sand and you also won't help him nothing."
+        },
+        {
+          "t": 2151.89,
+          "text": "Like if you just throw some water at him."
+        },
+        {
+          "t": 2155.81,
+          "text": "Right."
+        },
+        {
+          "t": 2156.16,
+          "text": "Hey, oh you're thirsty?"
+        },
+        {
+          "t": 2157.46,
+          "text": "Here's some water."
+        },
+        {
+          "t": 2158.51,
+          "text": "Yeah, they have to come together or they're they're useless."
+        },
+        {
+          "t": 2161.96,
+          "text": "Right, if you don't have the כלי to hold the water in, it's useless."
+        },
+        {
+          "t": 2165.62,
+          "text": "On the other hand, the כלי by itself is also useless."
+        },
+        {
+          "t": 2169.42,
+          "text": "Okay, so where are we?"
+        },
+        {
+          "t": 2175.02,
+          "text": "Okay, חכם שהוא רק להבין דבר חידוש אחר מתוך המושג בבינה, שזהו אינו אלא על ידי בחינת העיון הנ״ל."
+        },
+        {
+          "t": 2182.74,
+          "text": "This חכמה שבבינה does not come by itself that you can say, \"Okay, I'm going to innovate something now.\""
+        },
+        {
+          "t": 2189.09,
+          "text": "There's there's a קונטרס from the רבי רש״ב on how to learn גמרא."
+        },
+        {
+          "t": 2196.64,
+          "text": "Right."
+        },
+        {
+          "t": 2197.8,
+          "text": "At which basically what he says there is you cannot go for חידושים."
+        },
+        {
+          "t": 2202.37,
+          "text": "Right."
+        },
+        {
+          "t": 2202.76,
+          "text": "You should not try to make a חידוש."
+        },
+        {
+          "t": 2205.26,
+          "text": "If you're trying to make a חידוש, your חידוש will be what he calls a real חידוש."
+        },
+        {
+          "t": 2209.79,
+          "text": "Right."
+        },
+        {
+          "t": 2210.13,
+          "text": "You know what's a real חידוש?"
+        },
+        {
+          "t": 2212.33,
+          "text": "It's invented."
+        },
+        {
+          "t": 2213.51,
+          "text": "It was not told to משה רבינו on הר סיני."
+        },
+        {
+          "t": 2215.84,
+          "text": "Right."
+        },
+        {
+          "t": 2216.27,
+          "text": "It's a real It's it's really a חידוש, it means you you invented it out of your head."
+        },
+        {
+          "t": 2222,
+          "text": "But a a actual חידוש of a תלמיד ותיק is דווקא means that you'll learn first of all, you don't go for the חידושים, you learn the the the text of the גמרא first, then you'll learn it with רש״י."
+        },
+        {
+          "t": 2236.12,
+          "text": "Say, \"What?"
+        },
+        {
+          "t": 2236.44,
+          "text": "That's what I'm going to learn, just תלמוד with רש״י?"
+        },
+        {
+          "t": 2239.03,
+          "text": "How am I going to be a מחדש?\""
+        },
+        {
+          "t": 2240.78,
+          "text": "Right."
+        },
+        {
+          "t": 2241.27,
+          "text": "If you want to be a מחדש, you'll never be a מחדש."
+        },
+        {
+          "t": 2244.44,
+          "text": "Just the opposite, it's דווקא when you do the עיון, then the חידוש will come automatically."
+        },
+        {
+          "t": 2251.8,
+          "text": "Right."
+        },
+        {
+          "t": 2253.24,
+          "text": "So it's דווקא על ידי בחינת העיון הנ״ל which is בינה שבבינה, and and what he's saying here basically, and that's what the whole chapter is about, that that בינה שבבינה within the כלי of דעת is the is is the activator of all the"
+        },
+        {
+          "t": 2266.62,
+          "text": "powers, whether above it or below it."
+        },
+        {
+          "t": 2268.83,
+          "text": "And and basically in קונטרס ההתפעלות he explains that, you know, the התפעלות of the מידות comes דווקא from התבוננות."
+        },
+        {
+          "t": 2279.31,
+          "text": "Right."
+        },
+        {
+          "t": 2279.8,
+          "text": "And over here he's explaining that also the power the higher powers, in other words, the real thing that you really want is the עומק of חכמה, Right."
+        },
+        {
+          "t": 2287.18,
+          "text": "the flash of light, or even higher, the you know, the the the unification with the ultimate unity, with the infinite light, and stuff like that."
+        },
+        {
+          "t": 2298.9,
+          "text": "And what would you do?"
+        },
+        {
+          "t": 2299.94,
+          "text": "\"Oh, I'll meditate on the light.\""
+        },
+        {
+          "t": 2303.5,
+          "text": "But he says, \"No, it doesn't work like that.\""
+        },
+        {
+          "t": 2305.3,
+          "text": "It's דווקא the עיון that activates both the powers below it, and as a matter of fact, even the דעת is דווקא activated by by the by the בינה שבבינה, so that, for instance, you notice with us, we have a bigger דעת into it,"
+        },
+        {
+          "t": 2323.54,
+          "text": "I don't mean knowledge דעת, I mean a connection to it than somebody who who didn't learn as much as us."
+        },
+        {
+          "t": 2329.38,
+          "text": "Right."
+        },
+        {
+          "t": 2330.5,
+          "text": "Why?"
+        },
+        {
+          "t": 2330.78,
+          "text": "Because דווקא because we activated up to the כתר, so the דעת also gets activated."
+        },
+        {
+          "t": 2336.87,
+          "text": "And that's דווקא because of the בינה שבבינה."
+        },
+        {
+          "t": 2339.83,
+          "text": "The more you understand about something, the and and this is anything, Right."
+        },
+        {
+          "t": 2345.29,
+          "text": "the more you understand about something, the more your דעת towards that thing is activated."
+        },
+        {
+          "t": 2349.93,
+          "text": "The only thing you have to remember, there's two kinds of דעת, there's a negative דעת too."
+        },
+        {
+          "t": 2355.8,
+          "text": "In other words, when you understand more and more about something, you might understand that this is a bad thing."
+        },
+        {
+          "t": 2360.92,
+          "text": "Right."
+        },
+        {
+          "t": 2361.7,
+          "text": "So you'll you'll have a a a דעת that you want to stay away from it, Right."
+        },
+        {
+          "t": 2366.7,
+          "text": "the opposite of concentration, you don't want to think about it."
+        },
+        {
+          "t": 2371.2,
+          "text": "You don't want to think about it at all."
+        },
+        {
+          "t": 2373.44,
+          "text": "And the more you understand, the more the דעת gets activated."
+        },
+        {
+          "t": 2379.78,
+          "text": "And it's דווקא through the עיון הנ״ל שהוא מברר כל חלק על בוריו, that means the עיון means analysis, to separate out all the parts of it according to its various classifications."
+        },
+        {
+          "t": 2396.52,
+          "text": "Means מברר means you take, \"Okay, this one is the red one, you put it here, and this one is the green one, you put it here."
+        },
+        {
+          "t": 2403.4,
+          "text": "And then we see we have three red ones and two green ones."
+        },
+        {
+          "t": 2407.04,
+          "text": "Right."
+        },
+        {
+          "t": 2408.06,
+          "text": "And that's how it's made up, and then here and there's a blue one."
+        },
+        {
+          "t": 2411.38,
+          "text": "So like, for instance, like if you if you want to know like how a television screen works, how this picture comes up, you say, \"Well, over here there's a red one, and then two green ones, then a blue one.\""
+        },
+        {
+          "t": 2425.49,
+          "text": "Right."
+        },
+        {
+          "t": 2426.33,
+          "text": "That's how the screen works, right?"
+        },
+        {
+          "t": 2429.12,
+          "text": "Right."
+        },
+        {
+          "t": 2430.24,
+          "text": "And this the same thing with all the various things."
+        },
+        {
+          "t": 2432.7,
+          "text": "That in other words, how's a personality work?"
+        },
+        {
+          "t": 2434.93,
+          "text": "Or you say, \"Well, a personality is made up of intellect and emotions.\""
+        },
+        {
+          "t": 2439.86,
+          "text": "That's your first separation into two."
+        },
+        {
+          "t": 2442.88,
+          "text": "And you say, \"Well, intellect, what is intellect?\""
+        },
+        {
+          "t": 2444.88,
+          "text": "Well you say, \"Intellect, there's three parts: חכמה, בינה, and דעת."
+        },
+        {
+          "t": 2449.21,
+          "text": "And then there's the super-intellect of כתר.\""
+        },
+        {
+          "t": 2452.19,
+          "text": "Right."
+        },
+        {
+          "t": 2453.26,
+          "text": "And in emotions, there's these seven various emotions."
+        },
+        {
+          "t": 2456.02,
+          "text": "There's love and the the basic two divisions is love and love and hate, or love and fear, you know, so Right."
+        },
+        {
+          "t": 2464.28,
+          "text": "You separate it, and then you separate it more and more."
+        },
+        {
+          "t": 2466.2,
+          "text": "Then you say, \"Within love, there's also 10 separations.\""
+        },
+        {
+          "t": 2469.57,
+          "text": "Right."
+        },
+        {
+          "t": 2470.22,
+          "text": "You know, ונקרא, and this is called, this analysis of the thing into its parts is called בינה שבבינה."
+        }
+      ]
+    },
+    {
+      "source": "015",
+      "lineId": "66dcrnqt",
+      "segment": 28,
+      "startSeconds": 2478.74,
+      "endSeconds": 2563.73,
+      "confidence": 0.994,
+      "sentences": [
+        {
+          "t": 2478.74,
+          "text": "ואחר כך, only when he does this analysis, יוכל להוליד להתחכם להמציא הבנה והשגה חדשה."
+        },
+        {
+          "t": 2486.38,
+          "text": "It's דווקא the people who know all the analysis of all the parts of a car can come up with a better car."
+        },
+        {
+          "t": 2493.96,
+          "text": "Right."
+        },
+        {
+          "t": 2494.48,
+          "text": "Like for instance, I could not come up with a better car, because I have no idea how the motor works."
+        },
+        {
+          "t": 2501.78,
+          "text": "Right."
+        },
+        {
+          "t": 2502.32,
+          "text": "I don't know what's going on in the motor."
+        },
+        {
+          "t": 2504.3,
+          "text": "But somebody who knows every single part of the motor, דווקא somebody like that can come up with a better motor."
+        },
+        {
+          "t": 2513.06,
+          "text": "Okay, but what?"
+        },
+        {
+          "t": 2514.02,
+          "text": "But חכמה שבבינה, אבל רק בהשגה זו עצמה."
+        },
+        {
+          "t": 2517.48,
+          "text": "But only in a car."
+        },
+        {
+          "t": 2519.96,
+          "text": "Right, he can't innovate outside of his field."
+        },
+        {
+          "t": 2523.93,
+          "text": "Outside of his field."
+        },
+        {
+          "t": 2525.52,
+          "text": "And even like you say, \"Well, what about like the Wright brothers?\""
+        },
+        {
+          "t": 2529.24,
+          "text": "But it's still a machine, a traveling machine."
+        },
+        {
+          "t": 2531.81,
+          "text": "They just took like they took a motor from a car, and they put it on the airplane."
+        },
+        {
+          "t": 2537.52,
+          "text": "Right."
+        },
+        {
+          "t": 2538.03,
+          "text": "And they and they use some of their Okay, that's really in a way a ענין of תבונה that it goes from one from one field to another field."
+        },
+        {
+          "t": 2547.56,
+          "text": "And it's also an innovation like like חכמה שבבינה also, I mean בינה שבחכמה and stuff like that, you know."
+        },
+        {
+          "t": 2554.48,
+          "text": "But the basic thing of בינה of חכמה שבבינה is just to make an innovation in this השגה itself, שנקרא חכמה שבבינה."
+        }
+      ]
+    },
+    {
+      "source": "015",
+      "lineId": "r5wkpae2",
+      "segment": 28,
+      "startSeconds": 2563.73,
+      "endSeconds": 2593.76,
+      "confidence": 0.621,
+      "sentences": [
+        {
+          "t": 2563.73,
+          "text": "אבל כתר דבינה הוא עומק המושג הנ״ל, and that's the first that the כתר of בינה itself, and the and the כתר, and in the כתר, there's also the חיצוניות of כתר of בינה, which is just to understand the explanation."
+        },
+        {
+          "t": 2578.78,
+          "text": "But the שורש, but the שורש of the כתר of בינה is in עומק החכמה כנ״ל."
+        },
+        {
+          "t": 2584.74,
+          "text": "The real thing he wants to understand is not just the explanation, but the real actual thing."
+        },
+        {
+          "t": 2589.79,
+          "text": "Right."
+        },
+        {
+          "t": 2590.94,
+          "text": "So that's what חכמה שבבינה is."
+        }
+      ]
+    },
+    {
+      "source": "015",
+      "lineId": "7mt3upbi",
+      "segment": 29,
+      "startSeconds": 2593.76,
+      "endSeconds": 2662.56,
+      "confidence": 1,
+      "sentences": [
+        {
+          "t": 2593.76,
+          "text": "והבן בחכמה means בינה of חכמה, היינו ס״ג דע״ב, שהוא כח ההסבר בחכמה עצמה, the the היולי inherent power of explanation within a חכמה."
+        },
+        {
+          "t": 2607.32,
+          "text": "That, in other words, when you understand something beyond the just the explanation, and you have it in a way of the אין of חכמה, it's inherent in this חכמה that you could explain it."
+        },
+        {
+          "t": 2624.64,
+          "text": "Right."
+        },
+        {
+          "t": 2625,
+          "text": "Even though you didn't explain it at all yet, but if somebody will ask you, you'll be able to explain it, שיוכל להביאו בפנים מסבירות הרבה in any in in different ways, not just in one way."
+        },
+        {
+          "t": 2637.9,
+          "text": "When he goes past the the the עומק המושג of בינה into the actual חכמה of the thing, it's inherent in the חכמה, in the בינה of חכמה, that he should be able to then explain it in various different ways."
+        },
+        {
+          "t": 2650.64,
+          "text": "והוא למעלה מן השגת בינה עדין."
+        },
+        {
+          "t": 2655.48,
+          "text": "But this is still higher than the actual השגה."
+        },
+        {
+          "t": 2657.79,
+          "text": "It's not that he actually explained it, it's a היולי for explanation."
+        },
+        {
+          "t": 2661.46,
+          "text": "Right."
+        }
+      ]
+    },
+    {
+      "source": "015",
+      "lineId": "47u5u6vn",
+      "segment": 30,
+      "startSeconds": 2662.56,
+      "endSeconds": 2696.33,
+      "confidence": 0.432,
+      "sentences": [
+        {
+          "t": 2662.56,
+          "text": "ומה שאמרו נבונים לא ישתכחו, and this is besides the thing of the the כח ההסבר, so בינה שבחכמה has two ענינים."
+        },
+        {
+          "t": 2672.3,
+          "text": "כח ההסבר is בינה שבחכמה going downwards, means that he could bring this חכמה into various explanations of בינה."
+        },
+        {
+          "t": 2681.46,
+          "text": "But but he says, \"But.\""
+        },
+        {
+          "t": 2684.53,
+          "text": "ומה this ו is \"but\"."
+        },
+        {
+          "t": 2687.36,
+          "text": "But what they said נבונים לא ישתכחו, they didn't mean that there's not people who could explain it."
+        },
+        {
+          "t": 2693.14,
+          "text": "He's saying that's something"
+        }
+      ]
+    },
+    {
+      "source": "016",
+      "lineId": "7xlwb6pw",
+      "segment": 31,
+      "startSeconds": 5.74,
+      "endSeconds": 254.66,
+      "confidence": 0.458,
+      "sentences": [
+        {
+          "t": 5.74,
+          "text": "על כן יוכל להבין דבר חכמה אחרת לגמרי מתוך דבר חכמה זו, that the power of בינה of חכמה reaches the the root of the power that means the inner power of בינה of חכמה, מגיע בעומק החכמה now, like we said, into the aquifer,"
+        },
+        {
+          "t": 23.42,
+          "text": "and that's why he can understand a different חכמה from this חכמה."
+        },
+        {
+          "t": 29.87,
+          "text": "Right."
+        },
+        {
+          "t": 31.78,
+          "text": "Now he's telling you two things here, not just one thing."
+        },
+        {
+          "t": 34.9,
+          "text": "He told you two things that there's actually three things about the power of of בינה of חכמה."
+        },
+        {
+          "t": 40.64,
+          "text": "One thing is when it goes downwards there's that it can it's the inherent power of explanation to bring to bring out from חכמה to בינה is through בינה of חכמה."
+        },
+        {
+          "t": 56.11,
+          "text": "Right."
+        },
+        {
+          "t": 56.95,
+          "text": "To bring it out from just a חכמה into an explanation, that's דווקא from the power of בינה of חכמה."
+        },
+        {
+          "t": 64.4,
+          "text": "Right."
+        },
+        {
+          "t": 65.06,
+          "text": "That's one thing."
+        },
+        {
+          "t": 65.88,
+          "text": "The other thing, which is the real thing of the בינה of חכמה, the real inner thing of בינה of חכמה, is להבין דבר מתוך דבר, means to to understand a deeper wisdom from an external wisdom."
+        },
+        {
+          "t": 78.99,
+          "text": "Right."
+        },
+        {
+          "t": 80.12,
+          "text": "And then he said, and also because it is, since he goes into the aquifer, he'll be able to understand a different wisdom from this wisdom."
+        },
+        {
+          "t": 90.87,
+          "text": "Right, a a different field altogether."
+        },
+        {
+          "t": 93.38,
+          "text": "A different field."
+        },
+        {
+          "t": 94.24,
+          "text": "From this field he'll be able to carry into a different field."
+        },
+        {
+          "t": 96.9,
+          "text": "Why?"
+        },
+        {
+          "t": 97.16,
+          "text": "Because he understood it all the way into the aquifer, and that's the source of all the wisdoms."
+        },
+        {
+          "t": 106.54,
+          "text": "Then he was able to bring out from that not on not to this wisdom, but to a different wisdom."
+        },
+        {
+          "t": 110.84,
+          "text": "Right."
+        },
+        {
+          "t": 111.3,
+          "text": "So that's like a sideways."
+        },
+        {
+          "t": 114.98,
+          "text": "Besides going it can go down, it can go up, and it can go sideways."
+        },
+        {
+          "t": 119.8,
+          "text": "Right, it's like a width."
+        },
+        {
+          "t": 121.7,
+          "text": "It It's, yeah, it's like a width of it, that it can bring it into a different wisdom altogether, but that other wisdom can be on the same level as this wisdom."
+        },
+        {
+          "t": 130,
+          "text": "Right."
+        },
+        {
+          "t": 130.82,
+          "text": "And this is like what we said about the Wright brothers, that they were bicycle makers and were interested in cars, and they brought it into airplanes."
+        },
+        {
+          "t": 140.41,
+          "text": "Right."
+        },
+        {
+          "t": 142.2,
+          "text": "Why?"
+        },
+        {
+          "t": 142.42,
+          "text": "Because they understood they looked they looked they didn't just I mean, it it it they were they were not really total נבונים, but it's a good it's good just for a משל, for an external משל."
+        },
+        {
+          "t": 153.14,
+          "text": "In other words, what they did is they looked into it."
+        },
+        {
+          "t": 158.34,
+          "text": "They didn't just look at the at a motor as a car motor."
+        },
+        {
+          "t": 162.24,
+          "text": "Right."
+        },
+        {
+          "t": 163.04,
+          "text": "They looked into its root, Right."
+        },
+        {
+          "t": 165.8,
+          "text": "a supplier of power."
+        },
+        {
+          "t": 168.08,
+          "text": "Right."
+        },
+        {
+          "t": 169,
+          "text": "And then they said, well, the same like it could supply power to a car, it could supply power to an airplane."
+        },
+        {
+          "t": 175.7,
+          "text": "Right."
+        },
+        {
+          "t": 176.52,
+          "text": "And then like, you know, they they were bicycle makers."
+        },
+        {
+          "t": 182.2,
+          "text": "Right."
+        },
+        {
+          "t": 183.34,
+          "text": "So, you know, they knew how to make those chains and the gears."
+        },
+        {
+          "t": 188.34,
+          "text": "You know how you drive a bicycle, it has those those gears with teeth in it that connect into the chains."
+        },
+        {
+          "t": 194.92,
+          "text": "Like now the airplanes aren't made like that, but the original airplanes, it had those things connecting to the propeller, you know?"
+        },
+        {
+          "t": 201.4,
+          "text": "Right."
+        },
+        {
+          "t": 202.04,
+          "text": "So they took from bicycles to airplanes."
+        },
+        {
+          "t": 205.52,
+          "text": "Why?"
+        },
+        {
+          "t": 205.78,
+          "text": "Because they didn't look at just a chain as like somebody else would have just was a more would have a more חיצוניות level, would just, you know, know how to make a bicycle and he would never think of how this would apply to"
+        },
+        {
+          "t": 220.38,
+          "text": "something else."
+        },
+        {
+          "t": 221.48,
+          "text": "Right."
+        },
+        {
+          "t": 223.62,
+          "text": "But they thought into the root of it."
+        },
+        {
+          "t": 225.86,
+          "text": "They didn't see it just as a a bicycle."
+        },
+        {
+          "t": 230.02,
+          "text": "They saw it as a way to move the energy from the feet to the wheel Right."
+        },
+        {
+          "t": 236.6,
+          "text": "through the chain and the gear."
+        },
+        {
+          "t": 240.28,
+          "text": "And they saw it as the inner point of the thing, a way to move energy from from one thing to another thing."
+        },
+        {
+          "t": 247.13,
+          "text": "You know?"
+        },
+        {
+          "t": 249.11,
+          "text": "Right."
+        },
+        {
+          "t": 250.36,
+          "text": "מתוך דבר חכמה זו"
+        }
+      ]
+    },
+    {
+      "source": "016",
+      "lineId": "feq46pb4",
+      "segment": 32,
+      "startSeconds": 254.66,
+      "endSeconds": 355.83,
+      "confidence": 0.968,
+      "sentences": [
+        {
+          "t": 254.66,
+          "text": "שזה למעלה במדרגה גם מן החכם."
+        },
+        {
+          "t": 258.32,
+          "text": "So in other words, that the inner level of the outer level to explain it outwards is lower than the actual חכמה שבחכמה."
+        },
+        {
+          "t": 268.9,
+          "text": "But but the בינה שבחכמה, the inner level of בינה שבחכמה, a נבון is higher than a חכם."
+        },
+        {
+          "t": 276.14,
+          "text": "Why is that?"
+        },
+        {
+          "t": 276.92,
+          "text": "Because a a נבון is בינה שבחכמה, and a חכם is really חכמה שבחכמה."
+        },
+        {
+          "t": 282.4,
+          "text": "דהיינו מגוף של המצאת החכמה זו מאין שאינו מבין ממנה חכמה ושכל אחר."
+        },
+        {
+          "t": 290.72,
+          "text": "He just has an invention, but the נבון might not be able to come up with a new invention, but he can take an old invention and come up with a whole new Right."
+        },
+        {
+          "t": 302.03,
+          "text": "And in a way it has a higher source."
+        },
+        {
+          "t": 305.36,
+          "text": "And not only that, it can reach into a depth higher than the חכמה itself, into the להבין דבר מתוך דבר."
+        },
+        {
+          "t": 312.42,
+          "text": "And and this ענין of a דבר מתוך דבר, remember, we're talking what is התבוננות in terms of חסידות."
+        },
+        {
+          "t": 318.86,
+          "text": "And this is what he's talking about later that he says נגיל ונשמח בך, בך ממש, it's with this power of בינה שבחכמה."
+        },
+        {
+          "t": 326.98,
+          "text": "That that בינה שבבינה will activate the חכמה שבבינה, and the חכמה שבבינה will activate the בינה שבחכמה."
+        },
+        {
+          "t": 335.57,
+          "text": "And then when you have the חכמה itself, when you have the seeing in a way of an עין, he'll be able to understand not just the the סדר השתלשלות, but a דבר מתוך דבר, higher than the סדר השתלשלות."
+        },
+        {
+          "t": 347.92,
+          "text": "From the סדר השתלשלות, he'll be able to understand into deeper than the סדר השתלשלות."
+        },
+        {
+          "t": 352.54,
+          "text": "That's basically what he's talking about here."
+        }
+      ]
+    },
+    {
+      "source": "016",
+      "lineId": "fbecfg7n",
+      "segment": 33,
+      "startSeconds": 355.83,
+      "endSeconds": 396.22,
+      "confidence": 0.97,
+      "sentences": [
+        {
+          "t": 355.83,
+          "text": "ומכל מקום מה שבהשגה דבינה מבין השגה חדשה מתוך השגה זו, שרשה בהבנת החכמה, שמבין דבר מתוך דבר."
+        },
+        {
+          "t": 366.09,
+          "text": "So, in other words, what he's saying that בינה שב חכמה שבבינה the שורש of חכמה שבבינה is in בינה שבחכמה."
+        },
+        {
+          "t": 377.24,
+          "text": "Right."
+        },
+        {
+          "t": 378.3,
+          "text": "רק שזה בהעלם מקור השכל וכולי ודי למבין."
+        },
+        {
+          "t": 381.68,
+          "text": "Except that one of them is in the hidden part of the שכל and the other one is in the revealed part of the שכל."
+        },
+        {
+          "t": 389.12,
+          "text": "ודי למבין."
+        },
+        {
+          "t": 389.84,
+          "text": "Now we're starting a new thing, but it's very far."
+        },
+        {
+          "t": 392.47,
+          "text": "I'm going to go till the next ודי למבין and then we're going to stop."
+        }
+      ]
+    },
+    {
+      "source": "016",
+      "lineId": "vrsgqwdc",
+      "segment": 34,
+      "startSeconds": 396.22,
+      "endSeconds": 403.24,
+      "confidence": 0.58,
+      "sentences": [
+        {
+          "t": 396.22,
+          "text": "ונמצא סדר המדריגות כן."
+        },
+        {
+          "t": 398.66,
+          "text": "Now he's going to tell you what is התבוננות."
+        },
+        {
+          "t": 401.1,
+          "text": "How do you do התבוננות?"
+        },
+        {
+          "t": 402.36,
+          "text": "First of all,"
+        }
+      ]
+    },
+    {
+      "source": "016",
+      "lineId": "ykpa7sqa",
+      "segment": 34,
+      "startSeconds": 403.24,
+      "endSeconds": 428.8,
+      "confidence": 0.848,
+      "sentences": [
+        {
+          "t": 403.24,
+          "text": "בחינת עיון הנ\"ל, you start off with בינה שבבינה."
+        },
+        {
+          "t": 407.18,
+          "text": "לעמוד על בוריה, to go and and through the analysis of all the separate parts."
+        },
+        {
+          "t": 412.42,
+          "text": "And that's called נקרא בינה שבבינה להבחין תכלית ההבחנה בפנימיות וחיצוניות, to examine to the utmost of examination the inner and outer things of whatever it is that you're examining."
+        }
+      ]
+    },
+    {
+      "source": "016",
+      "lineId": "fuudukmx",
+      "segment": 35,
+      "startSeconds": 428.8,
+      "endSeconds": 466.31,
+      "confidence": 0.871,
+      "sentences": [
+        {
+          "t": 428.8,
+          "text": "וגם מזה יוכל להיות בחינת האורך."
+        },
+        {
+          "t": 431.54,
+          "text": "And also from this can come the אורך of בינה, meaning to explain it down into משלים, להוריד ההשגה בלבושים רבים עד שתתגשם להשגת התינוק כנ\"ל."
+        },
+        {
+          "t": 444.3,
+          "text": "So that's בינה שבבינה is also the אורך of בינה."
+        },
+        {
+          "t": 448.11,
+          "text": "אבל לא בחינת האורך בהסברים שונים."
+        },
+        {
+          "t": 451.11,
+          "text": "הסברים שונים is already an innovation."
+        },
+        {
+          "t": 454.48,
+          "text": "לכל צד וכולי."
+        },
+        {
+          "t": 456.22,
+          "text": "That's That's not בינה שבבינה."
+        },
+        {
+          "t": 459.51,
+          "text": "It's דווקא the אורך."
+        },
+        {
+          "t": 461.61,
+          "text": "It's בינה שבבינה means you understand in this explanation, only in this אורך."
+        }
+      ]
+    },
+    {
+      "source": "016",
+      "lineId": "qipfrgb7",
+      "segment": 36,
+      "startSeconds": 466.31,
+      "endSeconds": 506.34,
+      "confidence": 0.876,
+      "sentences": [
+        {
+          "t": 466.31,
+          "text": "ואחר כך מבחינת The רוחב is the חכמה שבבינה."
+        },
+        {
+          "t": 469.45,
+          "text": "The רוחב is חכמה שבבינה."
+        },
+        {
+          "t": 471.25,
+          "text": "That's what it's gonna say now."
+        },
+        {
+          "t": 473.25,
+          "text": "ואחר כך מבחינת חכמה שבבינה להמציא חדשות, but בהשגה אחת כנ\"ל, but דווקא in this השגה."
+        },
+        {
+          "t": 480.82,
+          "text": "Right."
+        },
+        {
+          "t": 481.33,
+          "text": "הוא הנקרא רוחב."
+        },
+        {
+          "t": 482.52,
+          "text": "Means you're giving a new twist on the thing, you understand a new a new ענין."
+        },
+        {
+          "t": 487.72,
+          "text": "וממנה כח דבינה שבבינה עושה בחינת אורך."
+        },
+        {
+          "t": 491.38,
+          "text": "And and the the the way to that you come up with a new explanation is דווקא when you have the חכמה שבבינה, so then when you understand a new twist on a thing, then you can make a whole new אורך when you go"
+        },
+        {
+          "t": 503.24,
+          "text": "and analyze that twist."
+        },
+        {
+          "t": 505.5,
+          "text": "Right."
+        }
+      ]
+    },
+    {
+      "source": "016",
+      "lineId": "zfgfsjbt",
+      "segment": 37,
+      "startSeconds": 506.34,
+      "endSeconds": 1695.64,
+      "confidence": 0.517,
+      "sentences": [
+        {
+          "t": 506.34,
+          "text": "אבל שיעור האורך והרוחב דחכמה ובינה שבבינה הוא תלוי בבחינת עומק המושג, שנקרא כתר דבינה."
+        },
+        {
+          "t": 515.26,
+          "text": "In other words, like in in חסידות, like what we're learning here, the אורך and the רוחב can be fantastic."
+        },
+        {
+          "t": 526.84,
+          "text": "Why?"
+        },
+        {
+          "t": 527.42,
+          "text": "Because the עומק is fantastic."
+        },
+        {
+          "t": 529.42,
+          "text": "Right."
+        },
+        {
+          "t": 531.44,
+          "text": "In a thing like understanding how to play chess, there's a There's a big רוחב and אורך, but not like this, right, but more than checkers."
+        },
+        {
+          "t": 547.12,
+          "text": "Right."
+        },
+        {
+          "t": 547.77,
+          "text": "So that somebody Somebody who knows chess and somebody who knows checkers, everybody understand chess is a deeper game than checkers."
+        },
+        {
+          "t": 557.67,
+          "text": "Right."
+        },
+        {
+          "t": 558.38,
+          "text": "So since it's a deeper game, so there's all kinds of books written with strategies on chess and stuff like that."
+        },
+        {
+          "t": 565.6,
+          "text": "In checkers you can also write, but how much can you write already?"
+        },
+        {
+          "t": 568.64,
+          "text": "Not like chess."
+        },
+        {
+          "t": 570.31,
+          "text": "Why?"
+        },
+        {
+          "t": 570.78,
+          "text": "Because the עומק of chess is bigger, so therefore the רוחב and the אורך and רוחב it will be bigger."
+        },
+        {
+          "t": 576.77,
+          "text": "Right."
+        },
+        {
+          "t": 577.66,
+          "text": "And not only that, but vice versa also, that you don't get to the עומק without going through the length and the width."
+        },
+        {
+          "t": 589.04,
+          "text": "You don't just get to the עומק by concentrating on it."
+        },
+        {
+          "t": 591.8,
+          "text": "Right."
+        },
+        {
+          "t": 592.5,
+          "text": "You know, it's דווקא when you go through the length and the width, the more you go through the length and the width, so like for instance a doctor A doctor that learned for seven years obviously knows more about medicine than I did."
+        },
+        {
+          "t": 606.1,
+          "text": "He knows all the explanations, he knows where all the bones are, he knows where all the organs are."
+        },
+        {
+          "t": 610.74,
+          "text": "Like, sometimes, you know, sometimes I consult her about things in חסידות, like where it talks about the liver and stuff like that."
+        },
+        {
+          "t": 619.89,
+          "text": "Right."
+        },
+        {
+          "t": 620.42,
+          "text": "Or the קרומא דאוירא, how the brain is made, because she knows the actual physical makeup of these things."
+        },
+        {
+          "t": 629.36,
+          "text": "Right."
+        },
+        {
+          "t": 630.06,
+          "text": "You know, and she explains to me certain things, how the liver works, how the, you know."
+        },
+        {
+          "t": 634.37,
+          "text": "Why, because she's a doctor."
+        },
+        {
+          "t": 636.06,
+          "text": "She went through the length."
+        },
+        {
+          "t": 637.9,
+          "text": "Okay, now a doctor that knows not only occidental medicine, but might know also oriental medicine and various other homeopathic medicine and other kinds of medicine, he has a width, probably is a might be a better doctor because he has more of than somebody"
+        },
+        {
+          "t": 658.32,
+          "text": "who'll just concentrate, he only wants to know from one way of looking at medicine."
+        },
+        {
+          "t": 663.35,
+          "text": "He only knows one explanation, you know."
+        },
+        {
+          "t": 665.34,
+          "text": "Right."
+        },
+        {
+          "t": 665.92,
+          "text": "But because he has a bigger רחב, he might have a bigger עומק also."
+        },
+        {
+          "t": 670.18,
+          "text": "Right."
+        },
+        {
+          "t": 671.46,
+          "text": "So, it works both ways."
+        },
+        {
+          "t": 674,
+          "text": "According to the עומק המושג of a certain thing, that's how much length and width you're going to have, and vice versa."
+        },
+        {
+          "t": 680.06,
+          "text": "How much you can get to the depth is דווקא according to how much you went through the length and the width."
+        },
+        {
+          "t": 685.44,
+          "text": "Right."
+        },
+        {
+          "t": 686.48,
+          "text": "עומק המושג שנתכסה בבינה וכן נראה בחוש שלפי ערך העומק כך יהיה ערך הרחב והאורך בכל השגת דבר מה בדיעה ולמבין."
+        },
+        {
+          "t": 698.74,
+          "text": "And any kind of thing that דווקא according to how deep the subject matter is, that's how much length and width there will be in it."
+        },
+        {
+          "t": 705.58,
+          "text": "Right."
+        },
+        {
+          "t": 706.22,
+          "text": "And basically really, it's also the other way around."
+        },
+        {
+          "t": 709.86,
+          "text": "Which which he doesn't say here, but really the main point, the real main point of this chapter is not so much that the length and width is according to the depth, but that reaching into the depth is according to how much you went"
+        },
+        {
+          "t": 725.2,
+          "text": "through the length and the width, דווקא, דווקא, in other words, דווקא through the בינה שבבינה, and and really it's דווקא through the length, because you shouldn't make חידושים."
+        },
+        {
+          "t": 739.63,
+          "text": "Right."
+        },
+        {
+          "t": 740.18,
+          "text": "Right."
+        },
+        {
+          "t": 740.72,
+          "text": "In other words, what he said, he said it here in a way from up to down: from the length comes the width, and from the width, I mean, sorry, from the depth comes the width, and from the width comes the length."
+        },
+        {
+          "t": 752.99,
+          "text": "Right."
+        },
+        {
+          "t": 754.08,
+          "text": "That's in a teacher that's teaching it."
+        },
+        {
+          "t": 756.8,
+          "text": "Right, but we're really going from down up."
+        },
+        {
+          "t": 759.2,
+          "text": "From down to up, in terms of the student, the student should concentrate דווקא on the length."
+        },
+        {
+          "t": 766.32,
+          "text": "If he tries to concentrate on a width, you he'll not you won't get nothing."
+        },
+        {
+          "t": 769.89,
+          "text": "Right."
+        },
+        {
+          "t": 770.28,
+          "text": "He'll just jump around."
+        },
+        {
+          "t": 771.78,
+          "text": "Once he'll, you know, once, you know, like these guys, one day they learn physics, they want to be a physicist."
+        },
+        {
+          "t": 778.77,
+          "text": "The next day, \"Yeah, yeah, you know what?"
+        },
+        {
+          "t": 780.75,
+          "text": "I want to be a chemist.\""
+        },
+        {
+          "t": 782.06,
+          "text": "Right."
+        },
+        {
+          "t": 782.37,
+          "text": "The next day, \"Oh, you know what?"
+        },
+        {
+          "t": 784.19,
+          "text": "I decided I want to be in computers.\""
+        },
+        {
+          "t": 786.25,
+          "text": "The next day, \"No, I want to make airplanes.\""
+        },
+        {
+          "t": 791.22,
+          "text": "So Like what he says later on about the someone who's has a wide דעת, but he doesn't have Doesn't have a deep דעת."
+        },
+        {
+          "t": 800.78,
+          "text": "Doesn't have the deep דעת."
+        },
+        {
+          "t": 802.63,
+          "text": "And really really somebody like that really does deep דעת, cuz he's just jumping around."
+        },
+        {
+          "t": 807.89,
+          "text": "Okay, but really someone like that doesn't have a דעת at all."
+        },
+        {
+          "t": 810.76,
+          "text": "Right."
+        },
+        {
+          "t": 811.33,
+          "text": "It's a wide דעת, you know, it's all spread."
+        },
+        {
+          "t": 815.33,
+          "text": "Yeah, there's people, you know, they'll know they'll know about baseball, they'll know about football, they'll know a little bit about this, they'll know, but there's nothing that they're really into."
+        },
+        {
+          "t": 822.9,
+          "text": "Ultimately, they they really don't know anything too too much about anything."
+        },
+        {
+          "t": 826.9,
+          "text": "Yeah, because they don't really have a deep דעת into one particular thing that really turns them on."
+        },
+        {
+          "t": 832.01,
+          "text": "Right."
+        },
+        {
+          "t": 832.65,
+          "text": "You know."
+        },
+        {
+          "t": 833.65,
+          "text": "And and that's basically a thing of that's that's the thing of דעת."
+        },
+        {
+          "t": 840.69,
+          "text": "That's the basic thing that דעת has to hold you onto the length."
+        },
+        {
+          "t": 846.69,
+          "text": "In other words, the thing of the width, a width is multiple lengths."
+        },
+        {
+          "t": 853.1,
+          "text": "Right."
+        },
+        {
+          "t": 854.22,
+          "text": "And in order to learn, you have to do דווקא בינה שבבינה, which means a single length."
+        },
+        {
+          "t": 859.58,
+          "text": "And then the same thing with people who have learned various kabbalistic stuff, here it tells them one thing and they say, \"What do you mean?"
+        },
+        {
+          "t": 867.48,
+          "text": "חכמה is this?"
+        },
+        {
+          "t": 868.35,
+          "text": "It says חכמה is not this.\""
+        },
+        {
+          "t": 871.3,
+          "text": "Right."
+        },
+        {
+          "t": 872.58,
+          "text": "So that's but that's a different length."
+        },
+        {
+          "t": 876.88,
+          "text": "So, you have to either in order to learn this length, you have to forget about that length."
+        },
+        {
+          "t": 883.21,
+          "text": "Right."
+        },
+        {
+          "t": 883.8,
+          "text": "And if you try to put the two of them together, you're not ready for the width yet, Right."
+        },
+        {
+          "t": 888.68,
+          "text": "till you go through the length."
+        },
+        {
+          "t": 890.16,
+          "text": "When you go through the length of שער היחוד, then you'll be able to go and understand how חכמה does have letters and doesn't have letters."
+        },
+        {
+          "t": 896.57,
+          "text": "Right."
+        },
+        {
+          "t": 897.26,
+          "text": "And how חכמה is a נקודה and And yet it has dimensions."
+        },
+        {
+          "t": 901.58,
+          "text": "Right."
+        },
+        {
+          "t": 902.54,
+          "text": "Because it's talking about two the two different aspects."
+        },
+        {
+          "t": 908.24,
+          "text": "Two different lengths."
+        },
+        {
+          "t": 909.16,
+          "text": "There's two different explanations, and when you put the two of them together, it gives you a width."
+        },
+        {
+          "t": 914.18,
+          "text": "Right."
+        },
+        {
+          "t": 915.16,
+          "text": "You know, so that's the basic thing, you know, like the the order of the levels is that it goes דוקא from בינה שבבינה, דוקא you have to sit and learn a length and forget about the other length."
+        },
+        {
+          "t": 930.08,
+          "text": "You know?"
+        },
+        {
+          "t": 932.1,
+          "text": "And then from that comes חכמה שבבינה, that now you'll start seeing new things, but דוקא in this explanation."
+        },
+        {
+          "t": 941.86,
+          "text": "And then you'll go from that, it will come into the power of בינה שבחכמה, which is the externality of חכמה really, not the inner בינה שבחכמה, that you'll start seeing already you'll start reaching into the fact that the היולי of many different explanations."
+        },
+        {
+          "t": 961.68,
+          "text": "Right."
+        },
+        {
+          "t": 962.78,
+          "text": "And from that, it will activate the power of חכמה שבחכמה, and then that will activate from the power of בינה שבחכמה going up into the תעלומות חכמה, to understand a דבר מתוך דבר, to understand we're not talking about a river."
+        },
+        {
+          "t": 978.66,
+          "text": "Right."
+        },
+        {
+          "t": 980.36,
+          "text": "By the way, that whole thing of of like here we're talking about a river, it's not talking about a river, that's the ענין of בינה שבחכמה, to understand from from a river, from the משל to the נמשל."
+        },
+        {
+          "t": 991.48,
+          "text": "Right."
+        },
+        {
+          "t": 993.26,
+          "text": "And also to understand, in other words, that when we're saying a length, it's not the same length as a length of a river."
+        },
+        {
+          "t": 999.73,
+          "text": "Right."
+        },
+        {
+          "t": 1000.44,
+          "text": "Not a physical length."
+        },
+        {
+          "t": 1002.6,
+          "text": "You know, so the length down from up to down, when you go from down to up, that's to understand a thing from inside of a thing, along the length."
+        },
+        {
+          "t": 1019.07,
+          "text": "Right?"
+        },
+        {
+          "t": 1019.95,
+          "text": "Right."
+        },
+        {
+          "t": 1020.82,
+          "text": "And that's the thing that it says when when משיח will come, he will open up the river."
+        },
+        {
+          "t": 1028.48,
+          "text": "משה רבינו opened up the sea."
+        },
+        {
+          "t": 1030.96,
+          "text": "Right, right."
+        },
+        {
+          "t": 1031.61,
+          "text": "It says he'll open up the river."
+        },
+        {
+          "t": 1032.98,
+          "text": "And משיח will open up the river."
+        },
+        {
+          "t": 1035.03,
+          "text": "It'll be lengthwise."
+        },
+        {
+          "t": 1037.3,
+          "text": "Right."
+        },
+        {
+          "t": 1038.11,
+          "text": "What?"
+        },
+        {
+          "t": 1038.8,
+          "text": "It'll be lengthwise, not sideways."
+        },
+        {
+          "t": 1041.86,
+          "text": "Yeah, right."
+        },
+        {
+          "t": 1042.44,
+          "text": "That's the thing."
+        },
+        {
+          "t": 1043.28,
+          "text": "As a matter of fact, it says it בפירוש, he'll open up the river and it'll become seven נחלים."
+        },
+        {
+          "t": 1048.6,
+          "text": "Right."
+        },
+        {
+          "t": 1049.2,
+          "text": "He'll split it along the length, not along the width."
+        },
+        {
+          "t": 1051.9,
+          "text": "Right."
+        },
+        {
+          "t": 1052.98,
+          "text": "You know, so that's the thing."
+        },
+        {
+          "t": 1056.02,
+          "text": "When משיח will come, he'll open up the river, and then you'll go up the length into the depth."
+        },
+        {
+          "t": 1061.28,
+          "text": "When you go up the length of the river, you end up, you know, if you take a boat up a boat up the river, you end up by the At the source."
+        },
+        {
+          "t": 1070.84,
+          "text": "by by the spring."
+        },
+        {
+          "t": 1072.55,
+          "text": "And if you keep going, you'll end up in the aquifer."
+        },
+        {
+          "t": 1076.25,
+          "text": "Right."
+        },
+        {
+          "t": 1077.03,
+          "text": "You know?"
+        },
+        {
+          "t": 1078.62,
+          "text": "And that's the basic thing."
+        },
+        {
+          "t": 1079.72,
+          "text": "When he when he opens up the river, he'll open it up all the way to the aquifer."
+        },
+        {
+          "t": 1084.09,
+          "text": "Right."
+        },
+        {
+          "t": 1084.96,
+          "text": "So that the aquifer will be revealed, and that's what it says, that that the מעינות of the תהום will come out."
+        },
+        {
+          "t": 1093.58,
+          "text": "Right."
+        },
+        {
+          "t": 1094.02,
+          "text": "That's the מבול."
+        },
+        {
+          "t": 1095.24,
+          "text": "The מבול means that the that the hidden aquifer bursts out to the revealed."
+        },
+        {
+          "t": 1102.54,
+          "text": "That's how the מבול worked, right?"
+        },
+        {
+          "t": 1107.32,
+          "text": "Right."
+        },
+        {
+          "t": 1108.22,
+          "text": "And both with the lower תהומות and with the upper תהומות."
+        },
+        {
+          "t": 1111.45,
+          "text": "The upper תהומות is also hidden."
+        },
+        {
+          "t": 1113.78,
+          "text": "Right."
+        },
+        {
+          "t": 1114.72,
+          "text": "And he'll open up over there also, that the upper תהומות will burst, וארובות השמים נפתחו, will be opened up."
+        },
+        {
+          "t": 1121.14,
+          "text": "Right now it's an ארובה, and he'll open it up so it's totally open, and everything's coming through with a, not through an ארובה, but like you know, like if like, you know, if you have a ceiling with a little hole in it, and"
+        },
+        {
+          "t": 1133.26,
+          "text": "then the whole ceiling comes down."
+        },
+        {
+          "t": 1134.7,
+          "text": "Right."
+        },
+        {
+          "t": 1135.22,
+          "text": "Like if the whole ceiling breaks down and the whole water that's on top of it just floods everything."
+        },
+        {
+          "t": 1141.57,
+          "text": "Right."
+        },
+        {
+          "t": 1142.11,
+          "text": "You know?"
+        },
+        {
+          "t": 1147.1,
+          "text": "So that's that's what we're going to expect very soon."
+        },
+        {
+          "t": 1152.68,
+          "text": "Okay, I'm going the the May I ask you what why does he mention ע״ב דס״ג and ס״ג דע״ב?"
+        },
+        {
+          "t": 1159.91,
+          "text": "Why does he mention ע״ב דס״ג and ס״ג דע״ב?"
+        },
+        {
+          "t": 1162.61,
+          "text": "Those are the numerical numbers in in in general, he mentions a lot of times the שם מ״ה and stuff like that."
+        },
+        {
+          "t": 1170.88,
+          "text": "I think part of it is I mean, if you wouldn't have mentioned that, you would have had the exact same explanation."
+        },
+        {
+          "t": 1179.23,
+          "text": "You would."
+        },
+        {
+          "t": 1180.02,
+          "text": "You're a novice."
+        },
+        {
+          "t": 1182.6,
+          "text": "But later on, in terms of That's why I'm asking you."
+        },
+        {
+          "t": 1185.54,
+          "text": "In terms of the יוד, like later on, he says the יוד of the ס״ג, also over there."
+        },
+        {
+          "t": 1189.66,
+          "text": "If you just skip that whole thing, then then the best thing."
+        },
+        {
+          "t": 1192.08,
+          "text": "If you don't skip the whole thing, you'll you'll just be stuck with it and you won't understand nothing."
+        },
+        {
+          "t": 1197.1,
+          "text": "When he gets to chapter 10 and stuff like that."
+        },
+        {
+          "t": 1199.24,
+          "text": "That it says the, he says the יוד of the ס״ג at the רשימו or chapter I don't remember which chapter."
+        },
+        {
+          "t": 1204.19,
+          "text": "That's 12."
+        },
+        {
+          "t": 1204.52,
+          "text": "The רשימו, maybe chapter 12."
+        },
+        {
+          "t": 1206.25,
+          "text": "That's ואו, the יוד of Yeah, the יוד of the ס״ג."
+        },
+        {
+          "t": 1208.66,
+          "text": "Right, well that's why I'm asking you how come he's mentioning ע״ב דס״ג and ס״ג דע״ב over here."
+        },
+        {
+          "t": 1213.36,
+          "text": "Because this was in his days it was written for people who were kabbalists."
+        },
+        {
+          "t": 1218.02,
+          "text": "Right, and also later on, you have a whole Not only that, later on you'll you'll also have something to do with it, like later on we looked into what is the יוד of the ס״ג, and now we can start understanding what it's talking"
+        },
+        {
+          "t": 1233.53,
+          "text": "about."
+        },
+        {
+          "t": 1234.14,
+          "text": "Not only that, really the whole thing of the שמות, what it explains later, how this שם יוד ק-י ואו ק-י goes into into its various, you know, ע״ב, ס״ג, מ״ה, ב״ן, I mean, right now we have a very vague understanding of what each"
+        },
+        {
+          "t": 1250.52,
+          "text": "letter means in it and stuff like that."
+        },
+        {
+          "t": 1252.16,
+          "text": "We just have the general thing of what a name is and stuff like that, but later on, we're going to understand what why he's why he said it."
+        },
+        {
+          "t": 1261.19,
+          "text": "Right."
+        },
+        {
+          "t": 1261.84,
+          "text": "There's a reason, it's not that for nothing."
+        },
+        {
+          "t": 1264.6,
+          "text": "I'm sure there's a, I'm I'm it's not like that."
+        },
+        {
+          "t": 1267.23,
+          "text": "It's not for nothing."
+        },
+        {
+          "t": 1268.39,
+          "text": "Obviously it's not for nothing, that's why I asked why it's there."
+        },
+        {
+          "t": 1272,
+          "text": "It's there for later."
+        },
+        {
+          "t": 1274.76,
+          "text": "Right now right now, the way we're understanding it, it's it's enough to understand חכמה of בינה and בינה of חכמה."
+        },
+        {
+          "t": 1283.24,
+          "text": "Right."
+        },
+        {
+          "t": 1284.14,
+          "text": "But how the whole thing works later on, and and by the way, this is why we want so much to turn everybody else onto this, because we're like on a you know, like a 007 thing, actually since we're in the sixth millennium we're"
+        },
+        {
+          "t": 1301.39,
+          "text": "a 006 thing, actually, that that we're like on a need-to-know basis."
+        },
+        {
+          "t": 1310.28,
+          "text": "This was also the thing by the נביאים, it says that you know when when the when the אויבערשטער was mad at the Jews, so משה רבינו didn't get נבואה, and he he didn't get he didn't get it either."
+        },
+        {
+          "t": 1324.32,
+          "text": "Right."
+        },
+        {
+          "t": 1325.18,
+          "text": "And and when we get these other people to learn and they start asking this question, we're going to have to know the answer, and at that point we'll know the answer."
+        },
+        {
+          "t": 1338.28,
+          "text": "Also at that point, we'll be able to sit in our in our retreat in the Catskills or wherever, you know, on the Golan Heights or whatever, you know, with a whole ישיבה, with all the books, and look it up in עץ חיים, what"
+        },
+        {
+          "t": 1352.44,
+          "text": "it says about the ע״ב of the ס״ג and the ס״ג of the ע״ב, and we'll know the exact letters, what the יוד of the ע״ב means, and what the you know, the יוד in the ואו means, you know, Right."
+        },
+        {
+          "t": 1366.45,
+          "text": "and why in why in ע״ב the ואו is spelled ואו יוד ואו, and in the in ס״ג is ואו אלף ואו, you know, Right."
+        },
+        {
+          "t": 1376.06,
+          "text": "stuff like that."
+        },
+        {
+          "t": 1377.73,
+          "text": "And then then then then we'll understand."
+        },
+        {
+          "t": 1382.94,
+          "text": "But right now basically the answer is that this book was written for kabbalists, and if you look if you if you look through the הלל פאריטשער, that's why I I mostly tell people not to learn the הלל פאריטשער, because הלל פאריטשער is really"
+        },
+        {
+          "t": 1401.31,
+          "text": "more complicated than this and it brings in a lot more kabbalistic things."
+        },
+        {
+          "t": 1405.9,
+          "text": "In a way הלל פאריטשער part of looks like part of what he is doing is that people had the same טענה on the מיטעלער רבי as they had on the רמב״ם, that he didn't seem to bring מקורות."
+        },
+        {
+          "t": 1419.6,
+          "text": "Huh?"
+        },
+        {
+          "t": 1419.84,
+          "text": "That where that where is he getting all this?"
+        },
+        {
+          "t": 1422.39,
+          "text": "Where is he getting all this from?"
+        },
+        {
+          "t": 1424.02,
+          "text": "You know, what's he where where is he coming up with this crazy stuff from?"
+        },
+        {
+          "t": 1428.02,
+          "text": "That's not what it says in עץ חיים."
+        },
+        {
+          "t": 1430.18,
+          "text": "Right."
+        },
+        {
+          "t": 1430.75,
+          "text": "You know, and in עץ חיים it says ע״ב of ס״ג, ס״ג of ע״ב, and stuff like that, and he's talking about basically something that you can apply to building cars and bicycles."
+        },
+        {
+          "t": 1444.48,
+          "text": "Right."
+        },
+        {
+          "t": 1445.08,
+          "text": "You know, what does what does stuff from עץ חיים have to do with building cars or bicycles?"
+        },
+        {
+          "t": 1449.59,
+          "text": "Hey, told you that's the ע״ב of the ס״ג and the ס״ג of the ע״ב, you know, and then in in in in הלל פאריטשער, a lot of it is apologetics for, not exactly apologetics, you know, like showing how this really comes from קבלה."
+        },
+        {
+          "t": 1463.37,
+          "text": "Right."
+        },
+        {
+          "t": 1464.22,
+          "text": "But in order to do that, you have to know the קבלה."
+        },
+        {
+          "t": 1468.67,
+          "text": "Right."
+        },
+        {
+          "t": 1471.55,
+          "text": "You know."
+        },
+        {
+          "t": 1476.08,
+          "text": "I mean, right now at the level that we're holding, I think basically that's that's the best explanation, just that, you know, he he's he wrote this book this book is like a ספר תורה."
+        },
+        {
+          "t": 1493.82,
+          "text": "It's it's a a story for little kids, You know, יוסף and his brothers, so therefore you should treat your brother nicely, and it's on a level of a big rabbi in הלכה, and it's on a level of the biggest kabbalist, the אריז״ל."
+        },
+        {
+          "t": 1512.63,
+          "text": "Right."
+        },
+        {
+          "t": 1513.68,
+          "text": "The story of יוסף is on all those different levels."
+        },
+        {
+          "t": 1517.66,
+          "text": "And this book also, it's on a level that even a brand new guy who doesn't know from nothing, he can sit with this and learn it."
+        },
+        {
+          "t": 1525.11,
+          "text": "And even the the biggest, you know, like the the רבי, the רבי הרש״ב was proud of, what was he so proud of the פריערדיקער רבי for?"
+        },
+        {
+          "t": 1535.54,
+          "text": "You'd think there should be many things he would be proud of him for."
+        },
+        {
+          "t": 1538.18,
+          "text": "The thing that he was the most proud of him for was that he read the שער היחוד without his father telling him to, and wrote a פירוש on it."
+        },
+        {
+          "t": 1547.38,
+          "text": "Right."
+        },
+        {
+          "t": 1548.42,
+          "text": "This is the the פריערדיקער רבי, and the רבי הרש״ב was so proud of it."
+        },
+        {
+          "t": 1554.33,
+          "text": "Right."
+        },
+        {
+          "t": 1554.92,
+          "text": "I don't think that the way the פריערדיקער רבי and רבי הרש״ב read this book was the same way that we were reading the book, you know."
+        },
+        {
+          "t": 1562.87,
+          "text": "Right."
+        },
+        {
+          "t": 1563.72,
+          "text": "So, this book is written on every level."
+        },
+        {
+          "t": 1567.66,
+          "text": "As a matter of fact, like like when the אויבערשטער, you know, decided that he's going to be the אויבערשטער, and he wanted to know how to be the אויבערשטער, he had to read this book to start to find out how who who he"
+        },
+        {
+          "t": 1581.74,
+          "text": "is, you know?"
+        },
+        {
+          "t": 1585.38,
+          "text": "Another story with with Jackie Mason."
+        },
+        {
+          "t": 1589.02,
+          "text": "No."
+        },
+        {
+          "t": 1589.84,
+          "text": "You know Jackie Mason goes, he said, you know, I went to a psychologist."
+        },
+        {
+          "t": 1594.62,
+          "text": "So so the psychologist told me I told him, so what am I doing here?"
+        },
+        {
+          "t": 1601.42,
+          "text": "He says, well, I'm going to help you find yourself."
+        },
+        {
+          "t": 1603.81,
+          "text": "He says, what do you mean find myself?"
+        },
+        {
+          "t": 1605.48,
+          "text": "I'm right over here!"
+        },
+        {
+          "t": 1606.46,
+          "text": "I know where I am!"
+        },
+        {
+          "t": 1607.3,
+          "text": "He says, no, I'm going to help you find out who I'm going to help you find out who you are."
+        },
+        {
+          "t": 1612.9,
+          "text": "He says, what do you mean?"
+        },
+        {
+          "t": 1614.06,
+          "text": "You mean I'm not me?"
+        },
+        {
+          "t": 1615.12,
+          "text": "I thought I was me."
+        },
+        {
+          "t": 1617.18,
+          "text": "So, maybe, you know, maybe maybe really you're me and I'm you, so you give me the 50 bucks!"
+        },
+        {
+          "t": 1623.91,
+          "text": "Right."
+        },
+        {
+          "t": 1624.95,
+          "text": "So, you know, when the אויבערשטער, you know, had an identity crisis, and he wanted to find out who he is, so all he had to do is read the שער היחוד, you know, this is written even for the אויבערשטער."
+        },
+        {
+          "t": 1641.11,
+          "text": "Right."
+        },
+        {
+          "t": 1641.64,
+          "text": "It's ממש written, I mean, I know it sounds kind of funny, what do you mean written for the אויבערשטער, but really, it's written even for the אויבערשטער."
+        },
+        {
+          "t": 1649.04,
+          "text": "And that's why the אויבערשטער wanted the world, because he wanted to get the explanation דווקא from idiots, the way that we understand it."
+        },
+        {
+          "t": 1660.54,
+          "text": "Right."
+        },
+        {
+          "t": 1661.24,
+          "text": "And when he when when when he reads, when when he sits here, like today, I mean, there's a you know, you had a three-way conference call, it was actually a four-way conference call."
+        },
+        {
+          "t": 1673.1,
+          "text": "One of the one of the, you know, one of the conference calls was arranged for the אויבערשטער, and he was listening in on it, also."
+        },
+        {
+          "t": 1680.79,
+          "text": "Mhm."
+        },
+        {
+          "t": 1681.48,
+          "text": "And he found out a whole bunch of things."
+        },
+        {
+          "t": 1683.22,
+          "text": "He says, oh, so that's who I am, maybe you'll give me the 50 bucks."
+        },
+        {
+          "t": 1687.24,
+          "text": "Right."
+        },
+        {
+          "t": 1687.9,
+          "text": "Okay, thank you very much, יוסי."
+        },
+        {
+          "t": 1691.33,
+          "text": "Okay, זיי געזונט."
+        },
+        {
+          "t": 1693.04,
+          "text": "Bye."
+        },
+        {
+          "t": 1693.51,
+          "text": "Be well."
+        }
+      ]
+    },
+    {
+      "source": "017",
+      "lineId": "inf44erc",
+      "segment": 38,
+      "startSeconds": 31.51,
+      "endSeconds": 141.8,
+      "confidence": 0.913,
+      "sentences": [
+        {
+          "t": 31.51,
+          "text": "ולפי זה, so according to what we said before, מה שקורים העלם עמקות הדעת, אין זה גופה של העמקה."
+        },
+        {
+          "t": 42.94,
+          "text": "That's not the actual essence of the depth."
+        },
+        {
+          "t": 46.86,
+          "text": "It's not the actual body of the depth."
+        },
+        {
+          "t": 50.41,
+          "text": "It's just the עמקות הדעת is the deepening, but not the actual depth."
+        },
+        {
+          "t": 59.92,
+          "text": "Like for instance, in a in a you know, when you go to you take a deep dive off a board."
+        },
+        {
+          "t": 67.01,
+          "text": "The עמקות הדעת is like the dive."
+        },
+        {
+          "t": 69.48,
+          "text": "The actual depth is the depth of the actual pool."
+        },
+        {
+          "t": 72.49,
+          "text": "Right."
+        },
+        {
+          "t": 73.4,
+          "text": "You know, that's where you're going to."
+        },
+        {
+          "t": 76,
+          "text": "So like for instance, let's say there's, you know, those people, you know, when you go to Hawaii, the the the you know, they throw money off the boat and then those guys jump off their little boats and they go down to get it,"
+        },
+        {
+          "t": 92.41,
+          "text": "you know?"
+        },
+        {
+          "t": 93.29,
+          "text": "Right."
+        },
+        {
+          "t": 93.84,
+          "text": "So the depth is the floor of the ocean."
+        },
+        {
+          "t": 98.66,
+          "text": "The עמקות הדעת is the dive that gets them there."
+        },
+        {
+          "t": 102.52,
+          "text": "So basically עמקות הדעת is not the actual depth, it's the thing that gets you to the depth."
+        },
+        {
+          "t": 107.76,
+          "text": "כמו עומק המושג דבינה, like for instance the עומק המושג דבינה, which means the actual depth of the actual concept, שלזה לא יהיה שייכות לדעת."
+        },
+        {
+          "t": 117.65,
+          "text": "This has nothing to do with concentration."
+        },
+        {
+          "t": 120.73,
+          "text": "Like for instance, to understand the depth of the thing of how computers work, the the when you go to school and learn, you have to concentrate in order to to get that."
+        },
+        {
+          "t": 132.46,
+          "text": "But really that has nothing to do with concentration."
+        },
+        {
+          "t": 136.01,
+          "text": "The actual the actual concept of the עומק המושג, that has nothing to do with concentration."
+        }
+      ]
+    },
+    {
+      "source": "017",
+      "lineId": "v676iwfg",
+      "segment": 39,
+      "startSeconds": 141.8,
+      "endSeconds": 510.78,
+      "confidence": 0.814,
+      "sentences": [
+        {
+          "t": 141.8,
+          "text": "אך הדעת, what is דעת, הוא בחינת התקשרות והרגשה במושג ביותר."
+        },
+        {
+          "t": 146.48,
+          "text": "Concentration in other words."
+        },
+        {
+          "t": 148.79,
+          "text": "To to connect your feeling into the מושג very much."
+        },
+        {
+          "t": 153.56,
+          "text": "והוא שמביא לידי בחינת העמקה במושג אחר בחינת העיון הנ״ל."
+        },
+        {
+          "t": 159.48,
+          "text": "And this is what brings a man to the to going deeply into the מושג after the analysis."
+        },
+        {
+          "t": 164.86,
+          "text": "Means once you know all the פרטים, that's still not enough."
+        },
+        {
+          "t": 168.55,
+          "text": "You know, if the בינה should be a בינה without דעת, if you don't concentrate on it, you you know, like there's two kids sitting in a classroom and one is getting A's and one is getting D's."
+        },
+        {
+          "t": 179.12,
+          "text": "They both hear exactly the same explanation."
+        },
+        {
+          "t": 182.06,
+          "text": "The teacher gave the same explanation to both of them."
+        },
+        {
+          "t": 184.32,
+          "text": "But since in one there was דעת and in the other one there was no דעת, so one of them got to the עומק המושג and one of them didn't get to the עומק המושג."
+        },
+        {
+          "t": 191.63,
+          "text": "But nonetheless, it's only after the עיון."
+        },
+        {
+          "t": 195.42,
+          "text": "Meaning that if one kid will concentrate real hard, will just say, \"Well, you know, since I concentrate so hard, so I'll just stay home and concentrate.\""
+        },
+        {
+          "t": 203.72,
+          "text": "Right."
+        },
+        {
+          "t": 204.04,
+          "text": "That's that's not going to work, because he didn't get the explanation."
+        },
+        {
+          "t": 208.78,
+          "text": "שהוא רק כמו בחינת כלי לעומק ההשגה כנ״ל."
+        },
+        {
+          "t": 213.19,
+          "text": "In other words, the the the דעת is only a כלי to get deeply into the השגה, but you have to have the השגה."
+        },
+        {
+          "t": 221.99,
+          "text": "וגם בדעת יש אורך ורוחב ועומק, כמו יש מי שדעתו קצרה, like there's somebody who has a very short דעת, means like the attention span."
+        },
+        {
+          "t": 232.74,
+          "text": "So one of the things in terms of learning חסידות is the attention span, a long דעת and a short דעת."
+        },
+        {
+          "t": 241.12,
+          "text": "And in ע״ב, for instance, like like in in you know, both of these books are an המשך, you know?"
+        },
+        {
+          "t": 250.61,
+          "text": "They call it an המשך."
+        },
+        {
+          "t": 251.5,
+          "text": "What does it mean an המשך?"
+        },
+        {
+          "t": 252.38,
+          "text": "That really in order to do the proper התבוננות of the דעת after you have the the עומק המושג in your brain, you have to be able to hold the entire book in your head."
+        },
+        {
+          "t": 264.04,
+          "text": "Exactly."
+        },
+        {
+          "t": 265.33,
+          "text": "At one shot."
+        },
+        {
+          "t": 267.48,
+          "text": "Or even like for instance, now let's say not the entire book, but at least like right now, you have to hold a certain amount of it, like chapter one, or like right now, the ענין, this little paragraph that we're learning about דעת, in"
+        },
+        {
+          "t": 281.86,
+          "text": "order to think about it, you have to be able to hold it, this whole thing in your head at one shot."
+        },
+        {
+          "t": 287.49,
+          "text": "Right."
+        },
+        {
+          "t": 288.07,
+          "text": "That's that's one thing of of the of the the length of דעת."
+        },
+        {
+          "t": 292.73,
+          "text": "And and and the other thing of it is like how long can you concentrate?"
+        },
+        {
+          "t": 298.74,
+          "text": "In other words, like If if you have a an attention span of three seconds, I won't be able to learn with you."
+        },
+        {
+          "t": 308.81,
+          "text": "It's not going to help."
+        },
+        {
+          "t": 311.3,
+          "text": "After three seconds, you're going to lose the attention span and be somewhere else."
+        },
+        {
+          "t": 315.72,
+          "text": "So like for instance, over here in in in in terms of our classes, you have to have an attention span of like somewhere between a half an hour to an hour for us to have these classes, right?"
+        },
+        {
+          "t": 331.7,
+          "text": "Right."
+        },
+        {
+          "t": 332.56,
+          "text": "You have to like have a דעת to leave everything and put your whole דעת into just the class and and and take everything else away for about a half an hour to an hour."
+        },
+        {
+          "t": 343.68,
+          "text": "Now, they they did they did researches, the maximum attention span of a an American is about 10 to 15 minutes."
+        },
+        {
+          "t": 355.76,
+          "text": "They did it for the TVs, you know, that's why they put the commercials, you know, they after about 10 minutes, even if it's a very interesting program, people tend to lose their attention span."
+        },
+        {
+          "t": 366.78,
+          "text": "Right."
+        },
+        {
+          "t": 367.5,
+          "text": "And also in movies, if if you keep a certain scene going for too long, you have to switch to another scene, otherwise you're going to lose your audience."
+        },
+        {
+          "t": 377.16,
+          "text": "Right."
+        },
+        {
+          "t": 377.73,
+          "text": "You know, like those Indian movies?"
+        },
+        {
+          "t": 380.99,
+          "text": "The Indian movies are very long."
+        },
+        {
+          "t": 384.1,
+          "text": "Those long, long, drawn You know what I'm talking about?"
+        },
+        {
+          "t": 388.04,
+          "text": "Yeah."
+        },
+        {
+          "t": 388.33,
+          "text": "Those long, long, drawn Indian movies, an American won't be able to sit through it."
+        },
+        {
+          "t": 393.15,
+          "text": "Or like some of these artsy Scandinavian movies and stuff like that, you know?"
+        },
+        {
+          "t": 399.92,
+          "text": "Right."
+        },
+        {
+          "t": 400.9,
+          "text": "So that a דעת קצרה means, first of all, that it's a short attention span and also the power of holding on to a certain idea in your mind, how long you can hold on to, so that for instance I don't know if you've"
+        },
+        {
+          "t": 415.48,
+          "text": "noticed, when you go through עין בית, you go through, I mean, the a a certain particular idea can be like 50, 60, 70, 80, 100 chapters."
+        },
+        {
+          "t": 427.21,
+          "text": "Right."
+        },
+        {
+          "t": 427.97,
+          "text": "And you're going through it, and you're learning something, and and and after a while, you you don't even know what he's talking about anymore, because you can only hold about maybe Okay, you're already holding 10 chapters in your mind, your mind is already"
+        },
+        {
+          "t": 442.86,
+          "text": "blowing up."
+        },
+        {
+          "t": 443.77,
+          "text": "You know?"
+        },
+        {
+          "t": 445.21,
+          "text": "Right, you have to have an an an incredible דעת."
+        },
+        {
+          "t": 452.58,
+          "text": "An incredible length of דעת."
+        },
+        {
+          "t": 454.3,
+          "text": "A length of דעת."
+        },
+        {
+          "t": 455.15,
+          "text": "A length of דעת."
+        },
+        {
+          "t": 456.24,
+          "text": "You have to be able to keep your concentration on a fantastically long idea."
+        },
+        {
+          "t": 463.36,
+          "text": "Right."
+        },
+        {
+          "t": 465.52,
+          "text": "Which sometimes over there, I mean, you know, I've noticed that some of the ideas are like 30 to 100 chapters long, but really it's even longer."
+        },
+        {
+          "t": 474.56,
+          "text": "It's really the whole thing is one idea."
+        },
+        {
+          "t": 476.86,
+          "text": "Right."
+        },
+        {
+          "t": 477.76,
+          "text": "And and and we see that most of us I I mean, I know I have a longer דעת than than most of these people because of because I have the דעת from here."
+        },
+        {
+          "t": 488.39,
+          "text": "Right."
+        },
+        {
+          "t": 489.21,
+          "text": "And and I can you know, sometimes I I I can't even hold on to like his part of an idea, which is like 30 chapters long."
+        },
+        {
+          "t": 497.52,
+          "text": "I go through the thing and I after a while I have no idea what he's talking."
+        },
+        {
+          "t": 500.68,
+          "text": "I forget what he was talking about before."
+        },
+        {
+          "t": 503.34,
+          "text": "Right."
+        },
+        {
+          "t": 504.03,
+          "text": "I can't hold a whole thing in my mind because my דעת is not that long."
+        },
+        {
+          "t": 509.74,
+          "text": "Right."
+        }
+      ]
+    },
+    {
+      "source": "017",
+      "lineId": "5663nwe6",
+      "segment": 40,
+      "startSeconds": 510.78,
+      "endSeconds": 710.95,
+      "confidence": 0.576,
+      "sentences": [
+        {
+          "t": 510.78,
+          "text": "ויש שדעתו ארוכה, so there's some people that have a much longer attention span, they can sit with one thing for a much longer time."
+        },
+        {
+          "t": 518.6,
+          "text": "And in general, kids, you notice kids have a very short attention span."
+        },
+        {
+          "t": 522.56,
+          "text": "Right."
+        },
+        {
+          "t": 523.2,
+          "text": "ויש שדעתו רחבה ולא ארוכה, like we were talking before, that he knows a little bit of everything, but he can't stay with one thing for a long time."
+        },
+        {
+          "t": 534.16,
+          "text": "ודעת חזק, or else a very strong דעת, which means like a strong he's very opinionated."
+        },
+        {
+          "t": 543.7,
+          "text": "ודעת קל, meaning that it's very easy to change his opinion."
+        },
+        {
+          "t": 548.76,
+          "text": "כנשים שדעתן קלות, in in women, it doesn't mean that there's some women who have a stronger דעת than certain men."
+        },
+        {
+          "t": 556.32,
+          "text": "But in general, in general, like like in general what you'll find out is that like, for instance, like like let's say a פרום woman like your wife, I would say when you say what do you mean that I have a דעת קלה, I"
+        },
+        {
+          "t": 569.82,
+          "text": "can show you most men don't have as as as heavy of a דעת as she does."
+        },
+        {
+          "t": 575.46,
+          "text": "Right."
+        },
+        {
+          "t": 576.62,
+          "text": "But we're talking in terms of people who are on the same level."
+        },
+        {
+          "t": 580.62,
+          "text": "That's because she's a פרום lady who's into learning and stuff like that."
+        },
+        {
+          "t": 585.08,
+          "text": "You know?"
+        },
+        {
+          "t": 586.73,
+          "text": "Right."
+        },
+        {
+          "t": 587.78,
+          "text": "Right."
+        },
+        {
+          "t": 588.84,
+          "text": "But so she has a a not not such a a דעת קלה like let's say some guy who's into like rock and roll and stuff stuff like that."
+        },
+        {
+          "t": 600.62,
+          "text": "Right."
+        },
+        {
+          "t": 600.93,
+          "text": "But if you look at that guy's girlfriend, you'll see that her דעת is even lighter than his, you know."
+        },
+        {
+          "t": 610.93,
+          "text": "Right."
+        },
+        {
+          "t": 612.17,
+          "text": "Or like if you'll see like some רביצין, the wife of some big, one of the גדולים or something like that, you say, \"What do you mean?"
+        },
+        {
+          "t": 619.86,
+          "text": "Look at her."
+        },
+        {
+          "t": 620.4,
+          "text": "She has a bigger דעת than you did.\""
+        },
+        {
+          "t": 622.16,
+          "text": "He says, \"Yeah, but if you look at her in comparison to her husband, it might not be like that."
+        },
+        {
+          "t": 626.74,
+          "text": "It's according to the level.\""
+        },
+        {
+          "t": 629.88,
+          "text": "So, what does it mean דעת קל, שדעתן קלה, it means ובלי עומק הדעת."
+        },
+        {
+          "t": 636.22,
+          "text": "So, since she doesn't have the עומק הדעת very deeply into the thing, ממילא דעתם קצרה, like a little kid."
+        },
+        {
+          "t": 642.68,
+          "text": "Right."
+        },
+        {
+          "t": 642.98,
+          "text": "And since he's not very deeply into the thing, so therefore, his דעת is also short."
+        },
+        {
+          "t": 648.67,
+          "text": "And and it's the same thing like we said about בינה, that the depth, it brings about the the width and the length."
+        },
+        {
+          "t": 656.41,
+          "text": "That you you notice if somebody is really deep into a certain thing, like like I I knew this kid that had he looked like he had no דעת at all."
+        },
+        {
+          "t": 669.2,
+          "text": "Right."
+        },
+        {
+          "t": 669.88,
+          "text": "He had no attention span for nothing, in school he had no attention span for nothing, but he loved hockey."
+        },
+        {
+          "t": 677.96,
+          "text": "Right."
+        },
+        {
+          "t": 679.08,
+          "text": "So, he had these books on hockey with whole pages of statistics."
+        },
+        {
+          "t": 682.94,
+          "text": "It looked like a whole mathematical book."
+        },
+        {
+          "t": 685.14,
+          "text": "And you see in mathematics, he was doing lousy."
+        },
+        {
+          "t": 688,
+          "text": "But when it was hockey, like the statistics of what this guy shot and how many points he scored, and he like he he had he could sit with it for hours."
+        },
+        {
+          "t": 697.72,
+          "text": "And you see all of a sudden, so you see that according to the עומק of the דעת that you have into something, that's the length will be become longer."
+        },
+        {
+          "t": 704.08,
+          "text": "He'll be able to have a much longer attention span."
+        },
+        {
+          "t": 709.31,
+          "text": "Right."
+        }
+      ]
+    },
+    {
+      "source": "017",
+      "lineId": "b4ghv6uq",
+      "segment": 41,
+      "startSeconds": 710.95,
+      "endSeconds": 749.35,
+      "confidence": 0.925,
+      "sentences": [
+        {
+          "t": 710.95,
+          "text": "והפרש זה בין קלי הדעת ועומקי הדעת, when people have a light דעת, and people who have a deep דעת, בין גדול לקטן, it's the same thing like a a older person and a younger person, ידוע שהתינוק שדעתו קלה, that say a תינוק has"
+        },
+        {
+          "t": 727.9,
+          "text": "a light דעת, היינו שאין בו כח המרגיש והתקשרות כלל לדבר זה שמבין או רוצה בו, רק בחיצוניות מעט, that he doesn't have such a strong, real feeling or התקשרות to this thing, only in a very external way, עד שיתבטל ויופח."
+        }
+      ]
+    },
+    {
+      "source": "017",
+      "lineId": "frjdgmr3",
+      "segment": 42,
+      "startSeconds": 749.35,
+      "endSeconds": 819.24,
+      "confidence": 0.759,
+      "sentences": [
+        {
+          "t": 749.35,
+          "text": "על כן, no, על כן יתבטל ויופח."
+        },
+        {
+          "t": 752.31,
+          "text": "That's that's why like a kid, he wants, he wants, he wants this toy, and you get him the toy, two seconds later he's already forgot about it."
+        },
+        {
+          "t": 762.19,
+          "text": "Right."
+        },
+        {
+          "t": 762.94,
+          "text": "Why?"
+        },
+        {
+          "t": 763.47,
+          "text": "He wanted it so much."
+        },
+        {
+          "t": 766.26,
+          "text": "Why?"
+        },
+        {
+          "t": 766.48,
+          "text": "Because the התקשרות was only in a very חיצוניות way."
+        },
+        {
+          "t": 769.17,
+          "text": "It was not really touching him in a inner level."
+        },
+        {
+          "t": 772.11,
+          "text": "Right."
+        },
+        {
+          "t": 772.82,
+          "text": "מה שאין כן הגדול שדעתו עמוקה בעסק דבר שמבין או רוצה בו, like a communist or something like that."
+        },
+        {
+          "t": 780.48,
+          "text": "Right."
+        },
+        {
+          "t": 781.14,
+          "text": "Right?"
+        },
+        {
+          "t": 781.81,
+          "text": "I mean, he's מקושר in it in a much more inner way."
+        },
+        {
+          "t": 786.52,
+          "text": "הנקרא עומק הדעת, which that's called עומק הדעת, the the connection to the thing, שממילא נמשך אורך הדעת ורוחב הדעת."
+        },
+        {
+          "t": 796.56,
+          "text": "Somebody is really into the thing deeply, so automatically he'll have the long attention span and he'll be able to hold long ideas in his head and also be able to have the רוחב of seeing it in many different ways."
+        },
+        {
+          "t": 811.16,
+          "text": "כנ״ל בבינה, like it said in בינה, that the that the אורך and the רוחב come from the length."
+        },
+        {
+          "t": 816.88,
+          "text": "The depth."
+        }
+      ]
+    },
+    {
+      "source": "017",
+      "lineId": "t3kfsj3c",
+      "segment": 43,
+      "startSeconds": 819.24,
+      "endSeconds": 1053.84,
+      "confidence": 0.858,
+      "sentences": [
+        {
+          "t": 819.24,
+          "text": "וסימן לעומק הדעת, the external סימן that somebody is concentrating, הוא אשר נראה כענין צמצום וקיבוץ כלי המוח לעצם עומק התקשרותו במושכל."
+        },
+        {
+          "t": 837.44,
+          "text": "It looks like he's קוועטשינג up his brain as far as how deeply he is connected to the מושכל."
+        },
+        {
+          "t": 846.12,
+          "text": "Right."
+        },
+        {
+          "t": 846.88,
+          "text": "Like Like Rabbi Raichik, עליו השלום, you know, when he דאוונט, you know that Rabbi Raichik had a long, sharp nose, right?"
+        },
+        {
+          "t": 855.24,
+          "text": "You know, I saw sometimes when he דאוונט, he would concentrate so hard that his nose would come out through the back of his טלית."
+        },
+        {
+          "t": 866.46,
+          "text": "You know what I'm talking about?"
+        },
+        {
+          "t": 867.61,
+          "text": "Yeah."
+        },
+        {
+          "t": 868,
+          "text": "That's That's this סימן that you קוועטש up your face, you know?"
+        },
+        {
+          "t": 873.76,
+          "text": "The סימן, as he קוועטשעס up his face, it almost looks like he's trying to קוועטש up his brain."
+        },
+        {
+          "t": 879.7,
+          "text": "That's the external סימן on it."
+        },
+        {
+          "t": 882.2,
+          "text": "בלשון אידיש, ער איז דערינען פארנומען, פארקוועטשט שטארק, he's really all taken up and all and all strongly פארקוועטשט, זייער, ביז עס איז זייער מצומצם, because he's very מצומצם, רק מיט תנועה אחת וסקירה אחת בלבד, in one movement and one one look."
+        },
+        {
+          "t": 903.99,
+          "text": "He's totally focused on one thing."
+        },
+        {
+          "t": 906.22,
+          "text": "He's totally focused on one thing, and the external thing of it is it looks like he's פארקוועטשינג his brain."
+        },
+        {
+          "t": 912.07,
+          "text": "Right."
+        },
+        {
+          "t": 912.6,
+          "text": "His whole face gets פארקוועטשט."
+        },
+        {
+          "t": 916.78,
+          "text": "שמזה דוקא בא עצם עומק ההשגה, that דוקא from this thing of getting totally פארקוועטשט into the one ענין, in other words, like for instance right now, even though we're we're like we said that the whole book is really one המשך, and you have"
+        },
+        {
+          "t": 934.54,
+          "text": "to hold to really do the עיון finally you have to hold the whole book in your head, Right."
+        },
+        {
+          "t": 939.36,
+          "text": "but right now we're totally פארקוועטשט only into the ענין of דעת."
+        },
+        {
+          "t": 944.35,
+          "text": "Right."
+        },
+        {
+          "t": 945.4,
+          "text": "You know, this here also, the book is always It's a funny thing."
+        },
+        {
+          "t": 948.16,
+          "text": "This book is always a משל on itself."
+        },
+        {
+          "t": 950.16,
+          "text": "You can always use the whatever whatever you're talking about, you can use it as a משל of what you're talking about."
+        },
+        {
+          "t": 956.18,
+          "text": "Right."
+        },
+        {
+          "t": 956.68,
+          "text": "So so like right now, we're totally פארקוועטשט about דעת."
+        },
+        {
+          "t": 961.76,
+          "text": "Like we're not talking about We're not thinking about מלכות of תבונה, or how the אותיות come out, לאה comes out, or what's the difference between חכמה and בינה, or how the כתרים are."
+        },
+        {
+          "t": 974.36,
+          "text": "Not only that, if we would think about it, it would detract from our העמקה into this."
+        },
+        {
+          "t": 979.76,
+          "text": "Right."
+        },
+        {
+          "t": 980.28,
+          "text": "If we would now start discussing all kinds of other things, like, you know, sometimes that's the whole thing of, you know, it says, \"A good student asks according to the ענין.\""
+        },
+        {
+          "t": 989.92,
+          "text": "Right."
+        },
+        {
+          "t": 990.78,
+          "text": "If now all of a sudden you start asking, \"Oh yeah, but what about מלכות of תבונה?\""
+        },
+        {
+          "t": 994.5,
+          "text": "say, \"What What are you talking about מלכות of תבונה?"
+        },
+        {
+          "t": 996.8,
+          "text": "We're talking about דעת.\""
+        },
+        {
+          "t": 998.08,
+          "text": "Say, \"Yeah, yeah, okay, but what about מלכות of תבונה, and what about the יו״ד of the ס״ג, and what about this and what about that?\""
+        },
+        {
+          "t": 1005.22,
+          "text": "it would actually detract and then you would learn nothing."
+        },
+        {
+          "t": 1008.5,
+          "text": "Right."
+        },
+        {
+          "t": 1008.97,
+          "text": "You know, and the whole thing that brings about the העמקה into the מושכל, means not the העמקה of the דעת, to to understand the real עומק המושג that we're trying to learn over here, is because we're פארקוועטשינג ourselves דוקא into this ענין and"
+        },
+        {
+          "t": 1029.3,
+          "text": "we're leaving aside all the other ענינים."
+        },
+        {
+          "t": 1033.16,
+          "text": "Right."
+        },
+        {
+          "t": 1034.92,
+          "text": "And דוקא through this בא עצם עומק ההשגה על ידי העיון דבינה, that the עיון of בינה means to cut it up into little pieces."
+        },
+        {
+          "t": 1046.88,
+          "text": "But now we are only going into the one piece."
+        },
+        {
+          "t": 1050.63,
+          "text": "Right."
+        },
+        {
+          "t": 1051.43,
+          "text": "Okay, but the עיון הבינה"
+        }
+      ]
+    },
+    {
+      "source": "017",
+      "lineId": "7jdikglb",
+      "segment": 44,
+      "startSeconds": 1053.84,
+      "endSeconds": 1120.2,
+      "confidence": 0.883,
+      "sentences": [
+        {
+          "t": 1053.84,
+          "text": "שהוא היפך הצמצום והקיבוץ, what does it mean?"
+        },
+        {
+          "t": 1058.18,
+          "text": "שהרי עיון דבינה, גם שעומד ומעמיק בצמצום וקיבוץ בתחילתו, in the beginning he talks about one point, אבל מיד מתפשט לרחב הרבה בכל פרטי חלוקיו, the מלכות of תבונה, and the אותיות, and the and חיצון ופנימה, and, you know, Right."
+        },
+        {
+          "t": 1077.37,
+          "text": "the מלאכים and the That's the whole thing."
+        },
+        {
+          "t": 1080.84,
+          "text": "The whole thing of התבוננות means to cut it up into all its sections and all its parts, and this is exactly the opposite, that we're not going to go into everything."
+        },
+        {
+          "t": 1089.65,
+          "text": "We're only going to go into דעת, nothing else."
+        },
+        {
+          "t": 1094.18,
+          "text": "And if like let's say this was a class with students and I was a teacher, if somebody would bring up a question about מלכות of תבונה now, I would tell him, \"Hey, what are you talking?"
+        },
+        {
+          "t": 1105.22,
+          "text": "Why are you interrupting the class?\""
+        },
+        {
+          "t": 1107.41,
+          "text": "Right?"
+        },
+        {
+          "t": 1108.63,
+          "text": "Right."
+        },
+        {
+          "t": 1109.84,
+          "text": "בהבחנת פרטים הרבה, the whole thing is the the the to examine all the different different particulars כידוע as is known."
+        }
+      ]
+    },
+    {
+      "source": "017",
+      "lineId": "inpfbvtq",
+      "segment": 45,
+      "startSeconds": 1120.2,
+      "endSeconds": 1165.57,
+      "confidence": 0.935,
+      "sentences": [
+        {
+          "t": 1120.2,
+          "text": "מה שאין כן הצמצום והקיבוץ של המשכת הדעת, the דעת is exactly the opposite, אדרבה just the just the opposite."
+        },
+        {
+          "t": 1127.12,
+          "text": "הוא רק הצמצום is is not to go into all the things, but rather the opposite, to to be מצמצם away all the other things, שהוא הקיבוץ והאסיפה מכל כח שכלו, to to to to focus and and gather together the whole power of your"
+        },
+        {
+          "t": 1146.58,
+          "text": "brain, להתקשר רק במושכל זה, only in דעת, like what we're doing now, that we're taking our whole power of our brain, say, \"Why are we focusing our whole brain?"
+        },
+        {
+          "t": 1157.82,
+          "text": "I mean, there's so many things to think about, and we're thinking only about דעת.\""
+        },
+        {
+          "t": 1162.16,
+          "text": "It's exactly the opposite of of of בינה."
+        }
+      ]
+    },
+    {
+      "source": "017",
+      "lineId": "zarq44py",
+      "segment": 46,
+      "startSeconds": 1165.57,
+      "endSeconds": 1297.36,
+      "confidence": 0.833,
+      "sentences": [
+        {
+          "t": 1165.57,
+          "text": "שזה היפך בחינת התפשטות העיון בהרחבת ענין המושכל, it's exactly the opposite of of of analyzing all the different parts."
+        },
+        {
+          "t": 1178.22,
+          "text": "The לשון אידיש, דערקלעבט מיט דעם, אריינלייגן זיך גאר, he only busies himself with only this thing, and nothing else."
+        },
+        {
+          "t": 1191.44,
+          "text": "Right."
+        },
+        {
+          "t": 1193.16,
+          "text": "Like over here that we are we are only busying ourselves just with the ענין of דעת and nothing else, and we're totally focusing our brain and and and gathering the whole power of our brain and putting it only on this to the exclusion"
+        },
+        {
+          "t": 1211.08,
+          "text": "of everything else."
+        },
+        {
+          "t": 1215.54,
+          "text": "ואמנם, however, על ידי העמקת הדעת בא לידי עומק המושכל עד שרשו בעמקי החכמה ובינה, דווקא from this thing of concentrating on it, that when we're learning this point, in other words, it's not that we're not going to learn the other points, and we're"
+        },
+        {
+          "t": 1233.86,
+          "text": "just going to stay with this and stay with this forever, and we'll go over and over and over and over again, you know, we'll sit in a in a cave in the Himalayas and we'll go דעת is העמקה, דעת is the concentration of"
+        },
+        {
+          "t": 1248,
+          "text": "all the powers of your brain, דעת is the concentration of all the powers of your brain, דעת, you know, that's what they do basically."
+        },
+        {
+          "t": 1255.6,
+          "text": "Right, right?"
+        },
+        {
+          "t": 1256.62,
+          "text": "So, it's it's not that we're we're not going to get to the other points."
+        },
+        {
+          "t": 1261.96,
+          "text": "We're going to get to the other points, and when we get to the next point, like the next chapter is going to be about תבונה, so then we're going to forget about דעת."
+        },
+        {
+          "t": 1270.96,
+          "text": "Right."
+        },
+        {
+          "t": 1271.68,
+          "text": "And then what, we're going to talk about תבונה and concentrate the whole thing דווקא on that."
+        },
+        {
+          "t": 1276.4,
+          "text": "So, when you're doing a particular point, you're totally concentrated on that point, and that what that is what will bring you to the actual עומק of the מושכל all the way to how it is in in the עומק of חכמה ובינה, and the"
+        },
+        {
+          "t": 1292.08,
+          "text": "in like it said, in the in the תעלומות חכמה."
+        }
+      ]
+    },
+    {
+      "source": "017",
+      "lineId": "r3exqicw",
+      "segment": 47,
+      "startSeconds": 1297.36,
+      "endSeconds": 1453.24,
+      "confidence": 0.924,
+      "sentences": [
+        {
+          "t": 1297.36,
+          "text": "עד בחינת דעת עליון, this is all the way till the upper דעת, המזווג חכמה לבינה, that is like the כתר, which is above חכמה ובינה and puts them both together."
+        },
+        {
+          "t": 1309.88,
+          "text": "In other words, when you have the inner connection that it means that you know the thing, that's what they say that you know the thing already, you learned it, and now you know it."
+        },
+        {
+          "t": 1319.37,
+          "text": "Right."
+        },
+        {
+          "t": 1319.78,
+          "text": "Know it means the knowledge, not the not the דעת תחתון."
+        },
+        {
+          "t": 1323.87,
+          "text": "The דעת תחתון is a דעת that's only the כלי."
+        },
+        {
+          "t": 1326.93,
+          "text": "The דעת עליון means that the thing is now part of your brain, is connected to you, it's one thing with you, like אדם ידע את חוה, they became one thing."
+        },
+        {
+          "t": 1336.52,
+          "text": "Right."
+        },
+        {
+          "t": 1337.68,
+          "text": "So, the דעת עליון means that you learned it, and now the whole חכמה ובינה is all connected together in the כתר, which connects the חכמה ובינה together, וכמו שנאמר למעלה, like it said before, בענין עומק המושג דבינה."
+        },
+        {
+          "t": 1362,
+          "text": "והיינו דדעת גניז בפומא דאימא, that's the thing that דעת is hidden inside the the the mouth of בינה, meaning basically that that דווקא from the the mouth of בינה is, as it says, like in the thing, what do you call it, that the"
+        },
+        {
+          "t": 1382.54,
+          "text": "mouth is like מלכות, right, but it's like the upper מלכות, you know, so that דווקא from when you want to say out the בינה, like what we're doing now, you have to you you have to bring the דעת into it."
+        },
+        {
+          "t": 1409.24,
+          "text": "That's where the דעת is hidden."
+        },
+        {
+          "t": 1410.55,
+          "text": "In other words, before we weren't concentrating on this, דווקא now that we want to bring it out, we want to talk it out, that's when we you see that the concentration automatically comes into it."
+        },
+        {
+          "t": 1424.92,
+          "text": "We're really not trying to concentrate, right, we're not doing like the yogis that we we sat down, and now we're going to concentrate."
+        },
+        {
+          "t": 1434.94,
+          "text": "We're not trying to concentrate, we're trying to understand, right, and not only we're trying to understand, we're trying to have a lesson actually, we're talk- we're talking, so in order to do that, automatically you see that the דעת becomes revealed, right, because that's"
+        },
+        {
+          "t": 1449.82,
+          "text": "where it was hidden in the first place."
+        }
+      ]
+    },
+    {
+      "source": "017",
+      "lineId": "4uo54llm",
+      "segment": 48,
+      "startSeconds": 1453.24,
+      "endSeconds": 1618.85,
+      "confidence": 0.657,
+      "sentences": [
+        {
+          "t": 1453.24,
+          "text": "וכמו שאמרו שמשה שהוא הדעת זכה לבינה שהוא שער הנון, כי הא בהא תליא, that משה is the דעת, which doesn't mean a דעת like the דעת of the גוים, this is a Jewish דעת, because a Jewish דעת means it's דווקא into the בינה,"
+        },
+        {
+          "t": 1472.62,
+          "text": "right, whereas the the גויישע דעת means it's דעת of תהו, that the whole thing of תהו is that each ספירה is on its own, it's not connected to the other ספירות, so the the the גויישע דעת is not connected to בינה, it's just"
+        },
+        {
+          "t": 1490.82,
+          "text": "דעת, it's just concentration on what?"
+        },
+        {
+          "t": 1492.92,
+          "text": "Well, what what do you mean on what?"
+        },
+        {
+          "t": 1494.28,
+          "text": "Concentration is just all by itself, right, תהו."
+        },
+        {
+          "t": 1500.93,
+          "text": "Right."
+        },
+        {
+          "t": 1502.81,
+          "text": "So דוקא משה, which is the דעת, because he was connected to the ענין, that's why he was זוכה to the בינה, which is the שער הנון."
+        },
+        {
+          "t": 1513.8,
+          "text": "הא בהא תליא, because it ממש, one depends on the other."
+        },
+        {
+          "t": 1517.98,
+          "text": "Like it says, what is it, if there's no דעת, there's no בינה, if there's no בינה, there's no דעת."
+        },
+        {
+          "t": 1523.77,
+          "text": "Right."
+        },
+        {
+          "t": 1524.14,
+          "text": "So what does it mean?"
+        },
+        {
+          "t": 1525.22,
+          "text": "If there's I think that I think that's the order, right?"
+        },
+        {
+          "t": 1527.6,
+          "text": "If there's no דעת, there's no בינה, if there's no בינה, there's no דעת, right?"
+        },
+        {
+          "t": 1530.6,
+          "text": "אם אין בינה אין דעת, yeah."
+        },
+        {
+          "t": 1531.72,
+          "text": "Right."
+        },
+        {
+          "t": 1531.98,
+          "text": "That's the way it says it, right?"
+        },
+        {
+          "t": 1533.44,
+          "text": "Right."
+        },
+        {
+          "t": 1533.7,
+          "text": "What does it mean?"
+        },
+        {
+          "t": 1534.68,
+          "text": "If you don't concentrate on your lesson, you won't understand nothing."
+        },
+        {
+          "t": 1541.63,
+          "text": "And if there's nothing to understand, you're going to lose interest."
+        },
+        {
+          "t": 1548.29,
+          "text": "Right."
+        },
+        {
+          "t": 1549.54,
+          "text": "And also, if there's no דעת תחתון of concentrating on the lesson, then there's not going to be no understanding."
+        },
+        {
+          "t": 1557.96,
+          "text": "If there's no understanding, then there won't be the דעת עליון, and you won't know nothing."
+        },
+        {
+          "t": 1563.52,
+          "text": "Right."
+        },
+        {
+          "t": 1563.97,
+          "text": "It means if there's if if there's just a concentration with no explanation, it won't go from דעת תחתון to דעת עליון, and you won't know nothing."
+        },
+        {
+          "t": 1573.02,
+          "text": "You'll just sit there and concentrate, and you won't know nothing."
+        },
+        {
+          "t": 1575.52,
+          "text": "And if if you do end up knowing something, it'll just be a vain imagination."
+        },
+        {
+          "t": 1580.71,
+          "text": "Right."
+        },
+        {
+          "t": 1581.78,
+          "text": "What time is it now?"
+        },
+        {
+          "t": 1585.6,
+          "text": "Okay, we can you want to start on the next chapter a little bit?"
+        },
+        {
+          "t": 1588.58,
+          "text": "Yeah."
+        },
+        {
+          "t": 1589.04,
+          "text": "Okay."
+        },
+        {
+          "t": 1589.41,
+          "text": "Let me flip the tape."
+        }
+      ]
+    }
+  ]
+}
