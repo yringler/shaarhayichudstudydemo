@@ -21,7 +21,7 @@ package.json  tsconfig.json  astro.config.ts  .node-version
 scripts/
   vendor.ts            # builds data/ from shaar-hayichud-sections and Sefaria
   validate-content.ts  # checks content/ against data/ (runs before every build)
-  build-pdf.ts         # prints /book/ to the KDP PDF (npm run pdf)
+  build-pdf.ts         # prints /book/ to the KDP PDFs (npm run pdf, pdf:all)
   dump-chapter.ts      # prints a chapter's text and transcripts, for writers
   review-notes.ts      # lists every reviewer note
   test-typography.ts   # checks src/lib/typography.ts (runs in npm run check)
@@ -59,6 +59,7 @@ npm run build      # validate content, then build the static site into dist/
 npm run preview    # serve dist/
 npm run check      # astro check (types) + content validation
 npm run pdf        # build, then the print-ready PDF in pdf/ (see below)
+npm run pdf:all    # the study guide and the explanation-only PDFs
 ```
 
 ## Re-vendoring the data
@@ -160,14 +161,32 @@ a little larger.
 `npm run pdf` makes the paperback interior for Amazon Kindle Direct Publishing:
 trim 7 × 10 in, no bleed, black and white, fonts embedded. It builds the site,
 serves `dist/` locally, opens `/book/` in Playwright's Chromium and prints it
-to `pdf/shaar-hayichud-booklet-1-7x10.pdf` (`pdf/` is not committed).
+to `pdf/` (not committed). Like `/booklet/`, the book comes in views, and each
+view has its own file name (`BOOK_PDFS` in `src/lib/chapters.ts`):
+
+| View | Contents | File |
+| --- | --- | --- |
+| `guide` (default) | Hebrew, translation and explanations | `shaar-hayichud-booklet-1-7x10.pdf` |
+| `explanation` | the explanations only, as continuous prose | `shaar-hayichud-booklet-1-explanation-7x10.pdf` |
+| `text` | Hebrew and translation only | `shaar-hayichud-booklet-1-text-7x10.pdf` |
+
+The site publishes the first two.
 
 ```sh
 npm run pdf                              # Study guide view, draft notices on
-npm run pdf -- --view explanation        # guide | explanation | text
-npm run pdf -- --final                   # without the draft notices
-npm run pdf -- --no-build --out x.pdf    # reuse dist/, write elsewhere
+npm run pdf:explanation                  # = npm run pdf -- --view explanation
+npm run pdf:all                          # = npm run pdf -- --all: guide and explanation, one build
+npm run pdf -- --view text               # guide | explanation | text
+npm run pdf -- --final                   # without the draft notices (also with --all)
+npm run pdf -- --no-build --out x.pdf    # reuse dist/, write elsewhere (one view only)
 ```
+
+The explanation view leaves out the passages (Hebrew and translation), and
+with them the sections that have no explanation, apart from their heading and
+"In short"; its title page, copyright page and "About this guide" say what
+the edition contains. Its contents and glossary page references point to the
+explanations, and a glossary reference whose passage has no explanation falls
+back to its section heading.
 
 - **The book:** title page, copyright and credits page, contents with page
   numbers (chapters and concept headings), "About this guide", the chapters,
@@ -235,10 +254,12 @@ npm run pdf -- --no-build --out x.pdf    # reuse dist/, write elsewhere
   in passes: it reads each heading's page from the PDF, adds blank pages and
   fills in the page numbers, and prints again until nothing changes.
 - **Without a local setup:** the "Build and deploy" GitHub Actions workflow
-  (`.github/workflows/deploy.yml`) builds the PDF on every push to `main` and
-  on demand (Actions → Build and deploy → Run workflow, choosing the view,
-  whether it is final, and whether to deploy). The PDF is attached to the run
-  as an artifact and published with the site (see below).
+  (`.github/workflows/deploy.yml`) builds both published PDFs (`--all`) on
+  every push to `main` and on demand (Actions → Build and deploy → Run
+  workflow, choosing the view, whether it is final, and whether to deploy).
+  Each PDF is attached to the run as an artifact of its own and published with
+  the site (see below). Choosing a single view builds only that PDF, for a
+  one-off; the workflow refuses to deploy it, since the site links both.
 
 Uploading to KDP (Paperback → Paperback Content): Print options **Black & white
 interior** on **cream or white paper**, trim size **7 × 10 in**, bleed
@@ -251,12 +272,13 @@ depends on the final page count and paper).
 The site is plain static files (no functions or adapters), but the book PDF
 needs Chromium, which Cloudflare's Git-connected build does not have. So
 GitHub Actions builds and deploys: `.github/workflows/deploy.yml` runs
-`npm run pdf` (content validation, the site build, then the PDF), copies the
-PDF into `dist/` and runs `wrangler pages deploy`. A push to `main` deploys to
+`npm run pdf -- --all` (content validation, the site build, then both PDFs),
+copies the PDFs into `dist/` and runs `wrangler pages deploy`. A push to `main` deploys to
 production; running the workflow by hand on another branch makes a preview.
-The PDF is served at `/shaar-hayichud-booklet-1-7x10.pdf` (linked from the
-cover and `/booklet/`), with an `X-Robots-Tag: noindex` header from
-`public/_headers`.
+The PDFs are served at `/shaar-hayichud-booklet-1-7x10.pdf` (study guide) and
+`/shaar-hayichud-booklet-1-explanation-7x10.pdf` (explanations only), both
+linked from the cover and `/booklet/`, with an `X-Robots-Tag: noindex` header
+from `public/_headers`.
 
 One-time setup:
 
@@ -271,8 +293,8 @@ One-time setup:
 To deploy by hand instead:
 
 ```sh
-npm run pdf
-cp pdf/shaar-hayichud-booklet-1-7x10.pdf dist/
+npm run pdf:all
+cp pdf/shaar-hayichud-booklet-1-7x10.pdf pdf/shaar-hayichud-booklet-1-explanation-7x10.pdf dist/
 npx wrangler pages deploy dist --project-name shaarhayichudstudydemo
 ```
 

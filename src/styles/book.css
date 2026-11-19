@@ -1027,6 +1027,12 @@ html.kdp {
     margin: 0.06in 0 0.12in;
   }
 
+  /* the note on a section without an explanation says the text and
+     translation follow; in this view they do not, so it is left out */
+  .kdp[data-view='explanation'] .concept-note {
+    display: none;
+  }
+
   /* class references: small italic, never split */
   .kdp .listen {
     color: #000;

@@ -133,9 +133,13 @@ const draftCss = `@page { @bottom-center { content: 'Draft — not reviewed. Do 
         <p class="kdp-title-rule" aria-hidden="true"></p>
         <p class="kdp-title-guide">Study Guide</p>
         <p class="kdp-title-booklet">Booklet 1 · {chaptersTitle()}</p>
-        <p class="kdp-title-with">
+        <p class="kdp-title-with v-guide">
           The Hebrew text with the English translation of Rabbi Amiram Markel, and explanations following the classes of Rabbi Markel
         </p>
+        <p class="kdp-title-with v-explanation">
+          Explanations following the classes of Rabbi Amiram Markel, quoting his English translation
+        </p>
+        <p class="kdp-title-with v-text">The Hebrew text with the English translation of Rabbi Amiram Markel</p>
         <p class="kdp-title-draft draft-only">Draft for review · not for distribution</p>
       </section>
 
@@ -157,7 +161,7 @@ const draftCss = `@page { @bottom-center { content: 'Draft — not reviewed. Do 
             via Sefaria (sefaria.org, “The Gate of Unity”). Changes: formatting reduced to italics, bold and footnotes, and the Name spelled
             G-d. The footnotes are the translator’s.
           </p>
-          <p>
+          <p class="v-guide v-text">
             <strong>Hebrew text:</strong> from the Shaar HaYichud class archive (shaar-hayichud-sections{
               guide.sectionsCommit ? `, commit ${guide.sectionsCommit.slice(0, 7)}` : ''
             }).

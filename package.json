@@ -16,7 +16,9 @@
     "vendor": "tsx scripts/vendor.ts --sections ../yringler/shaar-hayichud-sections",
     "dump": "tsx scripts/dump-chapter.ts",
     "review-notes": "tsx scripts/review-notes.ts",
-    "pdf": "tsx scripts/build-pdf.ts"
+    "pdf": "tsx scripts/build-pdf.ts",
+    "pdf:explanation": "tsx scripts/build-pdf.ts --view explanation",
+    "pdf:all": "tsx scripts/build-pdf.ts --all"
   },
   "dependencies": {
     "@fontsource/frank-ruhl-libre": "^5.3.0",
