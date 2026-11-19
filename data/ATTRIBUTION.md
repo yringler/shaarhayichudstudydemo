@@ -8,14 +8,17 @@ by hand; change the script or its inputs and rerun it.
 [yringler/shaar-hayichud-sections](https://github.com/yringler/shaar-hayichud-sections)
 at commit `53b16fb99c03b3bba2eb121d81f12538787d6525` (its `data/` directory):
 
-- `chapters/chapter_0[1-5].json`: the Hebrew text and its line IDs, and the
-  section labels. Copied into `data/chapters/` (`segments[].lines`, `sections`).
+- `chapters/chapter_NN.json` (chapters 1–5 and 10): the Hebrew text, its
+  line IDs and the section labels. Copied into `data/chapters/`
+  (`segments[].lines`, `sections`).
 - `classes.txt`: lecture titles, durations and the CDN location of each
-  class's `(edited)` mp3 (`data/sources.json`).
+  class's mp3, the `(edited)` file where there is one (`data/sources.json`).
 - `alignments/`, `transcripts/` (Sofer.ai), `retimed/` and `outlines/` (Sofer.ai,
   HIGH and MEDIUM confidence topics only) for the classes below. Reduced to
   per-line coverage (`data/chapters/`), per-line transcript spans and tape
   preambles (`data/transcripts/`), and class outlines (`data/sources.json`).
+  Class 001, the series introduction, has no aligned lines; its whole
+  transcript is the first preamble of chapter 10, where the series begins.
   Transcript text and outline titles are auto-generated and unedited, except
   that the Name is spelled G-d (the data repo's `reverentSpelling`).
 
@@ -27,6 +30,10 @@ served from `https://media.shaarhayichudresources.com`; this repository only lin
 
 | Key | Title | Lecture ID | Word times |
 |-----|-------|------------|------------|
+| 001 | Introduction | `001 Intro.mp3` | sofer |
+| 002 | Chapter 10, part 1 | `002 Tape016-Side1-Ch10.mp3` | retimed |
+| 003 | Chapter 10, part 2 | `003 Tape016-Side2-Ch10.mp3` | retimed |
+| 004 | Chapter 10, part 3 | `004 Tape017-Side1-Ch10.mp3` | retimed |
 | 015 | Chapter 1, part 1 | `015 Tape001-Side1-Ch1.mp3` | retimed |
 | 016 | Chapter 1, part 2 | `016 Tape001-Side2-Ch1.mp3` | retimed |
 | 017 | Chapter 1, part 3 | `017 Tape002-Side1-Ch1.mp3` | retimed |
@@ -43,7 +50,7 @@ served from `https://media.shaarhayichudresources.com`; this repository only lin
 
 ## Sefaria
 
-"The Gate of Unity" (Shaar HaYichud), chapters 1–5, from the Sefaria API
+"The Gate of Unity" (Shaar HaYichud), chapters 1–5 and 10, from the Sefaria API
 (`https://www.sefaria.org/api/v3/texts/The_Gate_of_Unity.N?version=english&version=hebrew`). The raw
 responses are kept in `raw/sefaria/`.
 

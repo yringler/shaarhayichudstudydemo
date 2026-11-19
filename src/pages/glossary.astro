@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { glossary, loadGuide } from '../lib/content';
+import { chaptersTitle } from '../lib/chapters';
 
 const guide = loadGuide();
 const terms = glossary(guide);
@@ -11,7 +12,7 @@ const letters = [...new Set(terms.map((t) => t.term.charAt(0).toUpperCase()))];
 <Base title="Glossary" current="glossary">
   <div class="page">
     <header class="page-head">
-      <p class="eyebrow"><span>Booklet 1 · Chapters 1–5</span></p>
+      <p class="eyebrow"><span>Booklet 1 · {chaptersTitle()}</span></p>
       <h1 class="chapter-title">Glossary</h1>
       <p class="lede">
         The key terms of each chapter, in the transliteration this guide uses. Each is glossed as it is explained in the classes, and linked to

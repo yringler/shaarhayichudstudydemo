@@ -22,9 +22,7 @@ import {
   type TranslationInfo,
 } from './schema';
 import { classNumber, formatTime, parseListenHref, segmentLabel } from './format';
-
-/** Chapters in this booklet. */
-export const CHAPTERS = [1, 2, 3, 4, 5] as const;
+import { CHAPTERS } from './chapters';
 
 /** Coverage confidence below which a listen position is flagged as approximate. */
 export const LOW_CONFIDENCE = 0.45;

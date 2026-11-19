@@ -30,6 +30,8 @@
 - { he: "עמקות הדעת", term: "amkus hadaas", gloss: "depth of daas" }
 - { he: "עומק הדעת", term: "omek hadaas", gloss: "depth of daas" }
 - { he: "דעת עליון", term: "daas elyon", gloss: "higher knowledge" }
+- { he: "בינה יתירה", term: "bina yeseira", gloss: "an extra measure of bina" }
+- { he: "קלי דעת", term: "kalei daas", gloss: "light of daas; easily swayed" }
 - { he: "דעת תחתון", term: "daas tachton", gloss: "lower knowledge" }
 
 # --- the work of contemplation
@@ -191,3 +193,43 @@
 - { he: "משיח", term: "Moshiach", gloss: "" }
 - { he: "שבת", term: "Shabbos", gloss: "" }
 - { he: "סטנדר", term: "shtender", gloss: "(Yiddish) lectern" }
+# chapter 10
+- { he: "יחיד", term: "Yachid", gloss: "lit. singular; the first of the three levels" }
+- { he: "אחד", term: "Echad", gloss: "lit. one; the second of the three levels" }
+- { he: "קדמון", term: "Kadmon", gloss: "lit. preceding; the third of the three levels" }
+- { he: "יחידה", term: "yechida", gloss: "the essence of the soul" }
+- { he: "מקורא דכולא", term: "Mekora d'Kula", gloss: "the Source of everything" }
+- { he: "מקום פנוי", term: "makom panui", gloss: "the empty place" }
+- { he: "מאריך באחד", term: "ma'arich b'echad", gloss: "lengthening the word Echad" }
+- { he: "מאור", term: "Maor", gloss: "the source of light" }
+- { he: "עצמות אור אין סוף", term: "Atzmus Or Ein Sof", gloss: "the Essence of the infinite light" }
+- { he: "פנימיות האור", term: "pnimiyus ha'or", gloss: "the inner aspect of the light" }
+- { he: "התפשטות האור", term: "hispashtus ha'or", gloss: "the spreading forth of the light" }
+- { he: "טהירו עילאה", term: "tehiru ila'a", gloss: "the upper purity" }
+- { he: "גליף גליפו", term: "glif glifu", gloss: "He engraved an engraving" }
+- { he: "אנא אמלוך", term: "Ana Emloch", gloss: "I shall rule" }
+- { he: "שיעור", term: "shiur", gloss: "estimation, measure" }
+- { he: "רצון הפשוט", term: "ratzon hapashut", gloss: "the simple will" }
+- { he: "רצון המוחלט", term: "ratzon hamuchlat", gloss: "the absolute will" }
+- { he: "מחשבה קדומה", term: "machshava kduma", gloss: "the primordial thought" }
+- { he: "צדיקים", term: "tzaddikim", gloss: "the righteous" }
+- { he: "שטות דקדושה", term: "shtus d'kedusha", gloss: "holy foolishness" }
+- { he: "חפץ חסד", term: "chafetz chesed", gloss: "the desire for kindness" }
+- { he: "נצח", term: "netzach", gloss: "victory" }
+- { he: "תפארת", term: "tiferes", gloss: "beauty" }
+- { he: "התנשאות", term: "hisnasus", gloss: "rising above; leadership" }
+- { he: "דיבור", term: "dibur", gloss: "speech" }
+- { he: "מעשה", term: "maaseh", gloss: "action" }
+- { he: "דין", term: "din", gloss: "judgement" }
+- { he: "תהו", term: "Tohu", gloss: "the world of Chaos" }
+- { he: "כח הדיבור", term: "koach hadibur", gloss: "the power of speech" }
+- { he: "כופר", term: "kofer", gloss: "a denier" }
+- { he: "כופר בעיקר", term: "kofer b'ikar", gloss: "one who denies the essence" }
+- { he: "פארברענגען", term: "farbrengen", gloss: "(Yiddish) a Chassidic gathering" }
+- { he: "שנורער", term: "schnorrer", gloss: "(Yiddish) a beggar" }
+- { he: "שנורערס", term: "schnorrers", gloss: "(Yiddish) beggars" }
+- { he: "אברהם אבינו", term: "Avraham Avinu", gloss: "Abraham our father" }
+- { he: "עמק המלך", term: "Emek HaMelech", gloss: "a Kabbalistic work" }
+- { he: "מקדש מלך", term: "Mikdash Melech", gloss: "a commentary on the Zohar" }
+- { he: "פתח אליהו", term: "Pasach Eliyahu", gloss: "Elijah's opening prayer, in the Tikkunei Zohar" }
+- { he: "מורה נבוכים", term: "Moreh Nevuchim", gloss: "the Guide for the Perplexed" }

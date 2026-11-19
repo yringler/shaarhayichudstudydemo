@@ -116,7 +116,7 @@ Nothing is written twice.
   and `listen:062#…`). The label is `▶ m:ss` (or `▶ h:mm:ss`) of that second.
 - **Callouts** inside a block: a Markdown blockquote starting
   `> **Key point:**` or `> **Mashal:**` (his analogy). At most one per unit.
-- **No recording** (chapter 1 §1–20): no explanation. One concept file per
+- **No recording** (chapter 1 §1–20, chapter 10 §48–64 and §82–84): no explanation. One concept file per
   natural group, with a heading taken from the text's own subject,
   `status: no-source`, and its unit sections left empty. Exception: where a
   tape's opening recap restates the earlier material, a short block may be
@@ -125,7 +125,10 @@ Nothing is written twice.
 
 ## Other parts of a chapter
 
-- Overview: 100–150 words.
+- Overview: 100–150 words. Where a class introduces the chapter without
+  reading it (class 001, the series introduction, before chapter 10; its
+  transcript is the chapter's first preamble), the overview may draw on it
+  and cite it with a listen link.
 - Key terms: 6–12 per chapter, glossed as he explains the term in these
   classes (or a bare literal meaning).
 - Review questions: 4–6, each answerable from the guide, each ending with its

@@ -34,12 +34,22 @@ import {
   type TranscriptFile,
   type TranscriptSpan,
 } from '../src/lib/schema.ts';
+import { CHAPTERS, chaptersLabel } from '../src/lib/chapters.ts';
 
 // ------------------------------------------------------------------ constants
 
-const CHAPTERS = [1, 2, 3, 4, 5] as const;
+// The chapters vendored are CHAPTERS in src/lib/chapters.ts (shared with the site and validator).
 /** Leading digits of the Rabbi Markel lecture ids vendored. */
-const SOURCE_KEYS = ['015', '016', '017', '018', '019', '020', '021', '022', '023', '060', '061', '062', '063'] as const;
+const SOURCE_KEYS = [
+  '001', '002', '003', '004', // Part 1: the series introduction, then chapter 10
+  '015', '016', '017', '018', '019', '020', '021', '022', '023', // Part 2: chapters 1–4
+  '060', '061', '062', '063', // Part 7: chapter 5
+] as const;
+/**
+ * Classes with no aligned lines that introduce a chapter: the whole transcript
+ * is vendored as that chapter's first preamble, and the class is listed with it.
+ */
+const INTRODUCES: Readonly<Record<string, number>> = { '001': 10 };
 const SERIES_TITLE = 'Rabbi Markel Series (Advanced)';
 const TEACHER = 'Rabbi Markel';
 const CDN_BASE = 'https://media.shaarhayichudresources.com';
@@ -372,10 +382,12 @@ function chapterNumber(key: string): number {
 }
 
 function loadClass(key: string, catalog: Map<string, CatalogLecture>): ClassData {
-  const lecture = [...catalog.values()].find((l) => l.id.startsWith(`${key} `));
-  if (!lecture) fail(`no catalog lecture with key ${key}`);
-  if (lecture.seriesTitle !== SERIES_TITLE) fail(`${lecture.id} is in "${lecture.seriesTitle}", not "${SERIES_TITLE}"`);
-  if (!/\(edited\)\.mp3$/.test(lecture.filename)) console.warn(`vendor: ${lecture.id}: catalog file is not an (edited) mp3: ${lecture.filename}`);
+  // Only the Rabbi Markel series: other series (Rabbi Walters) are never sources.
+  const matches = [...catalog.values()].filter((l) => l.seriesTitle === SERIES_TITLE && l.id.startsWith(`${key} `));
+  if (matches.length !== 1) fail(`${matches.length} lectures in "${SERIES_TITLE}" with key ${key}; expected 1`);
+  const lecture = matches[0]!;
+  // A lecture with an "@" id has an (edited) file on the same timeline; one without (001 Intro) has only the original.
+  if (lecture.id !== lecture.filename && !/\(edited\)\.mp3$/.test(lecture.filename)) console.warn(`vendor: ${lecture.id}: catalog file is not an (edited) mp3: ${lecture.filename}`);
   if (lecture.durationSeconds === null) fail(`${lecture.id}: no duration in classes.txt`);
   const file = `${encodePathSegment(lecture.id)}.json`;
 
@@ -395,12 +407,19 @@ function loadClass(key: string, catalog: Map<string, CatalogLecture>): ClassData
   }
   const words: TimedWord[] = stamps.map((w, i) => ({ word: w.word, start: starts[i]! }));
 
-  const alignment = readJson(join(SECTIONS_DATA, 'alignments', file));
-  if (!isRecord(alignment) || !Array.isArray(alignment['segments'])) fail(`${file}: unexpected alignment shape`);
-  const method = isRecord(alignment['method']) ? alignment['method'] : {};
-  const alignedTimes = method['times'] === 'retimed' ? 'retimed' : 'sofer';
-  if (alignedTimes !== times) fail(`${file}: alignment used ${alignedTimes} times, lecture now has ${times}`);
-  const segments = (alignment['segments'] as AlignmentSegment[]).slice().sort((a, b) => a.firstWord - b.firstWord);
+  // A class that introduces a chapter (INTRODUCES) has no alignment file.
+  const alignmentPath = join(SECTIONS_DATA, 'alignments', file);
+  let segments: AlignmentSegment[] = [];
+  if (existsSync(alignmentPath)) {
+    const alignment = readJson(alignmentPath);
+    if (!isRecord(alignment) || !Array.isArray(alignment['segments'])) fail(`${file}: unexpected alignment shape`);
+    const method = isRecord(alignment['method']) ? alignment['method'] : {};
+    const alignedTimes = method['times'] === 'retimed' ? 'retimed' : 'sofer';
+    if (alignedTimes !== times) fail(`${file}: alignment used ${alignedTimes} times, lecture now has ${times}`);
+    segments = (alignment['segments'] as AlignmentSegment[]).slice().sort((a, b) => a.firstWord - b.firstWord);
+  } else if (INTRODUCES[key] === undefined) {
+    fail(`${file}: no alignment, and the class is not listed in INTRODUCES`);
+  }
 
   const outlineRaw = readJson(join(SECTIONS_DATA, 'outlines', file));
   const topics = isRecord(outlineRaw) && Array.isArray(outlineRaw['topics']) ? (outlineRaw['topics'] as Record<string, unknown>[]) : [];
@@ -414,7 +433,9 @@ function loadClass(key: string, catalog: Map<string, CatalogLecture>): ClassData
   const title = lectureTitle(lecture);
   const alignedChapters = [...new Set(segments.map((s) => chapterNumber(s.chapter)))].sort((a, b) => a - b);
   const titleChapter = /Chapter (\d+)/.exec(title);
-  const chapters = alignedChapters.length > 0 ? alignedChapters : titleChapter ? [Number(titleChapter[1])] : [];
+  const introduces = INTRODUCES[key];
+  const chapters =
+    alignedChapters.length > 0 ? alignedChapters : introduces !== undefined ? [introduces] : titleChapter ? [Number(titleChapter[1])] : [];
 
   return {
     source: {
@@ -516,7 +537,7 @@ function main(): void {
       const next = segments[i + 1];
       if (!inScope(seg)) return;
       const info = lineInfo.get(seg.lineId);
-      if (!info) fail(`${source.lectureId}: aligned line ${seg.lineId} is not in chapters 1–5`);
+      if (!info) fail(`${source.lectureId}: aligned line ${seg.lineId} is not in chapters ${chaptersLabel()}`);
       if (info.chapter !== chapterNumber(seg.chapter)) fail(`${source.lectureId}: line ${seg.lineId} is in chapter ${info.chapter}, alignment says ${seg.chapter}`);
       const endSeconds = round2(next ? next.startSeconds : tapeEnd);
       const coverage: Coverage = {
@@ -539,7 +560,11 @@ function main(): void {
       transcripts.get(info.chapter)!.spans.push(span);
     });
     const first = segments[0];
-    if (first && inScope(first)) {
+    const introduces = INTRODUCES[source.key];
+    if (!first && introduces !== undefined) {
+      const preamble: Preamble = { source: source.key, sentences: sentences(words) };
+      transcripts.get(introduces)!.preambles.push(preamble);
+    } else if (first && inScope(first)) {
       const preamble: Preamble = { source: source.key, sentences: sentences(words.slice(0, first.firstWord)) };
       transcripts.get(chapterNumber(first.chapter))!.preambles.push(preamble);
     } else if (!first) {
@@ -583,14 +608,17 @@ by hand; change the script or its inputs and rerun it.
 [yringler/shaar-hayichud-sections](https://github.com/yringler/shaar-hayichud-sections)
 at commit \`${commit}\` (its \`data/\` directory):
 
-- \`chapters/chapter_0[1-5].json\`: the Hebrew text and its line IDs, and the
-  section labels. Copied into \`data/chapters/\` (\`segments[].lines\`, \`sections\`).
+- \`chapters/chapter_NN.json\` (chapters ${chaptersLabel()}): the Hebrew text, its
+  line IDs and the section labels. Copied into \`data/chapters/\`
+  (\`segments[].lines\`, \`sections\`).
 - \`classes.txt\`: lecture titles, durations and the CDN location of each
-  class's \`(edited)\` mp3 (\`data/sources.json\`).
+  class's mp3, the \`(edited)\` file where there is one (\`data/sources.json\`).
 - \`alignments/\`, \`transcripts/\` (Sofer.ai), \`retimed/\` and \`outlines/\` (Sofer.ai,
   HIGH and MEDIUM confidence topics only) for the classes below. Reduced to
   per-line coverage (\`data/chapters/\`), per-line transcript spans and tape
   preambles (\`data/transcripts/\`), and class outlines (\`data/sources.json\`).
+  Class 001, the series introduction, has no aligned lines; its whole
+  transcript is the first preamble of chapter 10, where the series begins.
   Transcript text and outline titles are auto-generated and unedited, except
   that the Name is spelled G-d (the data repo's \`reverentSpelling\`).
 
@@ -606,7 +634,7 @@ ${classes}
 
 ## Sefaria
 
-"The Gate of Unity" (Shaar HaYichud), chapters 1–5, from the Sefaria API
+"The Gate of Unity" (Shaar HaYichud), chapters ${chaptersLabel()}, from the Sefaria API
 (\`${SEFARIA_API}/${SEFARIA_BOOK}.N?version=english&version=hebrew\`). The raw
 responses are kept in \`raw/sefaria/\`.
 

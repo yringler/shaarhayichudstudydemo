@@ -1,6 +1,6 @@
 # Shaar HaYichud: Study Guide (demo)
 
-A proof-of-concept study guide for chapters 1–5 of the Mitteler Rebbe's
+A proof-of-concept study guide for chapters 1–5 and 10 of the Mitteler Rebbe's
 *Shaar HaYichud*, built to discuss with Markel Son. For each passage the site
 shows the Hebrew text, Rabbi Amiram Markel's English translation (from
 Sefaria) and an explanation drafted from Rabbi Markel's recorded classes,
@@ -35,12 +35,13 @@ content/               # the guide itself, hand-editable Markdown and YAML
   chapter_NN/          # _chapter.md, _terms.yaml, NN-concept.md files
 src/
   lib/schema.ts        # Zod schemas of data/ (the contract between script and site)
+  lib/chapters.ts      # the chapters in the booklet, shared by the scripts and the site
   lib/content.ts       # loads data/ and content/ into typed chapter models
   layouts/ components/ pages/ styles/ scripts/
 public/                # robots.txt, favicon
 ```
 
-Pages: `/` (cover and contents), `/chapter/1/` to `/chapter/5/`,
+Pages: `/` (cover and contents), `/chapter/N/` for each chapter (1–5 and 10),
 `/booklet/` (all chapters on one page, for printing), `/glossary/`, `/about/`.
 
 ## Running it
@@ -77,8 +78,12 @@ against `src/lib/schema.ts`, and fails if the line-to-paragraph mapping is
 inconsistent. It records the sections commit in `data/sources.json` and
 `data/ATTRIBUTION.md`. Commit `data/` afterwards, then run `npm run validate`:
 content written against the old data may need its listen links or segment
-ranges updated. The chapters and classes it reads are constants at the top
-of the script.
+ranges updated. The classes it reads are constants at the top of the
+script; the chapters are listed in `src/lib/chapters.ts` (shared with the
+validator and the site). Chapter files are named
+`chapter_NN` with two digits (`chapter_05`, `chapter_10`). Class 001, the
+series introduction, has no aligned lines; the script vendors its whole
+transcript as chapter 10's first preamble (`INTRODUCES` in the script).
 
 ## Editing the content
 
@@ -191,8 +196,9 @@ None of these blocks the demo; they are for the discussion with Markel Son.
    uses *Chochmah*/*Hitbonenut*. Leave the mismatch, respell the translation
    (CC-BY permits changes, marked as such), or have him supply a spelling
    list? (`content/translit.yaml` is the current list.)
-4. **Chapter 1's first 20 paragraphs have no recording** in this series.
-   Does Rabbi Markel have another shiur on the opening? More generally: which
+4. **Chapter 1's first 20 paragraphs have no recording** in this series, nor
+   do chapter 10 §48–64 (between tapes 003 and 004) and §82–84 (not read in
+   class). Does Rabbi Markel have another shiur on these passages? More generally: which
    other shiurim exist, in what form, and may they be transcribed? The content
    format already lets one passage cite several classes; future work is a
    teacher/series field per source in the UI, a policy for when two classes

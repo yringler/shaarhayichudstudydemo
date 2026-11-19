@@ -1,9 +1,26 @@
 ---
 import Base from '../layouts/Base.astro';
 import { loadGuide } from '../lib/content';
+import { segmentLabel } from '../lib/format';
 
 const guide = loadGuide();
 const t = guide.translation;
+/** Each chapter's passages with no recording, as "§1–20" runs. */
+const gaps = guide.chapters
+  .map((c) => {
+    const runs: string[] = [];
+    let start: number | undefined;
+    c.uncovered.forEach((n, i) => {
+      start ??= n;
+      const next = c.uncovered[i + 1];
+      if (next !== n + 1) {
+        runs.push(segmentLabel(start, n));
+        start = undefined;
+      }
+    });
+    return { n: c.n, runs };
+  })
+  .filter((g) => g.runs.length > 0);
 const counts = { ai: 0, edited: 0, reviewed: 0, none: 0 };
 for (const c of guide.chapters) {
   for (const k of c.concepts) {
@@ -33,9 +50,14 @@ for (const c of guide.chapters) {
         explanation, his analogies, and the questions he answered. It is meant to say only what he said. Logistics, side conversations and
         unclear stretches were left out; unclear stretches are listed in a “For the reviewer” box on screen.
       </p>
-      <p>
-        The opening of chapter 1 (§1–20) has no recording in this series, so those paragraphs appear with text and translation only.
-      </p>
+      {
+        gaps.length > 0 && (
+          <p>
+            Some passages have no recording in this series, so they appear with text and translation only:{' '}
+            {gaps.map((g) => `chapter ${g.n} ${g.runs.join(', ')}`).join('; ')}.
+          </p>
+        )
+      }
 
       <h2>What is and is not reviewed</h2>
       <p>

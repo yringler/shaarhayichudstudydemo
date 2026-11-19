@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Chapter from '../../components/Chapter.astro';
 import ViewSwitch from '../../components/ViewSwitch.astro';
 import { loadGuide } from '../../lib/content';
+import { chaptersTitle } from '../../lib/chapters';
 
 export const getStaticPaths = (() => {
   const { chapters } = loadGuide();
@@ -40,7 +41,7 @@ const base = import.meta.env.BASE_URL;
         ) : (
           <a class="pager-link prev" href={base}>
             <span class="pager-dir">← Contents</span>
-            <span class="pager-title">Booklet 1: Chapters 1–5</span>
+            <span class="pager-title">Booklet 1: {chaptersTitle()}</span>
           </a>
         )
       }

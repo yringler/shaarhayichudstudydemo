@@ -3,15 +3,16 @@ import Base from '../layouts/Base.astro';
 import Chapter from '../components/Chapter.astro';
 import ViewSwitch from '../components/ViewSwitch.astro';
 import { loadGuide } from '../lib/content';
+import { chaptersTitle } from '../lib/chapters';
 
 const { chapters } = loadGuide();
 ---
 
-<Base title="Booklet 1: Chapters 1–5" current="booklet">
+<Base title={`Booklet 1: ${chaptersTitle()}`} current="booklet">
   <div class="page guide booklet" data-guide-root>
     <header class="booklet-head">
       <p class="eyebrow"><span>Booklet 1</span></p>
-      <h1 class="chapter-title">Chapters 1–5 on one page</h1>
+      <h1 class="chapter-title">{chaptersTitle()} on one page</h1>
       <p class="muted">For printing in one go. Choose a view first; printing uses it.</p>
     </header>
     <ViewSwitch printLabel="Print the booklet" />

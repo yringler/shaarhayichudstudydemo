@@ -3,6 +3,162 @@
   "sectionsCommit": "53b16fb99c03b3bba2eb121d81f12538787d6525",
   "sources": [
     {
+      "key": "001",
+      "lectureId": "001 Intro.mp3",
+      "teacher": "Rabbi Markel",
+      "series": "Rabbi Markel Series (Advanced)",
+      "title": "Introduction",
+      "audioUrl": "https://media.shaarhayichudresources.com/Markel%20Advanced%20Compact%20Seminar/Advanced%20%20part%201%20ch%2010-15%20compact/001%20Intro.mp3",
+      "durationSeconds": 722.997,
+      "chapters": [
+        10
+      ],
+      "times": "sofer",
+      "outline": [
+        {
+          "title": "Introduction to the Series and Book",
+          "startSeconds": 1.02
+        },
+        {
+          "title": "What is תבוננות? Not Meditation",
+          "startSeconds": 95.68
+        },
+        {
+          "title": "Mastery Requires Detailed Analytical Study",
+          "startSeconds": 163.08
+        },
+        {
+          "title": "Why Study Kabbalah for G-dliness",
+          "startSeconds": 259.86
+        },
+        {
+          "title": "Method: Concentration and World Chaining",
+          "startSeconds": 350.78
+        },
+        {
+          "title": "Framework of Creation and Light Diminishment",
+          "startSeconds": 530.18
+        }
+      ]
+    },
+    {
+      "key": "002",
+      "lectureId": "002 Tape016-Side1-Ch10.mp3",
+      "teacher": "Rabbi Markel",
+      "series": "Rabbi Markel Series (Advanced)",
+      "title": "Chapter 10, part 1",
+      "audioUrl": "https://media.shaarhayichudresources.com/Markel%20Advanced%20Compact%20Seminar/Advanced%20%20part%201%20ch%2010-15%20compact/002%20Tape016-Side1-Ch10%20%28edited%29.mp3",
+      "durationSeconds": 1804.218667,
+      "chapters": [
+        10
+      ],
+      "times": "retimed",
+      "outline": [
+        {
+          "title": "Chapter 10: Detailed Path in the Ten Worlds",
+          "startSeconds": 9.98
+        },
+        {
+          "title": "Beginning with the Source: מקורא דכולא",
+          "startSeconds": 86.12
+        },
+        {
+          "title": "Chazal on חכם ולא בחכמה ידיעה",
+          "startSeconds": 547.62
+        },
+        {
+          "title": "Understanding the גליף גליפו Levels",
+          "startSeconds": 849.13
+        },
+        {
+          "title": "Example of חפץ חסד and Kindness",
+          "startSeconds": 1225.33
+        },
+        {
+          "title": "Is Not Giving Sandwiches Still חסד?",
+          "startSeconds": 1776.42
+        }
+      ]
+    },
+    {
+      "key": "003",
+      "lectureId": "003 Tape016-Side2-Ch10.mp3",
+      "teacher": "Rabbi Markel",
+      "series": "Rabbi Markel Series (Advanced)",
+      "title": "Chapter 10, part 2",
+      "audioUrl": "https://media.shaarhayichudresources.com/Markel%20Advanced%20Compact%20Seminar/Advanced%20%20part%201%20ch%2010-15%20compact/003%20Tape016-Side2-Ch10%20%28edited%29.mp3",
+      "durationSeconds": 935.869333,
+      "chapters": [
+        10
+      ],
+      "times": "retimed",
+      "outline": [
+        {
+          "title": "חפץ חסד turned into bureaucracy",
+          "startSeconds": 14.9
+        },
+        {
+          "title": "Real חסד requires personal specifics",
+          "startSeconds": 101.52
+        },
+        {
+          "title": "Divine provision beyond simple sandwiches",
+          "startSeconds": 178.86
+        },
+        {
+          "title": "Definition of חפץ חסד העצמי ההיולי",
+          "startSeconds": 262.96
+        },
+        {
+          "title": "Removing a ספירה eliminates חסד",
+          "startSeconds": 347.34
+        },
+        {
+          "title": "Strategy in חסד and נצח",
+          "startSeconds": 646.4
+        },
+        {
+          "title": "מלכות, גליף גליפו and world creation",
+          "startSeconds": 874.12
+        }
+      ]
+    },
+    {
+      "key": "004",
+      "lectureId": "004 Tape017-Side1-Ch10.mp3",
+      "teacher": "Rabbi Markel",
+      "series": "Rabbi Markel Series (Advanced)",
+      "title": "Chapter 10, part 3",
+      "audioUrl": "https://media.shaarhayichudresources.com/Markel%20Advanced%20Compact%20Seminar/Advanced%20%20part%201%20ch%2010-15%20compact/004%20Tape017-Side1-Ch10%20%28edited%29.mp3",
+      "durationSeconds": 1391.118667,
+      "chapters": [
+        10
+      ],
+      "times": "retimed",
+      "outline": [
+        {
+          "title": "The Eye’s Power to See All Shapes",
+          "startSeconds": 3.18
+        },
+        {
+          "title": "Desire (Ratzon) Behind Acts of Kindness",
+          "startSeconds": 74.46
+        },
+        {
+          "title": "Greek Mistake: G-d vs. Physical World",
+          "startSeconds": 215.94
+        },
+        {
+          "title": "Introducing the Three Levels of Soul Power",
+          "startSeconds": 314.69
+        },
+        {
+          "title": "Level Two: Powers Ready to Manifest",
+          "startSeconds": 375.25
+        }
+      ]
+    },
+    {
       "key": "015",
       "lectureId": "015 Tape001-Side1-Ch1.mp3",
       "teacher": "Rabbi Markel",

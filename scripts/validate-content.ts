@@ -15,6 +15,7 @@ import { parseArgs } from 'node:util';
 import { parse as parseYaml } from 'yaml';
 import { z } from 'zod';
 import { ChapterFileSchema, SourcesFileSchema, type ChapterFile, type Segment, type Source } from '../src/lib/schema.ts';
+import { CHAPTERS } from '../src/lib/chapters.ts';
 
 const ROOT = resolve(import.meta.dirname, '..');
 
@@ -29,7 +30,6 @@ const onlyChapters = args.chapter?.map(Number);
 /** --content <dir> checks another content folder (used to test this script). */
 const CONTENT = args.content !== undefined ? resolve(args.content) : join(ROOT, 'content');
 const DATA = join(ROOT, 'data');
-const CHAPTERS = [1, 2, 3, 4, 5];
 /** A listen link this far outside its unit's coverage in that class is flagged. */
 const COVERAGE_SLACK_SECONDS = 120;
 
