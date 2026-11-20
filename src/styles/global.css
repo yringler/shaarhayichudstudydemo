@@ -814,6 +814,32 @@ h3 {
   color: var(--accent-2);
 }
 
+/* The whole Hebrew text of a passage, one paragraph per §, set like the
+   incipit below: only in the print book's "hebrew" view (Hebrew and
+   explanation), where the two-column passage is hidden. A block, not a flex
+   row, so that a long paragraph can break across pages; the § sits in the
+   left padding. */
+.he-full {
+  display: none;
+}
+
+.he-full-seg {
+  position: relative;
+  margin: 0;
+  padding-left: 3rem;
+  line-height: 1.45;
+}
+
+.he-full-seg .incipit-ref {
+  position: absolute;
+  top: 0.2em;
+  left: 0;
+}
+
+.he-full-seg .incipit-he {
+  display: block;
+}
+
 /* The passage's opening words (dibbur hamaschil): only in the "explanation
    only" view, where the passage itself is hidden. § on the English side, the
    Hebrew on the right. */
@@ -1200,6 +1226,24 @@ h3 {
 
 [data-view='explanation'] .unit {
   margin: 0.25rem 0 0.75rem;
+}
+
+/* Hebrew and explanation (the print book only): the whole Hebrew text in
+   place of the incipit, and every passage, explained or not */
+[data-view='hebrew'] .text-block,
+[data-view='hebrew'] .no-source,
+[data-view='hebrew'] .explanation-label {
+  display: none;
+}
+
+[data-view='hebrew'] .he-full {
+  display: block;
+}
+
+[data-view='hebrew'] .explanation {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
 }
 
 [data-view='text'] .explanation,

@@ -18,6 +18,7 @@
     "review-notes": "tsx scripts/review-notes.ts",
     "pdf": "tsx scripts/build-pdf.ts",
     "pdf:explanation": "tsx scripts/build-pdf.ts --view explanation",
+    "pdf:hebrew": "tsx scripts/build-pdf.ts --view hebrew",
     "pdf:all": "tsx scripts/build-pdf.ts --all"
   },
   "dependencies": {

@@ -3,8 +3,8 @@
  * 7 × 10 in, no bleed, black and white interior) from the /book/ page.
  *
  *   npm run pdf                                   # npm run build, then print the study guide
- *   npm run pdf -- --view explanation             # guide | explanation | text
- *   npm run pdf -- --all                          # the guide and the explanation PDFs (one build)
+ *   npm run pdf -- --view explanation             # guide | explanation | hebrew | text
+ *   npm run pdf -- --all                          # the guide, explanation and hebrew PDFs (one build)
  *   npm run pdf -- --final                        # no draft notices (warns about unreviewed sections)
  *   npm run pdf -- --no-build                     # reuse dist/
  *   npm run pdf -- --out some/where.pdf
@@ -61,7 +61,7 @@ const SHORT_PAIR_IN = 0.8;
 const VIEWS = BOOK_VIEWS;
 type View = BookView;
 /** The views `--all` prints: those the site publishes (the deploy workflow runs it). */
-const ALL_VIEWS: readonly View[] = ['guide', 'explanation'];
+const ALL_VIEWS: readonly View[] = ['guide', 'explanation', 'hebrew'];
 /** Each view's PDF has its own name (src/lib/chapters.ts), so one never overwrites another. */
 const defaultOut = (view: View): string => `pdf/${BOOK_PDFS[view]}`;
 
@@ -131,7 +131,7 @@ function parseOptions(): Options {
     strict: true,
   });
   if (values.help) {
-    console.log('Usage: npm run pdf -- [--view guide|explanation|text | --all] [--final] [--no-build] [--out file.pdf]');
+    console.log('Usage: npm run pdf -- [--view guide|explanation|hebrew|text | --all] [--final] [--no-build] [--out file.pdf]');
     process.exit(0);
   }
   const common = { final: values.final, build: !values['no-build'] };
@@ -386,7 +386,7 @@ async function markShortPairs(page: Page, maxPx: number): Promise<number> {
   return page.evaluate((max) => {
     let n = 0;
     for (const pair of document.querySelectorAll<HTMLElement>('.seg-pair')) {
-      // A pair the view hides (all of them in "Explanation only") has no height and is not counted.
+      // A pair the view hides (all of them in "Explanation only" and "hebrew") has no height and is not counted.
       const h = pair.getBoundingClientRect().height;
       const short = h > 0 && h <= max;
       pair.classList.toggle('kdp-short', short);
