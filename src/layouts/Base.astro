@@ -9,7 +9,7 @@ import { loadGuide } from '../lib/content';
 interface Props {
   title: string;
   description?: string;
-  /** Which nav item is current: "home" | "booklet" | "glossary" | "about" | chapter number. */
+  /** Which nav item is current: "home" | "booklet" | "pdfs" | "glossary" | "about" | chapter number. */
   current?: string | number;
 }
 
@@ -70,6 +70,7 @@ const base = import.meta.env.BASE_URL;
           </ul>
           <ul class="nav-links">
             <li><a href={`${base}booklet/`} aria-current={current === 'booklet' ? 'page' : undefined}>Booklet</a></li>
+            <li><a href={`${base}pdfs/`} aria-current={current === 'pdfs' ? 'page' : undefined}>PDFs</a></li>
             <li><a href={`${base}glossary/`} aria-current={current === 'glossary' ? 'page' : undefined}>Glossary</a></li>
             <li><a href={`${base}about/`} aria-current={current === 'about' ? 'page' : undefined}>About</a></li>
           </ul>

@@ -329,12 +329,14 @@ html.kdp {
 
 .kdp .v-guide,
 .kdp .v-explanation,
+.kdp .v-hebrew,
 .kdp .v-text {
   display: none;
 }
 
 .kdp[data-view='guide'] .v-guide,
 .kdp[data-view='explanation'] .v-explanation,
+.kdp[data-view='hebrew'] .v-hebrew,
 .kdp[data-view='text'] .v-text {
   display: block;
 }
@@ -1061,6 +1063,68 @@ html.kdp {
   /* the note on a section without an explanation says the text and
      translation follow; in this view they do not, so it is left out */
   .kdp[data-view='explanation'] .concept-note {
+    display: none;
+  }
+
+  /* "Hebrew and explanation": the explanation view with the whole Hebrew
+     text of every passage, explained or not, in place of the incipit. The
+     Hebrew is set as the incipit is (Frank Ruhl 12 pt medium, ragged, the §
+     at the left in the labels' figures), with a little more leading for
+     running text; long paragraphs break across pages, two lines either side,
+     and the last stays with the explanation's first lines. */
+  .kdp[data-view='hebrew'] .concepts {
+    columns: auto;
+  }
+
+  .kdp[data-view='hebrew'] .unit {
+    margin: 0.06in 0 0.12in;
+  }
+
+  .kdp[data-view='hebrew'] .he-full {
+    margin: 0.14in 0 0.04in;
+  }
+
+  .kdp[data-view='hebrew'] .unit:first-child .he-full {
+    margin-top: 0.04in;
+  }
+
+  .kdp[data-view='hebrew'] .he-full-seg {
+    padding-left: 0.45in;
+    line-height: 1.4;
+    orphans: 2;
+    widows: 2;
+  }
+
+  .kdp[data-view='hebrew'] .he-full-seg + .he-full-seg {
+    margin-top: 0.06in;
+  }
+
+  .kdp[data-view='hebrew'] .unit.has-explanation .he-full-seg:last-child {
+    break-after: avoid;
+  }
+
+  .kdp[data-view='hebrew'] .he-full-seg .incipit-ref {
+    top: 0.25em;
+    font-family: var(--serif);
+    font-size: 9pt;
+    font-weight: 400;
+    font-variant-numeric: lining-nums proportional-nums;
+    letter-spacing: 0.04em;
+    color: #000;
+  }
+
+  .kdp[data-view='hebrew'] .he-full-seg .incipit-he {
+    font-size: 12pt;
+    font-weight: 500;
+    text-align: right;
+    color: #000;
+  }
+
+  .kdp[data-view='hebrew'] .explanation {
+    margin-top: 0.06in;
+  }
+
+  .kdp[data-view='hebrew'] .concept-note {
     display: none;
   }
 

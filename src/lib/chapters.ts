@@ -5,19 +5,24 @@
  */
 export const CHAPTERS = [1, 2, 3, 4, 5, 10] as const;
 
-/** The content views of the print book (/book/?view=…), as in /booklet/'s view switch. */
-export const BOOK_VIEWS = ['guide', 'explanation', 'text'] as const;
+/**
+ * The content views of the print book (/book/?view=…). `hebrew` is the explanation
+ * edition with the whole Hebrew text of each passage in place of its opening words
+ * (book only; the site's view switch has the other three).
+ */
+export const BOOK_VIEWS = ['guide', 'explanation', 'hebrew', 'text'] as const;
 export type BookView = (typeof BOOK_VIEWS)[number];
 
 /**
  * File names of the print-ready PDFs (7 x 10 in, KDP), one per view. `npm run pdf`
- * writes them to `pdf/`; the deploy workflow builds the guide and the explanation
- * PDFs and copies them to the site root, where /booklet/ and the cover link to
+ * writes them to `pdf/`; the deploy workflow builds the guide, the explanation and
+ * the Hebrew-and-explanation PDFs and copies them to the site root, where /booklet/ and the cover link to
  * them. The guide's name is the original one and stays as it is (links to it exist).
  */
 export const BOOK_PDFS: Readonly<Record<BookView, string>> = {
   guide: 'shaar-hayichud-booklet-1-7x10.pdf',
   explanation: 'shaar-hayichud-booklet-1-explanation-7x10.pdf',
+  hebrew: 'shaar-hayichud-booklet-1-hebrew-explanation-7x10.pdf',
   text: 'shaar-hayichud-booklet-1-text-7x10.pdf',
 };
 
@@ -25,6 +30,8 @@ export const BOOK_PDFS: Readonly<Record<BookView, string>> = {
 export const BOOK_PDF = BOOK_PDFS.guide;
 /** The explanation-only PDF. */
 export const BOOK_PDF_EXPLANATION = BOOK_PDFS.explanation;
+/** The explanations with the whole Hebrew text (no translation). */
+export const BOOK_PDF_HEBREW = BOOK_PDFS.hebrew;
 
 export type ChapterNumber = (typeof CHAPTERS)[number];
 

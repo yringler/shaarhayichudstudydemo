@@ -1,0 +1,191 @@
+---
+/**
+ * /pdfs/: the three typeset editions of the book (7 × 10 in, KDP), each with a
+ * miniature of how its pages are set, drawn from the booklet's first explained
+ * passage. The PDFs themselves are built by scripts/build-pdf.ts and copied to
+ * the site root by the deploy workflow (README "Print-ready PDF for KDP").
+ */
+import Base from '../layouts/Base.astro';
+import { loadGuide, type UnitModel } from '../lib/content';
+import { BOOK_PDFS, chaptersTitle } from '../lib/chapters';
+
+const guide = loadGuide();
+const base = import.meta.env.BASE_URL;
+
+/** The first passage that has an explanation, and the concept it belongs to: the miniatures' sample. */
+const sample = (() => {
+  for (const c of guide.chapters) {
+    for (const k of c.concepts) {
+      const units = k.units.filter((u) => u.explanationHtml !== null);
+      if (units[0]) return { concept: k, units };
+    }
+  }
+  return null;
+})();
+
+/** The first paragraph of an explanation, without the class references (▶ links). */
+const firstPara = (u: UnitModel): string => {
+  const html = u.explanationHtml ?? '';
+  const p = /<p>([\s\S]*?)<\/p>/.exec(html)?.[1] ?? html;
+  return p.replace(/<a class="listen"[\s\S]*?<\/a>/g, '').replace(/\s+([.,;:])/g, '$1');
+};
+const hebrew = (u: UnitModel): string => u.segments[0]?.lines.map((l) => l.text).join(' ') ?? '';
+/** Translation without footnote markers. */
+const english = (u: UnitModel): string => (u.segments[0]?.en ?? '').replace(/<sup[^>]*>[\s\S]*?<\/sup>/g, '');
+
+interface Edition {
+  key: 'guide' | 'explanation' | 'hebrew';
+  name: string;
+  he?: string;
+  tagline: string;
+  contents: string[];
+  file: string;
+}
+
+const editions: Edition[] = [
+  {
+    key: 'guide',
+    name: 'Study guide',
+    tagline: 'The full book: text, translation and explanation together.',
+    contents: [
+      'The Hebrew beside Rabbi Markel’s English translation, with his footnotes',
+      'The explanation under each passage, from his recorded class',
+      'Overviews, key terms, review questions and a glossary',
+    ],
+    file: BOOK_PDFS.guide,
+  },
+  {
+    key: 'hebrew',
+    name: 'Hebrew and explanation',
+    tagline: 'For learning from the original: the whole Hebrew, then the explanation.',
+    contents: [
+      'The whole Hebrew text, paragraph by paragraph (§)',
+      'The explanation under each passage; passages without one are given in Hebrew alone',
+      'No translation; the explanations quote it in bold',
+    ],
+    file: BOOK_PDFS.hebrew,
+  },
+  {
+    key: 'explanation',
+    name: 'Explanation only',
+    tagline: 'The explanations as continuous prose, for reading straight through.',
+    contents: [
+      'Each explanation headed by the opening words of its passage in Hebrew',
+      'Neither the full text nor the translation',
+      'The shortest of the three',
+    ],
+    file: BOOK_PDFS.explanation,
+  },
+];
+---
+
+<Base title="PDFs" current="pdfs" description="Download the Shaar HaYichud study guide as a typeset book: three editions, 7 × 10 in.">
+  <div class="page pdfs-page">
+    <header class="page-head pdfs-head">
+      <p class="eyebrow"><span>Booklet 1 · {chaptersTitle()}</span></p>
+      <h1 class="chapter-title">The book, in three editions</h1>
+      <p class="lede">
+        Typeset PDFs of the whole booklet, 7 × 10 in, ready to print or read on a tablet. They contain the same explanations; they differ in how much of
+        the text comes with them.
+      </p>
+    </header>
+
+    <ul class="pdf-grid">
+      {
+        editions.map((e) => (
+          <li class={`pdf-card pdf-${e.key}`}>
+            <a class="pdf-preview" href={`${base}${e.file}`} aria-label={`Open the ${e.name} PDF`}>
+              <div class="mini" aria-hidden="true">
+                {sample && (
+                  <>
+                    <p class="mini-title">{sample.concept.title.split(':')[0]}</p>
+                    {e.key === 'guide' &&
+                      sample.units.slice(0, 1).map((u) => (
+                        <>
+                          <div class="mini-pair">
+                            <p class="mini-en">
+                              <b>§{u.from}</b> <Fragment set:html={english(u)} />
+                            </p>
+                            <p class="mini-he" lang="he" dir="rtl">
+                              {hebrew(u)}
+                            </p>
+                          </div>
+                          <p class="mini-label">Explanation {u.label}</p>
+                          <p class="mini-prose">
+                            <Fragment set:html={firstPara(u)} />
+                          </p>
+                        </>
+                      ))}
+                    {e.key === 'hebrew' &&
+                      sample.units.slice(0, 2).map((u) => (
+                        <>
+                          <p class="mini-row">
+                            <span class="mini-ref">§{u.from}</span>
+                            <span class="mini-he" lang="he" dir="rtl">
+                              {hebrew(u)}
+                            </span>
+                          </p>
+                          <p class="mini-prose">
+                            <Fragment set:html={firstPara(u)} />
+                          </p>
+                        </>
+                      ))}
+                    {e.key === 'explanation' &&
+                      sample.units.slice(0, 3).map((u) => (
+                        <>
+                          <p class="mini-row">
+                            <span class="mini-ref">{u.label}</span>
+                            <span class="mini-he" lang="he" dir="rtl">
+                              {u.incipit}
+                            </span>
+                          </p>
+                          <p class="mini-prose">
+                            <Fragment set:html={firstPara(u)} />
+                          </p>
+                        </>
+                      ))}
+                  </>
+                )}
+              </div>
+            </a>
+            <div class="pdf-body">
+              <h2 class="pdf-name">{e.name}</h2>
+              <p class="pdf-tagline">{e.tagline}</p>
+              <ul class="pdf-contents">
+                {e.contents.map((c) => (
+                  <li>{c}</li>
+                ))}
+              </ul>
+              <div class="pdf-actions">
+                <a class="btn btn-primary" href={`${base}${e.file}`} download>
+                  Download PDF
+                </a>
+                <a class="pdf-open" href={`${base}${e.file}`}>
+                  Open in the browser
+                </a>
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+
+    <aside class="draft-full" aria-label="Draft notice">
+      <p class="draft-full-head">Draft for review</p>
+      <p>
+        Every page of these PDFs carries a draft notice. The explanations were drafted by AI from recordings of Rabbi Markel’s classes and have not
+        yet been reviewed by him. Do not rely on them or distribute them.
+      </p>
+    </aside>
+
+    <section class="prose pdfs-notes">
+      <h2>About the PDFs</h2>
+      <p>
+        Each is a paperback interior for print on demand: trim 7 × 10 in, black and white, fonts embedded, chapters starting on a right-hand page,
+        with contents and glossary page numbers. The paragraph numbers (§) are those of the English translation on Sefaria, the same in all three
+        editions and on this site, so a passage can be found in any of them. To print a few pages at home on Letter paper instead, use the
+        <a href={`${base}booklet/`}>whole booklet</a> page, which prints in whichever view you choose.
+      </p>
+    </section>
+  </div>
+</Base>

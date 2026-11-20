@@ -51,6 +51,20 @@ const extraAnchors = unit.segments.slice(1).map((s) => `ch${chapter}-s${s.n}`);
     }
   </div>
 
+  {/* The whole Hebrew text, set like the explanation view's incipit: only in the book's "hebrew" view, where the text-block is hidden. */}
+  <div class="he-full">
+    {
+      unit.segments.map((seg) => (
+        <p class="he-full-seg">
+          <span class="incipit-ref">§{seg.n}</span>
+          <span class="incipit-he" lang="he" dir="rtl">
+            {seg.lines.map((l) => l.text).join(' ')}
+          </span>
+        </p>
+      ))
+    }
+  </div>
+
   {
     !unit.covered && (
       <p class="no-source">

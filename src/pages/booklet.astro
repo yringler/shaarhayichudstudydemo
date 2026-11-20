@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import Chapter from '../components/Chapter.astro';
 import ViewSwitch from '../components/ViewSwitch.astro';
 import { loadGuide } from '../lib/content';
-import { BOOK_PDF, BOOK_PDF_EXPLANATION, chaptersTitle } from '../lib/chapters';
+import { BOOK_PDF, BOOK_PDF_EXPLANATION, BOOK_PDF_HEBREW, chaptersTitle } from '../lib/chapters';
 
 const { chapters } = loadGuide();
 const base = import.meta.env.BASE_URL;
@@ -16,8 +16,9 @@ const base = import.meta.env.BASE_URL;
       <h1 class="chapter-title">{chaptersTitle()} on one page</h1>
       <p class="muted">For printing in one go. Choose a view first; printing uses it.</p>
       <p class="muted">
-        Or download the typeset book (PDF, 7 × 10 in, with the draft notice): <a href={`${base}${BOOK_PDF}`} download>Study guide</a> or
-        <a href={`${base}${BOOK_PDF_EXPLANATION}`} download>Explanation only</a>.
+        Or download the typeset book (PDF, 7 × 10 in, with the draft notice): <a href={`${base}${BOOK_PDF}`} download>Study guide</a>,
+        <a href={`${base}${BOOK_PDF_EXPLANATION}`} download>Explanation only</a> or
+        <a href={`${base}${BOOK_PDF_HEBREW}`} download>Hebrew and explanation</a> (<a href={`${base}pdfs/`}>about the three</a>).
       </p>
     </header>
     <ViewSwitch printLabel="Print the booklet" />

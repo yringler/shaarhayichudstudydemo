@@ -814,6 +814,32 @@ h3 {
   color: var(--accent-2);
 }
 
+/* The whole Hebrew text of a passage, one paragraph per §, set like the
+   incipit below: only in the print book's "hebrew" view (Hebrew and
+   explanation), where the two-column passage is hidden. A block, not a flex
+   row, so that a long paragraph can break across pages; the § sits in the
+   left padding. */
+.he-full {
+  display: none;
+}
+
+.he-full-seg {
+  position: relative;
+  margin: 0;
+  padding-left: 3rem;
+  line-height: 1.45;
+}
+
+.he-full-seg .incipit-ref {
+  position: absolute;
+  top: 0.2em;
+  left: 0;
+}
+
+.he-full-seg .incipit-he {
+  display: block;
+}
+
 /* The passage's opening words (dibbur hamaschil): only in the "explanation
    only" view, where the passage itself is hidden. § on the English side, the
    Hebrew on the right. */
@@ -1202,6 +1228,24 @@ h3 {
   margin: 0.25rem 0 0.75rem;
 }
 
+/* Hebrew and explanation (the print book only): the whole Hebrew text in
+   place of the incipit, and every passage, explained or not */
+[data-view='hebrew'] .text-block,
+[data-view='hebrew'] .no-source,
+[data-view='hebrew'] .explanation-label {
+  display: none;
+}
+
+[data-view='hebrew'] .he-full {
+  display: block;
+}
+
+[data-view='hebrew'] .explanation {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
 [data-view='text'] .explanation,
 [data-view='text'] .callout-in-short,
 [data-view='text'] .front-matter,
@@ -1321,6 +1365,175 @@ h3 {
 .btn-primary:hover {
   background: var(--accent-2);
   color: #fff;
+}
+
+/* ------------------------------------------------------------ /pdfs/ */
+
+.pdf-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 820px) {
+  .pdf-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.pdf-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--card);
+  overflow: hidden;
+}
+
+/* the miniature page, on a paper-coloured ground */
+.pdf-preview {
+  display: block;
+  padding: 1.25rem 1.5rem 0;
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: inherit;
+}
+
+.mini {
+  position: relative;
+  aspect-ratio: 7 / 10;
+  max-width: 15rem;
+  margin: 0 auto;
+  padding: 9% 9% 0;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 2px 2px 0 0;
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 0.08),
+    0 6px 18px rgb(0 0 0 / 0.1);
+  font-family: var(--serif);
+  font-size: 6.5px;
+  line-height: 1.4;
+  color: var(--ink);
+  transition: transform 0.2s ease;
+}
+
+.pdf-preview:hover .mini,
+.pdf-preview:focus-visible .mini {
+  transform: translateY(-3px);
+}
+
+/* the page runs on below the frame: fade it out */
+.mini::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 30%;
+  background: linear-gradient(to bottom, rgb(255 255 255 / 0), #fff);
+}
+
+.mini p {
+  margin: 0;
+}
+
+.mini-title {
+  margin-bottom: 0.9em !important;
+  font-size: 1.55em;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.mini-pair {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 1.2em;
+  margin-bottom: 1em;
+}
+
+.mini-he {
+  font-family: var(--hebrew);
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: right;
+}
+
+.mini-en {
+  font-size: 0.95em;
+}
+
+.mini-label,
+.mini-ref {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.mini-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5em;
+  margin: 0.9em 0 0.3em !important;
+}
+
+.mini-row .mini-ref {
+  flex: none;
+}
+
+.mini-prose {
+  text-align: justify;
+  hyphens: auto;
+}
+
+.pdf-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.1rem 1.25rem 1.25rem;
+}
+
+.pdf-name {
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.25;
+}
+
+.pdf-tagline {
+  margin: 0.35rem 0 0;
+  color: var(--ink-2);
+}
+
+.pdf-contents {
+  margin: 0.8rem 0 1.1rem;
+  padding-left: 1.1rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.pdf-contents li + li {
+  margin-top: 0.3rem;
+}
+
+.pdf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-top: auto;
+}
+
+.pdf-open {
+  font-family: var(--ui);
+  font-size: 0.9rem;
+}
+
+.pdfs-notes {
+  margin-bottom: 2rem;
 }
 
 .draft-full {

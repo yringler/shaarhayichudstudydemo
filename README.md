@@ -44,7 +44,9 @@ public/                # robots.txt, favicon
 ```
 
 Pages: `/` (cover and contents), `/chapter/N/` for each chapter (1–5 and 10),
-`/booklet/` (all chapters on one page, for printing), `/glossary/`, `/about/`,
+`/booklet/` (all chapters on one page, for printing), `/pdfs/` (the three
+book PDFs, each with a miniature of its page layout drawn from the first
+explained passage, and download links), `/glossary/`, `/about/`,
 and `/book/`, the source of the print-ready PDF (see below; not linked from the
 site's navigation).
 
@@ -59,7 +61,7 @@ npm run build      # validate content, then build the static site into dist/
 npm run preview    # serve dist/
 npm run check      # astro check (types) + content validation
 npm run pdf        # build, then the print-ready PDF in pdf/ (see below)
-npm run pdf:all    # the study guide and the explanation-only PDFs
+npm run pdf:all    # the study guide, explanation-only and Hebrew-and-explanation PDFs
 ```
 
 ## Re-vendoring the data
@@ -168,15 +170,18 @@ view has its own file name (`BOOK_PDFS` in `src/lib/chapters.ts`):
 | --- | --- | --- |
 | `guide` (default) | Hebrew, translation and explanations | `shaar-hayichud-booklet-1-7x10.pdf` |
 | `explanation` | the explanations only, as continuous prose | `shaar-hayichud-booklet-1-explanation-7x10.pdf` |
+| `hebrew` | the whole Hebrew text and the explanations, no translation | `shaar-hayichud-booklet-1-hebrew-explanation-7x10.pdf` |
 | `text` | Hebrew and translation only | `shaar-hayichud-booklet-1-text-7x10.pdf` |
 
-The site publishes the first two.
+The site publishes the first three. The `hebrew` view exists only in the book
+(the site's view switch has the other three).
 
 ```sh
 npm run pdf                              # Study guide view, draft notices on
 npm run pdf:explanation                  # = npm run pdf -- --view explanation
-npm run pdf:all                          # = npm run pdf -- --all: guide and explanation, one build
-npm run pdf -- --view text               # guide | explanation | text
+npm run pdf:hebrew                       # = npm run pdf -- --view hebrew
+npm run pdf:all                          # = npm run pdf -- --all: guide, explanation and hebrew, one build
+npm run pdf -- --view text               # guide | explanation | hebrew | text
 npm run pdf -- --final                   # without the draft notices (also with --all)
 npm run pdf -- --no-build --out x.pdf    # reuse dist/, write elsewhere (one view only)
 ```
@@ -193,6 +198,13 @@ site's explanation-only view and the printed `/booklet/` show it too. Its title 
 the edition contains. Its contents and glossary page references point to the
 explanations, and a glossary reference whose passage has no explanation falls
 back to its section heading.
+
+The `hebrew` view is the explanation view with the whole Hebrew text in place
+of the incipit: every passage, explained or not, is given in full, one
+paragraph per §, set as the incipit is (Frank Ruhl 12 pt medium, ragged, the
+§ at the left), and its explanation, if any, follows. Sections without an
+explanation are given in Hebrew alone. The markup is `.he-full` in
+`src/components/Unit.astro`, hidden in every other view.
 
 - **The book:** title page, copyright and credits page, contents with page
   numbers (chapters and concept headings), "About this guide", the chapters,
@@ -260,12 +272,12 @@ back to its section heading.
   in passes: it reads each heading's page from the PDF, adds blank pages and
   fills in the page numbers, and prints again until nothing changes.
 - **Without a local setup:** the "Build and deploy" GitHub Actions workflow
-  (`.github/workflows/deploy.yml`) builds both published PDFs (`--all`) on
+  (`.github/workflows/deploy.yml`) builds the three published PDFs (`--all`) on
   every push to `main` and on demand (Actions → Build and deploy → Run
   workflow, choosing the view, whether it is final, and whether to deploy).
   Each PDF is attached to the run as an artifact of its own and published with
   the site (see below). Choosing a single view builds only that PDF, for a
-  one-off; the workflow refuses to deploy it, since the site links both.
+  one-off; the workflow refuses to deploy it, since the site links all three.
 
 Uploading to KDP (Paperback → Paperback Content): Print options **Black & white
 interior** on **cream or white paper**, trim size **7 × 10 in**, bleed
@@ -278,12 +290,14 @@ depends on the final page count and paper).
 The site is plain static files (no functions or adapters), but the book PDF
 needs Chromium, which Cloudflare's Git-connected build does not have. So
 GitHub Actions builds and deploys: `.github/workflows/deploy.yml` runs
-`npm run pdf -- --all` (content validation, the site build, then both PDFs),
+`npm run pdf -- --all` (content validation, the site build, then the three PDFs),
 copies the PDFs into `dist/` and runs `wrangler pages deploy`. A push to `main` deploys to
 production; running the workflow by hand on another branch makes a preview.
-The PDFs are served at `/shaar-hayichud-booklet-1-7x10.pdf` (study guide) and
-`/shaar-hayichud-booklet-1-explanation-7x10.pdf` (explanations only), both
-linked from the cover and `/booklet/`, with an `X-Robots-Tag: noindex` header
+The PDFs are served at `/shaar-hayichud-booklet-1-7x10.pdf` (study guide),
+`/shaar-hayichud-booklet-1-explanation-7x10.pdf` (explanations only) and
+`/shaar-hayichud-booklet-1-hebrew-explanation-7x10.pdf` (Hebrew and explanations), all
+presented on `/pdfs/` (linked from the navigation and the cover) and linked
+from `/booklet/`, with an `X-Robots-Tag: noindex` header
 from `public/_headers`.
 
 One-time setup:
@@ -300,7 +314,7 @@ To deploy by hand instead:
 
 ```sh
 npm run pdf:all
-cp pdf/shaar-hayichud-booklet-1-7x10.pdf pdf/shaar-hayichud-booklet-1-explanation-7x10.pdf dist/
+cp pdf/shaar-hayichud-booklet-1-7x10.pdf pdf/shaar-hayichud-booklet-1-explanation-7x10.pdf pdf/shaar-hayichud-booklet-1-hebrew-explanation-7x10.pdf dist/
 npx wrangler pages deploy dist --project-name shaarhayichudstudydemo
 ```
 

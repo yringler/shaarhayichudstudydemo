@@ -8,7 +8,7 @@
  * unchanged.
  *
  * Query parameters (read by the inline script before first paint):
- *   ?view=guide|explanation|text  which blocks to show (default: guide)
+ *   ?view=guide|explanation|hebrew|text  which blocks to show (default: guide)
  *   ?final=1                      drop the draft notices
  *   ?gutter=1                     inside margin in inches (default 0.9)
  *
@@ -81,7 +81,7 @@ const draftCss = `@page { @bottom-center { content: 'Draft — not reviewed. Do 
         }
         var root = document.documentElement;
         var v = q.get('view');
-        if (v === 'guide' || v === 'explanation' || v === 'text') root.setAttribute('data-view', v);
+        if (v === 'guide' || v === 'explanation' || v === 'hebrew' || v === 'text') root.setAttribute('data-view', v);
         if (q.get('final') === '1') {
           root.classList.add('final');
           document.addEventListener('DOMContentLoaded', function () {
@@ -139,6 +139,9 @@ const draftCss = `@page { @bottom-center { content: 'Draft — not reviewed. Do 
         <p class="kdp-title-with v-explanation">
           Explanations following the classes of Rabbi Amiram Markel, quoting his English translation
         </p>
+        <p class="kdp-title-with v-hebrew">
+          The Hebrew text with explanations following the classes of Rabbi Amiram Markel, quoting his English translation
+        </p>
         <p class="kdp-title-with v-text">The Hebrew text with the English translation of Rabbi Amiram Markel</p>
         <p class="kdp-title-draft draft-only">Draft for review · not for distribution</p>
       </section>
@@ -161,7 +164,7 @@ const draftCss = `@page { @bottom-center { content: 'Draft — not reviewed. Do 
             via Sefaria (sefaria.org, “The Gate of Unity”). Changes: formatting reduced to italics, bold and footnotes, and the Name spelled
             G-d. The footnotes are the translator’s.
           </p>
-          <p class="v-guide v-text">
+          <p class="v-guide v-hebrew v-text">
             <strong>Hebrew text:</strong> from the Shaar HaYichud class archive (shaar-hayichud-sections{
               guide.sectionsCommit ? `, commit ${guide.sectionsCommit.slice(0, 7)}` : ''
             }).
@@ -247,11 +250,16 @@ const draftCss = `@page { @bottom-center { content: 'Draft — not reviewed. Do 
             text paragraph by paragraph; the paragraph numbers (§) are those of the English translation on Sefaria. Each explanation is headed
             by the opening words of its passage in Hebrew, beside the paragraph numbers, so that it can be found in the text.
           </p>
+          <p class="v-hebrew">
+            This edition gives the whole Hebrew text, without the translation, and under each passage the explanation drawn from Rabbi
+            Markel’s recorded class on it; passages the classes do not explain are given in Hebrew alone. The paragraph numbers (§) beside
+            the Hebrew are those of the English translation on Sefaria, which the explanations quote.
+          </p>
           <p class="v-text">
             This edition gives the Hebrew text beside Rabbi Amiram Markel’s English translation, numbered by paragraph (§) as on Sefaria, with
             the translator’s footnotes under the English.
           </p>
-          <p class="v-guide v-explanation">
+          <p class="v-guide v-explanation v-hebrew">
             Words quoted from the translation are in <strong>bold</strong>; Hebrew and Aramaic terms are in <em>italics</em>, in the spelling
             of the glossary at the back. References such as “(class 21, 4:12)” give the class in Rabbi Markel’s advanced series and the time in
             its recording where the point is made, so anything here can be checked against what was actually said. Each chapter ends with
