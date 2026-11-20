@@ -44,7 +44,9 @@ public/                # robots.txt, favicon
 ```
 
 Pages: `/` (cover and contents), `/chapter/N/` for each chapter (1–5 and 10),
-`/booklet/` (all chapters on one page, for printing), `/glossary/`, `/about/`,
+`/booklet/` (all chapters on one page, for printing), `/pdfs/` (the three
+book PDFs, each with a miniature of its page layout drawn from the first
+explained passage, and download links), `/glossary/`, `/about/`,
 and `/book/`, the source of the print-ready PDF (see below; not linked from the
 site's navigation).
 
@@ -294,7 +296,8 @@ production; running the workflow by hand on another branch makes a preview.
 The PDFs are served at `/shaar-hayichud-booklet-1-7x10.pdf` (study guide),
 `/shaar-hayichud-booklet-1-explanation-7x10.pdf` (explanations only) and
 `/shaar-hayichud-booklet-1-hebrew-explanation-7x10.pdf` (Hebrew and explanations), all
-linked from the cover and `/booklet/`, with an `X-Robots-Tag: noindex` header
+presented on `/pdfs/` (linked from the navigation and the cover) and linked
+from `/booklet/`, with an `X-Robots-Tag: noindex` header
 from `public/_headers`.
 
 One-time setup:
