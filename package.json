@@ -19,7 +19,10 @@
     "pdf": "tsx scripts/build-pdf.ts",
     "pdf:explanation": "tsx scripts/build-pdf.ts --view explanation",
     "pdf:hebrew": "tsx scripts/build-pdf.ts --view hebrew",
-    "pdf:all": "tsx scripts/build-pdf.ts --all"
+    "pdf:all": "tsx scripts/build-pdf.ts --all",
+    "epub": "tsx scripts/build-epub.ts",
+    "epub:all": "tsx scripts/build-epub.ts --all",
+    "epub:check": "tsx scripts/build-epub.ts --check"
   },
   "dependencies": {
     "@fontsource/frank-ruhl-libre": "^5.3.0",
@@ -34,6 +37,7 @@
     "@astrojs/check": "^0.9.12",
     "@types/node": "^22.20.5",
     "diff": "^9.0.0",
+    "fflate": "^0.8.3",
     "node-html-parser": "^9.0.7",
     "pdf-lib": "1.17.1",
     "playwright": "1.63.0",
