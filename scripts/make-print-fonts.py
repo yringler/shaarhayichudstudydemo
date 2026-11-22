@@ -14,7 +14,13 @@ TrueType:
   * Source Sans 3 is Adobe's static TTF release, copied unmodified: its OFL
     reserves the name "Source", so it is not subset or converted.
 
+The EPUB editions (scripts/build-epub.ts) embed a few of the same instances
+as TrueType in epub/fonts/: Kindle takes TTF or OTF only, not WOFF2. They are
+made from the WOFF2 files here (decompressed, otherwise unchanged), so
+`--epub` alone needs no network.
+
 Usage: python3 scripts/make-print-fonts.py [download-dir]
+       python3 scripts/make-print-fonts.py --epub     # only epub/fonts/, from public/fonts/print/
 """
 
 import sys
@@ -64,6 +70,13 @@ INSTANCES = [
 GOOGLE_FOLDER = {SERIF: 'sourceserif4', SERIF_IT: 'sourceserif4', FRANK: 'frankruhllibre'}
 SANS = ['SourceSans3-Regular', 'SourceSans3-Semibold', 'SourceSans3-Bold']
 
+EPUB_OUT = ROOT / 'epub' / 'fonts'
+# The instances the EPUB's stylesheet (epub/epub.css) uses.
+EPUB_FONTS = [
+    'SourceSerif4Text-Regular', 'SourceSerif4Text-Italic', 'SourceSerif4Text-Semibold',
+    'SourceSerif4Text-SemiboldItalic', 'FrankRuhlLibre-Regular', 'FrankRuhlLibre-Medium',
+]
+
 
 def fetch(url: str, dest: Path) -> Path:
     if not dest.exists():
@@ -73,7 +86,19 @@ def fetch(url: str, dest: Path) -> Path:
     return dest
 
 
+def write_epub_fonts() -> None:
+    EPUB_OUT.mkdir(parents=True, exist_ok=True)
+    for name in EPUB_FONTS:
+        font = TTFont(OUT / f'{name}.woff2')
+        font.flavor = None
+        font.save(EPUB_OUT / f'{name}.ttf')
+        print(f'  epub/fonts/{name}.ttf')
+
+
 def main() -> None:
+    if sys.argv[1:] == ['--epub']:
+        write_epub_fonts()
+        return
     dl = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / '.font-downloads'
     dl.mkdir(parents=True, exist_ok=True)
     OUT.mkdir(parents=True, exist_ok=True)
@@ -102,6 +127,7 @@ def main() -> None:
         font.flavor = 'woff2'
         font.save(OUT / f'{out}.woff2')
         print(f'  {out}.woff2')
+    write_epub_fonts()
 
 
 if __name__ == '__main__':

@@ -4,7 +4,8 @@
  *
  *   npm run pdf                                   # npm run build, then print the study guide
  *   npm run pdf -- --view explanation             # guide | explanation | hebrew | text
- *   npm run pdf -- --all                          # the guide, explanation and hebrew PDFs (one build)
+ *   npm run pdf -- --all                          # the guide, explanation and hebrew PDFs, 7 x 10 and Letter (one build)
+ *   npm run pdf -- --trim letter                  # 8.5 x 11 in for printing at home (7x10 | letter; with --all, only that size)
  *   npm run pdf -- --final                        # no draft notices (warns about unreviewed sections)
  *   npm run pdf -- --no-build                     # reuse dist/
  *   npm run pdf -- --out some/where.pdf
@@ -19,6 +20,11 @@
  * count, and prints again until nothing changes. The result is checked (trim
  * size of every page, page count, fonts embedded, no colour, printed folios)
  * before it is written.
+ *
+ * Letter (--trim letter): the same pages on 8.5 × 11 in for printing at home,
+ * scaled up as a whole (book.astro, ?trim=letter), with equal side margins.
+ * No blank pages are added (a chapter starts on the next page, recto or not)
+ * and the KDP rules (gutter by page count, page limits, even count) do not apply.
  *
  * Page numbering: the front matter (title, copyright, contents, About, and any
  * blank page before chapter 1) is numbered i, ii, iii, … from the title page,
@@ -37,23 +43,38 @@ import { dirname, extname, join, normalize, resolve, sep } from 'node:path';
 import { parseArgs } from 'node:util';
 import { PDFArray, PDFDict, PDFDocument, PDFName, PDFNumber, PDFRef, PDFString, PDFHexString } from 'pdf-lib';
 import { chromium, type Browser, type Page } from 'playwright';
-import { BOOK_PDFS, BOOK_VIEWS, type BookView } from '../src/lib/chapters';
+import { BOOK_TRIMS, BOOK_VIEWS, bookPdf, type BookTrim, type BookView } from '../src/lib/chapters';
 import { loadGuide } from '../src/lib/content';
 
 // ---------------------------------------------------------------- settings
 
-const TRIM_W_PT = 7 * 72; // 504
-const TRIM_H_PT = 10 * 72; // 720
+/** A page size: the KDP paperback, or Letter for printing at home. Margins in inches. */
+interface TrimSpec {
+  name: BookTrim;
+  label: string;
+  wIn: number;
+  hIn: number;
+  top: number;
+  bottom: number;
+  /** The inside margin to start from (7 x 10: KDP may need more, kdpGutter). */
+  inside: number;
+  outside: number;
+  /** How much book.astro scales the 7 x 10 layout up (main.book zoom). */
+  zoom: number;
+  /** KDP paperback: chapters on a recto (blank pages added), even page count, gutter and page limits. */
+  kdp: boolean;
+}
+
+const TRIMS: Readonly<Record<BookTrim, TrimSpec>> = {
+  // book.css @page: 0.85 in top, 0.95 in bottom, 0.9 in inside, 0.8 in outside.
+  '7x10': { name: '7x10', label: '7 × 10 in, no bleed', wIn: 7, hIn: 10, top: 0.85, bottom: 0.95, inside: 0.9, outside: 0.8, zoom: 1, kdp: true },
+  // book.astro letterCss: a 6 × 9.3 in text block holding the 5.3 × 8.2 in one zoomed by 6 / 5.3.
+  letter: { name: 'letter', label: '8.5 × 11 in (US Letter)', wIn: 8.5, hIn: 11, top: 0.8, bottom: 0.9, inside: 1.25, outside: 1.25, zoom: 6 / 5.3, kdp: false },
+};
+
 const KDP_MIN_PAGES = 24;
 const KDP_MAX_PAGES = 828;
-/** The page's own gutter (book.css); a larger one is passed as ?gutter=. */
-const DEFAULT_GUTTER_IN = 0.9;
-const OUTSIDE_MARGIN_IN = 0.8;
 const MAX_PASSES = 8;
-/** Bottom margin (book.css @page). */
-const BOTTOM_MARGIN_IN = 0.95;
-/** Text block height (book.css: 10 in less 0.85 in top and 0.95 in bottom margins). */
-const TEXT_HEIGHT_IN = 10 - 0.85 - BOTTOM_MARGIN_IN;
 /** A page that stops more than this short of the text block's foot is reported (pageDepthReport). */
 const SHORT_PAGE_IN = 0.6;
 /** A passage pair no taller than this (about four lines of translation) is kept whole. */
@@ -62,8 +83,8 @@ const VIEWS = BOOK_VIEWS;
 type View = BookView;
 /** The views `--all` prints: those the site publishes (the deploy workflow runs it). */
 const ALL_VIEWS: readonly View[] = ['guide', 'explanation', 'hebrew'];
-/** Each view's PDF has its own name (src/lib/chapters.ts), so one never overwrites another. */
-const defaultOut = (view: View): string => `pdf/${BOOK_PDFS[view]}`;
+/** Each view and size has its own name (src/lib/chapters.ts), so one never overwrites another. */
+const defaultOut = (view: View, trim: BookTrim): string => `pdf/${bookPdf(view, trim)}`;
 
 /** KDP's minimum inside margin (gutter) for a page count, in inches. */
 function kdpGutter(pages: number): number {
@@ -106,9 +127,10 @@ function frontPageCount(info: PdfInfo, firstChapter: string): number {
 
 // ---------------------------------------------------------------- arguments
 
-/** One PDF to print: a view and where to write it. */
+/** One PDF to print: a view, a page size and where to write it. */
 interface Job {
   view: View;
+  trim: TrimSpec;
   out: string;
 }
 
@@ -126,22 +148,27 @@ function parseOptions(): Options {
       final: { type: 'boolean', default: false },
       'no-build': { type: 'boolean', default: false },
       out: { type: 'string' },
+      trim: { type: 'string' },
       help: { type: 'boolean', short: 'h', default: false },
     },
     strict: true,
   });
   if (values.help) {
-    console.log('Usage: npm run pdf -- [--view guide|explanation|hebrew|text | --all] [--final] [--no-build] [--out file.pdf]');
+    console.log('Usage: npm run pdf -- [--view guide|explanation|hebrew|text | --all] [--trim 7x10|letter] [--final] [--no-build] [--out file.pdf]');
     process.exit(0);
   }
   const common = { final: values.final, build: !values['no-build'] };
+  if (values.trim !== undefined && !(BOOK_TRIMS as readonly string[]).includes(values.trim)) fail(`--trim must be one of ${BOOK_TRIMS.join(', ')} (got "${values.trim}").`);
+  const trimArg = values.trim as BookTrim | undefined;
   if (values.all) {
     if (values.view !== undefined || values.out !== undefined) fail('--all prints every published view to its own file; it takes neither --view nor --out.');
-    return { ...common, jobs: ALL_VIEWS.map((view) => ({ view, out: resolve(defaultOut(view)) })) };
+    const trims = trimArg ? [trimArg] : BOOK_TRIMS;
+    return { ...common, jobs: trims.flatMap((t) => ALL_VIEWS.map((view) => ({ view, trim: TRIMS[t], out: resolve(defaultOut(view, t)) }))) };
   }
   const view = values.view ?? 'guide';
   if (!isView(view)) fail(`--view must be one of ${VIEWS.join(', ')} (got "${view}").`);
-  return { ...common, jobs: [{ view, out: resolve(values.out ?? defaultOut(view)) }] };
+  const t = trimArg ?? '7x10';
+  return { ...common, jobs: [{ view, trim: TRIMS[t], out: resolve(values.out ?? defaultOut(view, t)) }] };
 }
 
 function isView(v: string): v is View {
@@ -315,12 +342,12 @@ async function layoutTargets(page: Page): Promise<Layout> {
  * references are filled in from this pass's PDF (roman or arabic, folioLabel);
  * if a blank page moved them, the next pass corrects them.
  */
-async function applyPass(page: Page, info: PdfInfo, layout: Layout): Promise<string[]> {
+async function applyPass(page: Page, info: PdfInfo, layout: Layout, blanks: boolean): Promise<string[]> {
   const pageOf = Object.fromEntries(info.dests);
   const front = frontPageCount(info, layout.firstChapter);
   const labelOf = Object.fromEntries([...info.dests].map(([id, p]) => [id, folioLabel(p, front)]));
   return page.evaluate(
-    ({ pageOf, labelOf, recto, pages, firstChapter }) => {
+    ({ pageOf, labelOf, recto, pages, firstChapter, blanks }) => {
       const changes: string[] = [];
       let shift = 0;
       const first = firstChapter ? document.getElementById(firstChapter) : null;
@@ -356,7 +383,7 @@ async function applyPass(page: Page, info: PdfInfo, layout: Layout): Promise<str
           if (changes.length < 50) changes.push(`page ref #${span.dataset['pageref']} → ${text || '(none)'}`);
         }
       }
-      const book = document.querySelector('main.book');
+      const book = blanks ? document.querySelector('main.book') : null;
       const tail = book?.lastElementChild;
       const hasTail = tail?.classList.contains('kdp-tail') ?? false;
       const content = pages + shift - (hasTail ? 1 : 0);
@@ -372,7 +399,8 @@ async function applyPass(page: Page, info: PdfInfo, layout: Layout): Promise<str
       }
       return changes;
     },
-    { pageOf, labelOf, recto: layout.recto, pages: info.pages, firstChapter: layout.firstChapter },
+    // Without blank pages (Letter), only the page references are filled in.
+    { pageOf, labelOf, recto: blanks ? layout.recto : [], pages: info.pages, firstChapter: layout.firstChapter, blanks },
   );
 }
 
@@ -485,12 +513,12 @@ function folioCheck(file: string, windows: { what: string; pages: number[] }[], 
  * Reported, not failed: a heading kept with its text can leave a short page that
  * only an editor can mend.
  */
-function pageDepthReport(file: string, pages: number, frontPages: number, skip: Set<number>): string[] {
+function pageDepthReport(file: string, trim: TrimSpec, pages: number, frontPages: number, skip: Set<number>): string[] {
   if (!hasCommand('pdftotext')) return [];
   const r = spawnSync('pdftotext', ['-bbox', file, '-'], { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 });
   if (r.status !== 0) return [];
-  const footPt = TRIM_H_PT - BOTTOM_MARGIN_IN * 72;
-  const topPt = TRIM_H_PT - (TEXT_HEIGHT_IN + BOTTOM_MARGIN_IN) * 72;
+  const footPt = (trim.hIn - trim.bottom) * 72;
+  const topPt = trim.top * 72;
   // The lowest word of each page inside the text block (not the head or folio).
   const lowest = r.stdout
     .split('<page ')
@@ -509,7 +537,7 @@ function pageDepthReport(file: string, pages: number, frontPages: number, skip: 
     const low = lowest[p - 1] ?? -1;
     if (low < 0 || skip.has(p) || (lowest[p] ?? -1) < 0) continue;
     const gap = (footPt - low) / 72;
-    if (gap > SHORT_PAGE_IN) short.push(`${p} (${gap.toFixed(2)} in)`);
+    if (gap > SHORT_PAGE_IN * trim.zoom) short.push(`${p} (${gap.toFixed(2)} in)`);
   }
   return short;
 }
@@ -590,7 +618,10 @@ function relPath(file: string, cwd: string): string {
  * count. Throws BuildError if a check fails.
  */
 async function printBook(browser: Browser, port: number, job: Job, final: boolean, cwd: string): Promise<number> {
-  let gutter = DEFAULT_GUTTER_IN;
+  const trim = job.trim;
+  const trimWPt = trim.wIn * 72;
+  const trimHPt = trim.hIn * 72;
+  let gutter = trim.inside;
   let pdf: Uint8Array | undefined;
   let info: PdfInfo | undefined;
   let firstChapter = '';
@@ -601,12 +632,13 @@ async function printBook(browser: Browser, port: number, job: Job, final: boolea
     const page = await browser.newPage();
     const query = new URLSearchParams({ view: job.view });
     if (final) query.set('final', '1');
-    if (gutter !== DEFAULT_GUTTER_IN) query.set('gutter', String(gutter));
+    if (gutter !== trim.inside) query.set('gutter', String(gutter));
+    if (!trim.kdp) query.set('trim', trim.name);
     const url = `http://127.0.0.1:${port}/book/?${query}`;
     console.log(`› ${url}`);
 
     // Lay out at the text width in print media, wait for the fonts, check the margins.
-    const textWidthPx = Math.floor((7 - gutter - OUTSIDE_MARGIN_IN) * 96);
+    const textWidthPx = Math.floor((trim.wIn - gutter - trim.outside) * 96);
     await page.setViewportSize({ width: textWidthPx, height: 960 });
     await page.emulateMedia({ media: 'print' });
     const failed: string[] = [];
@@ -628,7 +660,7 @@ async function printBook(browser: Browser, port: number, job: Job, final: boolea
     }
     const overflow = await overflowCheck(page, textWidthPx);
     if (overflow.length > 0) throw new BuildError(`content runs into the margins:\n  ${overflow.join('\n  ')}`);
-    const short = await markShortPairs(page, SHORT_PAIR_IN * 96);
+    const short = await markShortPairs(page, SHORT_PAIR_IN * 96 * trim.zoom);
     console.log(`  ${short} short passage pair(s) kept whole; longer ones may break across pages`);
 
     const layout = await layoutTargets(page);
@@ -638,7 +670,7 @@ async function printBook(browser: Browser, port: number, job: Job, final: boolea
     for (let pass = 1; pass <= MAX_PASSES; pass++) {
       pdf = await page.pdf({ preferCSSPageSize: true, printBackground: true, outline: true, tagged: true });
       info = await readPdf(pdf);
-      const changes = await applyPass(page, info, layout);
+      const changes = await applyPass(page, info, layout, trim.kdp);
       console.log(`  pass ${pass}: ${info.pages} pages${changes.length ? `; ${changes.length} change(s): ${changes.slice(0, 4).join('; ')}${changes.length > 4 ? '; …' : ''}` : '; stable'}`);
       if (changes.length === 0) {
         stable = true;
@@ -653,11 +685,11 @@ async function printBook(browser: Browser, port: number, job: Job, final: boolea
 
     const missing = [...layout.recto, ...layout.refs].filter((id) => !info?.dests.has(id));
     if (missing.length > 0) throw new BuildError(`no page found for: ${missing.join(', ')} (are they link targets?)`);
-    const verso = layout.recto.filter((id) => (info?.dests.get(id) ?? 1) % 2 === 0);
+    const verso = trim.kdp ? layout.recto.filter((id) => (info?.dests.get(id) ?? 1) % 2 === 0) : [];
     if (verso.length > 0) throw new BuildError(`these start on a left-hand page: ${verso.join(', ')}`);
 
     const needed = kdpGutter(info.pages);
-    if (needed <= gutter) break;
+    if (!trim.kdp || needed <= gutter) break;
     if (attempt === 1) throw new BuildError(`${info.pages} pages need a ${needed} in gutter; the layout with it still did not fit.`);
     console.log(`  ${info.pages} pages need KDP's ${needed} in gutter; laying out again.`);
     gutter = needed;
@@ -666,16 +698,16 @@ async function printBook(browser: Browser, port: number, job: Job, final: boolea
 
   // ---- page numbering: roman front matter, arabic from chapter 1 (see the header comment)
   const front = frontPageCount(info, firstChapter);
-  if (front % 2 !== 0) throw new BuildError(`the front matter has ${front} pages, so chapter 1 is not on a right-hand page.`);
+  if (trim.kdp && front % 2 !== 0) throw new BuildError(`the front matter has ${front} pages, so chapter 1 is not on a right-hand page.`);
   pdf = await withPageLabels(pdf, front);
 
   // ---- checks
   const problems: string[] = [];
   info.sizes.forEach((s, i) => {
-    if (Math.abs(s.w - TRIM_W_PT) > 0.5 || Math.abs(s.h - TRIM_H_PT) > 0.5) problems.push(`page ${i + 1} is ${s.w} × ${s.h} pt, not ${TRIM_W_PT} × ${TRIM_H_PT}`);
+    if (Math.abs(s.w - trimWPt) > 0.5 || Math.abs(s.h - trimHPt) > 0.5) problems.push(`page ${i + 1} is ${s.w} × ${s.h} pt, not ${trimWPt} × ${trimHPt}`);
   });
-  if (info.pages % 2 !== 0) problems.push(`odd page count (${info.pages})`);
-  if (info.pages > KDP_MAX_PAGES) problems.push(`${info.pages} pages is over KDP's paperback maximum of ${KDP_MAX_PAGES}`);
+  if (trim.kdp && info.pages % 2 !== 0) problems.push(`odd page count (${info.pages})`);
+  if (trim.kdp && info.pages > KDP_MAX_PAGES) problems.push(`${info.pages} pages is over KDP's paperback maximum of ${KDP_MAX_PAGES}`);
 
   // Written under a temporary name and moved into place only once it passes, so a
   // PDF that failed the checks never sits at the name of a good one.
@@ -703,23 +735,23 @@ async function printBook(browser: Browser, port: number, job: Job, final: boolea
   if (problems.length > 0) {
     rmSync(job.out, { force: true });
     renameSync(tmp, failedOut);
-    throw new BuildError(`the PDF fails the KDP checks (kept for inspection as ${failedOut}; do not upload it):\n  ${problems.join('\n  ')}`);
+    throw new BuildError(`the PDF fails the ${trim.kdp ? 'KDP ' : ''}checks (kept for inspection as ${failedOut}; do not upload it):\n  ${problems.join('\n  ')}`);
   }
   rmSync(failedOut, { force: true });
   renameSync(tmp, job.out);
   const rectoPages = rectoIds.map((id) => info?.dests.get(id) ?? 0);
-  const short = pageDepthReport(job.out, info.pages, front, new Set([...rectoPages, ...rectoPages.map((p) => p - 1)]));
+  const short = pageDepthReport(job.out, trim, info.pages, front, new Set([...rectoPages, ...rectoPages.map((p) => p - 1)]));
   if (short.length > 0) warn(`${short.length} page(s) stop more than ${SHORT_PAGE_IN} in short of the foot (PDF page numbers): ${short.join(', ')}`);
-  if (info.pages < KDP_MIN_PAGES) warn(`${info.pages} pages is under KDP's paperback minimum of ${KDP_MIN_PAGES}.`);
+  if (trim.kdp && info.pages < KDP_MIN_PAGES) warn(`${info.pages} pages is under KDP's paperback minimum of ${KDP_MIN_PAGES}.`);
 
   const rel = relPath(job.out, cwd);
   console.log(`
 ✔ ${rel}
-  ${info.pages} pages, ${TRIM_W_PT} × ${TRIM_H_PT} pt (7 × 10 in, no bleed), view: ${job.view}${final ? ', final (no draft notices)' : ', draft notices on'}
+  ${info.pages} pages, ${trimWPt} × ${trimHPt} pt (${trim.label}), view: ${job.view}${final ? ', final (no draft notices)' : ', draft notices on'}
   folios: ${front > 0 ? `i–${roman(front)} (front matter), ` : ''}1–${info.pages - front} from chapter 1 (also as /PageLabels)
-  margins: inside ${gutter} in (KDP minimum for ${info.pages} pages: ${kdpGutter(info.pages)} in), outside ${OUTSIDE_MARGIN_IN} in
+  margins: ${trim.kdp ? `inside ${gutter} in (KDP minimum for ${info.pages} pages: ${kdpGutter(info.pages)} in), outside ${trim.outside} in` : `${trim.outside} in each side, the 7 × 10 layout scaled ${trim.zoom.toFixed(3)}×; no blank pages`}
   ${checkedFonts ? 'all fonts embedded (pdffonts)' : 'fonts NOT checked (no pdffonts)'}; ${checkedColour ? 'no colour (pdftoppm)' : 'colour NOT checked (no pdftoppm)'}; ${checkedFolios ? 'folios match (pdftotext)' : 'folios NOT checked (no pdftotext)'}
-  KDP: paperback, 7 x 10 in, no bleed, black & white interior, cream or white paper; upload the cover separately.`);
+  ${trim.kdp ? 'KDP: paperback, 7 x 10 in, no bleed, black & white interior, cream or white paper; upload the cover separately.' : 'For printing at home: Letter paper, single- or double-sided, at 100% (no "fit to page").'}`);
   return info.pages;
 }
 
@@ -745,9 +777,9 @@ async function main(): Promise<void> {
   try {
     const pages: string[] = [];
     for (const job of opts.jobs) {
-      if (opts.jobs.length > 1) console.log(`\n› view: ${job.view}`);
+      if (opts.jobs.length > 1) console.log(`\n› view: ${job.view}, ${job.trim.name}`);
       const n = await printBook(browser, port, job, opts.final, cwd);
-      pages.push(`${relPath(job.out, cwd)}: ${n} pages (${job.view})`);
+      pages.push(`${relPath(job.out, cwd)}: ${n} pages (${job.view}, ${job.trim.name})`);
     }
     if (opts.jobs.length > 1) console.log(`\n✔ ${opts.jobs.length} PDFs:\n  ${pages.join('\n  ')}`);
   } finally {

@@ -26,12 +26,47 @@ export const BOOK_PDFS: Readonly<Record<BookView, string>> = {
   text: 'shaar-hayichud-booklet-1-text-7x10.pdf',
 };
 
+/**
+ * The page sizes the book is printed at: `7x10` is the KDP paperback; `letter`
+ * (8.5 x 11 in) is for printing at home, the same pages scaled up 1.13x with
+ * even margins and no blank pages (scripts/build-pdf.ts, book.astro `?trim=letter`).
+ */
+export const BOOK_TRIMS = ['7x10', 'letter'] as const;
+export type BookTrim = (typeof BOOK_TRIMS)[number];
+
+/** File names of the Letter-size PDFs, one per view. */
+export const BOOK_PDFS_LETTER: Readonly<Record<BookView, string>> = {
+  guide: 'shaar-hayichud-booklet-1-letter.pdf',
+  explanation: 'shaar-hayichud-booklet-1-explanation-letter.pdf',
+  hebrew: 'shaar-hayichud-booklet-1-hebrew-explanation-letter.pdf',
+  text: 'shaar-hayichud-booklet-1-text-letter.pdf',
+};
+
+/** The PDF file name of a view at a page size. */
+export function bookPdf(view: BookView, trim: BookTrim = '7x10'): string {
+  return trim === 'letter' ? BOOK_PDFS_LETTER[view] : BOOK_PDFS[view];
+}
+
 /** The full study guide PDF (Hebrew, translation and explanations). */
 export const BOOK_PDF = BOOK_PDFS.guide;
 /** The explanation-only PDF. */
 export const BOOK_PDF_EXPLANATION = BOOK_PDFS.explanation;
 /** The explanations with the whole Hebrew text (no translation). */
 export const BOOK_PDF_HEBREW = BOOK_PDFS.hebrew;
+
+/** The editions published as EPUB (reflowable, single column; scripts/build-epub.ts). */
+export const EPUB_VIEWS = ['guide', 'explanation', 'hebrew'] as const;
+export type EpubView = (typeof EPUB_VIEWS)[number];
+
+/**
+ * File names of the EPUBs, one per published edition. `npm run epub` writes them
+ * to `pdf/` beside the PDFs, and the deploy workflow copies them to the site root.
+ */
+export const BOOK_EPUBS: Readonly<Record<EpubView, string>> = {
+  guide: 'shaar-hayichud-booklet-1.epub',
+  explanation: 'shaar-hayichud-booklet-1-explanation.epub',
+  hebrew: 'shaar-hayichud-booklet-1-hebrew-explanation.epub',
+};
 
 export type ChapterNumber = (typeof CHAPTERS)[number];
 

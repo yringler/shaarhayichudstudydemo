@@ -1,0 +1,372 @@
+/* The EPUB editions (scripts/build-epub.ts). Reflowable, single column.
+
+   Reader-safe on purpose: readers impose their own margins, line height and
+   font size, and some (Kindle) ignore flex, grid and media queries, so the
+   layout relies on blocks, ems and percentages only. Lengths are in em so a
+   reader's font-size setting scales everything together. The fonts are the
+   print book's (OFL), as TrueType: Kindle takes no WOFF2. A reader may still
+   override them; the fallbacks keep Hebrew in a Hebrew-capable face. */
+
+@font-face {
+  font-family: 'Source Serif 4';
+  src: url('../fonts/SourceSerif4Text-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Serif 4';
+  src: url('../fonts/SourceSerif4Text-Italic.ttf');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Source Serif 4';
+  src: url('../fonts/SourceSerif4Text-Semibold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Serif 4';
+  src: url('../fonts/SourceSerif4Text-SemiboldItalic.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  src: url('../fonts/FrankRuhlLibre-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Frank Ruhl Libre';
+  src: url('../fonts/FrankRuhlLibre-Medium.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  line-height: 1.45;
+  margin: 0;
+  padding: 0;
+  widows: 2;
+  orphans: 2;
+}
+
+p {
+  margin: 0 0 0.6em;
+  text-indent: 0;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+h1,
+h2 {
+  font-weight: bold;
+  line-height: 1.25;
+  page-break-after: avoid;
+  break-after: avoid;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+a {
+  color: inherit;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+/* --- Hebrew: Frank Ruhl, a little larger than the English, right to left.
+   The dir attribute sets the direction; text-align: right is for readers that
+   justify by default. */
+[lang='he'] {
+  font-family: 'Frank Ruhl Libre', 'Taamey Frank CLM', 'SBL Hebrew', 'Times New Roman', serif;
+  font-style: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+span.he {
+  font-size: 1.1em;
+}
+
+.nobr {
+  white-space: nowrap;
+}
+
+/* --- title, copyright, about */
+.titlepage {
+  text-align: center;
+  margin-top: 15%;
+}
+
+.title-he {
+  font-size: 2em;
+  margin-bottom: 0.3em;
+  text-align: center;
+}
+
+.title-main {
+  font-size: 2.2em;
+  margin: 0 0 0.2em;
+}
+
+.title-en {
+  font-size: 1.3em;
+  font-style: italic;
+}
+
+.title-author {
+  margin-top: 0.8em;
+}
+
+.title-rule {
+  width: 20%;
+  margin: 1.5em auto;
+  border: 0;
+  border-top: 1px solid currentColor;
+}
+
+.title-guide {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+.title-booklet,
+.title-edition {
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2em;
+}
+
+.title-with {
+  margin: 1.5em 10% 0;
+  font-size: 0.95em;
+  font-style: italic;
+}
+
+.title-draft {
+  margin-top: 2em;
+  font-weight: bold;
+}
+
+.copyright p {
+  font-size: 0.85em;
+  text-align: left;
+}
+
+.draft-box {
+  border: 1px solid currentColor;
+  padding: 0.4em 0.7em;
+  margin: 0.8em 0 1em;
+}
+
+.draft-head {
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+.draft-line {
+  font-style: italic;
+  font-size: 0.85em;
+}
+
+.section-title {
+  font-size: 1.5em;
+  margin: 0 0 1em;
+}
+
+/* --- chapters */
+.chapter-head {
+  margin: 0 0 1.5em;
+  text-align: left;
+}
+
+.eyebrow {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.3em;
+}
+
+.chapter-title {
+  font-size: 1.6em;
+  margin: 0 0 0.4em;
+}
+
+.eyebrow-he {
+  font-size: 1.2em;
+  text-align: right;
+}
+
+.notice,
+.concept-note {
+  font-style: italic;
+}
+
+.sub-head {
+  font-size: 1em;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  margin: 1.4em 0 0.5em;
+}
+
+.key-terms dt {
+  margin-top: 0.5em;
+}
+
+.key-terms dd {
+  margin: 0 0 0 1.2em;
+}
+
+.term-he {
+  font-size: 1.1em;
+}
+
+/* --- concepts: a heading over a rule, the § range after the title */
+.concept {
+  margin-top: 2em;
+}
+
+.concept-title {
+  font-size: 1.2em;
+  margin: 0 0 0.6em;
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid currentColor;
+}
+
+.concept-range {
+  font-weight: normal;
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+
+.callout {
+  margin: 0.6em 0 1em;
+  padding: 0 0 0 0.8em;
+  border-left: 2px solid currentColor;
+}
+
+.callout p {
+  margin-bottom: 0.3em;
+}
+
+/* --- passages: the § label, the Hebrew, the translation, the explanation */
+.unit {
+  margin: 1.2em 0 0;
+}
+
+.seg {
+  margin: 0 0 0.8em;
+}
+
+.seg-label,
+.explanation-label {
+  font-size: 0.8em;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  margin: 0.8em 0 0.2em;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+.seg-he,
+.he-full,
+.incipit {
+  font-size: 1.15em;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.incipit {
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+.seg-en {
+  margin-bottom: 0.3em;
+}
+
+.noteref {
+  text-decoration: none;
+}
+
+.footnote {
+  font-size: 0.8em;
+  margin: 0 0 0.3em 1em;
+}
+
+.footnote p {
+  margin: 0;
+}
+
+.fn-back {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.explanation {
+  margin: 0.6em 0 1em;
+}
+
+.explanation-label {
+  margin-top: 1em;
+}
+
+.listen {
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+/* --- end of chapter */
+.review ol,
+.review ul,
+.classes {
+  margin: 0 0 0.6em;
+  padding-left: 1.6em;
+}
+
+.review li,
+.classes li {
+  margin-bottom: 0.3em;
+}
+
+.class-series,
+.classes {
+  font-size: 0.9em;
+}
+
+/* --- glossary */
+.glossary dt {
+  margin-top: 0.7em;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+.glossary dd {
+  margin: 0 0 0 1.2em;
+}
+
+.gloss-where {
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.glossary-lede {
+  font-style: italic;
+}
+
+/* --- licences */
+.licence {
+  font-family: monospace;
+  font-size: 0.7em;
+  white-space: pre-wrap;
+}

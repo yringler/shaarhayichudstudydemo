@@ -21,7 +21,9 @@ package.json  tsconfig.json  astro.config.ts  .node-version
 scripts/
   vendor.ts            # builds data/ from shaar-hayichud-sections and Sefaria
   validate-content.ts  # checks content/ against data/ (runs before every build)
-  build-pdf.ts         # prints /book/ to the KDP PDFs (npm run pdf, pdf:all)
+  build-pdf.ts         # prints /book/ to the KDP and Letter PDFs (npm run pdf, pdf:all)
+  build-epub.ts        # the EPUB editions (npm run epub, epub:all, epub:check)
+  epub/                # build-epub.ts: content documents (book.ts), HTML → XHTML (xhtml.ts)
   dump-chapter.ts      # prints a chapter's text and transcripts, for writers
   review-notes.ts      # lists every reviewer note
   test-typography.ts   # checks src/lib/typography.ts and incipit() (runs in npm run check)
@@ -40,13 +42,14 @@ src/
   lib/chapters.ts      # the chapters in the booklet, shared by the scripts and the site
   lib/content.ts       # loads data/ and content/ into typed chapter models
   layouts/ components/ pages/ styles/ scripts/
+epub/                  # the EPUBs' stylesheet and TrueType fonts (make-print-fonts.py --epub)
 public/                # robots.txt, favicon
 ```
 
 Pages: `/` (cover and contents), `/chapter/N/` for each chapter (1–5 and 10),
 `/booklet/` (all chapters on one page, for printing), `/pdfs/` (the three
-book PDFs, each with a miniature of its page layout drawn from the first
-explained passage, and download links), `/glossary/`, `/about/`,
+editions, each with a miniature of its page layout drawn from the first
+explained passage, and download links: PDF 7 × 10 in, PDF Letter, EPUB), `/glossary/`, `/about/`,
 and `/book/`, the source of the print-ready PDF (see below; not linked from the
 site's navigation).
 
@@ -61,7 +64,8 @@ npm run build      # validate content, then build the static site into dist/
 npm run preview    # serve dist/
 npm run check      # astro check (types) + content validation
 npm run pdf        # build, then the print-ready PDF in pdf/ (see below)
-npm run pdf:all    # the study guide, explanation-only and Hebrew-and-explanation PDFs
+npm run pdf:all    # the study guide, explanation-only and Hebrew-and-explanation PDFs, 7 x 10 and Letter
+npm run epub:all   # the same three as EPUBs
 ```
 
 ## Re-vendoring the data
@@ -180,7 +184,8 @@ The site publishes the first three. The `hebrew` view exists only in the book
 npm run pdf                              # Study guide view, draft notices on
 npm run pdf:explanation                  # = npm run pdf -- --view explanation
 npm run pdf:hebrew                       # = npm run pdf -- --view hebrew
-npm run pdf:all                          # = npm run pdf -- --all: guide, explanation and hebrew, one build
+npm run pdf:all                          # = npm run pdf -- --all: guide, explanation and hebrew, 7 x 10 and Letter, one build
+npm run pdf -- --trim letter             # the Letter (8.5 x 11 in) PDF for printing at home (see "Letter PDFs")
 npm run pdf -- --view text               # guide | explanation | hebrew | text
 npm run pdf -- --final                   # without the draft notices (also with --all)
 npm run pdf -- --no-build --out x.pdf    # reuse dist/, write elsewhere (one view only)
@@ -279,23 +284,114 @@ explanation are given in Hebrew alone. The markup is `.he-full` in
   the site (see below). Choosing a single view builds only that PDF, for a
   one-off; the workflow refuses to deploy it, since the site links all three.
 
+### Letter PDFs
+
+`--trim letter` prints the same book on US Letter (8.5 × 11 in), for people
+to print at home; `--all` makes both sizes of each published view. The file
+names end in `-letter.pdf` instead of `-7x10.pdf` (`BOOK_PDFS_LETTER` in
+`src/lib/chapters.ts`). `/book/?trim=letter` turns on `letterCss` in
+`src/pages/book.astro`:
+
+- The 7 × 10 layout is scaled up as a whole (`zoom: 6 / 5.3` on
+  `main.book`), so everything tuned for the paperback holds: the 5.3 × 8.2 in
+  text block becomes 6 × 9.28 in, the 11 pt text about 12.5 pt, and the
+  passages keep the Hebrew and the translation side by side.
+- The margins are 1.25 in on both sides (0.8 in top, 0.9 in bottom), so pages
+  print single- or double-sided and leave room for a three-hole punch. The
+  running heads and folios (page margin boxes, which `zoom` does not reach)
+  are set a size larger to match.
+- `build-pdf.ts` adds no blank pages: a chapter starts on the next page,
+  recto or not, and the page count may be odd. The KDP rules (gutter by page
+  count, page limits) are skipped; the other checks (fonts, colour, folios,
+  margins, page size 612 × 792 pt) still run.
+
+Print at 100% ("actual size"), not "fit to page", which would shrink it.
+
 Uploading to KDP (Paperback → Paperback Content): Print options **Black & white
 interior** on **cream or white paper**, trim size **7 × 10 in**, bleed
 **No bleed**; upload the PDF as the manuscript and check it in the Print
 Previewer. The cover is separate and is not produced here (its spine width
 depends on the final page count and paper).
 
+## EPUB
+
+`npm run epub` makes the ebook editions, the same three as the published
+PDFs (`BOOK_EPUBS` in `src/lib/chapters.ts`), in `pdf/` beside them:
+
+```sh
+npm run epub                              # the study guide, draft notices on
+npm run epub -- --view explanation        # guide | explanation | hebrew
+npm run epub:all                          # all three
+npm run epub -- --final                   # without the draft notices (also with epub:all)
+npm run epub:check                        # EPUBCheck on the EPUBs in pdf/
+```
+
+It needs no site build or browser. `scripts/build-epub.ts` loads the typed
+models (`src/lib/content.ts`) and writes EPUB 3 directly:
+`scripts/epub/book.ts` lays out each edition's content documents (title,
+copyright, about, one file per chapter, glossary, font licences), and
+`scripts/epub/xhtml.ts` turns the site's HTML fragments into XHTML (entities
+decoded, void tags closed, the ▶ buttons dropped, class references kept as
+"(class 21, 4:12)" linking to the recording, `G‑d` kept whole without the
+U+2011 the fonts lack). Each EPUB holds only its own edition's markup, not
+the others hidden by CSS, so a reader's search and read-aloud see only what
+is shown. Transcripts, topic lists and reviewer notes are left out.
+
+- **Layout: one column.** Each passage opens with its § label; the Hebrew
+  follows as its own right-to-left paragraph, then, in the study guide, the
+  translation with its footnotes (EPUB pop-up footnotes:
+  `epub:type="noteref"` / `"footnote"`), then the explanation. The
+  explanation-only edition shows the § range and the Hebrew incipit before
+  each explanation, as in its PDF; the Hebrew edition shows the whole Hebrew
+  of each §. The PDF's side-by-side columns are not used: ebook text
+  reflows to the screen, and on a phone two columns leave three or four
+  words a line; Kindle (KFX) ignores flex layout and media queries, so a
+  "side by side on wide screens" fallback would not reach it; and tables of
+  whole paragraphs are clipped or split by several readers. Fixed layout
+  would keep the columns but lose reflow and font size, which the PDF
+  already serves.
+- **Hebrew:** the book is English (`dc:language en`, then `he`), read left
+  to right (`page-progression-direction="ltr"`); every Hebrew block and
+  inline run carries `lang="he" xml:lang="he" dir="rtl"`.
+- **Fonts:** Source Serif 4 (regular, italic, semibold, semibold italic) and
+  Frank Ruhl Libre (regular, medium), as TrueType in `epub/fonts/`, since
+  Kindle does not take WOFF2. They are the print instances decompressed:
+  `python3 scripts/make-print-fonts.py --epub` (no network) makes them from
+  `public/fonts/print/`. Not obfuscated (the OFL allows embedding, and
+  obfuscated fonts have failed in Kindle Previewer); the licences are in the
+  book. `ibooks:specified-fonts` asks Apple Books to use them. A reader may
+  still override them.
+- **Stylesheet:** `epub/epub.css`, reader-safe: em lengths, no flex, grid,
+  `@page` or media queries.
+- **Package:** a stable `urn:uuid` per edition, accessibility metadata
+  (schema.org), a navigation document with chapters and section headings
+  (also in the reading order, after the copyright page) and landmarks.
+- **Checks:** before writing, the script fails if a content document is not
+  well-formed XML (`xmllint`, if installed), an in-book link points at a
+  missing file or id, an id is duplicated, U+2011 is left, or the stylesheet
+  names a font that is not packaged. `npm run epub:check` runs EPUBCheck
+  (the W3C validator that Apple, Kobo and Google run) with
+  `--failonwarnings`: set `EPUBCHECK_JAR` to the jar from
+  github.com/w3c/epubcheck/releases (Java 11+), or put `epubcheck` on the
+  PATH. The deploy workflow downloads it and runs the check.
+- **Before uploading to a store,** check each edition by eye: Kindle
+  Previewer 3 (Windows or macOS), Apple Books, a Kobo and Google Play Books.
+
 ## Deploying to Cloudflare Pages
 
 The site is plain static files (no functions or adapters), but the book PDF
 needs Chromium, which Cloudflare's Git-connected build does not have. So
 GitHub Actions builds and deploys: `.github/workflows/deploy.yml` runs
-`npm run pdf -- --all` (content validation, the site build, then the three PDFs),
-copies the PDFs into `dist/` and runs `wrangler pages deploy`. A push to `main` deploys to
+`npm run pdf -- --all` (content validation, the site build, then the six PDFs:
+three views at 7 × 10 and at Letter), `npm run epub:all` and EPUBCheck,
+copies the PDFs and EPUBs into `dist/` and runs `wrangler pages deploy`. A push to `main` deploys to
 production; running the workflow by hand on another branch makes a preview.
 The PDFs are served at `/shaar-hayichud-booklet-1-7x10.pdf` (study guide),
 `/shaar-hayichud-booklet-1-explanation-7x10.pdf` (explanations only) and
-`/shaar-hayichud-booklet-1-hebrew-explanation-7x10.pdf` (Hebrew and explanations), all
+`/shaar-hayichud-booklet-1-hebrew-explanation-7x10.pdf` (Hebrew and explanations),
+the Letter PDFs at the same names with `-letter` for `-7x10`, and the EPUBs at
+`/shaar-hayichud-booklet-1.epub`, `/shaar-hayichud-booklet-1-explanation.epub` and
+`/shaar-hayichud-booklet-1-hebrew-explanation.epub`, all
 presented on `/pdfs/` (linked from the navigation and the cover) and linked
 from `/booklet/`, with an `X-Robots-Tag: noindex` header
 from `public/_headers`.
@@ -314,7 +410,8 @@ To deploy by hand instead:
 
 ```sh
 npm run pdf:all
-cp pdf/shaar-hayichud-booklet-1-7x10.pdf pdf/shaar-hayichud-booklet-1-explanation-7x10.pdf pdf/shaar-hayichud-booklet-1-hebrew-explanation-7x10.pdf dist/
+npm run epub:all
+cp pdf/*.pdf pdf/*.epub dist/
 npx wrangler pages deploy dist --project-name shaarhayichudstudydemo
 ```
 

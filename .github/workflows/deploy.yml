@@ -1,6 +1,7 @@
-# Builds the site and the print-ready KDP PDFs (7 x 10 in, no bleed): the study
-# guide, the explanation-only edition and the Hebrew-and-explanation edition.
-# Puts them in the site root, and deploys
+# Builds the site, the print-ready KDP PDFs (7 x 10 in, no bleed), the same
+# PDFs on Letter paper for printing at home, and the EPUBs: the study guide, the
+# explanation-only edition and the Hebrew-and-explanation edition. Checks the
+# EPUBs with EPUBCheck, puts everything in the site root, and deploys
 # to Cloudflare Pages. The PDFs are also kept as workflow artifacts.
 #
 # Replaces Cloudflare's Git-connected build (its build image has no Chromium):
@@ -16,7 +17,7 @@ on:
   workflow_dispatch:
     inputs:
       view:
-        description: 'Content view: all builds the guide, explanation and hebrew PDFs (published); one view builds only that PDF (a one-off; it is not published)'
+        description: 'Content view: all builds the guide, explanation and hebrew PDFs (both sizes) and EPUBs (published); one view builds only its two PDFs (a one-off; it is not published)'
         type: choice
         options: [all, guide, explanation, hebrew, text]
         default: all
@@ -39,7 +40,7 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
 
@@ -56,7 +57,8 @@ jobs:
           sudo apt-get install -y --no-install-recommends poppler-utils
 
       # npm run pdf runs npm run build first (content validation, then astro build into dist/).
-      # --all prints the guide, explanation and hebrew PDFs from one build, each to its own file.
+      # --all prints the guide, explanation and hebrew PDFs at 7 x 10 and Letter from one
+      # build, each to its own file.
       - name: Build the site and the PDFs
         env:
           VIEW: ${{ inputs.view || 'all' }}
@@ -66,18 +68,46 @@ jobs:
             npm run pdf -- --all $FINAL
           else
             npm run pdf -- --view "$VIEW" $FINAL
+            npm run pdf -- --view "$VIEW" --trim letter --no-build $FINAL
           fi
 
-      # The site links all three (src/lib/chapters.ts, BOOK_PDFS). A one-off single view
-      # copies whatever it built; a deploy then lacks the others, so the step fails
-      # rather than publish a broken link.
-      - name: Put the PDFs in the site
+      # The EPUBs need no site build or browser (scripts/build-epub.ts); only 'all' makes them.
+      - name: Build the EPUBs
+        if: (inputs.view || 'all') == 'all'
+        env:
+          FINAL: ${{ inputs.final && '--final' || '' }}
+        run: npm run epub:all -- $FINAL
+
+      - uses: actions/setup-java@v4
+        if: (inputs.view || 'all') == 'all'
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      # EPUBCheck, the W3C validator that Apple, Kobo and Google run on upload.
+      - name: Check the EPUBs (EPUBCheck)
+        if: (inputs.view || 'all') == 'all'
+        env:
+          EPUBCHECK_VERSION: 5.3.0
+        run: |
+          curl -fsSL -o "$RUNNER_TEMP/epubcheck.zip" "https://github.com/w3c/epubcheck/releases/download/v$EPUBCHECK_VERSION/epubcheck-$EPUBCHECK_VERSION.zip"
+          unzip -q "$RUNNER_TEMP/epubcheck.zip" -d "$RUNNER_TEMP"
+          EPUBCHECK_JAR="$RUNNER_TEMP/epubcheck-$EPUBCHECK_VERSION/epubcheck.jar" npm run epub:check
+
+      # The site links all of them (src/lib/chapters.ts: BOOK_PDFS, BOOK_PDFS_LETTER,
+      # BOOK_EPUBS). A one-off single view copies whatever it built; a deploy then lacks
+      # the others, so the step fails rather than publish a broken link.
+      - name: Put the PDFs and EPUBs in the site
         env:
           VIEW: ${{ inputs.view || 'all' }}
           DEPLOY: ${{ github.event_name == 'push' || inputs.deploy }}
         run: |
           cp pdf/*.pdf dist/
-          for f in shaar-hayichud-booklet-1-7x10.pdf shaar-hayichud-booklet-1-explanation-7x10.pdf shaar-hayichud-booklet-1-hebrew-explanation-7x10.pdf; do
+          cp pdf/*.epub dist/ 2>/dev/null || true
+          for f in \
+            shaar-hayichud-booklet-1-7x10.pdf shaar-hayichud-booklet-1-explanation-7x10.pdf shaar-hayichud-booklet-1-hebrew-explanation-7x10.pdf \
+            shaar-hayichud-booklet-1-letter.pdf shaar-hayichud-booklet-1-explanation-letter.pdf shaar-hayichud-booklet-1-hebrew-explanation-letter.pdf \
+            shaar-hayichud-booklet-1.epub shaar-hayichud-booklet-1-explanation.epub shaar-hayichud-booklet-1-hebrew-explanation.epub; do
             if [ ! -f "dist/$f" ] && [ "$DEPLOY" = true ]; then
               echo "::error::dist/$f is missing: deploy with view 'all', or untick deploy for a one-off view."
               exit 1
@@ -118,6 +148,23 @@ jobs:
         with:
           name: shaar-hayichud-booklet-1-7x10-text${{ inputs.final && '-final' || '' }}
           path: pdf/shaar-hayichud-booklet-1-text-7x10.pdf
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Keep the Letter PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: shaar-hayichud-booklet-1-letter${{ inputs.final && '-final' || '' }}
+          path: pdf/*-letter.pdf
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Keep the EPUBs
+        if: (inputs.view || 'all') == 'all'
+        uses: actions/upload-artifact@v4
+        with:
+          name: shaar-hayichud-booklet-1-epub${{ inputs.final && '-final' || '' }}
+          path: pdf/*.epub
           if-no-files-found: error
           retention-days: 30
 

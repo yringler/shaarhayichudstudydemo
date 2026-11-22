@@ -1,13 +1,15 @@
 ---
 /**
- * /pdfs/: the three typeset editions of the book (7 × 10 in, KDP), each with a
- * miniature of how its pages are set, drawn from the booklet's first explained
- * passage. The PDFs themselves are built by scripts/build-pdf.ts and copied to
- * the site root by the deploy workflow (README "Print-ready PDF for KDP").
+ * /pdfs/: the three editions of the book, each with a miniature of how its
+ * pages are set, drawn from the booklet's first explained passage, and links to
+ * each format: the 7 × 10 in PDF (KDP), the Letter PDF for printing at home,
+ * and the EPUB. The PDFs are built by scripts/build-pdf.ts and the EPUBs by
+ * scripts/build-epub.ts; the deploy workflow copies them to the site root
+ * (README "Print-ready PDF for KDP" and "EPUB").
  */
 import Base from '../layouts/Base.astro';
 import { loadGuide, type UnitModel } from '../lib/content';
-import { BOOK_PDFS, chaptersTitle } from '../lib/chapters';
+import { BOOK_EPUBS, BOOK_PDFS, BOOK_PDFS_LETTER, chaptersTitle } from '../lib/chapters';
 
 const guide = loadGuide();
 const base = import.meta.env.BASE_URL;
@@ -39,7 +41,11 @@ interface Edition {
   he?: string;
   tagline: string;
   contents: string[];
+  /** The 7 × 10 in PDF. */
   file: string;
+  /** The Letter PDF, for printing at home. */
+  letter: string;
+  epub: string;
 }
 
 const editions: Edition[] = [
@@ -53,6 +59,8 @@ const editions: Edition[] = [
       'Overviews, key terms, review questions and a glossary',
     ],
     file: BOOK_PDFS.guide,
+    letter: BOOK_PDFS_LETTER.guide,
+    epub: BOOK_EPUBS.guide,
   },
   {
     key: 'hebrew',
@@ -64,6 +72,8 @@ const editions: Edition[] = [
       'No translation; the explanations quote it in bold',
     ],
     file: BOOK_PDFS.hebrew,
+    letter: BOOK_PDFS_LETTER.hebrew,
+    epub: BOOK_EPUBS.hebrew,
   },
   {
     key: 'explanation',
@@ -75,18 +85,20 @@ const editions: Edition[] = [
       'The shortest of the three',
     ],
     file: BOOK_PDFS.explanation,
+    letter: BOOK_PDFS_LETTER.explanation,
+    epub: BOOK_EPUBS.explanation,
   },
 ];
 ---
 
-<Base title="PDFs" current="pdfs" description="Download the Shaar HaYichud study guide as a typeset book: three editions, 7 × 10 in.">
+<Base title="PDFs and ebooks" current="pdfs" description="Download the Shaar HaYichud study guide: three editions, each as a 7 × 10 in PDF, a Letter PDF for printing at home, and an EPUB ebook.">
   <div class="page pdfs-page">
     <header class="page-head pdfs-head">
       <p class="eyebrow"><span>Booklet 1 · {chaptersTitle()}</span></p>
       <h1 class="chapter-title">The book, in three editions</h1>
       <p class="lede">
-        Typeset PDFs of the whole booklet, 7 × 10 in, ready to print or read on a tablet. They contain the same explanations; they differ in how much of
-        the text comes with them.
+        The whole booklet in three editions. They contain the same explanations; they differ in how much of the text comes with them. Each comes as a
+        typeset PDF (7 × 10 in, the book), the same pages on Letter paper for printing at home, and an EPUB for ebook readers.
       </p>
     </header>
 
@@ -158,7 +170,13 @@ const editions: Edition[] = [
               </ul>
               <div class="pdf-actions">
                 <a class="btn btn-primary" href={`${base}${e.file}`} download>
-                  Download PDF
+                  PDF, 7 × 10 in
+                </a>
+                <a class="btn" href={`${base}${e.letter}`} download>
+                  PDF, Letter
+                </a>
+                <a class="btn" href={`${base}${e.epub}`} download>
+                  EPUB
                 </a>
                 <a class="pdf-open" href={`${base}${e.file}`}>
                   Open in the browser
@@ -173,18 +191,31 @@ const editions: Edition[] = [
     <aside class="draft-full" aria-label="Draft notice">
       <p class="draft-full-head">Draft for review</p>
       <p>
-        Every page of these PDFs carries a draft notice. The explanations were drafted by AI from recordings of Rabbi Markel’s classes and have not
+        Every page of these PDFs, and every chapter of the EPUBs, carries a draft notice. The explanations were drafted by AI from recordings of Rabbi Markel’s classes and have not
         yet been reviewed by him. Do not rely on them or distribute them.
       </p>
     </aside>
 
     <section class="prose pdfs-notes">
-      <h2>About the PDFs</h2>
+      <h2>About the formats</h2>
       <p>
-        Each is a paperback interior for print on demand: trim 7 × 10 in, black and white, fonts embedded, chapters starting on a right-hand page,
-        with contents and glossary page numbers. The paragraph numbers (§) are those of the English translation on Sefaria, the same in all three
-        editions and on this site, so a passage can be found in any of them. To print a few pages at home on Letter paper instead, use the
-        <a href={`${base}booklet/`}>whole booklet</a> page, which prints in whichever view you choose.
+        <strong>PDF, 7 × 10 in</strong> is a paperback interior for print on demand: black and white, fonts embedded, chapters starting on a
+        right-hand page, with contents and glossary page numbers.
+      </p>
+      <p>
+        <strong>PDF, Letter</strong> is the same book on 8.5 × 11 in paper, for printing at home: the pages are scaled up (the text is about
+        12.5 pt), the side margins are equal and wide enough for a hole punch, and there are no blank pages, so it prints single- or
+        double-sided. Print at 100% (“actual size”), not “fit to page”.
+      </p>
+      <p>
+        <strong>EPUB</strong> is for ebook readers (Apple Books, Kobo, Google Play Books, and Kindle through Send to Kindle). The text reflows to
+        the screen, so the Hebrew and the translation of each passage come one after the other rather than side by side. Class references
+        such as “(class 21, 4:12)” link to the recording.
+      </p>
+      <p>
+        The paragraph numbers (§) are those of the English translation on Sefaria, the same in every edition and format and on this site, so a
+        passage can be found in any of them. To print a few pages only, use the <a href={`${base}booklet/`}>whole booklet</a> page, which prints in
+        whichever view you choose.
       </p>
     </section>
   </div>
